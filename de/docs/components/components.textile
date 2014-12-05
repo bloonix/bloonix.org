@@ -1,0 +1,52 @@
+h1. Bloonix Komponenten
+
+p. Die Monitoring Software von Bloonix besteht aus fünf Hauptkomponenten:
+
+* der Bloonix-Server
+* der Bloonix-Service-Checker
+* der Bloonix-Agent
+* die Bloonix-Plugins
+* die Bloonix-WebGUI
+
+h2. Bloonix-Server
+
+p. Der *Bloonix-Server* ist der Kern des Monitoring Frameworks und die Schnittstelle für die Bloonix-Agenten. Der Bloonix-Server übersendet auf Anfrage eines Agenten die Konfiguration der zu überwachenden Services und nimmt den Status und auch statistische Daten von den Bloonix-Agenten entgegen, um diese zu validieren, in der Datenbank abzuspeichern und zu prüfen, ob ein Ereignis ausgelöst werden muss, wie zum Beispiel eine E-Mail an einen Administrator zu senden, um ihn darüber zu informieren, dass ein Service überlastet oder nicht mehr verfügbar ist.
+
+h2. Bloonix-Service-Checker
+
+p. Der *Bloonix-Service-Checker* ist ein Teil des Bloonix-Servers und dafür zuständig, die Aktualität des Status von Hosts und Services zu überwachen. Wenn zum Beispiel die CPU-Auslastung eines Servers seit mehreren Minuten nicht mehr geprüft wurde, dann kann das daran liegen, dass ein Bloonix-Agent ausgefallen ist. In diesem Fall würde der Service-Checker als Pseudo-Agent einspringen und einen kritischen Status für den Service liefern.
+
+h2. Bloonix-Agent
+
+p. Der *Bloonix-Agent* ist der Teil des Frameworks, der dafür zuständig ist, die Services zu überwachen und den Status der Services sowie dazugehörige Statistiken an den Bloonix-Server zu senden. Der Bloonix-Agent wird auf dem zu überwachenden System installiert und läuft dort als Daemon, der dauerhaft das System überwacht. Der Bloonix-Agent kann auch auf einem zentralen Server installiert werden, um von dort aus Webservices und Netzwerkkomponenten zu überwachen, wie Router, Switches und Loadbalancer.
+
+h2. Bloonix-Plugins
+
+p. Die *Bloonix-Plugins* sind kleinere Programme, die den Status eines oder mehrerer Services prüfen und zugleich statistische Daten zum Service liefern. Ein Plugin kann in jeder beliebigen Programmiersprache geschrieben sein, zu beachten ist nur, dass der Datenaustausch (Programmoptionen und Ausgabe statistischer Daten) im JSON-Format erfolgt. Die Plugins werden zusammen mit dem Bloonix-Agenten installiert.
+
+h2. Bloonix-WebGUI
+
+p. Die *Bloonix-WebGUI* ist das Benutzerinterface und läuft clientseitig als JavaScript Applikation im Browser. Serverseitig läuft die WebGUI als REST-API hinter einem Reverse-Proxy (Nginx), wodurch die Möglichkeit besteht, die WebGUI automatisiert abzufragen. Das Datenformat der REST-API ist JSON.
+
+p. Für die WebGUI wird ein moderner und HTML5-fähiger Browser benötigt. Wir empfehlen den Einsatz von Chrome, Safari, Firefox oder auch Opera. Der Internet Explorer in Version 11 sollte ebenfalls funktionieren, dieser Browser wird jedoch in keiner Version unterstützt.
+
+h1. Storage und Webserver
+
+h2. PostgreSQL
+
+p. PostgreSQL wird zur Speicherung der Konfiguration und der Daten von Hosts, Services, Benutzer und Gruppen eingesetzt. Andere Datenbanksysteme werden aktuell nicht unterstützt. Es ist in der Zukunft nicht geplant, MySQL zu unterstützen, da die Applikation von Bloonix mit Sequences arbeitet und dieses Feature von MySQL nicht unterstützt wird.
+
+p. "Zur Webseite von PostgreSQL":http://www.postgresql.org/
+
+h2. Elasticsearch
+
+p. Elasticsearch wird verwendet, um Metriken und Events zu speichern. Bei der Überwachung von mehreren tausend Hosts können hohe Datenmengen aufkommen. Die Wahl fiel auf Elasticsearch, da Elasticsearch hoch skalierbar ist, eine einfache Clusterfunktionalität bietet und die Daten automatisch horizotal partitioniert.
+
+p. "Zur Webseite von Elasticsearch":http://www.elasticsearch.org/
+
+h2. Nginx
+
+p. Der Webserver Nginx wird als Reverse-Proxy eingesetzt, da der Bloonix-Server und die Bloonix-WebGUI als externe FastCGI-Applikation laufen. Die Requests werden per ProxyPass an die Komponenten weitergeleitet.
+
+p. "Zur Webseite von Nginx":http://nginx.com/
+
