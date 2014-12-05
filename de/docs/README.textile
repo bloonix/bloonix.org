@@ -1,0 +1,6 @@
+* "Über Bloonix":about
+* "Komponenten":components
+* "Lizenzen":licences
+* "Installation":installation
+* "Konfiguration":configuration
+* "FAQ":faq
