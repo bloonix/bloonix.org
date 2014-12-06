@@ -1,0 +1,6 @@
+[
+    { "Komponenten": "components.textile" },
+    { "Plugins": "plugins.textile" }
+    { "Wie funktioniert Bloonix": "how-does-it-works.textile" },
+    { "Systemanforderungen": "requirements.textile" }
+]

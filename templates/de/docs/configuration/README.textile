@@ -1,8 +1,0 @@
-h1. Konfiguration
-
-* "Allgemeines":common.textile
-* "Bloonix-WebGUI":bloonix-webgui.textile
-* "Bloonix-Server":bloonix-server.textile
-* "Bloonix-Service-Checker":bloonix-service-checker.textile
-* "Bloonix-Agent":bloonix-agent.textile
-
