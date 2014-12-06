@@ -15,7 +15,7 @@ group bloonix
 |user|bloonix|Mit welchem Benutzer soll der Daemon laufen.|
 |group|bloonix|Mit welcher Gruppe soll der Daemon laufen.|
 
-<notextile>
+==
 <% include /de/docs/configuration/template-rest-server.textile %>
 % $stash->{item_logfile} = "bloonix-srvchk-database.log";
 <% include /de/docs/configuration/template-database.textile %>

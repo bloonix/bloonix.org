@@ -27,7 +27,7 @@ bc. system {
 |group|bloonix|Mit welcher Gruppe soll der Daemon laufen.|
 |timezone|Europe/Berlin|Die Zeitzone des Servers.|
 
-<notextile>
+==
 % $stash->{item_name} = "die Bloonix-WebGUI";
 % $stash->{item_port} = 9001;
 <% include /de/docs/configuration/template-proc-manager.textile %>
@@ -70,7 +70,7 @@ bc. email {
 |subject||Der Betreff der Nachricht. Der String __%s__ wird mit dem eigentlichen Betreff ersetzt.|
 |flags||Mögliche Werte sind __success-login__, __failed-login__ und __password-request__.|
 
-<notextile>
+==
 % $stash->{item_logfile} = "bloonix-webgui-database.log";
 <% include /de/docs/configuration/template-database.textile %>
 <% include /de/docs/configuration/template-elasticsearch.textile %>
@@ -84,7 +84,7 @@ bc. template {
 
 p. Diese Parameter sind für das Template-System und sollten nicht geändert werden.
 
-<notextile>
+==
 % $stash->{item_logfile} = "bloonix-webgui.log";
 <% include /de/docs/configuration/template-logger.textile %>
 </notextile>
