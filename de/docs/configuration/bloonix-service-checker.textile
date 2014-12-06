@@ -1,0 +1,25 @@
+h1. Konfiguration des Bloonix Service-Checkers
+
+p. Die Konfiguration des Service-Checkers befindet sich in:
+
+pre. /etc/bloonix/srvchk/main.conf
+
+h2. Globale Parameter
+
+pre. workers 3
+user bloonix
+group bloonix
+
+|Parameter|Standard|Beschreibung|
+|workers|3|Die Anzahl Prozesse, die gestartet werden sollen um Services zu prüfen, die auf einen Timeout gelaufen sind.|
+|user|bloonix|Mit welchem Benutzer soll der Daemon laufen.|
+|group|bloonix|Mit welcher Gruppe soll der Daemon laufen.|
+
+<% include /de/docs/configuration/template-rest-server.textile %>
+
+% $stash->{item_logfile} = "bloonix-srvchk-database.log";
+<% include /de/docs/configuration/template-database.textile %>
+
+% $stash->{item_logfile} = "bloonix-srvchk.log";
+<% include /de/docs/configuration/template-logger.textile %>
+

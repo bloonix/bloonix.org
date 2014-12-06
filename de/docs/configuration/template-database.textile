@@ -1,0 +1,24 @@
+h2. Sektion: database
+
+p. In dieser Sektion werden die Parameter für die Datenbank konfiguiert und sind selbsterklärend.
+
+pre. database {
+    driver Pg
+    host 127.0.0.1
+    port 5432
+    database bloonix
+    user bloonix
+    password bloonix
+
+    logger {
+        file {
+            filename /var/log/bloonix/<% item_logfile %>
+            filelock 0
+            maxlevel info
+            minlevel emerg
+            message_layout [%T] %L %P %t %X %Y %m (%C)
+        }
+    }
+}
+
+p. Die Konfiguration des Loggers ist identisch zur Konfiguration des Haupt-Loggers weiter unten.

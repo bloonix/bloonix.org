@@ -1,0 +1,109 @@
+h1. Konfiguration des Bloonix-Agenten
+
+p. Die Konfiguration des Agenten befindet sich in:
+
+pre. /etc/bloonix/agent/main.conf
+
+h2. Globale Parameter
+
+pre. agents 1
+user bloonix
+group bloonix
+plugins /usr/lib/bloonix/plugins
+nagios_plugins /usr/lib/nagios/plugins,/usr/lib64/nagios/plugins
+include /etc/bloonix/agent/hosts.conf
+
+h2. Sektion: server
+
+pre. server {
+    proto https
+    host p1.bloonix.de, s1.bloonix.de
+    mode failover
+    ssl_options {
+        ssl_verify_mode 1
+        @@SSL_CA_PARAM@@ @@SSL_CA_VALUE@@
+    }
+}
+
+|Parameter|Standard|Beschreibung|
+|proto|http|Das Protokoll, unter dem der Bloonix-Server erreichbar ist.|
+|host|127.0.0.1|Der Hostname bzw. die IP-Adresse zum Bloonix-Server. Dies kann auch eine komma-separierte Liste von IP-Adressen sein.|
+|timeout|60|Die maximale Zeit pro Request. Danach wird der Request abgebrochen.|
+|mode|balanced|Es ist möglich, die Requests auf mehrere Server zu verteilen oder aber ein Failover einzurichten. Mögliche Werte sind __balanced__ und __failover__.|
+|timeout|15||
+
+h3. Subsektion: ssl_options
+
+|Parameter|Standard|Beschreibung|
+|ssl_verify_mode||Dieser Parameter aktiviert oder deaktiviert die Validierung des Serverzertifikats. 0 = nein, 1 = ja.|
+|ssl_ca_path||Der Pfad zu den installierten CAs.|
+
+<% include /de/docs/configuration/template-logger.textile %>
+
+h2. Sektion: env
+
+pre. env {
+    name value
+}
+
+h2. Sektion: host
+
+pre. host {
+    host_id 12345
+    password secret
+}
+
+|Parameter|Standard|Beschreibung|
+|host_id||Die ID des Hosts, welcher überwacht werden soll. Die ID ist im Webinterface in der Konfiguration des Hosts zu finden.|
+|password||Das Passwort des Hosts, welcher überwacht werden soll. Das Passwort ist im Webinterface in der Konfiguration des Hosts zu finden.|
+|agent_id|localhost|Jeder Service ist mit einer Agenten-ID gekennzeichnet. Mit dieser Option kann ausgewählt werden, welche Services eines Hosts von diesem Agenten aus überwacht werden. Mögliche Werte sind __localhost__, __intranet__ und __remote__.|
+|active|yes|Mit diesem Parameter kann die Überwachung des Hosts aktiviert oder deaktiviert werden.|
+|use_sudo||Welche Checks sollen mit sudo ausgeführt werden.|
+|env||Umgebungsvariablen für die Checks dieses Hosts.|
+|execute_on_event||Ausführung eines Skripts bei einem bestimmten Status.|
+
+h3. Parameter: use_sudo
+
+p. Da der Bloonix-Agent nicht mit root-Rechten läuft, für manche Service-Checks jedoch root-Rechte benötigt werden, kann hier definiert werden, welche Service-Checks mit sudo ausgeführt werden sollen.
+
+p. Möchten Sie zum Beispiel ein Software-RAID und die Temparatur überwachen, so benötigen die Checks __check-mdadm__ und __check-sensors__ root-Rechte. Damit der Agent diese zwei Checks mit sudo ausführt, muss folgende Konfiguration vorgenommen werden:
+
+pre. host {
+    host_id 12345
+    password secret
+    use_sudo check-mdadm, check-sensors
+}
+
+h3. Parameter: env
+
+p. Mit diesem Parameter können Umgebungsvariablen des Checks geändert werden.
+
+pre. host {
+    host_id 12345
+    password secret
+    env {
+        PATH /usr/local/bin
+    }
+}
+
+h3. Parameter: execute_on_event
+
+p. Manchmal kann es hilfreich sein, wenn man auf dem Server, der überwacht wird, bei bestimmten Ereignissen ein Skript ausführen kann. Nehmen Sie zum Beispiel an, dass Sie ein selbstgeschriebenes Skript ausführen möchten, sobald der Status für einen Service __CRITICAL__ oder __UNKNOWN__ ist. Die Einrichtung sieht beispielhaft wie folgt aus:
+
+pre. host {
+    host_id 12345
+    password secret
+    execute_on_event {
+        check-memstat {
+            status CRITICAL, UNKNOWN
+            command /usr/local/bin/my-script %I %C %S
+        }
+    }
+}
+
+p. In der Untersektion __execute_on_event__ wird zunächst das Kommando oder die Service-ID angegeben. Im Weiteren muss angegeben werden, für welchen Status das Skript, welches unter __command__ angegben wird, ausgeführt werden soll. Die Platzhalter __%I__, __%C__ und __%S__ werden wie folgt ersetzt:
+
+|%I|Service-ID|
+|%C|Das Kommando, was ausgeührt wurde. Beispiel: check-http|
+|%S|Status des Checks|
+

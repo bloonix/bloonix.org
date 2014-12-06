@@ -1,3 +1,5 @@
+h1. Installation
+
 * "Wichtige Information vorab":common.textile
 * "Repositories":repositories.textile
 * "Elasticsearch":elasticsearch.textile
@@ -8,3 +10,4 @@
 * "Bloonix-Plugins":bloonix-plugins.textile
 * "Bloonix-Agent":bloonix-agent.textile
 * "Manuelle Installation":sources.textile
+

@@ -1,0 +1,37 @@
+h2. Sektion: proc-manager
+
+p. In dieser Sektion findet die Verwaltung der Prozesse statt, die [% item_name %] startet, um Anfragen zu bearbeiten.
+
+pre. proc-manager {
+    max_servers 10
+    min_spare_servers 5
+    max_spare_servers 8
+    port <% item_port %>
+    server_status {
+        enabled yes
+        location /server-status
+        allow_from 127.0.0.1
+    }
+}
+ 
+|Parameter|Standard|Beschreibung|
+|min_spare_servers|10|Wieviele Prozesse mit Leerlauf sollen mindestens verfügbar sein. Wenn die Zahl unterschritten wird, werden weitere Prozesse gestartet, solange, bis der Parameter __max_spare_servers__ erreicht ist.|
+|max_spare_servers|20|Wieviele Prozesse mit Leerlauf darf es maximal geben. Wenn die Zahl erreicht ist, werden soviele Prozesse beendet, bis der Parameter __min_spare_servers__ erreicht ist.|
+|max_servers|50|Wieviele Prozesse dürfen maximal gestartet sein.|
+|max_requests|0|Wieviele Requests darf ein Prozess verarbeiten, bis er sich selbst beendet. 0 bedeuted unendlich.|
+|max_process_size|1GB|Auf wieviel MB/GB darf ein Prozess maximal wachsen, bis er sich selbst beendet. 0 bedeuted unendlich. Möglich Angaben: xMB, xGB|
+|timeout|300|Wie lange darf ein Requests und dessen Verarbeitung andauern. Nach Ablauf des Timeouts wird die Verarbeitung abgebrochen.|
+|port|9000|Der Port, auf die der Server für eingehende Requests lauschen soll.|
+|lockfile|/var/cache/bloonix/blxipc.%P.lock|Diese Datei wird lediglich zum internen Locking verwendet.|
+
+h3. Untersektion: server_status
+
+p. Der Server-Status dient zur Anzeige, wieviele Server-Prozesse gestartet sind und in welchem Status sich die Prozesse befinden.
+
+p. Der Aufruf kann über HTTP/HTTPS erfolgen.
+
+|Parameter|Standard|Beschreibung|
+|enabled|yes|Hiermit kann die Funktionalität aktiviert oder deaktivert werden.|
+|location|/server-status|Der Pfad, der zur Abfrage der Server-Statistiken gültig ist.|
+|allow_from|127.0.0.1|Eine komma-separierte Liste von IPs, von denen der Server-Status abgefragt werden darf.|
+

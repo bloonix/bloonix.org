@@ -1,0 +1,85 @@
+h1. Konfiguration der Bloonix-WebGUI
+
+p. Die Konfiguration der WebGUI befindet sich in:
+
+pre. /etc/bloonix/webgui/main.conf
+
+h2. Sektion: heaven
+
+p. Diese Parameter sind für das MVC-Framework von Bloonix und sollten nicht geändert werden.
+
+pre. heaven {
+    base /srv/bloonix/webgui/lib
+    model Database, REST
+    view Template, JSON
+}
+
+h2. Sektion: system
+
+pre. system {
+    user bloonix
+    group bloonix
+    timezone Europe/Berlin
+}
+
+|Parameter|Standard|Beschreibung|
+|user|bloonix|Mit welchem Benutzer soll der Daemon laufen.|
+|group|bloonix|Mit welcher Gruppe soll der Daemon laufen.|
+|timezone|Europe/Berlin|Die Zeitzone des Servers.|
+
+% $stash->{item_name} = "die Bloonix-WebGUI";
+% $stash->{item_port} = 9001;
+<% include /de/docs/configuration/template-proc-manager.textile %>
+
+h2. Sektion: webapp
+
+pre. webapp {
+    hostname yourdomain.test
+    sid_expire_time 3600
+    sid_refresh_time 300
+    chart_library other
+    html_path /srv/bloonix/webgui/templates/html
+    check_frequency low
+}
+
+|Parameter|Standard|Beschreibung|
+|hostname|wird ermittelt|Der Hostname, auf dem die WebGUI läuft. Der Hostname wird automatisch ermittelt, wenn er nicht angegeben ist.|
+|sid_expire_time|3600|Nach wievielen Sekunden läuft eine Session-ID ab. Der Benutzer muss sich danach erneut anmelden.|
+|sid_refresh_time|300|Nach wievielen Sekunden wird die Ablaufzeit der Session-ID des Benutzers erneuert.|
+|chart_library|other|Mit diesem Parameter kann die Chart-Library ausgewählt werden. Gültige Werte sind __other__ und __highcharts__. Mit dem Wert __other__ werden die Chart-Libraries Flot, D3js, topojson und datamaps verwendet. Mit dem Wert __highcharts__ werden die Chart-Libraries Highcharts und Highmaps verwendet. _Bitte beachten Sie,_ dass Highcharts nur verwendet werden darf, wenn Sie über eine gültige Highcharts und Highmaps Lizenz verfügen. Weitere Informationen hierzu finden Sie im Bereich "Lizenezen":/de//docs/licences
+|html_path|/srv/bloonix/webgui/templates/html|Der Pfad zur internen Dokumentation zur WebGUI.|
+|check_frequency|low|Mit diesem Parameter können die mindest-Intervalle für Service-Checks konfiguriert werden. Mit dem Wert __low__ ist ein Intervall von mindestens 60 Sekunden möglich. Mit dem Wert __high__ ist der kleinste Intervall von 15 Sekunden möglich.|
+|allow_simple_usernames|no|Standardmäßig müssen Benutzernamen in der WebGUI im E-Mail Format angelegt werden. Setzt man diesen Parameter auf __yes__, so ist es möglich, auch einfache Namen zu verwenden. Der Benutzername muss mindestens 2 Zeichen lang sein und darf weder mit einem Leerzeichen beginnen oder enden.|
+
+h2. Sektion: email
+
+p. Mit der E-Mail Parametern kann festgelegt werden, über welche Ereignisse Sie als Administrator informiert werden. Wenn Sie zum Beispiel den Wunsch haben, bei einer Anfrage zum Passwort-Reset per E-Mail informiert zu werden, so setzen Sie den Parameter __flags__ auf __password-request__.
+
+pre. email {
+    from root@localhost
+    to root@localhost
+    subject [BLOONIX-WEBGUI] %s
+    flags success-login, failed-login, password-request
+}
+
+|Parameter|Standard|Beschreibung| 
+|from||Der Absender der E-Mail.|
+|to||Der Empfänger der E-Mail.|
+|subject||Der Betreff der Nachricht. Der String __%s__ wird mit dem eigentlichen Betreff ersetzt.|
+|flags||Mögliche Werte sind __success-login__, __failed-login__ und __password-request__.|
+
+% $stash->{item_logfile} = "bloonix-webgui-database.log";
+<% include /de/docs/configuration/template-database.textile %>
+<% include /de/docs/configuration/template-elasticsearch.textile %>
+
+h2. Sektion: template
+
+pre. template {
+    path /srv/bloonix/webgui/templates
+}
+
+p. Diese Parameter sind für das Template-System und sollten nicht geändert werden.
+
+% $stash->{item_logfile} = "bloonix-webgui.log";
+<% include /de/docs/configuration/template-logger.textile %>
+
