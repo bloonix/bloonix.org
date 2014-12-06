@@ -1,8 +1,8 @@
 [
-    "about",
-    "components",
-    "licences",
-    "installation",
-    "configuration",
-    "faq"
+    { "Über Bloonix": "about" },
+    { "Komponenten": "components" },
+    { "Lizenzen": "licences" },
+    { "Installation": "installation" },
+    { "Konfiguration": "configuration" },
+    { "FAQ": "faq" }
 ]
