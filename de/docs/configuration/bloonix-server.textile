@@ -14,7 +14,6 @@ allow_from ^127\.0\.0\.1\z
 elasticsearch_roll_forward /var/log/bloonix/elasticsearch-roll-forward.json
 
 |Parameter|Standard|Beschreibung|
-
 |user|bloonix|Mit welchem Benutzer soll der Daemon laufen.|
 |group|bloonix|Mit welcher Gruppe soll der Daemon laufen.|
 |timezone|Europe/Berlin|Die Zeitzone des Servers.|
@@ -31,11 +30,11 @@ pre. bloonix-roll-forward-log
 p. Das Skript läd automatisch die Serverkonfiguration und importiert vorhandene Einträge im Logfile nach Elasticsearch. Das Skript geht dabei wie folgt vor:
 
 
-* Logfile umbenennen nach __elasticsearch-roll-forward.json.import__|
-* Eine Datei namens __elasticsearch-roll-forward.json.import.count__ anlegen, um den Verarbeitungsstatus zu speichern|
-* Das Logfile __elasticsearch-roll-forward.json.import__ wird importiert|
-* Bei Verbindungsfehlern werden die Datensätze in __elasticsearch-roll-forward.json__ geschrieben|
-* Nach dem Durchlauf werden die temporären Dateien __elasticsearch-roll-forward.json.import__ und __elasticsearch-roll-forward.json.import.count__ entfernt|
+* Logfile umbenennen nach __elasticsearch-roll-forward.json.import__.
+* Eine Datei namens __elasticsearch-roll-forward.json.import.count__ anlegen, um den Verarbeitungsstatus zu speichern.
+* Das Logfile __elasticsearch-roll-forward.json.import__ wird importiert.
+* Bei Verbindungsfehlern werden die Datensätze in __elasticsearch-roll-forward.json__ geschrieben.
+* Nach dem Durchlauf werden die temporären Dateien __elasticsearch-roll-forward.json.import__ und __elasticsearch-roll-forward.json.import.count__ entfernt.
 
 p. Ist das Skript einmal gestartet, sollte es auf keinen Fall gestoppt werden. Das Skript merkt sich zwar, bis zu welcher Zeile die Daten verarbeitet wurden, trotzallem kann zu einem Verlust oder zu doppelten Einträgen kommen, wenn der Verarbeitungsprozess seinen Status nicht erfolgreich auf die Platte schreiben konnte.
 
@@ -51,8 +50,8 @@ pre. smsgateway {
 }
 
 |Parameter|Standard|Beschreibung|
-|command|||
-|response|||
+|command||Das Kommando, um eine SMS zu versenden.|
+|response||Die erwartete Antwort, wenn die SMS erfolgreich übersendet werden konnte. Der Wert ist ein regulärer Ausdruck.|
 
 h2. Sektion: email
 
@@ -68,7 +67,7 @@ pre. email {
 |sendmail|/usr/sbin/sendmail -t -oi -oem|Kommando zum Versenden von E-Mails.|
 |from|bloonix@localhost|Die Adresse des Absenders.|
 |bcc||Mit diesem Parameter ist es möglich, E-Mails an Kontakte als Blindkopie zu erhalten. Zusätzlich erhält der Empfänger eine Kopie jeder SMS, die versendet wurde.|
-|subject|*** STATUS %s FOR %h (%a) ***|Hier wird der Betreff konfiguriert. Die Strings __%s__ (Status), __%h__ (Hostname) und __%a__ (IP-Adresse) werden ersetzt.|
+|subject|\*\*\* STATUS %s FOR %h (%a) \*\*\*|Hier wird der Betreff konfiguriert. Die Strings __%s__ (Status), __%h__ (Hostname) und __%a__ (IP-Adresse) werden ersetzt.|
 
 h2. Sektion: redirect_remote_agent_timeouts
 
@@ -78,8 +77,8 @@ pre. redirect_remote_agent_timeouts {
 }
 
 |Parameter|Standard|Beschreibung|
-|sms_to|||
-|mail_to|||
+|sms_to||Die Mobilfunknummer, zu der die Nachricht umgeleitet werden soll.|
+|mail_to||Die E-Mail-Adresse, zu der die Nachricht umgeleitet werden soll.|
 
 % $stash->{item_logfile} = "bloonix-server-database.log";
 % $stash->{item_filename} = "bloonix-server.log";
