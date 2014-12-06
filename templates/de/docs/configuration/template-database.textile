@@ -12,7 +12,7 @@ bc. database {
 
     logger {
         file {
-            filename /var/log/bloonix/<% item_logfile %>
+            filename /var/log/bloonix/==<% item_logfile %>==
             filelock 0
             maxlevel info
             minlevel emerg

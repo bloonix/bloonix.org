@@ -5,7 +5,7 @@ p. Hier findet die Konfiguration des Logger statt. Weitere Informationen zu den 
 
 bc. logger {
     file {
-        filename /var/log/bloonix/<% item_logfile %>
+        filename /var/log/bloonix/==<% item_logfile %>==
         filelock 0
         maxlevel info
         minlevel emerg

@@ -38,7 +38,7 @@ h3. Subsektion: ssl_options
 |ssl_verify_mode||Dieser Parameter aktiviert oder deaktiviert die Validierung des Serverzertifikats. 0 = nein, 1 = ja.|
 |ssl_ca_path||Der Pfad zu den installierten CAs.|
 
-<% include /de/docs/configuration/template-logger.textile %>
+==<% include /de/docs/configuration/template-logger.textile %>==
 
 h2. Sektion: env
 

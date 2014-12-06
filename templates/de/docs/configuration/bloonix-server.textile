@@ -38,9 +38,11 @@ p. Das Skript läd automatisch die Serverkonfiguration und importiert vorhandene
 
 p. Ist das Skript einmal gestartet, sollte es auf keinen Fall gestoppt werden. Das Skript merkt sich zwar, bis zu welcher Zeile die Daten verarbeitet wurden, trotzallem kann zu einem Verlust oder zu doppelten Einträgen kommen, wenn der Verarbeitungsprozess seinen Status nicht erfolgreich auf die Platte schreiben konnte.
 
+<notextile>
 % $stash->{item_name} = "der Bloonix-Server";
 % $stash->{item_port} = 9001;
 <% include /de/docs/configuration/template-proc-manager.textile %>
+</notextile>
 
 h2. Sektion: smsgateway
 
@@ -80,9 +82,10 @@ bc. redirect_remote_agent_timeouts {
 |sms_to||Die Mobilfunknummer, zu der die Nachricht umgeleitet werden soll.|
 |mail_to||Die E-Mail-Adresse, zu der die Nachricht umgeleitet werden soll.|
 
+<notextile>
 % $stash->{item_logfile} = "bloonix-server-database.log";
 % $stash->{item_filename} = "bloonix-server.log";
 <% include /de/docs/configuration/template-database.textile %>
 <% include /de/docs/configuration/template-elasticsearch.textile %>
 <% include /de/docs/configuration/template-logger.textile %>
-
+</notextile>
