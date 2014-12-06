@@ -2,11 +2,11 @@ h1. Konfiguration des Bloonix-Agenten
 
 p. Die Konfiguration des Agenten befindet sich in:
 
-pre. /etc/bloonix/agent/main.conf
+bc. /etc/bloonix/agent/main.conf
 
 h2. Globale Parameter
 
-pre. agents 1
+bc. agents 1
 user bloonix
 group bloonix
 plugins /usr/lib/bloonix/plugins
@@ -15,7 +15,7 @@ include /etc/bloonix/agent/hosts.conf
 
 h2. Sektion: server
 
-pre. server {
+bc. server {
     proto https
     host p1.bloonix.de, s1.bloonix.de
     mode failover
@@ -42,13 +42,13 @@ h3. Subsektion: ssl_options
 
 h2. Sektion: env
 
-pre. env {
+bc. env {
     name value
 }
 
 h2. Sektion: host
 
-pre. host {
+bc. host {
     host_id 12345
     password secret
 }
@@ -68,7 +68,7 @@ p. Da der Bloonix-Agent nicht mit root-Rechten läuft, für manche Service-Check
 
 p. Möchten Sie zum Beispiel ein Software-RAID und die Temparatur überwachen, so benötigen die Checks __check-mdadm__ und __check-sensors__ root-Rechte. Damit der Agent diese zwei Checks mit sudo ausführt, muss folgende Konfiguration vorgenommen werden:
 
-pre. host {
+bc. host {
     host_id 12345
     password secret
     use_sudo check-mdadm, check-sensors
@@ -78,7 +78,7 @@ h3. Parameter: env
 
 p. Mit diesem Parameter können Umgebungsvariablen des Checks geändert werden.
 
-pre. host {
+bc. host {
     host_id 12345
     password secret
     env {
@@ -90,7 +90,7 @@ h3. Parameter: execute_on_event
 
 p. Manchmal kann es hilfreich sein, wenn man auf dem Server, der überwacht wird, bei bestimmten Ereignissen ein Skript ausführen kann. Nehmen Sie zum Beispiel an, dass Sie ein selbstgeschriebenes Skript ausführen möchten, sobald der Status für einen Service __CRITICAL__ oder __UNKNOWN__ ist. Die Einrichtung sieht beispielhaft wie folgt aus:
 
-pre. host {
+bc. host {
     host_id 12345
     password secret
     execute_on_event {

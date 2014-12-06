@@ -2,13 +2,13 @@ h1. Plugins installieren
 
 p. Die Installation von Plugins ist recht einfach. Wenn Sie wissen möchten, welche Plugins zur Verfügung stehen, können Sie dies wie folgt herausfinden:
 
-pre. # Debian
+bc. # Debian
 apt-cache search bloonix-plugins
 
-pre. # Red Hat / CentOS / Fedora
+bc. # Red Hat / CentOS / Fedora
 yum search bloonix-plugins
 
-pre. # SuSE / SLES
+bc. # SuSE / SLES
 zypper search bloonix-plugins
 
 p. Wenn Sie nun zum Beispiel eine MySQL-Datenbank überwachen möchten, so müssen Sie das Plugin __bloonix-plugins-mysql__ installieren.
@@ -36,18 +36,18 @@ h1. Plugins importieren
 
 p. Damit über die WebGUI die Services zur Überwachung eingerichtet werden können, ist es notwendig, die verfügbaren Bloonix-Plugins in die Datenbank zu importieren. Hierzu muss zunächst das Paket __bloonix-plugin-config__ auf dem Server installiert werden, auf dem Sie die Bloonix-WebGUI installiert und konfiguriert haben:
 
-pre. # Debian
+bc. # Debian
 apt-get install bloonix-plugin-config
 
-pre. # Red Hat / CentOS / Fedora
+bc. # Red Hat / CentOS / Fedora
 yum install bloonix-plugin-config
 
-pre. # SuSE / SLES
+bc. # SuSE / SLES
 zypper install bloonix-plugin-config
 
 p. Der Befehl, um die Plugins in die Datenbank zu importieren, lautet: 
 
-pre. bloonix-load-plugins --load-all
+bc. bloonix-load-plugins --load-all
 
 p. _Bitte beachten Sie,_ dass der Befehl __bloonix-load-plugins__ nach der Installation oder einem Update des Pakets __bloonix-plugin-config__ automatisch ausgeführt wird.
 

@@ -26,21 +26,21 @@ h3. Abfragen zur Datenbank
 
 h4. Beispielrechnung: 1.000 Hosts mit je 10 Services
 
-pre. 1.000 Hosts * 15 Leseaktionen / 60 Sekunden Intervall
+bc. 1.000 Hosts * 15 Leseaktionen / 60 Sekunden Intervall
     = ca. 250 Leseaktionen pro Sekunde
 
-pre. 1.000 Hosts * 4 Schreibaktionen / 60 Sekunden Intervall
+bc. 1.000 Hosts * 4 Schreibaktionen / 60 Sekunden Intervall
     = ca. 67 Schreibaktionen pro Sekunde
 
-pre. 10.000 Services * 5 Leseaktionen / 60 Sekunden Intervall
+bc. 10.000 Services * 5 Leseaktionen / 60 Sekunden Intervall
     = ca. 833 Leseaktionen pro Sekunde
 
-pre. 10.000 Services * 2 Schreibaktionen / 60 Sekunden Intervall
+bc. 10.000 Services * 2 Schreibaktionen / 60 Sekunden Intervall
     = ca. 333 Inserts/Updates pro Sekunde
 
 p. Bei 1.000 Hosts mit je 10 Services sind das in Summe:
 
-pre. 1083 Leseaktionen pro Sekunde
+bc. 1083 Leseaktionen pro Sekunde
 400 Schreibaktionen pro Sekunde
 
 h4. Abfragen zu Elasticsearch
@@ -65,17 +65,17 @@ p. Statistiken und Events werden in Elasticsearch gespeichert. Je nach Aufbewahr
 
 p. Besonders wichtig beim Einsatz von Elasticsearch ist der zur Verfügung stehende Hauptspeicher und die Schnelligkeit der Festplatten. Auch hier möchte ich dies gerne anhand einer Beispielrechnung aufzeigen. Die Grundrechnung pro Services und einem Überwachungsintervall von 60 Sekunden ist wie folgt:
 
-pre. 1 Service * 1440 Minuten (1 Tag) * 30 Tage (1 Monat)
+bc. 1 Service * 1440 Minuten (1 Tag) * 30 Tage (1 Monat)
     = ca. 43.200 Elasticsearch Dokumente pro Monat
 
 p. Angenommen, Sie möchten 1.000 Hosts mit je 10 Services überwachen:
 
-pre. 1.000 Hosts * 10 Services * 1440 Minuten (1 Tag) * 30 Tage (1 Monat)
+bc. 1.000 Hosts * 10 Services * 1440 Minuten (1 Tag) * 30 Tage (1 Monat)
     = 432.000.000 Dokumente pro Monat
 
 p. Nun stellen Sie sich vor, Sie möchten sich über die WebGUI die Statistiken von 100 Services aus den letzten 7 Tagen anschauen. Die Anzahl an Dokumenten, die von Elasticsearch abgefragt würden, sind ca.
 
-pre. 100 Services * 1440 Minuten (1 Tag) * 7 Tage
+bc. 100 Services * 1440 Minuten (1 Tag) * 7 Tage
     = 1.008.000 Dokumente
 
 p. Es würden ca. 1 Million Dokumente abgefragt, komprimiert und zum Browser gesendet, um im Browser visuell dargestellt werden zu können. Damit das Auslesen der Statistiken aus Elasticsearch sehr schnell abläuft, sollten die Festplatten schnell sein und auch genüngend Hauptspeicher zur Verfügung stehen, damit Elasticsearch die Datenmengen verarbeiten kann.
@@ -96,19 +96,19 @@ p. Beispielsetup:
 
 p. Minimale Anforderungen:
 
-pre. 4 CPUs mit min. 2GHz
+bc. 4 CPUs mit min. 2GHz
 8 GB Hauptspeicher
 2 x 15krpm je 600 GB Platten im RAID 1
 
 p. Empfohlene Anforderungen:
 
-pre. 8 CPUs mit min. 2GHz
+bc. 8 CPUs mit min. 2GHz
 16 GB Hauptspeicher
 2 x SSDs je 600 GB Platten im RAID 1
 
 h4. Aufteilung des Hauptspeichers
 
-pre. 10% PostgreSQL
+bc. 10% PostgreSQL
 50% Elasticsearch
 40% System für Prozesse und Filesystemcache
 

@@ -1,19 +1,19 @@
 h1. Installation des Bloonix-Agenten
 
-pre. # Debian
+bc. # Debian
 apt-get install bloonix-agent
 
-pre. # Red Hat / CentOS / Fedora
+bc. # Red Hat / CentOS / Fedora
 yum install bloonix-agent
 
-pre. # SuSE / SLES
+bc. # SuSE / SLES
 zypper install bloonix-agent
 
 h2. Konfiguration des Bloonix-Agenten
 
 p. Die Konfigurationsdatei des Agenten lautet:
 
-pre. /etc/bloonix/agent/main.conf
+bc. /etc/bloonix/agent/main.conf
 
 p. Damit der Agent das lokale System überwacht, sind zwei wichtige Sektionen zu konfigurieren.
 
@@ -21,7 +21,7 @@ h2. Sektion: server
 
 p. Beispielkonfiguration:
 
-pre. server {
+bc. server {
     proto https
     host p1.bloonix.de:8443, s1.bloonix.de:8443
     mode failover
@@ -40,7 +40,7 @@ p. _Bitte ersetzen</em> Sie den Hostnamen und die Portnummer mit dem Host und Po
 
 p. In der Sektion __server__ ist es wichtig den Host anzupassen. Geben Sie anstelle von
 
-pre. host p1.bloonix.de:8443, s1.bloonix.de:8443
+bc. host p1.bloonix.de:8443, s1.bloonix.de:8443
 
 p. den Hostnamen an, den Sie in der Nginx-Konfiguration für den Bloonix-Server eingetragen haben.
 
@@ -50,20 +50,20 @@ h3. Sektion: host
 
 p. Beispielkonfiguration:
 
-pre. host {
+bc. host {
     host_id 12345
     password secret
 }
 
 p. In der Sektion __host__ wird der Host konfiguriert, der in der WebGUI eingerichtet wurde, um von diesem Agenten überwacht zu werden. Tragen Sie die Host-ID und das dazugehörige Passwort ein. Danach können Sie den Agenten neu starten, damit dieser mit der neuen Konfiguration gestartet wird.
 
-pre. /etc/init.d/bloonix-agent restart
+bc. /etc/init.d/bloonix-agent restart
 # oder
 systemctl restart bloonix-agent.service
 
 p. Falls dieser Agent ein zentraler Agent ist, von dem aus mehrere Hosts überwacht werden, wie zum Beispiel Router und Switches per SNMP, so können Sie auch mehere Hosts eintragen.
 
-pre. host {
+bc. host {
     host_id 12345
     password secret
 }
@@ -84,5 +84,5 @@ p. Besuchen Sie die WebGUI und folgen Sie den Installationsanweisungen in der Hi
 
 p. Die Anleitung finden Sie unter:
 
-pre. /#help/bloonix-agent-installation
+bc. /#help/bloonix-agent-installation
 
