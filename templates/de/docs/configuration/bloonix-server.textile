@@ -42,7 +42,7 @@ p. Ist das Skript einmal gestartet, sollte es auf keinen Fall gestoppt werden. D
 % $stash->{item_name} = "der Bloonix-Server";
 % $stash->{item_port} = 9001;
 <% include /de/docs/configuration/template-proc-manager.textile %>
-</notextile>
+==
 
 h2. Sektion: smsgateway
 
@@ -69,7 +69,7 @@ bc. email {
 |sendmail|/usr/sbin/sendmail -t -oi -oem|Kommando zum Versenden von E-Mails.|
 |from|bloonix@localhost|Die Adresse des Absenders.|
 |bcc||Mit diesem Parameter ist es möglich, E-Mails an Kontakte als Blindkopie zu erhalten. Zusätzlich erhält der Empfänger eine Kopie jeder SMS, die versendet wurde.|
-|subject|==*** STATUS %s FOR %h (%a) ***</notextile>|Hier wird der Betreff konfiguriert. Die Strings __%s__ (Status), __%h__ (Hostname) und __%a__ (IP-Adresse) werden ersetzt.|
+|subject|==*** STATUS %s FOR %h (%a) ***==|Hier wird der Betreff konfiguriert. Die Strings __%s__ (Status), __%h__ (Hostname) und __%a__ (IP-Adresse) werden ersetzt.|
 
 h2. Sektion: redirect_remote_agent_timeouts
 
@@ -88,4 +88,4 @@ bc. redirect_remote_agent_timeouts {
 <% include /de/docs/configuration/template-database.textile %>
 <% include /de/docs/configuration/template-elasticsearch.textile %>
 <% include /de/docs/configuration/template-logger.textile %>
-</notextile>
+==

@@ -21,4 +21,4 @@ group bloonix
 <% include /de/docs/configuration/template-database.textile %>
 % $stash->{item_logfile} = "bloonix-srvchk.log";
 <% include /de/docs/configuration/template-logger.textile %>
-</notextile>
+==
