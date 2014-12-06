@@ -67,7 +67,7 @@ pre. email {
 |sendmail|/usr/sbin/sendmail -t -oi -oem|Kommando zum Versenden von E-Mails.|
 |from|bloonix@localhost|Die Adresse des Absenders.|
 |bcc||Mit diesem Parameter ist es möglich, E-Mails an Kontakte als Blindkopie zu erhalten. Zusätzlich erhält der Empfänger eine Kopie jeder SMS, die versendet wurde.|
-|subject|\*\*\* STATUS %s FOR %h (%a) \*\*\*|Hier wird der Betreff konfiguriert. Die Strings __%s__ (Status), __%h__ (Hostname) und __%a__ (IP-Adresse) werden ersetzt.|
+|subject|<notextile>*** STATUS %s FOR %h (%a) ***</notextile>|Hier wird der Betreff konfiguriert. Die Strings __%s__ (Status), __%h__ (Hostname) und __%a__ (IP-Adresse) werden ersetzt.|
 
 h2. Sektion: redirect_remote_agent_timeouts
 
