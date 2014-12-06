@@ -62,7 +62,7 @@ pre. email {
     flags success-login, failed-login, password-request
 }
 
-|Parameter|Standard|Beschreibung| 
+|Parameter|Standard|Beschreibung|
 |from||Der Absender der E-Mail.|
 |to||Der Empfänger der E-Mail.|
 |subject||Der Betreff der Nachricht. Der String __%s__ wird mit dem eigentlichen Betreff ersetzt.|
