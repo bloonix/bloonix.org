@@ -1,81 +1,47 @@
-<div class="step-webgui step">
-[% PROCESS 'docs/installation/toggle-os.tt' %]
-<h2>Installation der WebGUI</h2>
-<p>
-Die Bloonix-WebGUI ist in zwei Pakete aufgeteilt. Es gibt zum Einen das Paket <i>bloonix-webgui-core</i>, welches Abhängigkeiten installiert und über die Konfigurationsdateien der WebGUI verfügt und zum Anderen das Paket <i>webgui</i>, welches ein simples TAR-Archiv ist und manuell entpackt werden muss.
-</p>
-<p>Das Core-Paket kann wie folgt installiert werden:</p>
-</div>
+h1. Installation der WebGUI
 
-<div class="deb-step-webgui step">
-<pre>
+p. Die Bloonix-WebGUI ist in zwei Pakete aufgeteilt. Es gibt zum Einen das Paket __bloonix-webgui-core__, welches Abhängigkeiten installiert und über die Konfigurationsdateien der WebGUI verfügt und zum Anderen das Paket __webgui__, welches ein simples TAR-Archiv ist und manuell entpackt werden muss.
+
+p. Das Core-Paket kann wie folgt installiert werden:
+
+pre. # Debian
 apt-get install bloonix-webgui-core
-</pre>
-</div>
 
-<div class="rpm-step-webgui step">
-<pre>
+pre. # Red Hat / CentOS / Fedora
 yum install bloonix-webgui-core
-</pre>
-</div>
 
-<div class="suse-step-webgui step">
-<pre>
+pre. # SuSE / SLES
 zypper install bloonix-webgui-core
-</pre>
-</div>
 
-<div class="step-webgui step">
-<p>
-_Bitte installieren Sie das Core-Paket erst, wenn Sie Nginx installiert haben, da ansonsten wichtige Konfigurationsdateien nicht angelegt werden!</em>
-</p>
-<p>
-Nachdem das Core-Paket mit allen Abhängigkeiten installiert ist, kann nun die Webapplikation installiert werden. Es ist zwingend notwendig, dass die WebGUI unter /srv/bloonix/webgui installiert ist, da dies in der Konfigurationsdatei der WebGUI und auch im Init-Skript so definiert ist.
-</p>
-<p>Es wird zunächst die Verzeichnisstruktur unter <i>/srv</i> angelegt.
-<pre>
-mkdir -p /srv/bloonix
-</pre>
+p. _Bitte installieren Sie das Core-Paket erst, wenn Sie Nginx installiert haben, da ansonsten wichtige Konfigurationsdateien nicht angelegt werden!_
 
-<p>Danach kann die Webapplikation installiert werden:</p>
-<pre>
+p. Nachdem das Core-Paket mit allen Abhängigkeiten installiert ist, kann nun die Webapplikation installiert werden. Es ist zwingend notwendig, dass die WebGUI unter /srv/bloonix/webgui installiert ist, da dies in der Konfigurationsdatei der WebGUI und auch im Init-Skript so definiert ist.
+
+p. Es wird zunächst die Verzeichnisstruktur unter __/srv__ angelegt und dann die Webapplikation installiert:
+
+pre. mkdir -p /srv/bloonix
 cd /srv/bloonix
 wget https://download.bloonix.de/sources/webgui-0.16.tar.gz
 tar -xzf webgui-0.16.tar.gz
 ln -sfn webgui-0.16 webgui
-</pre>
-<p>Zu guter Letzt müssen noch die Verzeichnisrechte angepasst werden:</p>
-</div>
 
-<div class="deb-step-webgui step">
-<pre>
+# Debian / Ubuntu
 chown -R bloonix:www-data /srv/bloonix/webgui/
-</pre>
-</div>
 
-<div class="rpm-step-webgui step">
-<pre>
+# Red Hat / CentOS / SuSE
 chown -R bloonix:nginx /srv/bloonix/webgui/
-</pre>
-</div>
 
-<div class="suse-step-webgui step">
-<pre>
-chown -R bloonix:nginx /srv/bloonix/webgui/
-</pre>
-</div>
+h2. Nginx konfigurieren
 
-<div class="step-webgui step">
-<h3>Nginx konfigurieren</h3>
-<p>Die Bloonix-WebGUI läuft als externe FastCGI Applikation und benötigt Nginx als Reverse Proxy.</p>
-<p>Die Konfiguration kann in der folgenden Datei eingerichtet werden:</p>
-<pre>
-/etc/nginx/conf.d/bloonix-webgui.conf
-</pre>
-<p>Die Konfiguration:</p>
+p. Die Bloonix-WebGUI läuft als externe FastCGI Applikation und benötigt Nginx als Reverse Proxy.
 
-<pre>
-server {
+p. Die Konfiguration kann in der folgenden Datei eingerichtet werden:
+
+pre. /etc/nginx/conf.d/bloonix-webgui.conf
+
+p. Die Konfiguration:
+
+pre. server {
     listen 443;
     server_name bloonix-webgui;
 
@@ -101,67 +67,53 @@ server {
     ssl_certificate /etc/nginx/ssl/server.crt;
     ssl_certificate_key /etc/nginx/ssl/server.key;
 }
-</pre>
 
-<p>
-Der Paramter <i>server_name</i> sollte noch angepasst werden. Es muss ebenfalls ein SSL-Zertifikat generiert werden, falls noch keines vorhanden ist:
-</p>
+p. Der Paramter __server_name__ sollte noch angepasst werden. Es muss ebenfalls ein SSL-Zertifikat generiert werden, falls noch keines vorhanden ist:
 
-<pre>
-mkdir /etc/nginx/ssl
+pre. mkdir /etc/nginx/ssl
 cd /etc/nginx/ssl
 openssl req -new -x509 -nodes -out server.crt -keyout server.key
-</pre>
 
-<h2>Datenbankschema und Elasticsearch-Template</h2>
+h2. Datenbankschema und Elasticsearch-Template
 
-<p>Um das Schema für die PostgreSQL-Datenbank und das Template für Elasticsearch anzulegen, gibt es im Verzeichnis</p>
-<pre>
-/srv/bloonix/webgui/schema
-</pre>
-<p>ein paar Skripte zur Hilfe.</p>
+p. Um das Schema für die PostgreSQL-Datenbank und das Template für Elasticsearch anzulegen, gibt es im Verzeichnis
 
-<p>Um das Schema für die PostgreSQL-Datenbank anzulegen, muss folgendes Kommando ausgeführt werden:</p>
-<pre>
-/srv/bloonix/webgui/schema/init-database.sh
-</pre>
+pre. /srv/bloonix/webgui/schema
 
-<p>Editieren Sie die Konfiguration der WebGUI und tragen dort das Passwort zur Datenbank ein:</p>
-<pre>
-/etc/bloonix/webgui/main.conf
-</pre>
+p. ein paar Skripte zur Hilfe.
 
-<p>Um das Template für Elasticsearch anzulegen, muss folgendes Kommando ausgeführt werden:</p>
-<pre>
-/srv/bloonix/webgui/schema/init-elasticsearch.sh localhost:9200
-</pre>
+p. Um das Schema für die PostgreSQL-Datenbank anzulegen, muss folgendes Kommando ausgeführt werden:
 
-<h2>WebGUI starten</h2>
+.pre /srv/bloonix/webgui/schema/init-database.sh
 
-<p>Wenn alle Schritte durchgeführt wurden, kann die WebGUI gestartet werden:</p>
-<pre>
-/etc/init.d/bloonix-webgui restart
+p. Editieren Sie die Konfiguration der WebGUI und tragen dort das Passwort zur Datenbank ein:
+
+pre. /etc/bloonix/webgui/main.conf
+
+p. Um das Template für Elasticsearch anzulegen, muss folgendes Kommando ausgeführt werden:
+
+pre. /srv/bloonix/webgui/schema/init-elasticsearch.sh localhost:9200
+
+h2. WebGUI starten
+
+p. Wenn alle Schritte durchgeführt wurden, kann die WebGUI gestartet werden:
+
+pre. /etc/init.d/bloonix-webgui restart
 # oder
 systemctl restart bloonix-webgui.service
-</pre>
 
-<p>
-Öffnen Sie als nächstes einen Webbrowser und geben den Hostnamen ein, der in der Nginx Konfiguration angegeben wurde.
-</p>
+p. Öffnen Sie als nächstes einen Webbrowser und geben den Hostnamen ein, der in der Nginx Konfiguration angegeben wurde.
 
-<p><b>Wichtig:</b> Der initiale Zugang zur WebGUI lautet:</p>
+p. *Wichtig:* Der initiale Zugang zur WebGUI lautet:
 
-<pre>
-Benutzername: admin
+pre. Benutzername: admin
 Passwort: admin
-</pre>
 
-<h2>Nginx restarten</h2>
-<p>Nach der Konfiguration der WebGUI können wir nun den Nginx restarten:</p>
+h2. Nginx restarten
 
-<pre>
-/etc/init.d/nginx restart
+p. Nach der Konfiguration der WebGUI können wir nun den Nginx restarten:
+
+pre. /etc/init.d/nginx restart
 # oder
 systemctl restart nginx.service
-</pre>
-</div>
+
