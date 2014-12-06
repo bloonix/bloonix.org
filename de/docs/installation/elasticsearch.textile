@@ -1,0 +1,23 @@
+h1. Elasticsearch installieren
+
+p. Bevor Elasticsearch installiert wird, sollte zunächst OpenJDK installiert werden, da OpenJDK für Elasticsearch eine Abhängigkeit ist, jedoch nicht automatisch installiert wird.
+
+pre. # Debian
+apt-get install openjdk-7-jre
+
+pre. # Red Hat / CentOS / Fedora
+yum install java-1.7.0-openjdk
+
+pre. # SuSE
+zypper install java-1.7.0-openjdk
+
+p. Elasticsearch kann über folgende Webseite heruntergeladen und dann installiert werden:
+
+p. "http://www.elasticsearch.org/overview/elkdownloads/":http://www.elasticsearch.org/overview/elkdownloads/
+
+p. Elasticsearch starten:
+
+pre. /etc/init.d/elasticsearch start
+# oder
+systemctl start elasticsearch.service
+

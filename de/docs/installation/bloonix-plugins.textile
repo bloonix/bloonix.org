@@ -1,0 +1,53 @@
+h1. Plugins installieren
+
+p. Die Installation von Plugins ist recht einfach. Wenn Sie wissen möchten, welche Plugins zur Verfügung stehen, können Sie dies wie folgt herausfinden:
+
+pre. # Debian
+apt-cache search bloonix-plugins
+
+pre. # Red Hat / CentOS / Fedora
+yum search bloonix-plugins
+
+pre. # SuSE / SLES
+zypper search bloonix-plugins
+
+p. Wenn Sie nun zum Beispiel eine MySQL-Datenbank überwachen möchten, so müssen Sie das Plugin __bloonix-plugins-mysql__ installieren.
+
+p. _Bitte beachten Sie,_ dass die Plugins immer auf dem Server installiert werden müssen, auf oder von dem Sie die Komponenten überwachen möchten.
+
+h1. Verfügbare Plugins
+
+|bloonix-plugins-apache|Plugins Überwachung des Apache Webservers.|
+|bloonix-plugins-base|Basis Plugins zur Überwachung von Server Diensten über HTTP, TCP, UDP, SMTP, IMAP, POP3,<br/>DNS, FTP, if-Statistiken von Rountern, Switches und ein Wrapper zum Einsatz von Nagios-Checks.|
+|bloonix-plugins-drbd|Plugins zur Überwachung von DRBD Devices.|
+|bloonix-plugins-lighttpd|Überwachung des Lighttpd Webservers.|
+|bloonix-plugins-linux|Linux Plugins zur Überwachung der CPU, des Hauptspeichers, der Festplattenkapazität und vieles mehr.|
+|bloonix-plugins-memcached|Plugins zur Überwachung des Memcache Daemon.|
+|bloonix-plugins-mysql|Plugins zur Überwachung von MySQL 5 Datenbanken und Replikationen.|
+|bloonix-plugins-nginx|Plugins zur Überwachung des Nginx Webservers.|
+|bloonix-plugins-pgsql|Plugins zur Überwachung von PostgreSQL.|
+|bloonix-plugins-postfix|Plugins zur Überwachung von Postfix Queues.|
+|bloonix-plugins-redis|Plugins zur Überwachung von Redis.|
+|bloonix-plugins-sensors|Plugins zur Überwachung der Temperatur.|
+|bloonix-plugins-varnish|Plugins zur Überwachung des Varnish Webservers.|
+|bloonix-plugins-windows|Plugins zur Überwachung von Windows-Server über SNMP.|
+
+h1. Plugins importieren
+
+p. Damit über die WebGUI die Services zur Überwachung eingerichtet werden können, ist es notwendig, die verfügbaren Bloonix-Plugins in die Datenbank zu importieren. Hierzu muss zunächst das Paket __bloonix-plugin-config__ auf dem Server installiert werden, auf dem Sie die Bloonix-WebGUI installiert und konfiguriert haben:
+
+pre. # Debian
+apt-get install bloonix-plugin-config
+
+pre. # Red Hat / CentOS / Fedora
+yum install bloonix-plugin-config
+
+pre. # SuSE / SLES
+zypper install bloonix-plugin-config
+
+p. Der Befehl, um die Plugins in die Datenbank zu importieren, lautet: 
+
+pre. bloonix-load-plugins --load-all
+
+p. _Bitte beachten Sie,_ dass der Befehl __bloonix-load-plugins__ nach der Installation oder einem Update des Pakets __bloonix-plugin-config__ automatisch ausgeführt wird.
+

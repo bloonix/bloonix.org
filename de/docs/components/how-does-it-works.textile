@@ -16,7 +16,7 @@ div{width: 640px; margin: 40px 0;}. !/public/img/bloonix-howto-webgui.png!
 
 h2. Einrichtung des Agenten
 
-p. Ist ein Host im Webinterface eingerichtet, so muss als nächstes der Bloonix-Agent auf dem zu überwachenden Server installiert und konfiguriert werden. Zusätzlich müssen die Plugins zur Überwachung der Services installiert werden. Möchten Sie zum Beispiel eine MySQL-Datenbank überwachen, so installieren Sie das Paket _bloonix-plugins-mysql_.
+p. Ist ein Host im Webinterface eingerichtet, so muss als nächstes der Bloonix-Agent auf dem zu überwachenden Server installiert und konfiguriert werden. Zusätzlich müssen die Plugins zur Überwachung der Services installiert werden. Möchten Sie zum Beispiel eine MySQL-Datenbank überwachen, so installieren Sie das Paket __bloonix-plugins-mysql__.
 
 p. Damit der Agent nun weiß, welche Services dieser überwachen soll, wird die Host-ID und das Passwort des Hosts, welche im Webinterface zu finden sind, in der Konfigurationsdatei des Agenten eingetragen. Zusätzlich benötigt der Agent die Adresse (Hostname oder IP) des Bloonix-Servers.
 

@@ -1,0 +1,120 @@
+<div class="step-server step">
+[% PROCESS 'docs/installation/toggle-os.tt' %]
+<h2>Bloonix-Server</h2>
+<h3>Installation</h3>
+<p>
+Die Installation des Bloonix-Servers ist sehr einfach.
+</p>
+</div>
+
+<div class="deb-step-server step">
+<pre>
+apt-get install bloonix-server
+</pre>
+</div>
+
+<div class="rpm-step-server step">
+<pre>
+yum install bloonix-server
+</pre>
+</div>
+
+<div class="suse-step-server step">
+<pre>
+zypper install bloonix-server
+</pre>
+</div>
+
+<div class="step-server step">
+<p>
+_Bitte installieren Sie das Paket erst, wenn Sie Nginx installiert haben, da ansonsten wichtige Konfigurationsdateien nicht angelegt werden!</em>
+</p>
+<p>Die Konfigurationdatei des Bloonix-Servers lautet</p>
+<pre>
+/etc/bloonix/server/main.conf
+</pre>
+<p>und ist sehr gut dokumentiert. Editieren Sie die Konfiguration des Servers und tragen dort das _Passwort</em> zur Datenbank ein:</p>
+<p>Der Bloonix-Server wird über ein Init-Skript gestartet und gestoppt.</p>
+<pre>
+/etc/init.d/bloonix-server start
+# oder
+systemctl start bloonix-server.service
+</pre>
+
+<p><b>Achtung:</b> bevor der Bloonix-Server gestartet wird, sollte das Datenbankschema und das Template für Elasticsearch angelegt sein. Die Installation dieser Komponenten wird mit der Installtion der Bloonix-WebGUI durchgeführt.
+</p>
+
+<h3>Nginx konfigurieren</h3>
+<p>Da der Bloonix-Server als externe FastCGI Applikation läuft, ist es notwendig, Nginx als Reverse-Proxy einzurichten.</p>
+<p>Die Konfiguration kann in der folgenden Datei eingerichtet werden:</p>
+<pre>
+/etc/nginx/conf.d/bloonix-server.conf
+</pre>
+<p>Die Konfiguration:</p>
+
+<pre>
+server {
+    listen 8443;
+    server_name bloonix-server;
+
+    access_log /var/log/nginx/bloonix-server.access.log;
+    error_log /var/log/nginx/bloonix-server.error.log;
+
+    location / {
+        expires off;
+        include /etc/nginx/fastcgi_params;
+        root /srv/bloonix/server;
+        fastcgi_pass 127.0.0.1:9001;
+    }
+
+    ssl on;
+    ssl_certificate /etc/nginx/ssl/server.crt;
+    ssl_certificate_key /etc/nginx/ssl/server.key;
+}
+</pre>
+
+<p>
+Der Paramter <i>server_name</i> sollte noch angepasst werden. Es muss ebenfalls ein SSL-Zertifikat generiert werden, falls noch keines vorhanden ist:
+</p>
+
+<pre>
+mkdir /etc/nginx/ssl
+cd /etc/nginx/ssl
+openssl req -new -x509 -nodes -out server.crt -keyout server.key
+</pre>
+
+<p>
+_Portnummer:</em> Der Bloonix-Server kann auch auf den Standardport für HTTPS eingerichtet werden.
+</p>
+
+<h2>Bloonix-Server starten</h2>
+
+<p>Der Bloonix-Server kann wie folgt gestartet werden:</p>
+
+<pre>
+/etc/init.d/bloonix-server start
+# oder
+systemctl start bloonix-server.service
+</pre>
+
+<h2>Der Bloonix-Service-Checker</h2>
+
+<p>Mit der Installation des Bloonix-Servers wird auch ein Dienst namens Service-Checker installiert.</p>
+
+<p>
+Dieser Dienst ist dafür zuständig, Hosts und Services zu prüfen, dessen Überwachung auf einen Timeout gelaufen ist. Das bedeutet, dass wenn zum Beispiel die CPU-Auslastung eines Servers seit mehreren Minuten nicht mehr überprüft wurde, so wird der Service-Checker einen kritischen Status für den Service liefern.
+</p>
+
+<p>Die Konfigurationsdatei des Service-Checkers lautet:</p>
+<pre>
+/etc/bloonix/srvchk/main.conf
+</pre>
+
+<p>Der Service-Checker muss nebst dem Bloonix-Server gestartet werden:</p>
+<pre>
+/etc/init.d/bloonix-srvchk start
+# oder
+systemctl start bloonix-srvchk.service
+</pre>
+
+</div>

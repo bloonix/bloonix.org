@@ -1,0 +1,88 @@
+h1. Installation des Bloonix-Agenten
+
+pre. # Debian
+apt-get install bloonix-agent
+
+pre. # Red Hat / CentOS / Fedora
+yum install bloonix-agent
+
+pre. # SuSE / SLES
+zypper install bloonix-agent
+
+h2. Konfiguration des Bloonix-Agenten
+
+p. Die Konfigurationsdatei des Agenten lautet:
+
+pre. /etc/bloonix/agent/main.conf
+
+p. Damit der Agent das lokale System überwacht, sind zwei wichtige Sektionen zu konfigurieren.
+
+h2. Sektion: server
+
+p. Beispielkonfiguration:
+
+pre. server {
+    proto https
+    host p1.bloonix.de:8443, s1.bloonix.de:8443
+    mode failover
+    ssl_options {
+        ssl_verify_mode 1
+
+        # Debian / SuSE / SLES
+        ssl_ca_path /etc/ssl/certs
+
+        # Red Hat / CentOS / Fedora
+        ssl_ca_file /etc/pki/tls/certs/ca-bundle.crt
+    }
+}
+
+p. _Bitte ersetzen</em> Sie den Hostnamen und die Portnummer mit dem Host und Port, welche für den Bloonix-Server im Nginx konfiguriert wurde.
+
+p. In der Sektion __server__ ist es wichtig den Host anzupassen. Geben Sie anstelle von
+
+pre. host p1.bloonix.de:8443, s1.bloonix.de:8443
+
+p. den Hostnamen an, den Sie in der Nginx-Konfiguration für den Bloonix-Server eingetragen haben.
+
+p. *Hinweiß:* Falls ein selbst-signiertes Zertifikat im Nginx konfiguriert ist, müssen die SSL-Parameter in der Konfiguration des Agenten auskommentiert werden, da der Agent ansonsten einen Fehler liefert bei der Prüfung des Server-Zertifikats.
+
+h3. Sektion: host
+
+p. Beispielkonfiguration:
+
+pre. host {
+    host_id 12345
+    password secret
+}
+
+p. In der Sektion __host__ wird der Host konfiguriert, der in der WebGUI eingerichtet wurde, um von diesem Agenten überwacht zu werden. Tragen Sie die Host-ID und das dazugehörige Passwort ein. Danach können Sie den Agenten neu starten, damit dieser mit der neuen Konfiguration gestartet wird.
+
+pre. /etc/init.d/bloonix-agent restart
+# oder
+systemctl restart bloonix-agent.service
+
+p. Falls dieser Agent ein zentraler Agent ist, von dem aus mehrere Hosts überwacht werden, wie zum Beispiel Router und Switches per SNMP, so können Sie auch mehere Hosts eintragen.
+
+pre. host {
+    host_id 12345
+    password secret
+}
+host {
+    host_id 12346
+    password secret
+}
+host {
+    host_id 12347
+    password secret
+}
+
+h1. Weitere Dokumentation
+
+p. *Hinweiß:* Die Installation des Bloonix-Agenten ist ebenfalls in der WebGUI dokumentiert.
+
+p. Besuchen Sie die WebGUI und folgen Sie den Installationsanweisungen in der Hilfe.
+
+p. Die Anleitung finden Sie unter:
+
+pre. /#help/bloonix-agent-installation
+

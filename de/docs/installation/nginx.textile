@@ -1,0 +1,28 @@
+h1. Nginx installation
+
+pre. # debian
+apt-get install nginx
+
+pre. # Red Hat / CentOS / Fedora
+yum install nginx
+
+pre. # SuSE
+zypper install nginx
+
+p. Der Bloonix-Server sowie die Bloonix-WebGUI benötigen später ein SSL-Zertifikat, welches Sie wie folgt generieren können:
+
+pre. mkdir /etc/nginx/ssl
+cd /etc/nginx/ssl
+openssl req -new -x509 -nodes -out server.crt -keyout server.key
+
+p. Editieren Sie die Nginx-Konfiguration
+
+pre. /etc/nginx/nginx.conf
+
+p. und fügen folgende Parameter in die __http__ Sektion. Beispiel
+
+pre. server_names_hash_bucket_size 64;           # an den Anfang der Sektion
+include conf.d/*.conf;                      # ans Ende der Sektion
+
+p. Die Einrichtung von Nginx für den Bloonix-Server und der Bloonix-WebGUI erfolgt später.
+

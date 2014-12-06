@@ -1,0 +1,26 @@
+h1. Installation aus den Sourcen
+
+p. Falls Sie ein Linux System einsetzen, für das es keine fertigen Pakete gibt, besteht natürlich die Möglichkeit, alle Pakete manuell zu installieren. Die Abhängigkeiten der einzelnen Pakete vorab zu installieren.
+
+p. Die Installation ist bei allen Paketen grundlegend identisch. Die Sourcepakete gibt es unter folgender URL:
+
+p. "https://download.bloonix.de/sources/":https://download.bloonix.de/sources/
+
+p. Beispielinstallation des Bloonix-Agenten:
+
+pre. wget http://download.bloonix.de/sources/bloonix-agent-0.1.tar.gz
+tar –xzf bloonix-agent-0.1.tar.gz
+cd bloonix-agent-0.1
+perl Configure.PL
+make
+make install
+
+p. Beispielinstallation der Bloonix-Core Pakete
+
+pre. wget http://download.bloonix.de/sources/bloonix-core-0.1.tar.gz
+tar –xzf bloonix-core-0.1.tar.gz
+cd bloonix-core-0.1
+perl Build.PL
+perl Build
+perl Build install
+
