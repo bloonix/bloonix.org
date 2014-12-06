@@ -1,5 +1,5 @@
 * "Wichtige Information vorab":common.textile
-* "Repositories":repository.textile
+* "Repositories":repositories.textile
 * "Elasticsearch":elasticsearch.textile
 * "PostgreSQL":postgresql.textile
 * "Nginx":nginx.textile
