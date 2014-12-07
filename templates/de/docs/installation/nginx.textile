@@ -21,8 +21,8 @@ bc. /etc/nginx/nginx.conf
 
 p. und fügen folgende Parameter in die __http__ Sektion. Beispiel
 
-bc. server_names_hash_bucket_size 64;           # an den Anfang der Sektion
-include conf.d/*.conf;                      # ans Ende der Sektion
+bc. server_names_hash_bucket_size 64;
+include conf.d/*.conf;
 
 p. Die Einrichtung von Nginx für den Bloonix-Server und der Bloonix-WebGUI erfolgt später.
 
