@@ -11,7 +11,24 @@ user bloonix
 group bloonix
 plugins /usr/lib/bloonix/plugins
 nagios_plugins /usr/lib/nagios/plugins,/usr/lib64/nagios/plugins
-include /etc/bloonix/agent/hosts.conf
+include /etc/bloonix/agent/conf.d
+
+|Parameter|Standard|Beschreibung|
+|agents|1|Wieviele Agenten sollen geforkt werden, um die konfigurierten Hosts zu überwachen.|
+|user, group|bloonix|Mit diesen Parametern wird bestimmt, mit welchem Benutzer und welcher Gruppe der Agent läuft und die Checks ausführt.|
+|plugins|/usr/local/lib/bloonix/plugins|Mit dem Parameter __plugins__ wird der Pfad angegben, unter dem die Plugins zur Ausführung liegen. Sollte der Bloonix-Agent über einen Paketmanager installiert werden, so kann der Pfad abweichen. Auf Debian werden die Plugins beispielsweise unter /usr/lib/bloonix/plugins installiert. Unter Windows liegen die Plugins höchstwahrscheinlich im Installationsverzeichnis des Agenten.|
+|plugin_libdir|/var/lib/bloonix/agent|Unter diesem Pfad legen diverse Plugins Daten ab, um Deltas von statistischen Daten berechnen zu können.|
+|nagios_plugins||Falls Sie Nagios Plugins einsetzen möchten, so können Sie hier den Pfad zu den installierten Plugins setzen. Eine komma-separierte Liste von Pfaden ist möglich.|
+|include||Mit dem Parameter __include__ lassen sich andere Konfigurationsdateien oder sogar Verzeichnisse einbinden. Falls das Ziel ein Verzeichnis ist, so werden alle Dateien darin inkludiert, die mit __.conf__ enden.|
+|use_sudo||Welche Checks sollen global mit sudo ausgeführt werden. Hier werden nur die Checks Skripte angegeben, ohne Pfade. Es ist möglich mehrere Skripte komma-separiert anzugeben. Die hier eingerichteten Skripts gelten für alle Hosts.|
+
+h3. Parameter agents
+
+p. Dieser Parameter bestimmt, wieviele Agenten mittels fork() gestartet werden sollen, um die Daten zu sammeln. Da der Agent meistens installiert wird, um den lokalen Server zu überwachen, reicht es diesen Parameter auf 1 zu setzen. Diesen Wert höher als 1 zu setzen, lohnt sich erst, wenn der Agent mehr als einen Host überwacht.
+
+p. Ein Agent führt immer alle konfigurierten Checks eines Host aus und sendet die Daten gebündelt zum Bloonix-Server. Wieviele Agenten schlussendlich konfiguriert werden, kommt immer darauf an, wieviele Hosts und wieviele Checks in der Summe konfiguriert sind. Ein weiterer Faktor ist auch, wie lange ein Agent benötigt um alle Checks eines Hosts auszuführen.
+
+p. Wenn Sie zum Beispiel 10 Hosts mit je 10 Services konfiguriert haben, so sollten 3 Agenten vollkommen ausreichen, diese 10 Hosts zu prüfen.
 
 h2. Sektion: server
 
@@ -46,8 +63,10 @@ p. Einer der beiden Parameter, __ssl_ca_path__ oder __ssl_ca_file__, sollte konf
 
 h2. Sektion: env
 
+p. Hier können globale Umgebungsvariablen gesetzt werden.
+
 bc. env {
-    name value
+    NAME value
 }
 
 h2. Sektion: host
@@ -62,7 +81,7 @@ bc. host {
 |password||Das Passwort des Hosts, welcher überwacht werden soll. Das Passwort ist im Webinterface in der Konfiguration des Hosts zu finden.|
 |agent_id|localhost|Jeder Service ist mit einer Agenten-ID gekennzeichnet. Mit dieser Option kann ausgewählt werden, welche Services eines Hosts von diesem Agenten aus überwacht werden. Mögliche Werte sind __localhost__, __intranet__ und __remote__.|
 |active|yes|Mit diesem Parameter kann die Überwachung des Hosts aktiviert oder deaktiviert werden.|
-|use_sudo||Welche Checks sollen mit sudo ausgeführt werden.|
+|use_sudo||Welche Checks sollen mit sudo ausgeführt werden. Hier werden nur die Checks Skripte angegeben, ohne Pfade. Es ist möglich mehrere Skripte komma-separiert anzugeben. Die hier eingerichteten Skripts gelten nur für diesen Host.|
 |env||Umgebungsvariablen für die Checks dieses Hosts.|
 |execute_on_event||Ausführung eines Skripts bei einem bestimmten Status.|
 
