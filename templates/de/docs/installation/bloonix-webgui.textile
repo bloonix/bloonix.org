@@ -19,16 +19,16 @@ p. Nachdem das Core-Paket mit allen Abhängigkeiten installiert ist, kann nun di
 
 p. Es wird zunächst die Verzeichnisstruktur unter __/srv__ angelegt und dann die Webapplikation installiert:
 
-bc.. mkdir -p /srv/bloonix
+bc. mkdir -p /srv/bloonix
 cd /srv/bloonix
 wget https://download.bloonix.de/sources/webgui-<% webgui_version %>.tar.gz
 tar -xzf webgui-<% webgui_version %>.tar.gz
 ln -sfn webgui-<% webgui_version %> webgui
 
-# Debian / Ubuntu
+bc. # Debian / Ubuntu
 chown -R bloonix:www-data /srv/bloonix/webgui/
 
-# Red Hat / CentOS / SuSE
+bc. # Red Hat / CentOS / SuSE
 chown -R bloonix:nginx /srv/bloonix/webgui/
 
 h2. Nginx konfigurieren
