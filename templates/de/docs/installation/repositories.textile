@@ -81,7 +81,8 @@ EOT
 
 p. Den Public Signing Key von Bloonix runterladen und installieren:
 
-bc. wget https://download.bloonix.de/repos/centos/RPM-GPG-KEY-Bloonix --output-document /etc/pki/rpm-gpg/RPM-GPG-KEY-Bloonix
+bc. wget https://download.bloonix.de/repos/centos/RPM-GPG-KEY-Bloonix \\
+    --output-document /etc/pki/rpm-gpg/RPM-GPG-KEY-Bloonix
 rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-Bloonix
 
 h2. Repository für openSUSE
