@@ -1,6 +1,6 @@
 [
     { "Über Bloonix": "about.textile" },
-    { "Lizenzen": "licences.textile" },
+    { "Lizenzen": "license.textile" },
     { "Komponenten": "components" },
     { "Installation": "installation" },
     { "Konfiguration": "configuration" },
