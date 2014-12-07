@@ -1,10 +1,10 @@
-h2. PostgreSQL installieren
+h1. PostgreSQL installieren
 
 p. _Bitte PostgreSQL in Version 9 installieren!_
 
 p. _ACHTUNG_, die Versionsnummer kann in den Beispielen variieren!</p>
 
-h3. Debian
+h2. Debian
 
 bc. apt-get install postgresql
 
@@ -22,7 +22,7 @@ bc. /etc/init.d/postgresql restart
 # oder
 systemctl restart postgresql.service
 
-h3. Red Hat / CentOS / Fedora
+h2. Red Hat / CentOS / Fedora
 
 bc. yum install postgresql-server
 
