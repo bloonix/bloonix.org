@@ -116,6 +116,7 @@ a:hover {
     list-style-type: none;
 }
 #doc-content table {
+    width: 100%;
     font-size: 15px;
     line-height: 27px;
     border-collapse: collapse;
