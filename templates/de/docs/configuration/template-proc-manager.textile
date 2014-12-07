@@ -6,7 +6,7 @@ bc.. proc-manager {
     max_servers 10
     min_spare_servers 5
     max_spare_servers 8
-    port ==<% item_port %>==
+    port <% item_port %>
     server_status {
         enabled yes
         location /server-status
