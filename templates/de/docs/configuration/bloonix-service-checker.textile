@@ -10,10 +10,10 @@ bc. workers 3
 user bloonix
 group bloonix
 
-|Parameter|Standard|Beschreibung|
-|workers|3|Die Anzahl Prozesse, die gestartet werden sollen um Services zu prüfen, die auf einen Timeout gelaufen sind.|
-|user|bloonix|Mit welchem Benutzer soll der Daemon laufen.|
-|group|bloonix|Mit welcher Gruppe soll der Daemon laufen.|
+|_. Parameter |_. Standard |_. Beschreibung |
+| workers | 3 | Die Anzahl Prozesse, die gestartet werden sollen um Services zu prüfen, die auf einen Timeout gelaufen sind. |
+| user | bloonix | Mit welchem Benutzer soll der Daemon laufen. |
+| group | bloonix | Mit welcher Gruppe soll der Daemon laufen. |
 
 ==
 <% include /de/docs/configuration/template-rest-server.textile %>

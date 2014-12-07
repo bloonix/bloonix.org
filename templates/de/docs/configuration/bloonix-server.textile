@@ -13,13 +13,13 @@ hostname yourhostname
 allow_from ^127\.0\.0\.1\z
 elasticsearch_roll_forward /var/log/bloonix/elasticsearch-roll-forward.json
 
-|Parameter|Standard|Beschreibung|
-|user|bloonix|Mit welchem Benutzer soll der Daemon laufen.|
-|group|bloonix|Mit welcher Gruppe soll der Daemon laufen.|
-|timezone|Europe/Berlin|Die Zeitzone des Servers.|
-|hostname|wird ermittelt|Der Hostname, auf dem der Server läuft. Der Hostname wird automatisch ermittelt, wenn er nicht angegeben ist.|
-|allow_from|^127\.0\.0\.1\z|Dieser Parameter ist vergleichbar mit einer Whitelist. Es können alle vertrauenswürdigen IP-Adressen eingetragen werden, auf denen ein Bloonix-Agent läuft. Den Parameter gibt es auch in der Weboberfläche von Bloonix bei der Einrichtung eines Hosts. Dort können ebenfalls IP-Adressen eingetragen werden, denen es erlaubt ist, Daten für den Host abzufragen bzw. Daten abzuliefern.|
-|elasticsearch_roll_forward|/var/log/bloonix/elasticsearch-roll-forward.json|Siehe unten.|
+|_. Parameter |_. Standard |_. Beschreibung |
+| user | bloonix | Mit welchem Benutzer soll der Daemon laufen. |
+| group | bloonix | Mit welcher Gruppe soll der Daemon laufen. |
+| timezone | Europe/Berlin | Die Zeitzone des Servers. |
+| hostname | wird ermittelt | Der Hostname, auf dem der Server läuft. Der Hostname wird automatisch ermittelt, wenn er nicht angegeben ist. |
+| allow_from | ^127\.0\.0\.1\z | Dieser Parameter ist vergleichbar mit einer Whitelist. Es können alle vertrauenswürdigen IP-Adressen eingetragen werden, auf denen ein Bloonix-Agent läuft. Den Parameter gibt es auch in der Weboberfläche von Bloonix bei der Einrichtung eines Hosts. Dort können ebenfalls IP-Adressen eingetragen werden, denen es erlaubt ist, Daten für den Host abzufragen bzw. Daten abzuliefern. |
+| elasticsearch_roll_forward | /var/log/bloonix/elasticsearch-roll-forward.json | Siehe unten. |
 
 h3. Roll-Forward-Log
 
@@ -51,9 +51,9 @@ bc. smsgateway {
     response ^100$
 }
 
-|Parameter|Standard|Beschreibung|
-|command||Das Kommando, um eine SMS zu versenden.|
-|response||Die erwartete Antwort, wenn die SMS erfolgreich übersendet werden konnte. Der Wert ist ein regulärer Ausdruck.|
+|_. Parameter |_. Standard |_. Beschreibung |
+| command |  | Das Kommando, um eine SMS zu versenden. |
+| response |  | Die erwartete Antwort, wenn die SMS erfolgreich übersendet werden konnte. Der Wert ist ein regulärer Ausdruck. |
 
 h2. Sektion: email
 
@@ -65,11 +65,11 @@ bc. email {
     subject *** STATUS %s FOR %h (%a) ***
 }
 
-|Parameter|Standard|Beschreibung|
-|sendmail|/usr/sbin/sendmail -t -oi -oem|Kommando zum Versenden von E-Mails.|
-|from|bloonix@localhost|Die Adresse des Absenders.|
-|bcc||Mit diesem Parameter ist es möglich, E-Mails an Kontakte als Blindkopie zu erhalten. Zusätzlich erhält der Empfänger eine Kopie jeder SMS, die versendet wurde.|
-|subject|==*** STATUS %s FOR %h (%a) ***==|Hier wird der Betreff konfiguriert. Die Strings __%s__ (Status), __%h__ (Hostname) und __%a__ (IP-Adresse) werden ersetzt.|
+|_. Parameter |_. Standard |_. Beschreibung |
+| sendmail | /usr/sbin/sendmail -t -oi -oem | Kommando zum Versenden von E-Mails. |
+| from | bloonix@localhost | Die Adresse des Absenders. |
+| bcc |  | Mit diesem Parameter ist es möglich, E-Mails an Kontakte als Blindkopie zu erhalten. Zusätzlich erhält der Empfänger eine Kopie jeder SMS, die versendet wurde. |
+| subject | ==*** STATUS %s FOR %h (%a) ***== | Hier wird der Betreff konfiguriert. Die Strings __%s__ (Status), __%h__ (Hostname) und __%a__ (IP-Adresse) werden ersetzt. |
 
 h2. Sektion: redirect_remote_agent_timeouts
 
@@ -78,9 +78,9 @@ bc. redirect_remote_agent_timeouts {
     mail_to foo@example.test
 }
 
-|Parameter|Standard|Beschreibung|
-|sms_to||Die Mobilfunknummer, zu der die Nachricht umgeleitet werden soll.|
-|mail_to||Die E-Mail-Adresse, zu der die Nachricht umgeleitet werden soll.|
+|_. Parameter |_. Standard |_. Beschreibung |
+| sms_to |  | Die Mobilfunknummer, zu der die Nachricht umgeleitet werden soll. |
+| mail_to |  | Die E-Mail-Adresse, zu der die Nachricht umgeleitet werden soll. |
 
 ==
 % $stash->{item_logfile} = "bloonix-server-database.log";

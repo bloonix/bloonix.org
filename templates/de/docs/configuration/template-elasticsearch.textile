@@ -9,10 +9,10 @@ bc. elasticsearch {
     mode balanced
 }
 
-|Parameter|Standard|Beschreibung|
-|proto|http|Das Protokoll, unter das Elasticsearch erreichbar ist.|
-|host|127.0.0.1|Der Hostname bzw. die IP-Adresse zu Elasticsearch. Dies kann auch eine komma-separierte Liste von IP-Adressen sein.|
-|timeout|60|Die maximale Zeit pro Request. Danach wird der Request abgebrochen.|
-|mode|balanced|Es ist möglich, die Requests auf mehrere Elasticsearch-Server zu verteilen oder aber ein Failover einzurichten. Mögliche Werte sind __balanced__ und __failover__.|
+|_. Parameter |_. Standard |_. Beschreibung |
+| proto | http | Das Protokoll, unter das Elasticsearch erreichbar ist. |
+| host | 127.0.0.1 | Der Hostname bzw. die IP-Adresse zu Elasticsearch. Dies kann auch eine komma-separierte Liste von IP-Adressen sein. |
+| timeout | 60 | Die maximale Zeit pro Request. Danach wird der Request abgebrochen. |
+| mode | balanced | Es ist möglich, die Requests auf mehrere Elasticsearch-Server zu verteilen oder aber ein Failover einzurichten. Mögliche Werte sind __balanced__ und __failover__. |
 
 

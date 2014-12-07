@@ -13,14 +13,14 @@ plugins /usr/lib/bloonix/plugins
 nagios_plugins /usr/lib/nagios/plugins,/usr/lib64/nagios/plugins
 include /etc/bloonix/agent/conf.d
 
-|Parameter|Standard|Beschreibung|
-|agents|1|Wieviele Agenten sollen geforkt werden, um die konfigurierten Hosts zu überwachen.|
-|user, group|bloonix|Mit diesen Parametern wird bestimmt, mit welchem Benutzer und welcher Gruppe der Agent läuft und die Checks ausführt.|
-|plugins|/usr/local/lib/bloonix/plugins|Mit dem Parameter __plugins__ wird der Pfad angegben, unter dem die Plugins zur Ausführung liegen. Sollte der Bloonix-Agent über einen Paketmanager installiert werden, so kann der Pfad abweichen. Auf Debian werden die Plugins beispielsweise unter /usr/lib/bloonix/plugins installiert. Unter Windows liegen die Plugins höchstwahrscheinlich im Installationsverzeichnis des Agenten.|
-|plugin_libdir|/var/lib/bloonix/agent|Unter diesem Pfad legen diverse Plugins Daten ab, um Deltas von statistischen Daten berechnen zu können.|
-|nagios_plugins||Falls Sie Nagios Plugins einsetzen möchten, so können Sie hier den Pfad zu den installierten Plugins setzen. Eine komma-separierte Liste von Pfaden ist möglich.|
-|include||Mit dem Parameter __include__ lassen sich andere Konfigurationsdateien oder sogar Verzeichnisse einbinden. Falls das Ziel ein Verzeichnis ist, so werden alle Dateien darin inkludiert, die mit __.conf__ enden.|
-|use_sudo||Welche Checks sollen global mit sudo ausgeführt werden. Hier werden nur die Checks Skripte angegeben, ohne Pfade. Es ist möglich mehrere Skripte komma-separiert anzugeben. Die hier eingerichteten Skripts gelten für alle Hosts.|
+|_. Parameter |_. Standard |_. Beschreibung |
+| agents | 1 | Wieviele Agenten sollen geforkt werden, um die konfigurierten Hosts zu überwachen. |
+| user, group | bloonix | Mit diesen Parametern wird bestimmt, mit welchem Benutzer und welcher Gruppe der Agent läuft und die Checks ausführt. |
+| plugins | /usr/local/lib/bloonix/plugins | Mit dem Parameter __plugins__ wird der Pfad angegben, unter dem die Plugins zur Ausführung liegen. Sollte der Bloonix-Agent über einen Paketmanager installiert werden, so kann der Pfad abweichen. Auf Debian werden die Plugins beispielsweise unter /usr/lib/bloonix/plugins installiert. Unter Windows liegen die Plugins höchstwahrscheinlich im Installationsverzeichnis des Agenten. |
+| plugin_libdir | /var/lib/bloonix/agent | Unter diesem Pfad legen diverse Plugins Daten ab, um Deltas von statistischen Daten berechnen zu können. |
+| nagios_plugins |  | Falls Sie Nagios Plugins einsetzen möchten, so können Sie hier den Pfad zu den installierten Plugins setzen. Eine komma-separierte Liste von Pfaden ist möglich. |
+| include |  | Mit dem Parameter __include__ lassen sich andere Konfigurationsdateien oder sogar Verzeichnisse einbinden. Falls das Ziel ein Verzeichnis ist, so werden alle Dateien darin inkludiert, die mit __.conf__ enden. |
+| use_sudo |  | Welche Checks sollen global mit sudo ausgeführt werden. Hier werden nur die Checks Skripte angegeben, ohne Pfade. Es ist möglich mehrere Skripte komma-separiert anzugeben. Die hier eingerichteten Skripts gelten für alle Hosts. |
 
 h3. Parameter agents
 
@@ -43,18 +43,18 @@ bc. server {
     }
 }
 
-|Parameter|Standard|Beschreibung|
-|proto|http|Das Protokoll, unter dem der Bloonix-Server erreichbar ist.|
-|host|127.0.0.1|Der Hostname bzw. die IP-Adresse zum Bloonix-Server. Dies kann auch eine komma-separierte Liste von IP-Adressen sein.|
-|timeout|60|Die maximale Zeit pro Request. Danach wird der Request abgebrochen.|
-|mode|balanced|Es ist möglich, die Requests auf mehrere Server zu verteilen oder aber ein Failover einzurichten. Mögliche Werte sind __balanced__ und __failover__.|
+|_. Parameter |_. Standard |_. Beschreibung |
+| proto | http | Das Protokoll, unter dem der Bloonix-Server erreichbar ist. |
+| host | 127.0.0.1 | Der Hostname bzw. die IP-Adresse zum Bloonix-Server. Dies kann auch eine komma-separierte Liste von IP-Adressen sein. |
+| timeout | 60 | Die maximale Zeit pro Request. Danach wird der Request abgebrochen. |
+| mode | balanced | Es ist möglich, die Requests auf mehrere Server zu verteilen oder aber ein Failover einzurichten. Mögliche Werte sind __balanced__ und __failover__. |
 
 h3. Subsektion: ssl_options
 
-|Parameter|Standard|Beschreibung|
-|ssl_verify_mode||Dieser Parameter aktiviert oder deaktiviert die Validierung des Serverzertifikats. 0 = nein, 1 = ja.|
-|ssl_ca_path||Der Pfad zu den installierten CAs.|
-|ssl_ca_file||Der Pfad zum installierten CA Bundle.|
+|_. Parameter |_. Standard |_. Beschreibung |
+| ssl_verify_mode |  | Dieser Parameter aktiviert oder deaktiviert die Validierung des Serverzertifikats. 0 = nein, 1 = ja. |
+| ssl_ca_path |  | Der Pfad zu den installierten CAs. |
+| ssl_ca_file |  | Der Pfad zum installierten CA Bundle. |
 
 p. Einer der beiden Parameter, __ssl_ca_path__ oder __ssl_ca_file__, sollte konfiguriert werden.
 
@@ -75,14 +75,14 @@ bc. host {
     password secret
 }
 
-|Parameter|Standard|Beschreibung|
-|host_id||Die ID des Hosts, welcher überwacht werden soll. Die ID ist im Webinterface in der Konfiguration des Hosts zu finden.|
-|password||Das Passwort des Hosts, welcher überwacht werden soll. Das Passwort ist im Webinterface in der Konfiguration des Hosts zu finden.|
-|agent_id|localhost|Jeder Service ist mit einer Agenten-ID gekennzeichnet. Mit dieser Option kann ausgewählt werden, welche Services eines Hosts von diesem Agenten aus überwacht werden. Mögliche Werte sind __localhost__, __intranet__ und __remote__.|
-|active|yes|Mit diesem Parameter kann die Überwachung des Hosts aktiviert oder deaktiviert werden.|
-|use_sudo||Welche Checks sollen mit sudo ausgeführt werden. Hier werden nur die Checks Skripte angegeben, ohne Pfade. Es ist möglich mehrere Skripte komma-separiert anzugeben. Die hier eingerichteten Skripts gelten nur für diesen Host.|
-|env||Umgebungsvariablen für die Checks dieses Hosts.|
-|execute_on_event||Ausführung eines Skripts bei einem bestimmten Status.|
+|_. Parameter |_. Standard |_. Beschreibung |
+| host_id |  | Die ID des Hosts, welcher überwacht werden soll. Die ID ist im Webinterface in der Konfiguration des Hosts zu finden. |
+| password |  | Das Passwort des Hosts, welcher überwacht werden soll. Das Passwort ist im Webinterface in der Konfiguration des Hosts zu finden. |
+| agent_id | localhost | Jeder Service ist mit einer Agenten-ID gekennzeichnet. Mit dieser Option kann ausgewählt werden, welche Services eines Hosts von diesem Agenten aus überwacht werden. Mögliche Werte sind __localhost__, __intranet__ und __remote__. |
+| active | yes | Mit diesem Parameter kann die Überwachung des Hosts aktiviert oder deaktiviert werden. |
+| use_sudo |  | Welche Checks sollen mit sudo ausgeführt werden. Hier werden nur die Checks Skripte angegeben, ohne Pfade. Es ist möglich mehrere Skripte komma-separiert anzugeben. Die hier eingerichteten Skripts gelten nur für diesen Host. |
+| env |  | Umgebungsvariablen für die Checks dieses Hosts. |
+| execute_on_event |  | Ausführung eines Skripts bei einem bestimmten Status. |
 
 h3. Parameter: use_sudo
 
@@ -125,7 +125,7 @@ bc. host {
 
 p. In der Untersektion __execute_on_event__ wird zunächst das Kommando oder die Service-ID angegeben. Im Weiteren muss angegeben werden, für welchen Status das Skript, welches unter __command__ angegben wird, ausgeführt werden soll. Die Platzhalter __%I__, __%C__ und __%S__ werden wie folgt ersetzt:
 
-|%I|Service-ID|
-|%C|Das Kommando, was ausgeührt wurde. Beispiel: check-http|
-|%S|Status des Checks|
+| %I | Service-ID |
+| %C | Das Kommando, was ausgeührt wurde. Beispiel: check-http |
+| %S | Status des Checks |
 

@@ -2,12 +2,12 @@ h2. Sektion: server
 
 p. In dieser Sektion werden die Verbindungsparameter zum Bloonix-Server konfiguriert.
 
-|Parameter|Standard|Beschreibung|
-|proto|http|Das Protokoll, unter dem der Bloonix-Server erreichbar ist.|
-|host|127.0.0.1|Der Hostname bzw. die IP-Adresse zum Bloonix-Server. Dies kann auch eine komma-separierte Liste von IP-Adressen sein.|
-|timeout|60|Die maximale Zeit pro Request. Danach wird der Request abgebrochen.|
-|mode|balanced|Es ist möglich, die Requests auf mehrere Bloonix-Server zu verteilen oder aber ein Failover einzurichten. Mögliche Werte sind __balanced__ und __failover__.|
-|timeout|60|Der Timeout für den kompletten Request zum Bloonix-Server.|
+|_. Parameter |_. Standard |_. Beschreibung |
+| proto | http | Das Protokoll, unter dem der Bloonix-Server erreichbar ist. |
+| host | 127.0.0.1 | Der Hostname bzw. die IP-Adresse zum Bloonix-Server. Dies kann auch eine komma-separierte Liste von IP-Adressen sein. |
+| timeout | 60 | Die maximale Zeit pro Request. Danach wird der Request abgebrochen. |
+| mode | balanced | Es ist möglich, die Requests auf mehrere Bloonix-Server zu verteilen oder aber ein Failover einzurichten. Mögliche Werte sind __balanced__ und __failover__. |
+| timeout | 60 | Der Timeout für den kompletten Request zum Bloonix-Server. |
 
 h3. Untersektion: ssl_options
 
@@ -15,7 +15,7 @@ p. In dieser Sektion werden die SSL Parameter konfiguriert und ob das Zertifikat
 
 p. Falls eine Validierung nicht stattfinden soll, weil zum Beispiel selbst-signierte Zertifikate eingesetzt werden und diese nicht auf allen Servern verteilt sind, so können die SSL Parameter entfernt werden.
 
-|Parameter|Standard|Beschreibung|
-|ssl_verify_mode||Dieser Parameter aktiviert oder deaktiviert die Validierung des Serverzertifikats. 0 = nein, 1 = ja.|
-|ssl_ca_path||Der Pfad zu den installierten CAs.|
+|_. Parameter |_. Standard |_. Beschreibung |
+| ssl_verify_mode |  | Dieser Parameter aktiviert oder deaktiviert die Validierung des Serverzertifikats. 0 = nein, 1 = ja. |
+| ssl_ca_path |  | Der Pfad zu den installierten CAs. |
 

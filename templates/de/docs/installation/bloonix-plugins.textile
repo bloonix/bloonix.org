@@ -17,21 +17,21 @@ p. _Bitte beachten Sie,_ dass die Plugins immer auf dem Server installiert werde
 
 h1. Verfügbare Plugins
 
-|bloonix-plugins-apache|Plugins Überwachung des Apache Webservers.|
-|bloonix-plugins-basic|Basis Plugins zur Überwachung von Server Diensten über HTTP, TCP, UDP, SMTP, IMAP, POP3,<br/>DNS, FTP, if-Statistiken von Rountern, Switches und ein Wrapper zum Einsatz von Nagios-Checks.|
-|bloonix-plugins-drbd|Plugins zur Überwachung von DRBD Devices.|
-|bloonix-plugins-lighttpd|Überwachung des Lighttpd Webservers.|
-|bloonix-plugins-linux|Linux Plugins zur Überwachung der CPU, des Hauptspeichers, der Festplattenkapazität und vieles mehr.|
-|bloonix-plugins-memcached|Plugins zur Überwachung des Memcache Daemon.|
-|bloonix-plugins-mysql|Plugins zur Überwachung von MySQL 5 Datenbanken und Replikationen.|
-|bloonix-plugins-nginx|Plugins zur Überwachung des Nginx Webservers.|
-|bloonix-plugins-pgsql|Plugins zur Überwachung von PostgreSQL.|
-|bloonix-plugins-postfix|Plugins zur Überwachung von Postfix Queues.|
-|bloonix-plugins-redis|Plugins zur Überwachung von Redis.|
-|bloonix-plugins-sensors|Plugins zur Überwachung der Temperatur.|
-|bloonix-plugins-varnish|Plugins zur Überwachung des Varnish Webservers.|
-|bloonix-plugins-windows|Plugins zur Überwachung von Windows-Server über SNMP.|
-|bloonix-plugins-wtrm|Plugins zur Durchführung von Web-Transaktionen.|
+| bloonix-plugins-apache | Plugins Überwachung des Apache Webservers. |
+| bloonix-plugins-basic | Basis Plugins zur Überwachung von Server Diensten über HTTP, TCP, UDP, SMTP, IMAP, POP3,<br/>DNS, FTP, if-Statistiken von Rountern, Switches und ein Wrapper zum Einsatz von Nagios-Checks. |
+| bloonix-plugins-drbd | Plugins zur Überwachung von DRBD Devices. |
+| bloonix-plugins-lighttpd | Überwachung des Lighttpd Webservers. |
+| bloonix-plugins-linux | Linux Plugins zur Überwachung der CPU, des Hauptspeichers, der Festplattenkapazität und vieles mehr. |
+| bloonix-plugins-memcached | Plugins zur Überwachung des Memcache Daemon. |
+| bloonix-plugins-mysql | Plugins zur Überwachung von MySQL 5 Datenbanken und Replikationen. |
+| bloonix-plugins-nginx | Plugins zur Überwachung des Nginx Webservers. |
+| bloonix-plugins-pgsql | Plugins zur Überwachung von PostgreSQL. |
+| bloonix-plugins-postfix | Plugins zur Überwachung von Postfix Queues. |
+| bloonix-plugins-redis | Plugins zur Überwachung von Redis. |
+| bloonix-plugins-sensors | Plugins zur Überwachung der Temperatur. |
+| bloonix-plugins-varnish | Plugins zur Überwachung des Varnish Webservers. |
+| bloonix-plugins-windows | Plugins zur Überwachung von Windows-Server über SNMP. |
+| bloonix-plugins-wtrm | Plugins zur Durchführung von Web-Transaktionen. |
 
 h1. Plugins importieren
 
