@@ -2,7 +2,7 @@ h1. Wichtige Information vorab
 
 p. Auf älteren Linux-Systemen werden aus dem Bloonix-Repository diverse Perl-Module installiert, wenn hierfür keine höheren Versionen aus einem anderen Repository zur Verfügung stehen. Diese Module sind
 
-bc.. IO::Socket::SSL Version 1.77
+bc. IO::Socket::SSL Version 1.77
 HTTP::Tiny Version 0.22
 Log::Handler Version 0.82
 

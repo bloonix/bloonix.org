@@ -2,11 +2,11 @@ h1. Konfiguration des Bloonix Service-Checkers
 
 p. Die Konfiguration des Service-Checkers befindet sich in:
 
-bc.. /etc/bloonix/srvchk/main.conf
+bc. /etc/bloonix/srvchk/main.conf
 
 h2. Globale Parameter
 
-bc.. workers 3
+bc. workers 3
 user bloonix
 group bloonix
 

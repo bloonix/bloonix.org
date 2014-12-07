@@ -3,7 +3,7 @@ h2. Sektion: logger
 p. Hier findet die Konfiguration des Logger statt. Weitere Informationen zu den Einstellungsmöglichkeiten finden Sie unter
 "http://search.cpan.org/dist/Log-Handler/":http://search.cpan.org/dist/Log-Handler/ .
 
-bc.. logger {
+bc. logger {
     file {
         filename /var/log/bloonix/<% item_logfile %>
         filelock 0

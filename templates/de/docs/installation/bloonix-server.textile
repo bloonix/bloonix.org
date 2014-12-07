@@ -4,26 +4,26 @@ h2. Installation
 
 p. Die Installation des Bloonix-Servers ist sehr einfach.
 
-bc.. # Debian
+bc. # Debian / Ubuntu
 apt-get install bloonix-server
 
-bc.. # Red Hat / CentOS / Fedora
+bc. # Red Hat / CentOS / Fedora
 yum install bloonix-server
 
-bc.. # SuSE / SLES
+bc. # SuSE / SLES
 zypper install bloonix-server
 
 p. _Bitte installieren Sie das Paket erst, wenn Sie Nginx installiert haben, da ansonsten wichtige Konfigurationsdateien nicht angelegt werden!_
 
 p. Die Konfigurationdatei des Bloonix-Servers lautet
 
-bc.. /etc/bloonix/server/main.conf
+bc. /etc/bloonix/server/main.conf
 
 p. und ist sehr gut dokumentiert. Editieren Sie die Konfiguration des Servers und tragen dort das _Passwort_ zur Datenbank ein:
 
 p. Der Bloonix-Server wird über ein Init-Skript gestartet und gestoppt.
 
-bc.. /etc/init.d/bloonix-server start
+bc. /etc/init.d/bloonix-server start
 # oder
 systemctl start bloonix-server.service
 
@@ -35,11 +35,11 @@ p. Da der Bloonix-Server als externe FastCGI Applikation läuft, ist es notwendi
 
 p. Die Konfiguration kann in der folgenden Datei eingerichtet werden:
 
-bc.. /etc/nginx/conf.d/bloonix-server.conf
+bc. /etc/nginx/conf.d/bloonix-server.conf
 
 p. Die Konfiguration:
 
-bc.. server {
+bc. server {
     listen 8443;
     server_name bloonix-server;
 
@@ -60,7 +60,7 @@ bc.. server {
 
 p. Der Paramter __server_name__ sollte noch angepasst werden. Es muss ebenfalls ein SSL-Zertifikat generiert werden, falls noch keines vorhanden ist:
 
-bc.. mkdir /etc/nginx/ssl
+bc. mkdir /etc/nginx/ssl
 cd /etc/nginx/ssl
 openssl req -new -x509 -nodes -out server.crt -keyout server.key
 
@@ -70,7 +70,7 @@ h1. Bloonix-Server starten
 
 p. Der Bloonix-Server kann wie folgt gestartet werden:
 
-bc.. /etc/init.d/bloonix-server start
+bc. /etc/init.d/bloonix-server start
 # oder
 systemctl start bloonix-server.service
 
@@ -82,11 +82,11 @@ p. Dieser Dienst ist dafür zuständig, Hosts und Services zu prüfen, dessen Ü
 
 p. Die Konfigurationsdatei des Service-Checkers lautet:
 
-bc.. /etc/bloonix/srvchk/main.conf
+bc. /etc/bloonix/srvchk/main.conf
 
 p. Der Service-Checker muss nebst dem Bloonix-Server gestartet werden:
 
-bc.. /etc/init.d/bloonix-srvchk start
+bc. /etc/init.d/bloonix-srvchk start
 # oder
 systemctl start bloonix-srvchk.service
 

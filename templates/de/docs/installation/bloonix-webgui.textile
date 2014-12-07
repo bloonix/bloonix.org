@@ -4,13 +4,13 @@ p. Die Bloonix-WebGUI ist in zwei Pakete aufgeteilt. Es gibt zum Einen das Paket
 
 p. Das Core-Paket kann wie folgt installiert werden:
 
-bc.. # Debian
+bc. # Debian / Ubuntu
 apt-get install bloonix-webgui-core
 
-bc.. # Red Hat / CentOS / Fedora
+bc. # Red Hat / CentOS / Fedora
 yum install bloonix-webgui-core
 
-bc.. # SuSE / SLES
+bc. # SuSE / SLES
 zypper install bloonix-webgui-core
 
 p. _Bitte installieren Sie das Core-Paket erst, wenn Sie Nginx installiert haben, da ansonsten wichtige Konfigurationsdateien nicht angelegt werden!_
@@ -37,7 +37,7 @@ p. Die Bloonix-WebGUI läuft als externe FastCGI Applikation und benötigt Nginx
 
 p. Die Konfiguration kann in der folgenden Datei eingerichtet werden:
 
-bc.. /etc/nginx/conf.d/bloonix-webgui.conf
+bc. /etc/nginx/conf.d/bloonix-webgui.conf
 
 p. Die Konfiguration:
 
@@ -70,7 +70,7 @@ bc.. server {
 
 p. Der Paramter __server_name__ sollte noch angepasst werden. Es muss ebenfalls ein SSL-Zertifikat generiert werden, falls noch keines vorhanden ist:
 
-bc.. mkdir /etc/nginx/ssl
+bc. mkdir /etc/nginx/ssl
 cd /etc/nginx/ssl
 openssl req -new -x509 -nodes -out server.crt -keyout server.key
 
@@ -78,7 +78,7 @@ h2. Datenbankschema und Elasticsearch-Template
 
 p. Um das Schema für die PostgreSQL-Datenbank und das Template für Elasticsearch anzulegen, gibt es im Verzeichnis
 
-bc.. /srv/bloonix/webgui/schema
+bc. /srv/bloonix/webgui/schema
 
 p. ein paar Skripte zur Hilfe.
 
@@ -88,17 +88,17 @@ p. Um das Schema für die PostgreSQL-Datenbank anzulegen, muss folgendes Kommand
 
 p. Editieren Sie die Konfiguration der WebGUI und tragen dort das Passwort zur Datenbank ein:
 
-bc.. /etc/bloonix/webgui/main.conf
+bc. /etc/bloonix/webgui/main.conf
 
 p. Um das Template für Elasticsearch anzulegen, muss folgendes Kommando ausgeführt werden:
 
-bc.. /srv/bloonix/webgui/schema/init-elasticsearch.sh localhost:9200
+bc. /srv/bloonix/webgui/schema/init-elasticsearch.sh localhost:9200
 
 h2. WebGUI starten
 
 p. Wenn alle Schritte durchgeführt wurden, kann die WebGUI gestartet werden:
 
-bc.. /etc/init.d/bloonix-webgui restart
+bc. /etc/init.d/bloonix-webgui restart
 # oder
 systemctl restart bloonix-webgui.service
 
@@ -106,14 +106,14 @@ p. Öffnen Sie als nächstes einen Webbrowser und geben den Hostnamen ein, der i
 
 p. *Wichtig:* Der initiale Zugang zur WebGUI lautet:
 
-bc.. Benutzername: admin
+bc. Benutzername: admin
 Passwort: admin
 
 h2. Nginx restarten
 
 p. Nach der Konfiguration der WebGUI können wir nun den Nginx restarten:
 
-bc.. /etc/init.d/nginx restart
+bc. /etc/init.d/nginx restart
 # oder
 systemctl restart nginx.service
 

@@ -8,7 +8,7 @@ p. "https://download.bloonix.de/sources/":https://download.bloonix.de/sources/
 
 p. Beispielinstallation des Bloonix-Agenten:
 
-bc.. wget http://download.bloonix.de/sources/bloonix-agent-0.1.tar.gz
+bc. wget http://download.bloonix.de/sources/bloonix-agent-0.1.tar.gz
 tar –xzf bloonix-agent-0.1.tar.gz
 cd bloonix-agent-0.1
 perl Configure.PL
@@ -17,7 +17,7 @@ make install
 
 p. Beispielinstallation der Bloonix-Core Pakete
 
-bc.. wget http://download.bloonix.de/sources/bloonix-core-0.1.tar.gz
+bc. wget http://download.bloonix.de/sources/bloonix-core-0.1.tar.gz
 tar –xzf bloonix-core-0.1.tar.gz
 cd bloonix-core-0.1
 perl Build.PL
@@ -28,7 +28,7 @@ h2. Abhängigkeiten
 
 h3. Abhängigkeiten des Pakets bloonix-agent
 
-bc.. facter
+bc. facter
 bloonix-core
 perl(Getopt::Long)
 perl(JSON)
@@ -39,7 +39,7 @@ perl(Time::HiRes)
 
 h3. Abhängigkeiten des Pakets bloonix-core
 
-bc.. ca-certificates
+bc. ca-certificates
 perl(Data::Dumper)
 perl(HTTP::Tiny)
 perl(IO::Select)
@@ -59,7 +59,7 @@ perl(Time::ParseDate)
 
 h3. Abhängigkeiten des Pakets bloonix-dbi
 
-bc.. bloonix-core
+bc. bloonix-core
 perl(DBI)
 perl(DBD::Pg)
 perl(Log::Handler)
@@ -67,7 +67,7 @@ perl(Params::Validate)
 
 h3. Abhängigkeiten des Pakets bloonix-fcgi
 
-bc.. bloonix-core
+bc. bloonix-core
 perl-JSON-XS
 perl(FCGI)
 perl(JSON)
@@ -78,7 +78,7 @@ perl(Time::HiRes)
 
 h3. Abhängigkeiten des Pakets bloonix-heaven
 
-bc.. bloonix-core
+bc. bloonix-core
 bloonix-fcgi
 perl-JSON-XS
 perl(JSON)
@@ -87,12 +87,12 @@ perl(Getopt::Long)
 
 h3. Abhängigkeiten des Pakets bloonix-plugins-apache
 
-bc.. bloonix-core
+bc. bloonix-core
 curl
 
 h3. Abhängigkeiten des Pakets bloonix-plugins-base
 
-bc.. bloonix-core
+bc. bloonix-core
 curl
 perl(Getopt::Long)
 perl(Time::HiRes)
@@ -101,68 +101,68 @@ perl(MIME::Base64)
 
 h3. Abhängigkeiten des Pakets bloonix-plugins-drbd
 
-bc.. bloonix-core
+bc. bloonix-core
 
 h3. Abhängigkeiten des Pakets bloonix-plugins-lighttpd
 
-bc.. bloonix-core
+bc. bloonix-core
 curl
 
 h3. Abhängigkeiten des Pakets bloonix-plugins-linux
 
-bc.. bloonix-core
+bc. bloonix-core
 
 h3. Abhängigkeiten des Pakets bloonix-plugins-memcached
 
-bc.. bloonix-core
+bc. bloonix-core
 
 h3. Abhängigkeiten des Pakets bloonix-plugins-mysql
 
-bc.. bloonix-core
+bc. bloonix-core
 perl(DBI)
 perl(DBD::mysql)
 
 h3. Abhängigkeiten des Pakets bloonix-plugins-nginx
 
-bc.. bloonix-core
+bc. bloonix-core
 curl
 
 h3. Abhängigkeiten des Pakets bloonix-plugins-pgsql
 
-bc.. bloonix-core
+bc. bloonix-core
 perl(DBI)
 perl(DBD::Pg)
 
 h3. Abhängigkeiten des Pakets bloonix-plugins-postfix
 
-bc.. bloonix-core
+bc. bloonix-core
 curl
 
 h3. Abhängigkeiten des Pakets bloonix-plugins-redis
 
-bc.. bloonix-core
+bc. bloonix-core
 
 h3. Abhängigkeiten des Pakets bloonix-plugins-sensors
 
-bc.. bloonix-core
+bc. bloonix-core
 lm_sensors
 
 h3. Abhängigkeiten des Pakets bloonix-plugins-varnish
 
-bc.. bloonix-core
+bc. bloonix-core
 
 h3. Abhängigkeiten des Pakets bloonix-plugins-windows
 
-bc.. bloonix-core
+bc. bloonix-core
 
 h3. Abhängigkeiten des Pakets bloonix-plugins-wtrm
 
-bc.. bloonix-core
+bc. bloonix-core
 PhantomJS
 
 h3. Abhängigkeiten des Pakets bloonix-server
 
-bc.. bloonix-agent
+bc. bloonix-agent
 bloonix-core
 bloonix-dbi
 bloonix-fcgi
@@ -184,7 +184,7 @@ perl(URI::Escape)
 
 h3. Abhängigkeiten des Pakets bloonix-webgui-core
 
-bc.. bloonix-agent
+bc. bloonix-agent
 bloonix-core
 bloonix-dbi
 bloonix-fcgi
@@ -201,7 +201,7 @@ perl(Time::HiRes)
 
 h3. Abhängigkeiten des Pakets bloonix-wtrm
 
-bc.. bloonix-core
+bc. bloonix-core
 bloonix-fcgi
 bloonix-plugins-wtrm
 perl-JSON-XS
@@ -214,7 +214,7 @@ PhantomJS
 
 h3. Alle Abhängigkeiten auf einen Blick
 
-bc.. bloonix-agent
+bc. bloonix-agent
 bloonix-core
 bloonix-dbi
 bloonix-fcgi

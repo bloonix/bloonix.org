@@ -2,13 +2,13 @@ h1. Konfiguration der Bloonix-WebGUI
 
 p. Die Konfiguration der WebGUI befindet sich in:
 
-bc.. /etc/bloonix/webgui/main.conf
+bc. /etc/bloonix/webgui/main.conf
 
 h2. Sektion: heaven
 
 p. Diese Parameter sind für das MVC-Framework von Bloonix und sollten nicht geändert werden.
 
-bc.. heaven {
+bc. heaven {
     base /srv/bloonix/webgui/lib
     model Database, REST
     view Template, JSON
@@ -16,7 +16,7 @@ bc.. heaven {
 
 h2. Sektion: system
 
-bc.. system {
+bc. system {
     user bloonix
     group bloonix
     timezone Europe/Berlin
@@ -35,7 +35,7 @@ bc.. system {
 
 h2. Sektion: webapp
 
-bc.. webapp {
+bc. webapp {
     hostname yourdomain.test
     sid_expire_time 3600
     sid_refresh_time 300
@@ -57,7 +57,7 @@ h2. Sektion: email
 
 p. Mit der E-Mail Parametern kann festgelegt werden, über welche Ereignisse Sie als Administrator informiert werden. Wenn Sie zum Beispiel den Wunsch haben, bei einer Anfrage zum Passwort-Reset per E-Mail informiert zu werden, so setzen Sie den Parameter __flags__ auf __password-request__.
 
-bc.. email {
+bc. email {
     from root@localhost
     to root@localhost
     subject [BLOONIX-WEBGUI] %s
@@ -78,7 +78,7 @@ bc.. email {
 
 h2. Sektion: template
 
-bc.. template {
+bc. template {
     path /srv/bloonix/webgui/templates
 }
 
