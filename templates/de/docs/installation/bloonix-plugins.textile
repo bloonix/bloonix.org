@@ -18,7 +18,7 @@ p. _Bitte beachten Sie,_ dass die Plugins immer auf dem Server installiert werde
 h1. Verfügbare Plugins
 
 |bloonix-plugins-apache|Plugins Überwachung des Apache Webservers.|
-|bloonix-plugins-base|Basis Plugins zur Überwachung von Server Diensten über HTTP, TCP, UDP, SMTP, IMAP, POP3,<br/>DNS, FTP, if-Statistiken von Rountern, Switches und ein Wrapper zum Einsatz von Nagios-Checks.|
+|bloonix-plugins-basic|Basis Plugins zur Überwachung von Server Diensten über HTTP, TCP, UDP, SMTP, IMAP, POP3,<br/>DNS, FTP, if-Statistiken von Rountern, Switches und ein Wrapper zum Einsatz von Nagios-Checks.|
 |bloonix-plugins-drbd|Plugins zur Überwachung von DRBD Devices.|
 |bloonix-plugins-lighttpd|Überwachung des Lighttpd Webservers.|
 |bloonix-plugins-linux|Linux Plugins zur Überwachung der CPU, des Hauptspeichers, der Festplattenkapazität und vieles mehr.|
@@ -31,6 +31,7 @@ h1. Verfügbare Plugins
 |bloonix-plugins-sensors|Plugins zur Überwachung der Temperatur.|
 |bloonix-plugins-varnish|Plugins zur Überwachung des Varnish Webservers.|
 |bloonix-plugins-windows|Plugins zur Überwachung von Windows-Server über SNMP.|
+|bloonix-plugins-wtrm|Plugins zur Durchführung von Web-Transaktionen.|
 
 h1. Plugins importieren
 
