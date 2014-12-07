@@ -48,7 +48,6 @@ bc. server {
 |host|127.0.0.1|Der Hostname bzw. die IP-Adresse zum Bloonix-Server. Dies kann auch eine komma-separierte Liste von IP-Adressen sein.|
 |timeout|60|Die maximale Zeit pro Request. Danach wird der Request abgebrochen.|
 |mode|balanced|Es ist möglich, die Requests auf mehrere Server zu verteilen oder aber ein Failover einzurichten. Mögliche Werte sind __balanced__ und __failover__.|
-|timeout|15||
 
 h3. Subsektion: ssl_options
 
