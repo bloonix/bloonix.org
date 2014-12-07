@@ -4,7 +4,7 @@ h2. Übersicht über alle Komponenten
 
 p. Hier sehen Sie eine grobe Übersicht über alle Komponenten. Da der Bloonix-Server und die Bloonix-WebGUI serverseitig als externe FastCGI-Applikation laufen, sind diese hochskalierbar und können auf mehreren Servern installiert werden. Alles, was Sie dann noch benötigen, ist ein HTTPS-Offloader und Loadbalancer, um die Anfragen zu verteilen.
 
-div{width: 980px; margin: 20px 0;}. !/public/img/bloonix-components.png!
+!{width: 100%; margin: 20px 0;}/public/img/bloonix-components.png!
 
 h1. Wie funktioniert das nun mit der Überwachung von Hosts und Services
 
@@ -12,7 +12,7 @@ h2. Einrichtung von Hosts und Services im Webinterface
 
 p. Im Webinterface werden alle Hosts und Services eingerichtet, die Sie überwachen möchten. Ein Host kann im Kontext von Bloonix ein Server, ein virtueller Server, ein Router, ein Switch oder auch ein Drucker sein. Jeder Host besitzt einen Hostnamen und eine IP-Adresse. Wenn ein Host im Webinterface eingerichtet wird, erhält dieser eine eindeutige ID und ein dazugehöriges Passwort. Darüber hinaus werden Service-Checks eingerichtet, zum Beispiel zur Überwachung der CPU-Auslastung, des Speicherverbrauchs oder der Auslastung der Netzwerkinterfaces.
 
-div{width: 640px; margin: 40px 0;}. !/public/img/bloonix-howto-webgui.png!
+!{width: 640px; margin: 40px 0;}/public/img/bloonix-howto-webgui.png!
 
 h2. Einrichtung des Agenten
 
@@ -29,7 +29,7 @@ p. Was der Agent nun macht ist folgendes:
 # Der Bloonix-Agent überprüft die Services und übersendet den Status und die Statistiken des Service an den Bloonix-Server</li>
 # Der Bloonix-Server validiert die Daten, speichert diese in der Datenbank und informiert gegebenfalls einen Administrator per E-Mail oder SMS</li>
 
-div{width: 640px; margin: 40px 0;}. !/public/img/bloonix-howto-agent-server.png!
+!{width: 640px; margin: 40px 0;}/public/img/bloonix-howto-agent-server.png!
 
 h2. Überwachung von Windows-Systemen, Routern, Switches, Drucker
 
@@ -37,4 +37,4 @@ p. Da der Bloonix-Agent nicht für Windows-Systeme zur Verfügung steht und auch
 
 p. Hierfür wird der Bloonix-Agent auf einem zentralen Linux-Server installiert, der in Ihrer lokalen Infrastruktur integriert ist, also in dem LAN Ihres Unternehmens. Von dort aus werden alle Netzwerksysteme und Server über SNMP, HTTP und anderen Protokollen überwacht. Der Bloonix-Agent ist so konzipiert, dass er beliebig viele Hosts und Services überwachen kann.
 
-div{width: 900px; margin: 40px 0;}. !/public/img/bloonix-howto-agent-server-snmp.png!
+!{width: 100%; margin: 40px 0;}/public/img/bloonix-howto-agent-server-snmp.png!
