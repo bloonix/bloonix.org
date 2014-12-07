@@ -10,27 +10,27 @@ h3. Installation des Bloonix Repositories
 
 p. Das Bloonix Repository ist über HTTPS erreichbar, daher wird ein spezielles Paket benötigt, welches nicht standardmäßig installiert wird.
 
-bc. apt-get update
+bc.. apt-get update
 apt-get install apt-transport-https ca-certificates curl
 
 p. Als nächstes muss der Public-Signing-Key von Bloonix runtergeladen und installiert werden:
 
-bc. wget https://download.bloonix.de/repos/debian/bloonix.gpg -O- | apt-key add -
+bc.. wget https://download.bloonix.de/repos/debian/bloonix.gpg -O- | apt-key add -
 
 p. Jetzt muss nur noch das passende Bloonix Repository in __/etc/apt/sources.list__ eingetragen werden:
 
-bc. Debian 6: echo "deb https://download.bloonix.de/repos/debian/ squeeze main" >>/etc/apt/sources.list
+bc.. Debian 6: echo "deb https://download.bloonix.de/repos/debian/ squeeze main" >>/etc/apt/sources.list
 Debian 7: echo "deb https://download.bloonix.de/repos/debian/ wheezy main" >>/etc/apt/sources.list
 Debian 8: echo "deb https://download.bloonix.de/repos/debian/ jessie main" >>/etc/apt/sources.list
 
-bc. Ubuntu 12.04: echo "deb https://download.bloonix.de/repos/ubuntu/ precise main" >>/etc/apt/sources.list
+bc.. Ubuntu 12.04: echo "deb https://download.bloonix.de/repos/ubuntu/ precise main" >>/etc/apt/sources.list
 Ubuntu 14.04: echo "deb https://download.bloonix.de/repos/ubuntu/ trusty main" >>/etc/apt/sources.list
 
 p. Falls Ubuntu zum Einsatz kommt, sollte das passende Debian Release zum Ubuntu Release eingetragen werden.
 
 p. Auflisting der Bloonix Pakete:
 
-bc. apt-get update
+bc.. apt-get update
 apt-cache search bloonix
 
 h2. Repository für Red Hat und CentOS
@@ -43,24 +43,24 @@ h3. EPEL (Extra Packages for Enterprise Linux)
 
 p. Beim Einsatz von Red Hat und CentOS wird zwingend das EPEL Repository benötigt, da diverse Pakete benötigt werden, die im Repository von Red Hat und CentOS nicht enthalten sind. Bitte installieren Sie daher das EPEL Repository.
 
-bc. yum install epel-release
+bc.. yum install epel-release
 
 p. "Link zum EPEL Projekt":https://fedoraproject.org/wiki/EPEL
 
 h3. Installation des Bloonix Repositories
 
-bc. RHEL 6: rpm -ivh https://download.bloonix.de/repos/centos/6/noarch/bloonix-release-0.5-1.el6.noarch.rpm
+bc.. RHEL 6: rpm -ivh https://download.bloonix.de/repos/centos/6/noarch/bloonix-release-0.5-1.el6.noarch.rpm
 RHEL 7: rpm -ivh https://download.bloonix.de/repos/centos/7/noarch/bloonix-release-0.5-1.el7.centos.noarch.rpm
 
 p. Auflisting der Bloonix Pakete:
 
-bc. yum search bloonix
+bc.. yum search bloonix
 
 h3. Manuelle Installation des Repositories
 
 p. Das Bloonix Repository in __/etc/yum.repos.d/Bloonix.repo__ eintragen:
 
-bc. cat <<EOT >/etc/yum.repos.d/Bloonix.repo
+bc.. cat <<EOT >/etc/yum.repos.d/Bloonix.repo
 [bloonix]
 name=Bloonix repository
 baseurl=https://download.bloonix.de/repos/centos/$releasever/$basearch
@@ -70,7 +70,7 @@ EOT
 
 p. Den Public Signing Key von Bloonix runterladen und installieren:
 
-bc. wget https://download.bloonix.de/repos/centos/RPM-GPG-KEY-Bloonix --output-document /etc/pki/rpm-gpg/RPM-GPG-KEY-Bloonix
+bc.. wget https://download.bloonix.de/repos/centos/RPM-GPG-KEY-Bloonix --output-document /etc/pki/rpm-gpg/RPM-GPG-KEY-Bloonix
 rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-Bloonix
 
 h2. Repository für openSUSE
@@ -81,10 +81,10 @@ p. Derzeit wird lediglich openSUSE in Version 13 unterstützt. Falls Sie SLES ei
 
 h3. Installation des Bloonix Repositories
 
-bc. rpm -ivh https://download.bloonix.de/repos/suse/13/noarch/bloonix-release-0.4-1.noarch.rpm
+bc.. rpm -ivh https://download.bloonix.de/repos/suse/13/noarch/bloonix-release-0.4-1.noarch.rpm
 
 p. Auflisting der Bloonix Pakete:
 
-bc. zypper search bloonix
+bc.. zypper search bloonix
 
 p. Die Installation der Pakete erfolgt später.

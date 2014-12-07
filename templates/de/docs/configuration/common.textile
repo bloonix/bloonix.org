@@ -4,52 +4,52 @@ h2. Konfiguration
 
 p. Die gesamte Konfiguration von Bloonix liegt unter:
 
-bc. /etc/bloonix
+bc.. /etc/bloonix
 
 p. Die einzelnen Applikationen haben folgende Konfigurationsdateien:
 
-bc. /etc/bloonix/server/main.conf
+bc.. /etc/bloonix/server/main.conf
 /etc/bloonix/srvchk/main.conf
 /etc/bloonix/webgui/main.conf
 /etc/bloonix/agent/main.conf
 
 p. Die Konfigurationtemplates liegen unter:
 
-bc. /usr/lib/bloonix/etc/bloonix
+bc.. /usr/lib/bloonix/etc/bloonix
 
 h2. Dienste Starten und Stoppen
 
 p. Alle Init-Skripts haben die gleichen Argumente:
 
-bc. /etc/init.d/bloonix-server [ start | stop | restart | condrestart ]
+bc.. /etc/init.d/bloonix-server [ start | stop | restart | condrestart ]
 /etc/init.d/bloonix-srvchk [ start | stop | restart | condrestart ]
 /etc/init.d/bloonix-webgui [ start | stop | restart | condrestart ]
 /etc/init.d/bloonix-agent  [ start | stop | restart | condrestart ]
 
 p. Systemd
 
-bc. systemctl [ start | stop | restart | condrestart ] bloonix-server.service
+bc.. systemctl [ start | stop | restart | condrestart ] bloonix-server.service
 systemctl [ start | stop | restart | condrestart ] bloonix-srvchk.service
 systemctl [ start | stop | restart | condrestart ] bloonix-webgui.service
 systemctl [ start | stop | restart | condrestart ] bloonix-agent.service
 
 p. Alle Init-Skripts laden die folgende Source-Datei
 
-bc. /usr/lib/bloonix/bin/bloonix-init-source
+bc.. /usr/lib/bloonix/bin/bloonix-init-source
 
 h2. Logfiles
 
 p. Alle Dienste von Bloonix verfügen über ein eigenes Logfile. Diese Logfiles sind zu finden unter:
 
-bc. /var/log/bloonix
+bc.. /var/log/bloonix
 
 h2. Plugins
 
 p. Der Pfad zu den Bloonix-Plugins lautet:
 
-bc. /usr/lib/bloonix/plugins
+bc.. /usr/lib/bloonix/plugins
 
 p. Der Pfad zu den Pluginbeschreibungen lautet:
 
-bc. /usr/lib/bloonix/etc/plugins
+bc.. /usr/lib/bloonix/etc/plugins
 

@@ -2,7 +2,7 @@ h2. Sektion: elasticsearch
 
 p. In dieser Sektion werden die Verbindungsparameter zu Elasticsearch konfiguriert.
 
-bc. elasticsearch {
+bc.. elasticsearch {
     proto http
     host 127.0.0.1:9200, 127.0.0.2:9200
     timeout 60

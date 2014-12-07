@@ -6,89 +6,89 @@ p. _ACHTUNG_, die Versionsnummer kann in den Beispielen variieren!</p>
 
 h3. Debian
 
-bc. apt-get install postgresql
+bc.. apt-get install postgresql
 
 p. Als nächstes muss PostgreSQL konfiguriert werden, damit PostgreSQL über eine IP erreichbar ist. Die Konfigurationsdatei lautet:
 
-bc. /etc/postgresql/9.1/main/postgresql.conf
+bc.. /etc/postgresql/9.1/main/postgresql.conf
 
 p. und darin muss folgende Zeile konfiguriert werden:
 
-bc. listen_addresses = 'localhost'
+bc.. listen_addresses = 'localhost'
 
 p. PostgreSQL neu starten
 
-bc. /etc/init.d/postgresql restart
+bc.. /etc/init.d/postgresql restart
 # oder
 systemctl restart postgresql.service
 
 h3. Red Hat / CentOS / Fedora
 
-bc. yum install postgresql-server
+bc.. yum install postgresql-server
 
 p. Zunächst muss eine Datenbank initialisiert werden:
 
-bc. service postgresql initdb
+bc.. service postgresql initdb
 
 p. Als nächstes muss PostgreSQL konfiguriert werden, damit PostgreSQL über eine IP erreichbar ist. Die Konfigurationsdatei lautet:
 
-bc. /var/lib/pgsql/data/postgresql.conf
+bc.. /var/lib/pgsql/data/postgresql.conf
 
 p. und darin muss folgende Zeile konfiguriert werden
 
-bc. listen_addresses = 'localhost'
+bc.. listen_addresses = 'localhost'
 
 p. Eine weitere Datei muss konfiguriert werden. Diese lautet:
 
-bc. /var/lib/pgsql/data/pg_hba.conf
+bc.. /var/lib/pgsql/data/pg_hba.conf
 
 p. und darin folgende Zeilen:
 
-bc. host    all             all             127.0.0.1/32            ident
+bc.. host    all             all             127.0.0.1/32            ident
 host    all             all             ::1/128                 ident
 
 p. __ersetzen durch__ (oder hinzufügen, falls die Zeilen nicht existieren):
 
-bc. host    all             all             127.0.0.1/32            md5
+bc.. host    all             all             127.0.0.1/32            md5
 host    all             all             ::1/128                 md5
 
 p. PostgreSQL neu starten:
 
-bc. /etc/init.d/postgresql restart
+bc.. /etc/init.d/postgresql restart
 # oder
 systemctl restart postgresql.service
 
 h2. SuSE / SLES
 
-bc. zypper install postgresql-server
+bc.. zypper install postgresql-server
 
 p. Zunächst muss eine Datenbank initialisiert werden. Dies passiert beim initialen Start von PostgreSQL:
 
-bc. systemctl start postgresql.service
+bc.. systemctl start postgresql.service
 
 p. Als nächstes muss PostgreSQL konfiguriert werden, damit PostgreSQL über eine IP erreichbar ist. Die Konfigurationsdatei lautet:
 
-bc. /var/lib/pgsql/data/postgresql.conf
+bc.. /var/lib/pgsql/data/postgresql.conf
 
 p. und darin muss folgende Zeile konfiguriert werden
 
-bc. listen_addresses = 'localhost'
+bc.. listen_addresses = 'localhost'
 
 p. Eine weitere Datei muss konfiguriert werden. Diese lautet:
 
-bc. /var/lib/pgsql/data/pg_hba.conf
+bc.. /var/lib/pgsql/data/pg_hba.conf
 
 p. und darin folgende Zeilen:
 
-bc. host    all             all             127.0.0.1/32            ident
+bc.. host    all             all             127.0.0.1/32            ident
 host    all             all             ::1/128                 ident
 
 p. __ersetzen durch__ (oder hinzufügen, falls die Zeilen nicht existieren):
 
-bc. host    all             all             127.0.0.1/32            md5
+bc.. host    all             all             127.0.0.1/32            md5
 host    all             all             ::1/128                 md5
 
 p. PostgreSQL neu starten:
 
-bc. systemctl restart postgresql.service
+bc.. systemctl restart postgresql.service
 

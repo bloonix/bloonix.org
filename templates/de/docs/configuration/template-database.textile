@@ -2,7 +2,7 @@ h2. Sektion: database
 
 p. In dieser Sektion werden die Parameter für die Datenbank konfiguiert und sind selbsterklärend.
 
-bc. database {
+bc.. database {
     driver Pg
     host 127.0.0.1
     port 5432

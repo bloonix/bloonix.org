@@ -2,11 +2,11 @@ h1. Konfiguration des Bloonix-Servers
 
 p. Die Konfiguration des Servers befindet sich in:
 
-bc. /etc/bloonix/server/main.conf
+bc.. /etc/bloonix/server/main.conf
 
 h2. Globale Parameter
 
-bc. user bloonix
+bc.. user bloonix
 group bloonix
 timezone Europe/Berlin
 hostname yourhostname
@@ -25,7 +25,7 @@ h3. Roll-Forward-Log
 
 p. Jedesmal, wenn Elasticsearch nicht erreichbar ist oder ein Fehler auftritt, werden Inserts und Updates in eine Datei geschrieben. Wenn zum Beispiel Elasticsearch nach einem Update einen Cluster-Restart erfordert, landen alle Aktionen in der Datei. Diese Einträge können später importiert werden. Das Kommando hierzu lautet:
 
-bc. bloonix-roll-forward-log
+bc.. bloonix-roll-forward-log
 
 p. Das Skript läd automatisch die Serverkonfiguration und importiert vorhandene Einträge im Logfile nach Elasticsearch. Das Skript geht dabei wie folgt vor:
 
@@ -46,7 +46,7 @@ p. Ist das Skript einmal gestartet, sollte es auf keinen Fall gestoppt werden. D
 
 h2. Sektion: smsgateway
 
-bc. smsgateway {
+bc.. smsgateway {
     command /usr/bin/curl --silent https://sms.test?key=SECRET&from=BLOONIX&to=%TO%&message=%MESSAGE%
     response ^100$
 }
@@ -59,7 +59,7 @@ h2. Sektion: email
 
 p. Diese Sektion wird für das Versenden von E-Mails an Kontakte konfiguriert.
 
-bc. email {
+bc.. email {
     from subdomain@yourdomain.test
     bcc admin@yourdomain.test
     subject *** STATUS %s FOR %h (%a) ***
@@ -73,7 +73,7 @@ bc. email {
 
 h2. Sektion: redirect_remote_agent_timeouts
 
-bc. redirect_remote_agent_timeouts {
+bc.. redirect_remote_agent_timeouts {
     sms_to 012345
     mail_to foo@example.test
 }
