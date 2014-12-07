@@ -24,7 +24,8 @@ a:hover {
     font-family: "Roboto","PT Sans","Arial","sans-serif";
 }
 #doc-nav {
-    width: 300px;
+    width: 280px;
+    padding-right: 20px;
     float: left;
 }
 #doc-nav ol {
@@ -35,8 +36,7 @@ a:hover {
     padding: 2px;
 }
 #doc-content {
-    width: 880px;
-    padding-left: 20px;
+    width: 900px;
     padding-bottom: 40px;
     float: left;
 }
@@ -101,6 +101,7 @@ a:hover {
     padding: 10px;
     color: #3B3F70;
     border-left: 3px solid #C0C2DF;
+    overflow: auto;
 }
 #doc-content ul, #doc-content ol {
     margin: 20px 0 20px 40px;
