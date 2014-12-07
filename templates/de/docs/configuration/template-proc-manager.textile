@@ -13,7 +13,7 @@ bc. proc-manager {
         allow_from 127.0.0.1
     }
 }
- 
+
 |Parameter|Standard|Beschreibung|
 |min_spare_servers|10|Wieviele Prozesse mit Leerlauf sollen mindestens verfügbar sein. Wenn die Zahl unterschritten wird, werden weitere Prozesse gestartet, solange, bis der Parameter __max_spare_servers__ erreicht ist.|
 |max_spare_servers|20|Wieviele Prozesse mit Leerlauf darf es maximal geben. Wenn die Zahl erreicht ist, werden soviele Prozesse beendet, bis der Parameter __min_spare_servers__ erreicht ist.|
