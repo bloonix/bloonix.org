@@ -74,6 +74,7 @@ a:hover {
     margin: 30px auto 20px auto;
 }
 #doc-content p {
+    margin-bottom: 16px;
     font-size: 16px;
     line-height: 30px;
 }
