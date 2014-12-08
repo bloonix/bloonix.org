@@ -8,7 +8,7 @@ bc. /etc/bloonix
 
 p. Die einzelnen Applikationen haben folgende Konfigurationsdateien:
 
-bc.. /etc/bloonix/server/main.conf
+bc. /etc/bloonix/server/main.conf
 /etc/bloonix/srvchk/main.conf
 /etc/bloonix/webgui/main.conf
 /etc/bloonix/agent/main.conf
@@ -21,17 +21,17 @@ h2. Dienste Starten und Stoppen
 
 p. Alle Init-Skripts haben die gleichen Argumente:
 
-bc. /etc/init.d/bloonix-server [ start  |  stop  |  restart  |  condrestart ]
-/etc/init.d/bloonix-srvchk [ start  |  stop  |  restart  |  condrestart ]
-/etc/init.d/bloonix-webgui [ start  |  stop  |  restart  |  condrestart ]
-/etc/init.d/bloonix-agent  [ start  |  stop  |  restart  |  condrestart ]
+bc. /etc/init.d/bloonix-server [ start | stop | restart |  condrestart ]
+/etc/init.d/bloonix-srvchk [ start | stop | restart | condrestart ]
+/etc/init.d/bloonix-webgui [ start | stop | restart | condrestart ]
+/etc/init.d/bloonix-agent  [ start | stop | restart | condrestart ]
 
 p. Systemd
 
-bc. systemctl [ start  |  stop  |  restart  |  condrestart ] bloonix-server.service
-systemctl [ start  |  stop  |  restart  |  condrestart ] bloonix-srvchk.service
-systemctl [ start  |  stop  |  restart  |  condrestart ] bloonix-webgui.service
-systemctl [ start  |  stop  |  restart  |  condrestart ] bloonix-agent.service
+bc. systemctl [ start | stop | restart | condrestart ] bloonix-server.service
+systemctl [ start | stop | restart | condrestart ] bloonix-srvchk.service
+systemctl [ start | stop | restart | condrestart ] bloonix-webgui.service
+systemctl [ start | stop | restart | condrestart ] bloonix-agent.service
 
 p. Alle Init-Skripts laden die folgende Source-Datei
 
