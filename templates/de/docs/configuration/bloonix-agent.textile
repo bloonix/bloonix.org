@@ -21,6 +21,7 @@ include /etc/bloonix/agent/conf.d
 | nagios_plugins |  | Falls Sie Nagios Plugins einsetzen möchten, so können Sie hier den Pfad zu den installierten Plugins setzen. Eine komma-separierte Liste von Pfaden ist möglich. |
 | include |  | Mit dem Parameter __include__ lassen sich andere Konfigurationsdateien oder sogar Verzeichnisse einbinden. Falls das Ziel ein Verzeichnis ist, so werden alle Dateien darin inkludiert, die mit __.conf__ enden. |
 | use_sudo |  | Welche Checks sollen global mit sudo ausgeführt werden. Hier werden nur die Checks Skripte angegeben, ohne Pfade. Es ist möglich mehrere Skripte komma-separiert anzugeben. Die hier eingerichteten Skripts gelten für alle Hosts. |
+| config_path | /etc/bloonix/agent | Dieser Parameter wird als Umgebungsvariable gesetzt (CONFIG_PATH=config_path) vor der Ausführung eines Checks. Es gibt diverse Checks, wie zum Beispiel das Skript __check-logfile__, welches diesen Pfad verwendet, um nach eigenen Konfigurationsdateien unterhalb des Pfades zu suchen. |
 
 h3. Parameter agents
 
