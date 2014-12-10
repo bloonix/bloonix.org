@@ -51,6 +51,11 @@ h4. bloonix-update-agent-host-config
 
 h4. bloonix-cli
 
+p. Mit diesem Skript kann vereinfacht mit der WebGUI kommuniziert werden. Der Aufruf des Skripts ist recht einfach:
+
+bc. bloonix-cli https://webgui/hosts -d '{ "limit": 10 }'
+
+p. Auf Wunsch kann man die Session-ID im Home-Verzeichnis des Benutzers speichern, um nicht bei jedem Aufruf den Benutzernamen und das Passwort eingeben zu müssen.
 
 h4. bloonix-init-host
 
