@@ -38,7 +38,7 @@ p. Dieses Skript zeigt die Anzahl Dokumente für jeden Service, welche in Elasti
 
 h4. bloonix-delete-es-host-data
 
-p. Mit diesem Skript können Host Daten aus Elasticsearch entfernt werden. Die Aufbewahrungsdauer der Daten wird bei der Konfiguration der Hosts in der WebGUI bestimmt.
+p. Mit diesem Skript können Daten von Hosts aus Elasticsearch entfernt werden. Die Aufbewahrungsdauer der Daten wird bei der Konfiguration der Hosts in der WebGUI bestimmt.
 
 h4. bloonix-get-sms-count
 
