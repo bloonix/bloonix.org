@@ -3,5 +3,6 @@
     { "Bloonix-WebGUI": "bloonix-webgui.textile" },
     { "Bloonix-Server": "bloonix-server.textile" },
     { "Bloonix-Service-Checker": "bloonix-service-checker.textile" },
-    { "Bloonix-Agent": "bloonix-agent.textile" }
+    { "Bloonix-Agent": "bloonix-agent.textile" },
+    { "Skripte und Cronjobs": "bloonix-scripts.textile" }
 ]
