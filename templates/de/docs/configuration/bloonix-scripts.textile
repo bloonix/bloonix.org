@@ -1,0 +1,63 @@
+h1. Bloonix Skripte und Cronjobs
+
+h2. Skripte
+
+|_. Skript |_. Installiert durch |_. Kurzbeschreibung |
+| bloonix-check-for-maintenance | bloonix-server | Einrichtung einer globalen Downtime. |
+| bloonix-count-distinct-es-service-data | bloonix-server | Anzahl der Dokumente eines Hosts in Elasticsearch. |
+| bloonix-delete-es-host-data | bloonix-server | Daten eines Hosts löschen. |
+| bloonix-get-sms-count | bloonix-server | Anzahl der versendeten SMS einer Company. |
+| bloonix-roll-forward-log | bloonix-server | Einspielen von JSON Daten nach Ausfall von Elasticsearch. |
+| bloonix-update-agent-host-config | bloonix-server | Automatische Aktualisierung der Hostkonfiguration für den Bloonix-Agenten. |
+| bloonix-cli | bloonix-agent | Command-Line-Interface für die WebGUI. |
+| bloonix-init-host | bloonix-agent | Einen Host in der Agenten-Konfiguration anlegen. |
+| bloonix-create-plugin | bloonix-plugin-config | Erzeugung einer importfähigen Konfigurationsdatei eines Plugins. |
+| bloonix-load-plugins | bloonix-plugin-config | Eine Konfigurationdatei eines Plugins in die Datenbank importieren. |
+
+h3. Detaillierte Beschreibung der Skripte
+
+h4. bloonix-check-for-maintenance
+
+p. Mit diesem Skript kann geprüft werden, ob der Monitoring-Server eventuell Netzwerkprobleme hat. Die Prüfung erfolgt über einfache Ping-Checks zu einem externen Server. Der Aufruf des Skripts sieht beispielhaft wie folgt aus:
+
+bc. bloonix-check-for-maintenance -H a.server.example -H b.server.example -H c.server.example -e 600
+
+p. Die angegeben Server werden mittels __check-ping__ geprüft. Wenn die Ping-Checks für alle Server einen höheren Status als WARNING zurückgeben (CRITICAL oder UNKNOWN), so wird das Warnmeldesystem von Bloonix deaktiviert. Wenn nach der Deaktivierung mindestens ein Ping-Check wieder erfolgreich war, so wird das Warnmeldesystem nach einer Wartezeit von 600 Sekunden wieder aktiviert.
+
+p. Hintergrund:
+
+p. Die Überwachung von Hosts und Services geschieht über die Bloonix-Agenten. Wenn ein Bloonix-Agent den Bloonix-Server netzwerktechnisch nicht mehr erreichen kann, so laufen die Services, die von den Agenten überwacht werden, nach wenigen Minuten auf einen Timeout, der dazu führt, dass eine Warnmeldung für die Services generiert wird.
+
+p. Beispiel: Auf einem Server haben Sie den Bloonix-Agenten installiert. Dieser überwacht die Load-Average des Servers. Der Bloonix-Agent kann den Bloonix-Server nicht erreichen, um den aktuellen Status zu liefern. Irgendwann merkt der Bloonix-Server, dass der Status für die Load-Average seit mehreren Minuten nicht mehr aktualisiert wurde und würde nach einem Timeout eine eigene kritische Warnmeldung generieren.
+
+p. Nun, genau betrachtet gibt es jedoch kein Problem mit dem Host oder den Services, für die in diesem Fall eine Warnmeldung generiert würde, denn das Problem liegt nicht am Host, der überwacht wird, sondern beim Monitoring-Server selbst. Diese Warnmeldung könnte somit irreführend sein. Das Skript __bloonix-check-for-maintenance__ würde also einen Eintrag in der Bloonix-Datenbank tätigen, die alle Bloonix-Server dazu veranlasst, Warnmeldungen via SMS oder E-Mail zu unterdrücken.
+
+h4. bloonix-count-es-service-documents
+
+p. Dieses Skript zeigt die Anzahl Dokumente für jeden Service, welche in Elasticsearch gespeichert sind. Je nach Menge hat das Skript eine sehr lange Laufzeit, da es jeden Index befragen muss, wieviel Dokumente zu einer Service-ID gespeichert sind.
+
+h4. bloonix-delete-es-host-data
+
+p. Mit diesem Skript können Host Daten aus Elasticsearch entfernt werden. Die Aufbewahrungsdauer der Daten wird bei der Konfiguration der Hosts in der WebGUI bestimmt.
+
+h4. bloonix-get-sms-count
+
+
+h4. bloonix-roll-forward-log
+
+
+h4. bloonix-update-agent-host-config
+
+
+h4. bloonix-cli
+
+
+h4. bloonix-init-host
+
+
+h4. bloonix-create-plugin
+
+
+h4. bloonix-load-plugins
+
+
