@@ -22,6 +22,9 @@
 #doc-nav .chapter {
     padding-right: 6px;
 }
+#doc-nav .active-chapter {
+    color: #116c77;
+}
 #doc-content {
     width: 900px;
     padding-bottom: 40px;
