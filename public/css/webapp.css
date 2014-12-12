@@ -24,6 +24,7 @@
 }
 #doc-nav .active-chapter {
     color: #116c77;
+    font-weight: 400;
 }
 #doc-content {
     width: 900px;
