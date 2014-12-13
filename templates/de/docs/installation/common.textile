@@ -3,8 +3,8 @@ h1. Wichtige Information vorab
 p. Auf älteren Linux-Systemen werden aus dem Bloonix-Repository diverse Perl-Module installiert, wenn hierfür keine höheren Versionen aus einem anderen Repository zur Verfügung stehen. Diese Module sind
 
 bc. IO::Socket::SSL Version 1.77
-HTTP::Tiny Version 0.22
-Log::Handler Version 0.82
+HTTP::Tiny Version 0.022
+Log::Handler Version 0.84
 
 p. Diese Versionen werden mindestens zum Einsatz der Bloonix-Software benötigt. Bitte prüfen Sie vor der Installation der Bloonix-Software, ob andere Software, die von Ihnen eingesetzt wird, mit diesen Versionen nicht kompatibel sind oder ob es zu Problemen kommen kann.
 
