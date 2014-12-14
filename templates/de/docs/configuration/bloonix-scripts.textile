@@ -42,12 +42,15 @@ p. Mit diesem Skript können Daten von Hosts aus Elasticsearch entfernt werden. 
 
 h4. bloonix-get-sms-count
 
+In Bearbeitung.
 
 h4. bloonix-roll-forward-log
 
+In Bearbeitung.
 
 h4. bloonix-update-agent-host-config
 
+In Bearbeitung.
 
 h4. bloonix-cli
 
@@ -59,10 +62,12 @@ p. Auf Wunsch kann man die Session-ID im Home-Verzeichnis des Benutzers speicher
 
 h4. bloonix-init-host
 
+In Bearbeitung.
 
 h4. bloonix-create-plugin
 
+In Bearbeitung.
 
 h4. bloonix-load-plugins
 
-
+In Bearbeitung.
