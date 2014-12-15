@@ -38,19 +38,45 @@ p. Dieses Skript zeigt die Anzahl Dokumente für jeden Service, welche in Elasti
 
 h4. bloonix-delete-es-host-data
 
-p. Mit diesem Skript können Daten von Hosts aus Elasticsearch entfernt werden. Die Aufbewahrungsdauer der Daten wird bei der Konfiguration der Hosts in der WebGUI bestimmt.
+p. Mit diesem Skript können Daten von Hosts aus Elasticsearch entfernt werden. Die Aufbewahrungsdauer der Daten wird bei der Konfiguration der Hosts in der WebGUI bestimmt. Der Parameter hierzu lautet __Aufbewahrungszeit__.
 
 h4. bloonix-get-sms-count
 
-In Bearbeitung.
+p. Dieses Skript erstellt gibt die Anzahl versendeter SMS eines __Unternehmens__ aus. Der Aufruf des Skripts ist sehr einfach:
+
+bc. bloonix-get-sms-count 2014-01-01 2014-01-31
+
+p. Die Ausgabeformat hat folgenen Aufbau:
+
+bc. COMPANY-ID ; REAL-COMPANY-ID ; SMS-COUNT
+
+p. Der Unterschied zwischen __COMPANY-ID__ und __REAL-COMPANY-ID__ ist, dass die __COMPANY-ID__ das Auto-Increment Feld der Tabelle __COMAPNY__ ist, während __REAL-COMPANY-ID__ frei vergeben werden kann. Der Wert kann zum Beispiel verwendet werden, um die ID mit einer fremden Kundendatenbank abzugleichen.
 
 h4. bloonix-roll-forward-log
 
-In Bearbeitung.
+p. Mit diesem Skript können Daten importiert werden, die während eines Ausfalls von Elasticsearch nicht über den Bloonix-Server gespeichert werden konnten.
+
+p. Erläuterung:
+
+p. Der Bloonix-Server speichert Events und Statistiken von Services in Elasticsearch. Wenn das Speichern der Daten nicht erfolgreich war, zum Beispiel weil Elasticsearch nicht erreichbar war, so werden die Daten temporär in der Datei __/var/log/bloonix/elasticsearch-roll-forward.json__ gespeichert. Um diese Daten nun nachträglich zu importieren, kann das Skript __bloonix-roll-forward-log__ gestartet werden. Das Skript sucht automatisch nach der Log-Datei, importiert die Daten und legt danach eine neue Log-Datei an.
+
+p. _Bitte beachten Sie_, dass die Daten, vorallem die Event-Daten, extrem wichtig sind für die Reports und zur Ermittlung der Flap-Detection von Services. Wenn Events in Elasticsearch fehlen, dann führt das dazu, dass die Reports von betroffenen Services verfälscht sind. Um sicherzustellen, dass dies nie der Fall ist, sollten Sie die größe der Datei __/var/log/bloonix/elasticsearch-roll-forward.json__ über das Plugin __Filestat.Check__ überwachen. Sobald sich Daten darin befinden, sollten diese umgehend importiert werden.
 
 h4. bloonix-update-agent-host-config
 
-In Bearbeitung.
+p. Mit diesem Skript können Sie die Host-Konfiguration eines Agenten automatisiert pflegen. Angenommen, Sie möchten einen zentralen Agenten einrichten, der alle Service-Checks mit der Agenten-Lokation __remote__ überwachen soll.
+
+bc. bloonix-update-agent-host-config --addr localhost --agent-id remote --run
+
+p. Das Skript würde also nun alle Service-Checks mit der Lokation __remote__ aus der Datenbank lesen und diese in einer Datei namens __/etc/bloonix/agent/conf.d/hosts.conf__ schreiben und anschließend den Agenten neu laden. Der Parameter __--addr__ sagt aus, dass der Agent lokal liegt. Wenn Sie die Konfiguration eines Agenten aktualisieren möchten, der auf einem andere Server läuft, so können Sie einfach den Hostnamen über __--addr__ angeben.
+
+bc. bloonix-update-agent-host-config --addr agent.bloonix.net --agent-id remote --run
+
+p. Das Skript würde dann versuchen, sich über SSH auf dem Server __agent.bloonix.net__ mit dem Benutzer __root__ zu verbinden um dort die Konfiguration zu aktulisieren und den Agenten neu zu laden.
+
+p. Bitte beachten Sie, dass über den Parameter __--agent-id__ auch mehrere Lokationen komma-separiert angegeben werden können. Beispiel:
+
+bc. bloonix-update-agent-host-config --addr agent.bloonix.net --agent-id intranet,remote --run
 
 h4. bloonix-cli
 
@@ -62,7 +88,17 @@ p. Auf Wunsch kann man die Session-ID im Home-Verzeichnis des Benutzers speicher
 
 h4. bloonix-init-host
 
-In Bearbeitung.
+p. Dieses Skript haben Sie eventuell bereits kennengelernt, wenn Sie einen Agenten initial eingerichtet haben. Mit diesem Skript können Sie vereinfacht einen einzelnen Host einer Agenten-Konfiguration hinzufügen.
+
+p. Angenommen, Sie haben einen Host in der WebGUI eingerichtet und möchten den Agenten auf dem zu überwachenden Server nun konfigurieren. Dies können Sie wie folgt machen:
+
+bc. bloonix-init-host  $hostID.$hostPassword  $bloonixServer1,$bloonixServer2
+
+p. Das Skript benötigt die Host-ID, das Host-Passwort und die Adressen der Bloonix-Server. Bitte beachten Sie, dass die Adressen der Bloonix-Server beim zweiten Ausführen nicht erneut mit angegeben werden müssen.
+
+bc. bloonix-init-host 1000.a9f8hawefhvwfhv98sahdfvauish  server1.bloonix.net,server2.bloonix.net
+
+p. Nachdem das Skript ausgeführt wurde, wird eine Konfigurationsdatei names __/etc/bloonix/agent/conf.d/host-1000.conf__ angelegt und der Agent wird neu gestartet, damit dieser sofort mit der Überwachung des Hosts beginnen kann.
 
 h4. bloonix-create-plugin
 

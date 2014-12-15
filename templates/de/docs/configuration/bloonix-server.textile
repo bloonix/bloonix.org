@@ -29,7 +29,6 @@ bc. bloonix-roll-forward-log
 
 p. Das Skript läd automatisch die Serverkonfiguration und importiert vorhandene Einträge im Logfile nach Elasticsearch. Das Skript geht dabei wie folgt vor:
 
-
 * Logfile umbenennen nach __elasticsearch-roll-forward.json.import__.
 * Eine Datei namens __elasticsearch-roll-forward.json.import.count__ anlegen, um den Verarbeitungsstatus zu speichern.
 * Das Logfile __elasticsearch-roll-forward.json.import__ wird importiert.
