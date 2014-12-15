@@ -3,5 +3,6 @@
     { "Lizenzen": "license.textile" },
     { "Komponenten": "components" },
     { "Installation": "installation" },
-    { "Konfiguration": "configuration" }
+    { "Konfiguration": "configuration" },
+    { "HowTos": "howtos" }
 ]
