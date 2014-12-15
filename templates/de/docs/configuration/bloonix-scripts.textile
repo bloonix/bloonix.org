@@ -100,10 +100,7 @@ bc. bloonix-init-host 1000.a9f8hawefhvwfhv98sahdfvauish  server1.bloonix.net,ser
 
 p. Nachdem das Skript ausgeführt wurde, wird eine Konfigurationsdatei names __/etc/bloonix/agent/conf.d/host-1000.conf__ angelegt und der Agent wird neu gestartet, damit dieser sofort mit der Überwachung des Hosts beginnen kann.
 
-h4. bloonix-create-plugin
+h4. bloonix-create-plugin, bloonix-load-plugins
 
-In Bearbeitung.
+p. Diese Skripts sind für Entwickler interessant, die eigene Plugins für Bloonix entwickeln möchten. Bitte lesen Sie hierzu das Dokument "HowTo: Plugins entwickeln":/de/docs/howtos/howto-write-plugins.html .
 
-h4. bloonix-load-plugins
-
-In Bearbeitung.
