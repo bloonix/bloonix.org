@@ -60,7 +60,7 @@ p. Erläuterung:
 
 p. Der Bloonix-Server speichert Events und Statistiken von Services in Elasticsearch. Wenn das Speichern der Daten nicht erfolgreich war, zum Beispiel weil Elasticsearch nicht erreichbar war, so werden die Daten temporär in der Datei __/var/log/bloonix/elasticsearch-roll-forward.json__ gespeichert. Um diese Daten nun nachträglich zu importieren, kann das Skript __bloonix-roll-forward-log__ gestartet werden. Das Skript sucht automatisch nach der Log-Datei, importiert die Daten und legt danach eine neue Log-Datei an.
 
-p. _Bitte beachten Sie_, dass die Daten, vorallem die Event-Daten, extrem wichtig sind für die Reports und zur Ermittlung der Flap-Detection von Services. Wenn Events in Elasticsearch fehlen, dann führt das dazu, dass die Reports von betroffenen Services verfälscht sind. Um sicherzustellen, dass dies nie der Fall ist, sollten Sie die größe der Datei __/var/log/bloonix/elasticsearch-roll-forward.json__ über das Plugin __Filestat.Check__ überwachen. Sobald sich Daten darin befinden, sollten diese umgehend importiert werden.
+p. _Bitte beachten Sie_, dass die Daten, vorallem die Event-Daten, extrem wichtig sind für die Reports und zur Ermittlung der Flap-Detection von Services. Wenn Events in Elasticsearch fehlen, dann führt das dazu, dass die Reports von betroffenen Services verfälscht sind. Um sicherzustellen, dass dies nie der Fall ist, sollten Sie die Größe der Datei __/var/log/bloonix/elasticsearch-roll-forward.json__ über das Plugin __Filestat.Check__ überwachen. Sobald sich Daten darin befinden, sollten diese umgehend importiert werden. Die Log-Datei muss auf allen Server überwacht werden, auf denen der Bloonix-Server aktiv ist.
 
 h4. bloonix-update-agent-host-config
 
