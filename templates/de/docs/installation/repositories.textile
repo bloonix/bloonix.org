@@ -20,19 +20,19 @@ bc. wget https://download.bloonix.de/repos/debian/bloonix.gpg -O- | apt-key add 
 p. Jetzt muss nur noch das passende Bloonix Repository in __/etc/apt/sources.list__ eingetragen werden:
 
 bc. # Debian 6:
-echo "deb https://download.bloonix.de/repos/debian/ squeeze main" >>/etc/apt/sources.list
+echo "deb https://download.bloonix.de/repos/debian/ squeeze main" >>/etc/apt/sources.list.d/bloonix.list
 
 bc. # Debian 7:
-echo "deb https://download.bloonix.de/repos/debian/ wheezy main" >>/etc/apt/sources.list
+echo "deb https://download.bloonix.de/repos/debian/ wheezy main" >>/etc/apt/sources.list.d/bloonix.list
 
 bc. # Debian 8:
-echo "deb https://download.bloonix.de/repos/debian/ jessie main" >>/etc/apt/sources.list
+echo "deb https://download.bloonix.de/repos/debian/ jessie main" >>/etc/apt/sources.list.d/bloonix.list
 
 bc. # Ubuntu 12.04:
-echo "deb https://download.bloonix.de/repos/ubuntu/ precise main" >>/etc/apt/sources.list
+echo "deb https://download.bloonix.de/repos/ubuntu/ precise main" >>/etc/apt/sources.list.d/bloonix.list
 
 bc. # Ubuntu 14.04:
-echo "deb https://download.bloonix.de/repos/ubuntu/ trusty main" >>/etc/apt/sources.list
+echo "deb https://download.bloonix.de/repos/ubuntu/ trusty main" >>/etc/apt/sources.list.d/bloonix.list
 
 p. Falls Ubuntu zum Einsatz kommt, sollte das passende Debian Release zum Ubuntu Release eingetragen werden.
 
