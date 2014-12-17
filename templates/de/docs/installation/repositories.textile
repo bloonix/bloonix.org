@@ -17,7 +17,7 @@ p. Als nächstes muss der Public-Signing-Key von Bloonix runtergeladen und insta
 
 bc. wget https://download.bloonix.de/repos/debian/bloonix.gpg -O- | apt-key add -
 
-p. Jetzt muss nur noch das passende Bloonix Repository in __/etc/apt/sources.list__ eingetragen werden:
+p. Jetzt muss nur noch das passende Bloonix Repository in __/etc/apt/sources.list.d/bloonix.list__ eingetragen werden:
 
 bc. # Debian 6:
 echo "deb https://download.bloonix.de/repos/debian/ squeeze main" >>/etc/apt/sources.list.d/bloonix.list
