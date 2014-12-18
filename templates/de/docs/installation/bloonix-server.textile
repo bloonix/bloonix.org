@@ -39,7 +39,7 @@ bc. /etc/nginx/conf.d/bloonix-server.conf
 
 p. Die Konfiguration:
 
-bc. server {
+bc.. server {
     listen 8443;
     server_name bloonix-server;
 
