@@ -21,7 +21,7 @@ h2. Sektion: server
 
 p. Beispielkonfiguration:
 
-bc. server {
+bc.. server {
     proto https
     host p1.bloonix.de:8443, s1.bloonix.de:8443
     mode failover
