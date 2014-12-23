@@ -15,6 +15,8 @@ include /etc/bloonix/agent/conf.d
 
 |_. Parameter |_. Standard |_. Beschreibung |
 | agents | 1 | Wieviele Agenten sollen geforkt werden, um die konfigurierten Hosts zu überwachen. |
+| max_concurrent_checks | 4 | Mit diesem Parameter wird festgelegt, wieviele Checks maximal gleichzeitig für einen Host ausgeführt werden sollen. Der Parameter ist abhängig von der Einstellung des Parameters __agents__. Wenn der Parameter __agents__ auf 1 gesetzt ist, kann auch immer nur ein Check gleichzeitig ausgeführt werden. |
+| poll_interval | 60 | Der Bloonix-Agent pollt für jeden konfigurierten Host den Bloonix-Server standardmäßig alle 60 Sekunden um eine Liste der Services zu erhalten, die er prüfen soll. Dieser Parameter sollte nur dann kleiner gesetzt werden, wenn der Intervall eines Hosts oder von Services kleiner 60 Sekunden ist. |
 | user, group | bloonix | Mit diesen Parametern wird bestimmt, mit welchem Benutzer und welcher Gruppe der Agent läuft und die Checks ausführt. |
 | plugins | /usr/local/lib/bloonix/plugins | Mit dem Parameter __plugins__ wird der Pfad angegben, unter dem die Plugins zur Ausführung liegen. Sollte der Bloonix-Agent über einen Paketmanager installiert werden, so kann der Pfad abweichen. Auf Debian werden die Plugins beispielsweise unter /usr/lib/bloonix/plugins installiert. Unter Windows liegen die Plugins höchstwahrscheinlich im Installationsverzeichnis des Agenten. |
 | plugin_libdir | /var/lib/bloonix/agent | Unter diesem Pfad legen diverse Plugins Daten ab, um Deltas von statistischen Daten berechnen zu können. |
