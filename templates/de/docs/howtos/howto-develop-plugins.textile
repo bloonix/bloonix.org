@@ -73,10 +73,43 @@ p. Jedes Bloonix Plugin muss über mindestens 5 Optionen verfügen. Diese sind w
 
 |_. Parameter |_. Beschreibung |
 | --version | Ausgabe der Version des Plugins. |
-| --help | Ausgabe einer Hilfe zu Plugin mit Auflistung der Optionen. |
+| --help | Ausgabe einer Hilfe zum Plugin mit Auflistung der Optionen. |
+| --plugin-info | Ausführliche Informationen über das Plugin im JSON-Format. |
 | --stdin | Anweisung an das Plugin, die Optionen zur Ausführung über den STDIN-Kanal zu lesen. |
 | --pretty | Anweisung an das Plugin, den JSON-String in einem leserlichen Format auszugeben. |
-| --plugin-info | Ausführliche Informationen über das Plugin im JSON-Format. |
+
+p. Die Optionen __--help__ und __--plugin-info__ sind fast identisch. Die Option __--help__ gibt die Hilfe so aus, wie es bei Programmen üblich ist:
+
+bc.. check-http --help
+
+Usage: check-http [ OPTIONS ]
+
+Options:
+
+--url <url>
+    This is the HTTP or HTTPS request you want to check. Please enter the full URL with the query string.
+    This option is mandatory.
+--warning <seconds>
+    A value in seconds. When the check takes longer than this time then a warning status is triggered.
+    Default: 3
+--critical <seconds>
+    A value in seconds. When the check takes longer than this time then a critical status is triggered.
+    Default: 5
+--timeout <seconds>
+    A timeout in seconds after its expiration the check is aborted and a critical status is triggered.
+    Default: 10
+--version
+    Print the version.
+--help
+    Print the help.
+--plugin-info
+    Print plugin information as JSON string.
+--pretty
+    Print the plugin information in pretty format
+...
+...
+
+p. Die Option __--plugin-info__ gibt die Informationen einen Plugins im JSON-Format aus, so dass diese Daten in die Datenbank von Bloonix importiert werden können. Dabei werden erweiterte Informationen zum Plugin ausgegeben. Weiteres erfährst du im nächsten Kapitel.
 
 h2. Informationen eines Plugins in die Bloonix Datenbank importieren
 
