@@ -1,3 +1,5 @@
+p. _IN ENTWICKLUNG_
+
 h1. HowTo: Plugins entwickeln
 
 p. Dieser Leitfaden richtet sich an Plugin Entwickler und erklärt die Standards und die Funktionsweise von Bloonix Plugins.
