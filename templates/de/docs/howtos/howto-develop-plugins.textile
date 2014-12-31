@@ -1,4 +1,4 @@
-p. _IN ENTWICKLUNG_
+p. _IN ENTWICKLUNG: Dieses HowTo ist noch nicht fertig_
 
 h1. HowTo: Plugins entwickeln
 
