@@ -1,4 +1,148 @@
 h1. HowTo: Plugins entwickeln
 
+p. Dieser Leitfaden richtet sich an Plugin Entwickler und erklärt die Standards und die Funktionsweise von Bloonix Plugins.
 
+p. Im Verlauf dieses HowTos wird das Plugin __check-http__ von Bloonix als Beispiel verwendet. Das Plugin können Sie sich im Github Repository von Bloonix anschauen: "Github check-http":https://github.com/bloonix/bloonix-plugins-basic/blob/master/plugins/check-http
+
+h2. Allgemeines
+
+p. Bloonix Plugins sind eigenständige Skripts, die den Status eines oder mehrerer Services abfragen und zugleich statistische Daten zum Service liefern. Die Skripts können in jeder beliebigen Sprache geschrieben werden, wobei die Plugins, die von Bloonix entwickelt werden, in der Programmiersprache Perl entwickelt sind.
+
+p. Jedes Plugin verfügt über diverse Optionen, ein Beispiel wäre:
+
+bc. check-http --url https://www.bloonix.de/ --warning 3 --critical 5 --timeout 10
+
+p. Mit diesem beispielhaften Aufruf wird die Antwortzeit des Webservers für die Domain www.bloonix.de geprüft. Benötigt die Antwort gleich oder länger als 5 Sekunden, so wird ein kritischer Status zurückgegeben. Benötigt die Antwort gleich oder länger 3 Sekunden, so wird eine Warnung zurückgegeben. Nach 10 Sekunden wird die HTTP-Abfrage abgebrochen und ein kritischer Status zurückgegeben.
+
+p. Insbesonders ist zu beachten, dass die Optionen eines Plugins, wie zum Beispiel __--url__, __--warning__ und __--critical__, in die Datenbank von Bloonix importiert werden müssen, damit einem Benutzer bei der Konfiguration eines Service-Checks in der WebGUI die Optionen als Formularfelder zur Verfügung stehen. Wie das funktioniert, wird im weiteren Verlauf dieses HowTos eingegangen.
+
+!{width: 640px; margin: 40px 0;}/public/img/service-settings-check-http.png!
+
+h2. Statuscodes
+
+p. Statuscodes spiegeln den Status eines Service wieder. Es gibt für Bloonix Plugins vier mögliche Statuscodes:
+
+|_. Status String |_. Exitcode |_. Kurzbeschreibung |
+| OK | 0 | Der Service ist verfügbar. Es gibt keinen Handlungsbedarf. |
+| WARNING | 1 | Der Service ist verfügbar, es gibt Handlungsbedarf, aber nicht dringend. |
+| CRITICAL | 2 | Der Service befindet sich in einem kritischen Status. Es gibt dringenden Handlungsbedarf. |
+| UNKNOWN | 3 | Das Bloonix Plugin konnte nicht ausgeführt werden oder hat einen unerwarteten Fehler geliefert. |
+
+p. Es gibt natürlich für jeden Status Raum für unterschiedliche Interpretationen. Zu beachten ist jedoch, dass der Status __UNKNOWN__ einzig den Status des Plugins selbst beschreibt und nicht den Status eines Service. Das könnte zum Beispiel der Fall sein, wenn das Plugin __check-http__ nicht ausgeführt werden konnte, weil das Programm __curl__ nicht installiert ist oder weil die Parameterübergabe fehlerhaft war. Sobald alle Abhängigkeiten eines Plugins erfüllt sind, so muss der Status __OK__, __WARNING__ oder __CRITICAL__ sein.
+
+h3. Plugins ausführen
+
+p. Die Plugins von Bloonix können für Testzwecke über Kommandozeilenparametern aufgerufen werden. Beispiel:
+
+bc. check-http --url https://www.bloonix.de/ --warning 3 --critical 5 --timeout 10
+
+p. Der Bloonix Agent, welcher für die Ausführung der Plugins verantwortlich ist, übergibt die Optionen jedoch über __STDIN__ an das Plugin und im JSON-Format. Der Bloonix Agent verwendet die Option __--stdin__, um die Übergabe der Optionen über __STDIN__ einzuleiten. Die Ausgabe des Plugins erfolgt in einer einzigen Zeile und ebenfalls im JSON-Format. Um eine lesbare Ausgabe zu erhalten, sollte der Parameter __--pretty__ fürs Debugging implementiert werden.
+
+p. Es folgt ein beispielhafter Aufruf des Plugins __check-http__:
+
+bc. check-http --stdin --pretty
+{"url":"https://www.bloonix.de","warning":3,"critical":5,"timeout":10}
+
+p. Die Ausgabe sieht in etwa so aus:
+
+bc. {
+   "status" : "OK",
+   "debug" : {
+      "http-header" : {
+         "Connection" : "keep-alive",
+         "Server" : "nginx",
+         "Content-Type" : "text/html; charset=utf-8",
+         "Transfer-Encoding" : "chunked",
+         "Date" : "Wed, 24 Dec 2014 13:36:51 GMT"
+      },
+      "ipaddr" : "127.0.0.1"
+   },
+   "stats" : {
+      "time" : "16.433"
+   },
+   "message" : "HTTP/1.1 200 OK, response in 0.016433s, 10764 bytes, IP: 127.0.0.1"
+}
+
+h2. Optionen
+
+p. Die Optionen eines Plugins werden dazu verwendet, dem Plugin bestimmte Anweisungen zur Ausführung zu geben. Zum Beispiel kann über den Parameter __--help__ eine Hilfe zu einem Plugin abgerufen werden. Eine Kurzversion der Optionen, zum Beispiel __-h__ für die Hilfe, gibt es nicht. Alle Optionen gibt es nur im langen Format.
+
+p. Jedes Bloonix Plugin muss über mindestens 5 Optionen verfügen. Diese sind wie folgt:
+
+|_. Parameter |_. Beschreibung |
+| --version | Ausgabe der Version des Plugins. |
+| --help | Ausgabe einer Hilfe zu Plugin mit Auflistung der Optionen. |
+| --stdin | Anweisung an das Plugin, die Optionen zur Ausführung über den STDIN-Kanal zu lesen. |
+| --pretty | Anweisung an das Plugin, den JSON-String in einem leserlichen Format auszugeben. |
+| --plugin-info | Ausführliche Informationen über das Plugin im JSON-Format. |
+
+h2. Informationen eines Plugins in die Bloonix Datenbank importieren
+
+p. In Bearbeitung.
+
+h2. Programmierstil
+
+h3. Grundlegendes
+
+* Es sollte immer die englische Sprache verwendet werden, sei es für Variablennamen, Erklärungen oder auch der Ausgabe von Plugins.
+* Verwende keine Hard-Tabs, sondern immer Soft-Tabs mit einer Länge von 4 Leerzeichen.
+* Für die Einrückung sollten immer 4 Leerzeichen (1 Softtab) verwendet werden.
+* Halte den Codingstyle der Programmiersprache bei, welche verwendet wird, jedoch unter Beachtung der oberen Punkte.
+
+h3. Perl
+
+p. Solte die Programmiersprache Perl verwendet werden, so findest du hier einen Codingstyle: "Perlstyle":http://perldoc.perl.org/perlstyle.html
+
+p. Verwende +kein+ CamelCase:
+
+bc. my $someVariableThatContainsData =
+    someSubroutineThatProcessDataAndReturnsItBack( $someAwfulVariable );
+
+p. Verwende snake_case, denn das ist deutlich lesbarer:
+
+bc. my $some_variable_that_contains_data =
+    some_subroutine_that_process_data_and_returns_it_back( $some_awful_variable );
+
+p. Verhindere unnötiges Zeichenrauschen. Schreib lesbar. Statt
+
+bc. if(ref($data) eq "HASH")
+{
+
+p. schreib es so:
+
+bc. if (ref $data eq "HASH") {
+
+p. oder statt
+
+bc. my %hash = ("foo" => 1, "bar" => 2, "baz" => 3);
+
+p. geht es auch so:
+
+bc. my %hash = (foo => 1, bar => 2, baz => 3);
+
+p. Noch ein paar schlechte Beispiele:
+
+bc.. foreach my $var (qw(a b c)) {
+
+$var =~ s/\/\/a\/\//b/g;
+
+open(FH,">$foo") or die $!;
+
+p. So geht es lesbarer
+
+bc.. foreach my $var (qw/a b c/) {
+
+$var =~ s!//a//!b!g;
+
+open my $fh, ">", $foo or die $!;
+
+p. Verwende nach einem Punkt, Komma oder Semikolon ein Leerzeichen. So
+
+bc. my $var = join(",", $a, $b, @c, "and this");
+
+p. anstatt
+
+bc. my $var = join(",",$a,$b,@c,"and this");
+
+h2. Ein Plugin Step für Step entwickeln
 
