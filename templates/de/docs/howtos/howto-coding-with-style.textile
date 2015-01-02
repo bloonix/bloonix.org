@@ -1,0 +1,66 @@
+h1. Coding mit Stil
+
+h2. Programmierstil
+
+h3. Grundlegendes
+
+* Es sollte immer die englische Sprache verwendet werden, sei es für Variablennamen, Erklärungen oder auch der Ausgabe von Plugins.
+* Verwende keine Hard-Tabs, sondern immer Soft-Tabs mit einer Länge von 4 Leerzeichen.
+* Für die Einrückung sollten immer 4 Leerzeichen (1 Softtab) verwendet werden.
+* Halte den Codingstyle der Programmiersprache bei, welche verwendet wird, jedoch unter Beachtung der oberen Punkte.
+
+h3. Perl
+
+p. Solte die Programmiersprache Perl verwendet werden, so findest du hier einen Codingstyle: "Perlstyle":http://perldoc.perl.org/perlstyle.html
+
+p. Verwende +kein+ CamelCase:
+
+bc. my $someVariableThatContainsData =
+    someSubroutineThatProcessDataAndReturnsItBack( $someAwfulVariable );
+
+p. Verwende snake_case, denn das ist deutlich lesbarer:
+
+bc. my $some_variable_that_contains_data =
+    some_subroutine_that_process_data_and_returns_it_back( $some_awful_variable );
+
+p. Verhindere unnötiges Zeichenrauschen. Schreib lesbar. Statt
+
+bc. if(ref($data) eq "HASH")
+{
+
+p. schreib es so:
+
+bc. if (ref $data eq "HASH") {
+
+p. oder statt
+
+bc. my %hash = ("foo" => 1, "bar" => 2, "baz" => 3);
+
+p. geht es auch so:
+
+bc. my %hash = (foo => 1, bar => 2, baz => 3);
+
+p. Noch ein paar schlechte Beispiele:
+
+bc.. foreach my $var (qw(a b c)) {
+
+$var =~ s/\/\/a\/\//b/g;
+
+open(FH,">$foo") or die $!;
+
+p. So geht es lesbarer
+
+bc.. foreach my $var (qw/a b c/) {
+
+$var =~ s!//a//!b!g;
+
+open my $fh, ">", $foo or die $!;
+
+p. Verwende nach einem Punkt, Komma oder Semikolon ein Leerzeichen. So
+
+bc. my $var = join(",", $a, $b, @c, "and this");
+
+p. anstatt
+
+bc. my $var = join(",",$a,$b,@c,"and this");
+
