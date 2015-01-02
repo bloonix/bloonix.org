@@ -4,9 +4,9 @@ h2. Programmierstil
 
 h3. Grundlegendes
 
-* Es sollte immer die englische Sprache verwendet werden, sei es für Variablennamen, Erklärungen oder auch der Ausgabe von Plugins.
+* Es sollte immer die englische Sprache verwendet werden, sei es für Variablennamen, Erklärungen, Meldungen fürs Logfile oder auch der Ausgabe von Plugins.
 * Verwende keine Hard-Tabs, sondern immer Soft-Tabs mit einer Länge von 4 Leerzeichen.
-* Für die Einrückung sollten immer 4 Leerzeichen (1 Softtab) verwendet werden.
+* Für die Einrückung sollten immer 4 Leerzeichen (1 Soft-Tab) verwendet werden.
 * Halte den Codingstyle der Programmiersprache bei, welche verwendet wird, jedoch unter Beachtung der oberen Punkte.
 
 h3. Perl
