@@ -99,8 +99,7 @@
 }
 #doc-content ul li, #doc-content ol li {
     font-size: 16px;
-    line-height: 20px;
-    padding: 4px 0;
+    line-height: 24px;
 }
 #doc-content .no-bullet-first-child li:first-child {
     list-style-type: none;
