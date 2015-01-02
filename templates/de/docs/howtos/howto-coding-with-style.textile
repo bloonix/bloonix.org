@@ -64,3 +64,10 @@ p. anstatt
 
 bc. my $var = join(",",$a,$b,@c,"and this");
 
+h2. Der Bloonix Code
+
+p. Wenn du in den Code von Bloonix blickst, dann wirst du sicherlich Codestellen finden, die nicht optimal sind. Wie das in vielen Softwareprojekten der Fall ist, gibt es oft Code, der schon lange existiert und gewachsen ist. Oder es gibt Funktionen/Methoden, die man __mal eben__ um ein paar Zeilen erweitert, ohne auf die Länge der Funktion/Methode zu achten.
+
+p. Mit der Zeit werden auch diese Codestellen überarbeitet... es ist halt immer eine Frage der Zeit :-)
+
+
