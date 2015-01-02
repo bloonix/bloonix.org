@@ -2,7 +2,7 @@ p. _IN ENTWICKLUNG: Dieses HowTo ist noch nicht fertig_
 
 h1. HowTo: Plugins entwickeln
 
-p. Dieser Leitfaden richtet sich an Plugin Entwickler und erklärt die Standards und die Funktionsweise von Bloonix Plugins.
+p. Dieser Leitfaden richtet sich an Plugin-Entwickler und erklärt die Standards und die Funktionsweise von Bloonix Plugins.
 
 p. Im Verlauf dieses HowTos wird das Plugin __check-http__ von Bloonix als Beispiel verwendet. Das Plugin können Sie sich im Github Repository von Bloonix anschauen: "Github check-http":https://github.com/bloonix/bloonix-plugins-basic/blob/master/plugins/check-http
 
@@ -109,7 +109,7 @@ Options:
 ...
 ...
 
-p. Die Option __--plugin-info__ gibt die Informationen einen Plugins im JSON-Format aus, so dass diese Daten in die Datenbank von Bloonix importiert werden können. Dabei werden erweiterte Informationen zum Plugin ausgegeben. Weiteres erfährst du im nächsten Kapitel.
+p. Die Option __--plugin-info__ gibt die Informationen einen Plugins im JSON-Format aus, so dass diese Daten in die Datenbank von Bloonix importiert werden können. Dabei werden erweiterte Informationen zum Plugin ausgegeben. Weiteres erfahren Sie im nächsten Kapitel.
 
 h2. Informationen eines Plugins in die Bloonix Datenbank importieren
 
