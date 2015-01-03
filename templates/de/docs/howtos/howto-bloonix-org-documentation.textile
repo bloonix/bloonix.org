@@ -38,7 +38,7 @@ bc. [
     { "Titel des Verzeichnisses" : "verzeichnis" }
 ]
 
-h2. Markup Textile
+h2. Textile Markup
 
 p. Die Dokumentation von Bloonix ist in Textile geschrieben. Aus diesem Grund erhalten alle Dokumente die Dateiendung __.textile__.
 
