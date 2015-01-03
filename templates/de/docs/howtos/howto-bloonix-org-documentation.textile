@@ -49,24 +49,6 @@ p. Bei der Gestaltung der Dokumente gibt es ein paar Regeln, die beachtet werden
 * Die Breite für den Inhalt beträgt derzeit 900 Pixel. Bilder sollten nicht größer sein oder skaliert werden.
 * Versuche, so wenig bis garkeine eigenen Styles zu verwenden.
 
-p. Hinzu kommt, dass jeder Absatz mit einem Textile Prefix eingeleitet werden sollte. Es folgt ein Beispiel, wie man es nicht machen sollte:
-
-<pre>
-h1. Titel
-
-Dies ist ein Text, der automatisch in ein Paragraph <p> eingebettet wird.
-
-Noch eine Zeile, die automatisch in ein Paragraph <p> eingebettet wird.
-</pre>
-
-<pre>
-h1. Titel
-
-p. Besser ist es, wenn jeder Absatz mit p. eingeleitet wird.
-
-p. Und hier auch.
-</pre>
-
 h2. Anker und Links
 
 p. Aus den h2-Elementen wird das Inhaltsverzeichnis eines Dokuments mittels Javascript automatisch generiert. Dieses erscheint dann oben rechts. Der Text aus den h2-Elementen wird als Anker verwendet und sollte daher nur aus bestimmten Zeichen entstehen. Aussen den normalen Zahlen und Buchstaben sollten nur folgende Sonderzeichen verwendet werden: Leerzeichen und _+-_.,;:__
