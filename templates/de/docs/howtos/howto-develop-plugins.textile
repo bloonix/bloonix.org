@@ -222,7 +222,7 @@ bc. "flags" : "sudo,this,that"
 
 p. Mit den Flags können für Plugins bestimmte Merkmale vergeben werden. Derzeit ist nur ein einzigen Flag verfügbar und zwar das Flag __sudo__. Wenn dieses Flag gesetzt ist, dann wird in der WebGUI bei der Einrichtung eines Services ein besonderer Hinweis angezeigt. Für das Plugins __check-smart-health__ sieht die Information wie folgt aus:
 
-!{margin: 40px 0;}/public/img/plugin-info-sudo.png!
+!{margin: 20px 0;}/public/img/plugin-info-sudo.png!
 
 h4. Optionen
 
@@ -267,7 +267,7 @@ bc. "examples" : [
 
 p. Die Beispiele werden in der WebGUI bei der Einrichtung eines Service-Checks angezeigt:
 
-!{margin: 40px 0;}/public/img/plugin-info-option-examples.png!
+!{margin: 20px 0;}/public/img/plugin-info-option-examples.png!
 
 h2. Informationen eines Plugins in die Bloonix Datenbank importieren
 
