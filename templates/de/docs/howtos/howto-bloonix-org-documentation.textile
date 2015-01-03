@@ -48,7 +48,6 @@ p. Bei der Gestaltung der Dokumente gibt es ein paar Regeln, die beachtet werden
 * Versuche, das Dokument und den Inhalt auf die vordefinierten CSS-Klassen der Dokumentation anzupassen.
 * Die Breite für den Inhalt beträgt derzeit 900 Pixel. Bilder sollten nicht größer sein oder skaliert werden.
 * Versuche, so wenig bis garkeine eigenen Styles zu verwenden.
-* Jeder Absatz sollte mit einem Textile Schlüsselwort beginnen.
 
 p. Hinzu kommt, dass jeder Absatz mit einem Textile Prefix eingeleitet werden sollte. Es folgt ein beispiel, wie man es nicht machen sollte:
 
