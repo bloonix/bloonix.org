@@ -4,21 +4,21 @@ h1. HowTo: Plugins entwickeln
 
 p. Dieser Leitfaden richtet sich an Plugin-Entwickler und erklärt die Standards und die Funktionsweise von Bloonix Plugins.
 
-p. Im Verlauf dieses HowTos wird das Plugin __check-http__ von Bloonix als Beispiel verwendet. Das Plugin können Sie sich im Github Repository von Bloonix anschauen: "Github check-http":https://github.com/bloonix/bloonix-plugins-basic/blob/master/plugins/check-http
+p. Im Verlauf dieses HowTos wird das Plugin __check-http__ von Bloonix als Beispiel verwendet. Das Plugin können Sie sich im Github Repository von Bloonix anschauen: "Github: check-http":https://github.com/bloonix/bloonix-plugins-basic/blob/master/plugins/check-http
 
 h2. Allgemeines
 
 p. Bloonix Plugins sind eigenständige Skripts, die den Status eines oder mehrerer Services abfragen und zugleich statistische Daten zum Service liefern. Die Skripts können in jeder beliebigen Sprache geschrieben werden, wobei die Plugins, die von Bloonix entwickelt werden, in der Programmiersprache Perl entwickelt sind.
 
-p. Jedes Plugin verfügt über diverse Optionen, ein Beispiel wäre:
+p. Jedes Plugin verfügt über diverse Optionen. Zum Beispiel kann das Plugin __check-http__ wie folgt über die Kommandozeile aufgerufen werden:
 
 bc. check-http --url https://www.bloonix.de/ --warning 3 --critical 5 --timeout 10
 
-p. Mit diesem beispielhaften Aufruf wird die Antwortzeit des Webservers für die Domain www.bloonix.de geprüft. Benötigt die Antwort gleich oder länger als 5 Sekunden, so wird ein kritischer Status zurückgegeben. Benötigt die Antwort gleich oder länger 3 Sekunden, so wird eine Warnung zurückgegeben. Nach 10 Sekunden wird die HTTP-Abfrage abgebrochen und ein kritischer Status zurückgegeben.
+p. Mit den Optionen __--url__, __--warning__, __--critical__ und __--timeout__ wird die Antwortzeit des Webservers für die Domain www.bloonix.de geprüft. Benötigt die Antwort gleich oder länger als 5 Sekunden, so wird ein kritischer Status zurückgegeben. Benötigt die Antwort gleich oder länger 3 Sekunden, so wird eine Warnung zurückgegeben. Nach 10 Sekunden wird die HTTP-Abfrage abgebrochen und ein kritischer Status zurückgegeben.
 
-p. Insbesonders ist zu beachten, dass die Optionen eines Plugins, wie zum Beispiel __--url__, __--warning__ und __--critical__, in die Datenbank von Bloonix importiert werden müssen, damit einem Benutzer bei der Konfiguration eines Service-Checks in der WebGUI die Optionen als Formularfelder zur Verfügung stehen. Wie das funktioniert, wird im weiteren Verlauf dieses HowTos eingegangen.
+p. Insbesonders ist zu beachten, dass die Optionen eines Plugins, wie zum Beispiel __--url__, __--warning__ und __--critical__, in die Datenbank von Bloonix importiert werden müssen, damit einem Benutzer bei der Konfiguration eines Service-Checks die Optionen als Formularfelder zur Verfügung stehen. Wie das funktioniert, wird im weiteren Verlauf dieses HowTos eingegangen.
 
-!{width: 640px; margin: 40px 0;}/public/img/service-settings-check-http.png!
+!{margin: 40px 0;}/public/img/service-settings-check-http.png!
 
 h2. Statuscodes
 
@@ -30,11 +30,11 @@ p. Statuscodes spiegeln den Status eines Service wieder. Es gibt für Bloonix Pl
 | CRITICAL | 2 | Der Service befindet sich in einem kritischen Status. Es gibt dringenden Handlungsbedarf. |
 | UNKNOWN | 3 | Das Bloonix Plugin konnte nicht ausgeführt werden oder hat einen unerwarteten Fehler geliefert. |
 
-p. Es gibt natürlich für jeden Status Raum für unterschiedliche Interpretationen. Zu beachten ist jedoch, dass der Status __UNKNOWN__ einzig den Status des Plugins selbst beschreibt und nicht den Status eines Service. Das könnte zum Beispiel der Fall sein, wenn das Plugin __check-http__ nicht ausgeführt werden konnte, weil das Programm __curl__ nicht installiert ist oder weil die Parameterübergabe fehlerhaft war. Sobald alle Abhängigkeiten eines Plugins erfüllt sind, so muss der Status __OK__, __WARNING__ oder __CRITICAL__ sein.
+p. Es gibt natürlich Raum für unterschiedliche Interpretationen eines Status, zu beachten ist jedoch, dass der Status __UNKNOWN__ einzig den Status des Plugins selbst beschreibt und nicht den Status eines Service. Das könnte zum Beispiel der Fall sein, wenn das Plugin __check-http__ nicht ausgeführt werden konnte, weil das Programm __curl__ nicht installiert ist oder weil die Parameterübergabe fehlerhaft war. Sobald alle Abhängigkeiten eines Plugins erfüllt sind, muss der Status __OK__, __WARNING__ oder __CRITICAL__ sein.
 
-h3. Plugins ausführen
+h2. Plugins ausführen
 
-p. Die Plugins von Bloonix können für Testzwecke über Kommandozeilenparametern aufgerufen werden. Beispiel:
+p. Die Plugins von Bloonix können für Testzwecke über die Kommandozeile aufgerufen werden. Beispiel:
 
 bc. check-http --url https://www.bloonix.de/ --warning 3 --critical 5 --timeout 10
 
@@ -65,9 +65,13 @@ bc. {
    "message" : "HTTP/1.1 200 OK, response in 0.016433s, 10764 bytes, IP: 127.0.0.1"
 }
 
-h2. Optionen
+h2. Namensformat von Plugins
 
-p. Die Optionen eines Plugins werden dazu verwendet, dem Plugin bestimmte Anweisungen zur Ausführung zu geben. Zum Beispiel kann über den Parameter __--help__ eine Hilfe zu einem Plugin abgerufen werden. Eine Kurzversion der Optionen, zum Beispiel __-h__ für die Hilfe, gibt es nicht. Alle Optionen gibt es nur im langen Format.
+p. Die Namen der Plugins bestehen aus zwei Teilen. Der erste Teil ist der Prefix __check__. Der zweite Teil ist ein sinnvoller Name, welchen Service das Plugin prüft. Alle Teile werden mit einem Minuszeichen verbunden. Wenn zum Beispiel die CPU geprüft werden soll, so sollte das Plugin __check-cpu__ lauten.
+
+h2. Eingabe, Optionen
+
+p. Die Optionen eines Plugins werden dazu verwendet, um dem Plugin bestimmte Anweisungen zur Ausführung zu geben. Zum Beispiel kann über den Parameter __--help__ eine Hilfe zu einem Plugin abgerufen werden. Eine Kurzversion der Optionen, zum Beispiel __-h__ für die Hilfe, gibt es nicht. Alle Optionen gibt es nur im langen Format.
 
 p. Jedes Bloonix Plugin muss über mindestens 5 Optionen verfügen. Diese sind wie folgt:
 
@@ -78,7 +82,18 @@ p. Jedes Bloonix Plugin muss über mindestens 5 Optionen verfügen. Diese sind w
 | --stdin | Anweisung an das Plugin, die Optionen zur Ausführung über den STDIN-Kanal zu lesen. |
 | --pretty | Anweisung an das Plugin, den JSON-String in einem leserlichen Format auszugeben. |
 
-p. Die Optionen __--help__ und __--plugin-info__ sind fast identisch. Die Option __--help__ gibt die Hilfe so aus, wie es bei Programmen üblich ist:
+h2. Ausgabe
+
+h3. Option: version
+
+p. Die Ausgabe der Plugin-Version ist einheitlich und im Format __check-script v$version__.
+
+bc. check-http --version
+check-http v0.1
+
+h3. Option: help
+
+p. Die Option __help__ gibt die Hilfe eines Plugins aus und zwar so, wie es bei Programmen üblich ist:
 
 bc.. check-http --help
 
@@ -109,7 +124,150 @@ Options:
 ...
 ...
 
-p. Die Option __--plugin-info__ gibt die Informationen einen Plugins im JSON-Format aus, so dass diese Daten in die Datenbank von Bloonix importiert werden können. Dabei werden erweiterte Informationen zum Plugin ausgegeben. Weiteres erfahren Sie im nächsten Kapitel.
+h3. Option: plugin-info
+
+p. Die Option __plugin-info__ ist ähnlich zur Option __help__ und gibt die Informationen einen Plugins im JSON-Format aus, so dass diese Daten in die Datenbank von Bloonix importiert werden können. Dabei werden erweiterte Informationen zum Plugin ausgegeben.
+
+bc. check-http --plugin-info --help
+{
+   "plugin" : "check-http",
+   "version" : "0.13",
+   "flags" : "",
+   "options" : [
+      {
+         "option" : "url",
+         "name" : "URL",
+         "default" : null,
+         "description" : "This is the HTTP or HTTPS request you want to check. Please enter the full URL with the query string.",
+         "value_type" : "string",
+         "value_desc" : "url",
+         "mandatory" : 1,
+         "multiple" : 0,
+         "example" : "https://www.bloonix.de/"
+      },
+      {
+         "option" : "warning",
+         "name" : "Warning threshold",
+         "default" : 3,
+         "description" : "A value in seconds. When the check takes longer than this time then a warning status is triggered.",
+         "value_type" : "number",
+         "value_desc" : "seconds"
+         "mandatory" : 0,
+         "multiple" : 0
+      },
+      {
+         "option" : "critical",
+         "name" : "Critical threshold",
+         "default" : 5,
+         "description" : "A value in seconds. When the check takes longer than this time then a critical status is triggered.",
+         "value_type" : "number",
+         "value_desc" : "seconds",
+         "mandatory" : 0,
+         "multiple" : 0
+      },
+      {
+         "option" : "timeout",
+         "name" : "Timeout",
+         "default" : 10,
+         "description" : "A timeout in seconds after its expiration the check is aborted and a critical status is triggered.",
+         "value_type" : "number",
+         "value_desc" : "seconds",
+         "mandatory" : 0,
+         "multiple" : 0
+      },
+      {
+         "option" : "verbose-status",
+         "name" : "Verbose status",
+         "default" : null,
+         "description" : "Add the http header and content to status output.",
+         "value_type" : 0,
+         "mandatory" : 0,
+         "multiple" : 0
+      }
+   ],
+   "examples" : [
+      {
+         "description" : [
+            "The following set of options would send a HTTP request and check the response time of the webserver."
+         ],
+         "arguments" : [
+            "url", "https://www.bloonix.de/",
+            "warning", 3,
+            "critical", 5
+         ]
+      }
+   ]
+}
+
+h4. Allgemeine Parameter
+
+bc. {
+   "plugin" : "check-http",
+   "version" : "0.13",
+   "flags" : "",
+   "options" : [ ],
+   "examples" : [ ]
+}
+
+|_. Parameter |_. Beschreibung |
+| plugin | Der Names des Plugins. Dieser muss den Prefix __check-__ haben. |
+| version | Die Version des Plugins. Das Format der Ausgabe ist __check-name v$version__ |
+| flags | Hier können Flags mitgegeben werden. Zum Beispiel __sudo__, falls das Plugin __sudo__ benötigt, um ausgeführt zu werden. |
+| options | Die Optionen des Plugins. |
+| examples | Ein Beispiel, die das Plugin mit Optionen aufgerufen wird. |
+
+h4. Flags
+
+bc. "flags" : "sudo,this,that"
+
+p. Mit den Flags können für Plugins bestimmte Merkmale vergeben werden. Derzeit ist nur ein einzigen Flag verfügbar und zwar das Flag __sudo__. Wenn dieses Flag gesetzt ist, dann wird in der WebGUI bei der Einrichtung eines Services ein besonderer Hinweis angezeigt. Für das Plugins __check-smart-health__ sieht die Information wie folgt aus:
+
+!{margin: 40px 0;}/public/img/plugin-info-sudo.png!
+
+h4. Optionen
+
+bc. "options" : [
+   {
+      "option" : "warning",
+      "name" : "Warning threshold",
+      "default" : 3,
+      "description" : "A value in seconds. When the check takes longer than this time then a warning status is triggered.",
+      "value_type" : "number",
+      "value_desc" : "seconds"
+      "mandatory" : 0,
+      "multiple" : 0
+   }
+]
+
+|_. Parameter |_. Beschreibung |
+| option | Das ist der Name der Option, zum Beispiel __warning__ für __--warning__. |
+| name | Das ist der sprechende Name der Option. |
+| default | Der Standardwert, welcher im Formular vorbelegt sein soll. |
+| description | Eine kurze Beschreibung der Option. Die Beschreibung mit über den Info-Button eingeblendet. |
+| value_type | Welchen Typ hat der Wert. Möglich ist __int__ für eine Zahl, __number_ für eine Zahl größer Null, __array__ für ein Array und __hash__ für ein assoziatives Array. |
+| value_desc | Eine sehr kurze Beschreibung des Wertes, zum Beispiel __seconds__ für Sekunden. |
+| mandatory | Wenn diese Option unbedingt gesetzt werden muss, dann sollte __mandatory__ auf 1 gesetzt werden, ansonsten 0. |
+| multiple | Kann diese Option mehrfach gesetzt werden? Zum Beispiel: __--device sda --device sdb --device sdc__ |
+| example | Der Wert von __example__ wird als Platzhalter in einem Forumlarfeld angezeigt. |
+
+h4. Beispiele
+
+bc. "examples" : [
+   {
+      "description" : [
+         "The following set of options would send a HTTP request and check the response time of the webserver."
+      ],
+      "arguments" : [
+         "url", "https://www.bloonix.de/",
+         "warning", 3,
+         "critical", 5
+      ]
+   }
+]
+
+p. Die Beispiele werden in der WebGUI bei der Einrichtung eines Service-Checks angezeigt:
+
+!{margin: 40px 0;}/public/img/plugin-info-option-examples.png!
 
 h2. Informationen eines Plugins in die Bloonix Datenbank importieren
 
