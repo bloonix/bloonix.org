@@ -62,7 +62,7 @@ Noch eine Zeile, die automatisch in ein Paragraph <p> eingebettet wird.
 <pre>
 h1. Titel
 
-p. Besser ist es, wenn jeder Absatz mit <i>p.</p> eingeleitet wird.
+p. Besser ist es, wenn jeder Absatz mit p. eingeleitet wird.
 
 p. Und hier auch.
 </pre>
