@@ -49,18 +49,22 @@ p. Bei der Gestaltung der Dokumente gibt es ein paar Regeln, die beachtet werden
 * Die Breite für den Inhalt beträgt derzeit 900 Pixel. Bilder sollten nicht größer sein oder skaliert werden.
 * Versuche, so wenig bis garkeine eigenen Styles zu verwenden.
 
-p. Hinzu kommt, dass jeder Absatz mit einem Textile Prefix eingeleitet werden sollte. Es folgt ein beispiel, wie man es nicht machen sollte:
+p. Hinzu kommt, dass jeder Absatz mit einem Textile Prefix eingeleitet werden sollte. Es folgt ein Beispiel, wie man es nicht machen sollte:
 
 <pre>
 h1. Titel
 
-Dies ist ein Text, der automatisch in ein Paragraph <p> eingebetter wird.
+Dies ist ein Text, der automatisch in ein Paragraph <p> eingebettet wird.
+
+Noch eine Zeile, die automatisch in ein Paragraph <p> eingebettet wird.
 </pre>
 
 <pre>
 bc.. h1. Titel
 
-p. Besser ist es, wenn der Paragraph auch wirklich mit <i>p.</p> eingeleitet wird.
+p. Besser ist es, wenn jeder Absatz mit <i>p.</p> eingeleitet wird.
+
+p. Und hier auch.
 </pre>
 
 h2. Anker und Links
