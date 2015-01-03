@@ -1,0 +1,70 @@
+h1. HowTo: Dokumentieren auf Bloonix.org
+
+h2. Github Repository
+
+p. Die gesamte Dokumentation von Bloonix befindet sich auf Github im Repository "Github: bloonix.org":https://github.com/bloonix/bloonix.org .
+
+h2. Pfade
+
+|_. Pfad |_. Beschreibung |
+| public/css | CSS-Dateien. Standardmäßig wird die Datei __webapp.css__ geladen. |
+| public/img | Bilder wie PNG, JPEG. |
+| public/js | Javascript Dateien. Standardmäßig wird die Datei __webapp.js__ geladen. |
+| templates | Hier liegen die Dokumente in Unterordnern. |
+
+p. Unterhalb des Verzeichnisses __templates__ wird zunächst ein Verzeichnis im Format eines Länderkürzels angelegt, welches der Sprache entspricht, in welches die Dokumenten geschrieben sind.
+
+p. Beispiel:
+
+bc. templates/de/docs # Deutsch
+templates/en/docs # Englisch
+
+p. Ab dem Verzeichnis __docs__ gibt es in jedem Verzeichnis und den Unterverzeichnissen eine Datei namens __order.json__. Diese Datei ist wichtig für das Inhaltsverzeichnis der Dokumentation und die Reihenfolge der Dokumente.
+
+bc. cat templates/de/docs/order.json
+[
+    { "Über Bloonix": "about.textile" },
+    { "Lizenzen": "license.textile" },
+    { "Komponenten": "components" },
+    { "Installation": "installation" },
+    { "Konfiguration": "configuration" },
+    { "HowTos": "howtos" }
+]
+
+p. Der Aufbau der Datei ist recht einfach. Dokumente erhalten immer __.textile__ als Endung.
+
+bc. [
+    { "Titel des Dokuments" : "datei.textile" },
+    { "Titel des Verzeichnisses" : "verzeichnis" }
+]
+
+h2. Markup Textile
+
+p. Die Dokumentation von Bloonix ist in Textile geschrieben. Aus diesem Grund erhalten alle Dokumente die Dateiendung __.textile__.
+
+p. Bei der Gestaltung der Dokumente gibt es ein paar Regeln, die beachtet werden sollten, damit alle Dokumente lesbar und einheitlich sind.
+
+* h2-Titel sollten keine Sonderzeichen enthalten, ausser Leerzeichen und die folgenden Zeichen __.,;:__
+* Versuche, das Dokument und den Inhalt auf die vordefinierten CSS-Klassen der Dokumentation anzupassen.
+* Die Breite für den Inhalt beträgt derzeit 900 Pixel. Bilder sollten nicht größer sein oder skaliert werden.
+* Versuche, so wenig bis garkeine eigenen Styles zu verwenden.
+* Jeder Absatz sollte mit einem Textile Schlüsselwort beginnen.
+
+p. Hinzu kommt, dass jeder Absatz mit einem Textile Prefix eingeleitet werden sollte. Es folgt ein beispiel, wie man es nicht machen sollte:
+
+<pre>
+h1. Titel
+
+Dies ist ein Text, der automatisch in ein Paragraph <p> eingebetter wird.
+</pre>
+
+<pre>
+bc.. h1. Titel
+
+p. Besser ist es, wenn der Paragraph auch wirklich mit <i>p.</p> eingeleitet wird.
+</pre>
+
+h2. Anker und Links
+
+p. Aus den h2-Elementen wird das Inhaltsverzeichnis eines Dokuments mittels Javascript automatisch generiert. Dieses erscheint dann oben rechts. Der Text aus den h2-Elementen wird als Anker verwendet und sollte daher nur aus bestimmten Zeichen entstehen. Aussen den normalen Zahlen und Buchstaben sollten nur folgende Sonderzeichen verwendet werden: Leerzeichen und _+-_.,;:__
+

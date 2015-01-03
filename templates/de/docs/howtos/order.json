@@ -1,4 +1,5 @@
 [
-    { "HowTo: Plugins entwickeln": "howto-develop-plugins.textile" },
-    { "HowTo: Coding mit Stil": "howto-coding-with-style.textile" }
+    { "Plugins entwickeln": "howto-develop-plugins.textile" },
+    { "Coding mit Stil": "howto-coding-with-style.textile" }
+    { "Dokumentation auf Bloonix.org": "howto-bloonix-org.documentation.textile" }
 ]
