@@ -25,7 +25,7 @@ p. In diesem Kapitel wird beispielhaft ein Plugin namens __Test.Check__ entwicke
 
 h3. Entwicklung: check-test
 
-bc.. #!/usr/bin/perl
+<pre>#!/usr/bin/perl
 
 # Immer 'warnings' und 'strict' inkludieren.
 use warnings;
@@ -148,6 +148,7 @@ $plugin->exit(
         time => $time
     }
 );
+</pre>
 
 p. Es folgen ein paar Beispiele zur Ausführung des Skripts:
 
