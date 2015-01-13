@@ -81,7 +81,7 @@ $plugin->add_option(
     # korrekt ist. Hier wird beispielhaft geprüft, ob die URL vereinfacht
     # einem bestimmten Format entspricht (nicht erlaubt sind Leerzeichen
     # und Hochkommas):
-    regex => qr!^https{0,1}://[^\s']+!,
+    regex => qr/^https{0,1}:\/\/[^\s']+/,
 
     # Eine Beschreibung der Option.
     description => "Check the response time of a URL."
