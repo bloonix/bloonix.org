@@ -10,7 +10,7 @@ bc. agents 1
 user bloonix
 group bloonix
 plugins /usr/lib/bloonix/plugins
-nagios_plugins /usr/lib/nagios/plugins,/usr/lib64/nagios/plugins
+simple_plugins /usr/local/lib/bloonix/simple-plugins,/usr/lib/bloonix/simple-plugins
 include /etc/bloonix/agent/conf.d
 
 |_. Parameter |_. Standard |_. Beschreibung |
@@ -21,7 +21,7 @@ include /etc/bloonix/agent/conf.d
 | plugins | /usr/local/lib/bloonix/plugins | Mit dem Parameter __plugins__ wird der Pfad angegben, unter dem die Plugins zur Ausführung liegen. Sollte der Bloonix-Agent über einen Paketmanager installiert werden, so kann der Pfad abweichen. Auf Debian werden die Plugins beispielsweise unter /usr/lib/bloonix/plugins installiert. Unter Windows liegen die Plugins höchstwahrscheinlich im Installationsverzeichnis des Agenten. |
 | plugin_libdir | /var/lib/bloonix/agent | Unter diesem Pfad legen diverse Plugins Daten ab, um Deltas von statistischen Daten berechnen zu können. |
 | config_path | /etc/bloonix/agent | Unter diesem Pfad können Plugin-spezifische Konfigurationsdateien abgelegt werden. |
-| nagios_plugins |  | Falls Sie Nagios Plugins einsetzen möchten, so können Sie hier den Pfad zu den installierten Plugins setzen. Eine komma-separierte Liste von Pfaden ist möglich. |
+| simple_plugins |  | Falls Sie Nagios-kompatible Plugins einsetzen möchten, so können Sie hier den Pfad zu den installierten Plugins setzen. Eine komma-separierte Liste von Pfaden ist möglich. |
 | include |  | Mit dem Parameter __include__ lassen sich andere Konfigurationsdateien oder sogar Verzeichnisse einbinden. Falls das Ziel ein Verzeichnis ist, so werden alle Dateien darin inkludiert, die mit __.conf__ enden. |
 | use_sudo |  | Welche Checks sollen global mit sudo ausgeführt werden. Hier werden nur die Checks Skripte angegeben, ohne Pfade. Es ist möglich mehrere Skripte komma-separiert anzugeben. Die hier eingerichteten Skripts gelten für alle Hosts. |
 
