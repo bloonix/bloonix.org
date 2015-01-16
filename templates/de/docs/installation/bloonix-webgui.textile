@@ -109,6 +109,8 @@ p. *Wichtig:* Der initiale Zugang zur WebGUI lautet:
 bc. Benutzername: admin
 Passwort: admin
 
+p. Falls Sie mal das Passwort vergessen, so können Sie das Skript __/srv/bloonix/webgui/bin/generate-password__ verwenden, um ein neues Passwort zu generieren. Das Skript gibt zwei Update-Statements aus, die auf der Datenbank von Bloonix ausgeführt werden müssen.
+
 h2. Nginx restarten
 
 p. Nach der Konfiguration der WebGUI können wir nun den Nginx restarten:
