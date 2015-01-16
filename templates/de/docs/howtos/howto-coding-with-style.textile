@@ -56,9 +56,11 @@ bc.. foreach my $var (qw/a b c/) {
 
 $var =~ s!//a//!b!g;
 
-bc. my $var = join(",",$a,$b,@c,"and this");
+my $var = join(",",$a,$b,@c,"and this");
 
 open my $fh, ">", $foo or die $!;
+
+p. Bitte lokalisiere Variablen mit __my__!
 
 h2. Der Bloonix Code
 
