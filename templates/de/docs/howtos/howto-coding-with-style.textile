@@ -48,7 +48,7 @@ $var =~ s/\/\/a\/\//b/g;
 
 $var = join(",", $a, $b, @c, "and this");
 
-open(FH,">$foo") or die $!; # dieses Beispiel auch aus Sicherheitsgründen nicht verwenden
+open(FH,">$foo") or die $!;
 
 p. So geht es lesbarer
 
