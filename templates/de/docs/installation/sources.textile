@@ -166,7 +166,6 @@ bc. bloonix-agent
 bloonix-core
 bloonix-dbi
 bloonix-fcgi
-postfix
 perl-JSON-XS
 perl(DBI)
 perl(DBD::Pg)
@@ -189,7 +188,6 @@ bloonix-core
 bloonix-dbi
 bloonix-fcgi
 bloonix-heaven
-postfix
 perl-JSON-XS
 perl-Time-modules
 perl(Digest::SHA)
@@ -232,7 +230,7 @@ perl(DBI)
 perl(Digest::SHA)
 perl(FCGI)
 perl(Getopt::Long)
-perl(HTTP::Tiny)
+perl(HTTP::Tiny) >= 0.022
 perl(IO::Select)
 perl(IO::Socket)
 perl(IO::Socket::INET6)
@@ -259,5 +257,4 @@ perl(Time::HiRes)
 perl-Time-modules
 perl(Time::ParseDate)
 perl(URI::Escape)
-postfix
 
