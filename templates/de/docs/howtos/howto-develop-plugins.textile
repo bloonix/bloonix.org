@@ -306,7 +306,7 @@ p. Beschreibung __plugin__:
 
 p. Beschreibung __statistic__:
 
-|_. Parameter |_. Standardwert |_. Beschreibung |
+|_. Parameter |_. Beschreibung |
 | statkey | Der Schlüsselname der Statistik. |
 | alias | Ein Alias, welcher in den Charts statt des Schlüssels verwendet wird. |
 | datatype | Der Datentyp ist wichtig, denn die Statistiken werden validiert, bevor diese in der Datenbank gespeichert werden. Mögliche Werte sind smallint, integer, bigint, float und varchar(ZAHL). |
