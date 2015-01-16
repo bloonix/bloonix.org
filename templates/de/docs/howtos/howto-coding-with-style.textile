@@ -46,7 +46,9 @@ bc.. foreach my $var (qw(a b c)) {
 
 $var =~ s/\/\/a\/\//b/g;
 
-open(FH,">$foo") or die $!;
+$var = join(",", $a, $b, @c, "and this");
+
+open(FH,">$foo") or die $!; # dieses Beispiel auch aus Sicherheitsgründen nicht verwenden
 
 p. So geht es lesbarer
 
@@ -54,19 +56,13 @@ bc.. foreach my $var (qw/a b c/) {
 
 $var =~ s!//a//!b!g;
 
-open my $fh, ">", $foo or die $!;
-
-p. Verwende nach einem Punkt, Komma oder Semikolon ein Leerzeichen. So
-
-bc. my $var = join(",", $a, $b, @c, "and this");
-
-p. anstatt
-
 bc. my $var = join(",",$a,$b,@c,"and this");
+
+open my $fh, ">", $foo or die $!;
 
 h2. Der Bloonix Code
 
-p. Wenn Sie in den Code von Bloonix blickst, dann werden Sie sicherlich Codestellen finden, die nicht optimal sind. Wie das in vielen Softwareprojekten der Fall ist, gibt es oft Code, der schon lange existiert und gewachsen ist. Oder es gibt Funktionen/Methoden, die man __mal eben__ um ein paar Zeilen erweitert, ohne auf die Länge der Funktion/Methode zu achten.
+p. Wenn Sie in den Code von Bloonix blicken, dann werden Sie sicherlich Codestellen finden, die nicht optimal sind. Wie das in vielen Softwareprojekten der Fall ist, gibt es oft Code, der schon lange existiert und gewachsen ist. Oder es gibt Funktionen/Methoden, die man __mal eben__ um ein paar Zeilen erweitert, ohne auf die Länge der Funktion/Methode zu achten.
 
 p. Mit der Zeit werden auch diese Codestellen überarbeitet... es ist halt immer eine Frage der Zeit :-)
 
