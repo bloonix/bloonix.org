@@ -291,7 +291,7 @@ chart {
     }
 }
 
-p. Beschreibung __plugin__:
+p. *Beschreibung __plugin__:*
 
 |_. Parameter |_. Beschreibung |
 | id | Eine eindeutige ID für das Plugin. Die ID darf sich nicht ändern und auch nicht für andere Plugins verwendet werden. Zu beachten ist, dass die IDs unter 100.000 für Bloonix selbst reserviert sind. Sollten Sie ein Plugin nur für eigene Zwecke entwickeln, so sollte eine ID ab 100.000 gewählt werden. |
@@ -304,7 +304,7 @@ p. Beschreibung __plugin__:
 | abstract | Eine Kurzbeschreibung, welche in der WebGUI im Feld __Beschreibung__ standardmäßig gesetzt wird. |
 | description | Eine Beschreibung des Plugins. |
 
-p. Beschreibung __statistic__:
+p. *Beschreibung __statistic__:*
 
 |_. Parameter |_. Beschreibung |
 | statkey | Der Schlüsselname der Statistik. |
@@ -313,14 +313,14 @@ p. Beschreibung __statistic__:
 | units | Hier wird angegeben, welche Einheit der statistische Wert hat. Gibt es keine Einheit, so kann der Parameter ausgelassen werden. Mögliche Werte sind: kilo, mega, giga, tera, peta, exa, zetta, yotta, bytes, kilobytes, megabytes, gigabytes, terabytes, petabytes, exabytes, zettabytes, yottabytes, bits, kilobits, megabits, gigabits, terabits, petabits, exabits, zettabits, yottabits, ms, percent, temperature, unixtime |
 | description | Eine Beschreibung des statistischen Wertes. |
 
-p. Beschreibung __chart__:
+p. *Beschreibung __chart__:*
 
 |_. Parameter |_. Beschreibung |
 | id | Eine eindeutige ID für den Chart. Diese ID darf innerhalb des Plugins nur einmal verwendet werden. Bitte beachten Sie, dass Benutzer in der WebGUI Chart-Views erstellen können. Zu diesen Chart-Views werden die Chart-IDs gespeichert. Eine Chart ID zu ändern bedeuted also, dass der Chart dann nicht mehr existiert. Eine Chart-ID zu ändern bedeuted, dass ein Benutzer eventuell etwas anderes angezeigt bekommt. |
 | title | Der Titel des Charts. |
 | options | Hier werden die Optionen für den Chart selber konfiguriert. |
 
-p. Beschreibung __chart -> options__:
+p. *Beschreibung __chart -> options__:*
 
 |_. Parameter |_. Beschreibung |
 | ylabel | Der Text auf der Y-Achse des Charts. |
