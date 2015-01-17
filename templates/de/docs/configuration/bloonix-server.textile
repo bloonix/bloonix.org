@@ -51,7 +51,7 @@ bc. smsgateway {
 }
 
 |_. Parameter |_. Standard |_. Beschreibung |
-| command |  | Das Kommando, um eine SMS zu versenden. |
+| command |  | Das Kommando, um eine SMS zu versenden. Die Platzhalter %TO% und %MESSAGE% werden URL-encoded mit der Mobilfunknummer und der Warnmeldung ersetzt. |
 | response |  | Die erwartete Antwort, wenn die SMS erfolgreich übersendet werden konnte. Der Wert ist ein regulärer Ausdruck. |
 
 h2. Sektion: email
