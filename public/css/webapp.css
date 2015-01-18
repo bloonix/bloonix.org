@@ -22,6 +22,10 @@
 }
 #doc-nav .chapter {
     padding-right: 6px;
+    float: left;
+}
+#doc-nav .chapter-title {
+    float: left;
 }
 #doc-nav .active-chapter {
     color: #116c77;
