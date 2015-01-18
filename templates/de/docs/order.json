@@ -4,5 +4,6 @@
     { "Komponenten": "components" },
     { "Installation": "installation" },
     { "Konfiguration": "configuration" },
-    { "HowTos": "howtos" }
+    { "HowTos": "howtos" },
+    { "WebGUI": "webgui" }
 ]
