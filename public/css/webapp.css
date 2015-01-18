@@ -9,8 +9,7 @@
     float: left;
 }
 #doc-nav ul, #doc-nav ol {
-    margin: 0 0 0 20px;
-    /*list-style-type: none;*/
+    margin: 0 0 0 30px;
     font-size: 15px;
 }
 #doc-nav ul li, #doc-nav ol li {
