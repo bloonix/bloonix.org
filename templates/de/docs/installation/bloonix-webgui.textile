@@ -1,35 +1,19 @@
 h1. Installation der WebGUI
 
-p. Die Bloonix-WebGUI ist in zwei Pakete aufgeteilt. Es gibt zum Einen das Paket __bloonix-webgui-core__, welches Abhängigkeiten installiert und über die Konfigurationsdateien der WebGUI verfügt und zum Anderen das Paket __webgui__, welches ein simples TAR-Archiv ist und manuell entpackt werden muss.
+p. Die Bloonix-WebGUI ist in zwei Pakete aufgeteilt. Es gibt zum Einen das Paket __bloonix-webgui-core__, welches Abhängigkeiten installiert und über die Konfigurationsdateien der WebGUI verfügt und zum Anderen das Paket __bloonix-webgui__, welches die Web-Applikation enthält, die unter __/srv/bloonix/webgui__ installiert wird.
 
-p. Das Core-Paket kann wie folgt installiert werden:
+p. Die WebGUI kann wie folgt installiert werden:
 
 bc. # Debian / Ubuntu
-apt-get install bloonix-webgui-core
+apt-get install bloonix-webgui
 
 bc. # Red Hat / CentOS / Fedora
-yum install bloonix-webgui-core
+yum install bloonix-webgui
 
 bc. # SuSE / SLES
-zypper install bloonix-webgui-core
+zypper install bloonix-webgui
 
-p. _Bitte installieren Sie das Core-Paket erst, wenn Sie Nginx installiert haben, da ansonsten wichtige Konfigurationsdateien nicht angelegt werden!_
-
-p. Nachdem das Core-Paket mit allen Abhängigkeiten installiert ist, kann nun die Webapplikation installiert werden. Es ist zwingend notwendig, dass die WebGUI unter /srv/bloonix/webgui installiert ist, da dies in der Konfigurationsdatei der WebGUI und auch im Init-Skript so definiert ist.
-
-p. Es wird zunächst die Verzeichnisstruktur unter __/srv__ angelegt und dann die Webapplikation installiert:
-
-bc. mkdir -p /srv/bloonix
-cd /srv/bloonix
-wget https://download.bloonix.de/sources/webgui-<% webgui_version %>.tar.gz
-tar -xzf webgui-<% webgui_version %>.tar.gz
-ln -sfn webgui-<% webgui_version %> webgui
-
-bc. # Debian / Ubuntu
-chown -R bloonix:www-data /srv/bloonix/webgui/
-
-bc. # Red Hat / CentOS / SuSE
-chown -R bloonix:nginx /srv/bloonix/webgui/
+p. _Bitte installieren Sie die WebGUI erst, wenn Sie Nginx installiert haben, da ansonsten wichtige Konfigurationsdateien nicht angelegt werden!_
 
 h2. Nginx konfigurieren
 
