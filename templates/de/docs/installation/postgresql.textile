@@ -92,3 +92,7 @@ p. PostgreSQL neu starten:
 
 bc. systemctl restart postgresql.service
 
+h2. Einrichtung der Datenbank für Bloonix
+
+p. Die Einrichtung der Bloonix-Datenbank erfolgt hier: "Bloonix-WebGUI":/de/docs/installation/bloonix-webgui.html
+

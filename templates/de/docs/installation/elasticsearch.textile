@@ -21,3 +21,5 @@ bc. /etc/init.d/elasticsearch start
 # oder
 systemctl start elasticsearch.service
 
+p. Für Bloonix muss jetzt nur noch ein Template eingerichtet werden. Die Einrichtung erfolgt hier: "Bloonix-WebGUI":/de/docs/installation/bloonix-webgui.html
+
