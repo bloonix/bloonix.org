@@ -12,11 +12,11 @@ h2. Einrichtung von Host-Templates
 
 p. Host-Templates lassen sich im Bereich __MONITORING ⇒ Templates__ verwalten.
 
-!/public/img/add-host-templates-1.png!
+!{width: 100%; margin: 40px 0;}/public/img/add-host-templates-1.png!
 
 p. Dort können Sie neue Host-Templates anlegen und bestehende Host-Templates verwalten. Klicken Sie einfach auf den Namen eines Host-Template. Es wird sich ein Menü öffnen, über welches Sie zu den Seiten gelangen, um die Service-Checks eines Host-Template zu verwalten oder auch Hosts hinzuzufügen oder zu entfernen.
 
-!/public/img/host-template-click-menu-1.png!
+!{width: 100%; margin: 40px 0;}/public/img/host-template-click-menu-1.png!
 
 h2. Service-Checks in Host-Templates verwalten
 
@@ -26,17 +26,17 @@ p. *Bitte beachten Sie:* Änderungen eines Host-Templates wirken sich auf alle H
 
 p. In der folgenden Grafik sehen Sie beispielhaft ein Host-Template mit drei konfigurierten Service-Checks.
 
-!/public/img/manage-host-template-services-1.png!
+!{width: 100%; margin: 40px 0;}/public/img/manage-host-template-services-1.png!
 
 h2. Hosts in Host-Templates verwalten
 
 p. Haben Sie nun den Wunsch, einen Host mehreren Host-Templates zuzuordnen, so können Sie das an verschiedenen Stellen machen. Zum Einen können Sie direkt beim Anlegen eines neuen Hosts beliebig viele Host-Templates auswählen. Der Host erbt daraufhin umgehend alle Service-Checks der Host-Templates, die dem Host zugeordnet wurden.
 
-!/public/img/add-host-template-to-host-1.png!
+!{width: 100%; margin: 40px 0;}/public/img/add-host-template-to-host-1.png!
 
 p. Ist ein Host bereits angelegt, so können Sie die Verwaltung von Host-Templates eines Hosts über folgende Navigation erreichen:
 
-!/public/img/manage-host-template-of-host-1.png!
+!{width: 100%; margin: 40px 0;}/public/img/manage-host-template-of-host-1.png!
 
 p. *Bitte beachten Sie:* Wenn Sie ein Host-Template einem Host zuordnen, so werden umgehend alle Service-Checks des Host-Templates an den Host vererbt. Wenn Sie ein Host-Template von einem Host entfernen, so werden auch die Service-Checks mit allen Daten umgehend entfernt. Seien Sie daher vorsichtig bei der Konfiguration der Gruppen.
 
@@ -52,7 +52,7 @@ p. *Bitte beachten Sie,* dass es möglich ist, Variablen für Hosts und Host-Tem
 
 p. In der Übersicht der konfigurierten Service-Checks eines Hosts lassen sich Service-Checks, die aus einem Host-Template vererbt wurden, auch sehr leicht erkennen. In der folgenden Grafik sind diese Service-Checks mit dem Icon !/public/img/host-template-icon.png! markiert.
 
-!/public/img/host-template-services-view-1.png! 
+!{width: 100%; margin: 40px 0;}/public/img/host-template-services-view-1.png! 
 
 p. Wenn Sie also die Parameter eines Service-Checks ändern möchten, der aus einem Host-Template vererbt wurde, dann müssen Sie den Service-Check im Host-Template selbst editieren.
 

@@ -17,10 +17,10 @@ bc.
 
 p. In der folgenden Grafik erhalten Sie ein Beispiel, wie die Hierarchie der Klassen ausschaut:
 
-!/public/img/device-classes-1.png! 
+!{width: 100%; margin: 40px 0;}/public/img/device-classes-1.png! 
 
 p. Auf jeder Ebene der Hierarchie wird ein Icon angezeigt, dass Ihnen den höchsten Status aller Hosts in dieser Ebene anzeigt. Ist beispielsweise ein Host im Status CRITICAL, so wird die Ebene mit einem roten Icon markiert. Zusätzlich wird die Anzahl der Hosts angezeigt, die sich nicht im Status OK befinden.
 
 p. In der folgenden Grafik sehen Sie zum Beispiel, dass es 146 Hosts mit der Klasse __/Server__ gibt und davon ist 1 Host nicht OK. Hat ein Host weitere Subklassen, so können Sie sich weiter durch die Ebenen klicken. Letztendlich befindet sich der Host, der sich im Status UNKNOWN befindet, auf der Ebene __/Server/Linux/Debian/Wheezy__.
 
-!/public/img/device-classes-2.png!
+!{width: 100%; margin: 40px 0;}/public/img/device-classes-2.png!

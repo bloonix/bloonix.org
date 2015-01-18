@@ -8,13 +8,13 @@ h2. Einrichtung von Hosts und Services im Webinterface
 
 p. Im Webinterface von Bloonix werden alle Hosts eingerichtet, die Sie überwachen möchten. Ein Host kann im Kontext von Bloonix ein Server, ein virtueller Server, ein Router, ein Switch oder auch ein Drucker sein. Oberflächlich betrachtet ist ein Host ein Kontainer für Metainformationen. Diese Metainformationen beinhalten beispielsweise eine eindeutige Host-ID, verknüpft mit einem Passwort, einem Hostnamen, einer IP-Adresse, oder auch Informationen über den Hersteller der Hardware oder dem Betriebssystem, das auf dem Host installiert ist.
 
-!/public/img/host-metainfo-1.png!
+!{width: 100%; margin: 40px 0;}/public/img/host-metainfo-1.png!
 
 p. Bitte beachten Sie, dass wenn ein Host im Webinterface eingerichtet wird, erhält dieser eine eindeutige ID und ein dazugehöriges Passwort. Diese Daten werden später für den Bloonix-Agenten benötigt.
 
 p. Neben den Metainformationen ist ein Host auch ein Kontainer für Service-Checks, denn jeder Service-Check, welcher im Webinterface von Bloonix konfiguriert wird, gehört immer fest zu einem Host. Um Service-Checks besser verstehen zu können, schauen wir uns das bildlich einmal genauer an:
 
-!/public/img/services-with-location-1.png!
+!{width: 100%; margin: 40px 0;}/public/img/services-with-location-1.png!
 
 p. Wie man anhand der Grafik erkennen kann, kann ein Service-Check zum Beispiel ein Check sein, welcher die Auslastung der CPU Ihres Servers überprüft oder auch die Verfügbarkeit Ihrer Webseite über einen HTTP-Aufruf. Bitte beachten Sie insbesonders die Spalte „Agent location“ in der Grafik, zu deutsch „Lokation des Agenten“.
 
@@ -74,7 +74,7 @@ h3. Multiple Bloonix-Agenten
 
 p. Schauen wir uns erneut folgende Grafik an:
 
-!/public/img/services-with-location-1.png!
+!{width: 100%; margin: 40px 0;}/public/img/services-with-location-1.png!
 
 p. Um alle Services überwachen zu können, benötigen wir mindestens zwei Agenten. Beide Agenten werden nahezu indentisch konfiguriert.
 

@@ -12,7 +12,7 @@ p. Die Zeitangabe für Wartungsarbeiten geschieht entweder über eine feste Uhrz
 
 p. Eine feste Zeitangabe könnte wie folgt aussehen:
 
-!/public/img/scheduled-downtimes-1.png!
+!{width: 100%; margin: 40px 0;}/public/img/scheduled-downtimes-1.png!
 
 p. Hier ist zu erkennen, dass die geplante Wartungsarbeit, die das Update eines Webservers betrifft, zwischen 01 und 03 Uhr am 30.03.2014 stattfindet.
 
@@ -20,7 +20,7 @@ h2. Wiederkehrende Wartungsarbeiten
 
 p. Eine Zeitangabe über für eine wiederkehrende Wartungsarbeit könnte so aussehen:
 
-!/public/img/scheduled-downtimes-2.png!
+!{width: 100%; margin: 40px 0;}/public/img/scheduled-downtimes-2.png!
 
 p. Diese Einstellungen haben den großen Vorteil, dass sich die Zeitangabe nicht auf ein einmaliges, sondern auf ein wiederkehrendes Ereignis bezieht. So können Sie zum Beispiel Benachrichtigungen verhindern, wenn zum Beispiel das Backup Ihres Servers die Performance nächtlich stark beeinflußt. Die Planung von Wartungsarbeiten können für einzelne Services, sowie für einen gesamten Host getätigt werden, was alle Services mit einbeziehen würde.
 

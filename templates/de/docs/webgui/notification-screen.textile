@@ -4,7 +4,7 @@ h2. Der Notification Screen
 
 p. Mit dem Notification Screen haben Sie die Möglichkeit, die für einen Benutzer konfigurierten Hosts mit einem Status zu sehen. Diese Übersicht eignet sich besonders für große Wandmonitore in Ihrem Büro. Dort haben Sie dann zu jeder Zeit den Status Ihrer Hosts und Services im Blickfeld und können deutlich schneller reagieren, wenn etwas ausfällt.
 
-!/public/img/notification-screen-1.png!
+!{width: 100%; margin: 40px 0;}/public/img/notification-screen-1.png!
 
 p. *Es wird empfohlen,* für den Notification Screen einen oder mehrere Benutzer zu erstellen, die nur lesenden Zugriff auf die gesamte WebGUI haben. Um so einen Benutzer anzulegen, müssen Sie den Benutzer mit folgenden Rechten konfigurieren:
 
@@ -19,7 +19,7 @@ h3. Notification Screen ohne Login abrufen
 
 p. Im Formular zur Konfiguration der Benutzer haben Sie die Möglichkeit, einen *Authenfication-Key* zu erstellen. Mit diesem Key kann der Notification Screen abgerufen werden, ohne sich einloggen zu müssen.
 
-!/public/img/authentificaton-key-1.png
+!{width: 100%; margin: 40px 0;}/public/img/authentificaton-key-1.png
 
 p. Mit dieser Einstellung können Sie den Notification Screen nun wie folgt aufrufen:
 
@@ -34,7 +34,7 @@ p. Mit dem *Authenfication-Key* können Sie ebenfalls Charts abrufen ohne sich e
 * Speichern Sie die Charts unter einem Namen ab
 * Merken Sie sich die Chart ID
 
-!/public/img/chart-view-selection-1.png!
+!{width: 100%; margin: 40px 0;}/public/img/chart-view-selection-1.png!
 
 p. Anhand des Beispiels in der Grafik verwenden wir nun die Charts, welche unter dem Namen __CPU-Charts__ mit der ID __21__ abgespeichert sind. Diese Charts können Sie nun wie folgt abrufen:
 

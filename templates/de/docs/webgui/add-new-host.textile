@@ -17,7 +17,7 @@ h3. Zu 1.
 
 p. Den neuen Host können Sie im Bereich __MONITORING ⇒ Hosts__ anlegen. Oben Rechts befindet sich ein Plus-Icon, um zum Formular zu gelangen, mit dem Sie einen neuen Host anlegen können.
 
-!/public/img/add-new-host-1.png!
+!{width: 100%; margin: 40px 0;}/public/img/add-new-host-1.png!
 
 p. Dort angelangt, füllen Sie das Formular mit allen notwendigen Daten aus. Am wichtigsten hierbei sind der Hostname, die IP-Adresse und eine kleine Beschreibung des Hosts. Das Passwort, welches die Bloonix-Agenten zur Authentifizierung verwenden müssen, sollte bereits mit einem zufälligen Passwort generiert worden sein. Sind alle Felder ausgefüllt, so können Sie den Host anlegen.
 

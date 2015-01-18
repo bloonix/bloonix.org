@@ -24,11 +24,11 @@ p. Die Konfiguration von Host-Variablen ist sehr einfach. Das Format ist __NAME=
 
 p. Beispiel:
 
-!/public/img/host-variables-1.png!
+!{width: 100%; margin: 40px 0;}/public/img/host-variables-1.png!
 
 p. Diese Variablen können nun bei der Konfiguration eines Service-Checks verwendet werden:
 
-!/public/img/host-service-variables-1.png!
+!{width: 100%; margin: 40px 0;}/public/img/host-service-variables-1.png!
 
 h2. Vordefinierte Variablen
 
