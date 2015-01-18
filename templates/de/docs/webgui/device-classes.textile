@@ -1,4 +1,4 @@
-h1. %%site.help.doc.device-classes%%
+h1. Bauklasse von Hosts
 
 h2. Wie funktioniert dieses Feature
 

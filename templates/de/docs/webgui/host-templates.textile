@@ -42,13 +42,13 @@ p. *Bitte beachten Sie:* Wenn Sie ein Host-Template einem Host zuordnen, so werd
 
 h2. Host-Template Variablen
 
-p. Es ist möglich, Variablen für Hosts und Host-Templates einzurichten. Diese Variablen können zur Definition von Schwellwerten eingesetzt werden. Auf diese Weise bekommen Sie ein Stück Dynamik trotz der starren Host-Templates zurück. Weitere Informationen hierzu finden Sie im Dokument: <a data-id="host-variables">%%site.help.doc.host-variables%%</a>
+p. Es ist möglich, Variablen für Hosts und Host-Templates einzurichten. Diese Variablen können zur Definition von Schwellwerten eingesetzt werden. Auf diese Weise bekommen Sie ein Stück Dynamik trotz der starren Host-Templates zurück. Weitere Informationen hierzu finden Sie im Dokument: <a data-id="host-variables">Host Variablen</a>
 
 h2. Änderung von Parametern eines Service-Checks
 
 p. Die Parameter von Service-Checks, die aus einem Host-Template vererbt wurden, können nicht mehr für einzelne Hosts angepasst werden. Wenn Sie die Parameter ändern möchten, dann geht das nur über die Service-Checks, die in den entsprechenden Host-Templates konfiguriert sind.
 
-p. *Bitte beachten Sie,* dass es möglich ist, Variablen für Hosts und Host-Templates einzurichten. Diese Variablen können zur Definition von Schwellwerten eingesetzt werden. Auf diese Weise bekommen Sie ein Stück Dynamik trotz der starren Host-Templates zurück. Weitere Informationen hierzu finden Sie im Dokument: <a data-id="host-variables">%%site.help.doc.host-variables%%</a>
+p. *Bitte beachten Sie,* dass es möglich ist, Variablen für Hosts und Host-Templates einzurichten. Diese Variablen können zur Definition von Schwellwerten eingesetzt werden. Auf diese Weise bekommen Sie ein Stück Dynamik trotz der starren Host-Templates zurück. Weitere Informationen hierzu finden Sie im Dokument: <a data-id="host-variables">Host Variablen</a>
 
 p. In der Übersicht der konfigurierten Service-Checks eines Hosts lassen sich Service-Checks, die aus einem Host-Template vererbt wurden, auch sehr leicht erkennen. In der folgenden Grafik sind diese Service-Checks mit dem Icon !/public/img/host-template-icon.png! markiert.
 

@@ -58,7 +58,7 @@ h3. Authentication-Key
 
 p. Mit dem Authentication-Key haben Benutzer die Möglichkeit, den Benachrichtigungsbildschirm abzurufen, ohne dabei eingeloggt zu sein. Über diesen Key hat der Benutzer nur auf den Benachrichtigungsbildschirm Zugriff!
 
-p. Für weitere Möglichkeiten zur Nutzung lesen Sie das folgende Dokument: <a data-id="notification-screen">%%site.help.doc.notification-screen%%</a>
+p. Für weitere Möglichkeiten zur Nutzung lesen Sie das folgende Dokument: <a data-id="notification-screen">Notification Screen</a>
 
 h3. Gesperrt
 
