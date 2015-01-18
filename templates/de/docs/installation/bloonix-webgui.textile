@@ -2,6 +2,8 @@ h1. Installation der WebGUI
 
 p. Die Bloonix-WebGUI ist in zwei Pakete aufgeteilt. Es gibt zum Einen das Paket __bloonix-webgui-core__, welches Abhängigkeiten installiert und über die Konfigurationsdateien der WebGUI verfügt und zum Anderen das Paket __bloonix-webgui__, welches die Web-Applikation enthält, die unter __/srv/bloonix/webgui__ installiert wird.
 
+p. _Wichtig: Bitte installieren Sie die WebGUI erst, wenn Sie Nginx installiert haben, da ansonsten wichtige Konfigurationsdateien nicht angelegt werden!_
+
 p. Die WebGUI kann wie folgt installiert werden:
 
 bc. # Debian / Ubuntu
@@ -12,8 +14,6 @@ yum install bloonix-webgui
 
 bc. # SuSE / SLES
 zypper install bloonix-webgui
-
-p. _Bitte installieren Sie die WebGUI erst, wenn Sie Nginx installiert haben, da ansonsten wichtige Konfigurationsdateien nicht angelegt werden!_
 
 h2. Nginx konfigurieren
 
