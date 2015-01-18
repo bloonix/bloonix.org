@@ -231,6 +231,7 @@ Route: /administration/groups/:group_id/users/remove
 h2. Objekte - Kontakte
 
 h3. Routen
+
 bc. Route: /contacts
 Route: /contacts/options
 Route: /contacts/create
@@ -241,6 +242,7 @@ Route: /contacts/:contact_id/delete
 h2. Objekte - Kontaktgruppen
 
 h3. Routen
+
 bc. Route: /contactgroups
 Route: /contactgroups/options
 Route: /contactgroups/create
@@ -431,6 +433,7 @@ h2. Host Downtimes einrichten (Kurzbeschreibung)
 p. Dies ist eine Kurzbeschreibung um eine Downtime für mehrere Hosts einzurichten und wieder zu löschen. Die Hosts werden mit dem Schlüssel __host_id__ angegeben. Wichtig ist, dass Sie den Parameter __flag__ setzen. Anhand dieses Flags können Downtimes eindeutig identifiziert und später wieder gelöscht werden.
 
 h3. Einloggen
+
 bc. curl -H 'Content-Type: application/json' https://gui.bloonix.de/login/ -d '
 {
     "username" : "username",
@@ -440,6 +443,7 @@ bc. curl -H 'Content-Type: application/json' https://gui.bloonix.de/login/ -d '
 p. Die Session-ID aus __sid__ muss für alle weiteren Requests verwendet werden.
 
 h3. Token abfragen und Downtimes einrichten
+
 p. Das Token aus __data__ muss für den Request zum Anlegen der Downtimes verwendet werden. Das Token ist nur für 30 Sekunden gültig.
 
 p. Zur Angabe der Dauer der Downtime gibt es drei Typen: __preset__, __absolute__ und __timeslice__
@@ -486,6 +490,7 @@ curl -H 'Content-Type: application/json' https://gui.bloonix.de/hosts/create-dow
 }'
 
 h3. Token abfragen und Downtimes löschen
+
 p. Das Token aus __data__ muss für den Request zum Löschen der Downtimes verwendet werden. Das Token ist nur für 30 Sekunden gültig.
 
 bc.. curl -H 'Content-Type: application/json' https://gui.bloonix.de/token/csrf -d '

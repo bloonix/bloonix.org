@@ -80,5 +80,5 @@ p. Ist der Service-Check angelegt, so können Sie nun das Web-Transaction-Dashbo
 Zum Dashboard gelangen Sie wie folgt:
 
 !{margin: 40px 0;}/public/img/wtrm-step-17.png!
-!{margin: 40px 0;}/public/img/wtrm-step-18.png!
+!{width: 100%; margin: 40px 0;}/public/img/wtrm-step-18.png!
 

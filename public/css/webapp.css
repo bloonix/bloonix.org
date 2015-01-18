@@ -26,7 +26,7 @@
 }
 #doc-nav .active-chapter {
     color: #116c77;
-    font-weight: 400;
+    font-weight: 500;
 }
 #doc-content {
     width: 900px;
@@ -87,7 +87,7 @@
     text-decoration: underline;
 }
 #doc-content pre {
-    font-size: 13px;
+    font-size: 14px;
     font-weight: normal;
     color: #fff;
     margin: 30px 0 30px 10px;
