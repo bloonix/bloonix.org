@@ -1,0 +1,75 @@
+h1. Die Benutzer- und Gruppenverwaltung
+
+h2. Gruppen
+
+p. Mit der Benutzer- und Gruppenverwaltung können Sie genauestens festlegen, welche Benutzer welche Hosts und Services sehen, die Konfiguration ändern oder sogar löschen dürfen. Die Rechte lassen sich soweit runterschrauben, sodass ein Benutzer nur noch über Leserechte in der gesamten WebGUI verfügt.
+
+p. Benutzer- und Gruppen lassen sich im Administrationsbereich konfigurieren. Die einzelnen Optionen für Benutzer und Gruppen sind in den Formularen gut erklärt.
+
+p. Wenn Sie einen Benutzer einer Gruppe hinzufügen, dann können Sie auch gleichzeitig festlegen, welche Rechte der Benutzer in Bezug auf die Hosts und Services in der Gruppe besitzt. Folgende Rechte können konfiguriert werden:
+
+* Neue Services anlegen
+* Services ändern
+* Services löschen
+* Hosts ändern
+
+p. Die Rechte geben einem Benutzer das Recht, für Hosts, die sich ebenfalls in der Gruppe befinden, neue Services anzulegen, zu ändern oder zu löschen. Das Recht "Hosts ändern" betrifft Änderungen wie zum Beispiel Wartungsarbeiten einzutragen, einen Host zu deaktivieren oder Benachrichtigungen ein- oder auszuschalten.
+
+h2. Benutzer
+
+p. Die Benutzerverwaltung von Bloonix ist sehr einfach gehalten. Es gibt auf der einen Seite Hosts, Services und Kontakte. Auf der anderen Seite haben Sie Benutzer, die diese einzelnen Resourcen verwalten und deren Status einsehen dürfen.
+
+p. Folgende Parameter stehen Ihnen zur Einrichtung von Benutzern zur Verfügung:
+
+h3. Benutzername
+
+p. Hier wird der eindeutige Benutzername angegeben, mit dem sich der Benutzer einloggt. Dieser Name muss in Form einer E-Mail-Adresse angegeben werden.
+
+h3. Telefon
+
+p. Hier können Sie die Festnetz- oder Mobilfunknummer des Benutzers eintragen. Die Rufnummer kann in dringenden Notfällen von Kollegen oder auch vom Bloonix-Support verwendet werden.
+
+h3. Zeitzone
+
+p. Die Zeitzone des Benutzers ist wichtig zur richtigen Anzeige von Datum und Uhrzeit im gesamten Interface. Bitte beachten Sie, dass Datum und Uhrzeit von Charts die Browsereinstellung verwenden, da die Zeit direkt im Browser umgewandelt wird.
+
+h3. Rolle
+
+p. Mit der Rolle bestimmen Sie, welche Berechtigungen ein Benutzer hat. Es gibt insgesamt drei Rollen in der Bloonix Applikation:
+
+|_. Rolle |_. &nbsp;|_. Wert |
+| admin | Administrator | Der Power-User sollte nur verwendet werden, um im Bereich __ADMINISTRATION__ zu agieren. Bitte verwenen Sie den Benutzer für keine anderen Aktionen. |
+| operator | Operator | Der Operator ist ein Power-User und darf Benutzer- und Gruppen verwalten. |
+| user | Benutzer|  Die Rolle __user__ ist für alle sonstigen Benutzer. Diese Benutzer haben keinen Zugriff auf den Administrationsbereich. |
+
+h3. Verwaltung von Kontakten
+
+p. Über das Rollensystem hinaus kann hier konfiguriert werden, ob der Benutzer Kontakte verwalten darf.
+
+h3. Passwort
+
+p. Das Passwort wird verschlüsselt in der Datenbank abgespeichert und kann nicht eingesehen werden. Sollte der Benutzer sein Passwort vergessen, so bleibt nur der Weg ihm ein neues Passwort zu vergeben.
+
+h3. Passwort geändert
+
+p. Mit diesem Parameter kann das Ändern eines initialen Passwörts erzwungen werden. Wenn zum Beispiel ein neuer Benutzer eingerichtet wurde oder ein Benutzer sein Passwort vergessen hat und ihm ein neues Passwort eingerichtet wurde, dann können Sie den Benutzer erneut dazu auffordern, sein Passwort beim nächsten Zugriff auf die Weboberfläche zu ändern.
+
+h3. Authentication-Key
+
+p. Mit dem Authentication-Key haben Benutzer die Möglichkeit, den Benachrichtigungsbildschirm abzurufen, ohne dabei eingeloggt zu sein. Über diesen Key hat der Benutzer nur auf den Benachrichtigungsbildschirm Zugriff!
+
+p. Für weitere Möglichkeiten zur Nutzung lesen Sie das folgende Dokument: <a data-id="notification-screen">%%site.help.doc.notification-screen%%</a>
+
+h3. Gesperrt
+
+p. Mit diesem Parameter können Sie einen Benutzeraccount deaktivieren. Eingeloggte Benutzer werden beim nächsten Zugriff auf die Weboberfläche zum Login umgeleitet.
+
+h3. Erlaubter IP-Zugriff
+
+p. 
+Falls Sie den Wunsch haben, einen Benutzerzugang zusätzlich abzusichern, so können Sie für jeden Benutzer IP-Adressen in dieses Feld eintragen, von denen sich ein Benutzer in der Weboberfläche einloggen darf. Diese Option ist besonders für Benutzer sinnvoll, die über die Rolle __operator__ verfügen.
+
+h3. Kommentar
+
+p. Ein einfaches Kommentarfeld. Das Kommentarfeld ist für den Benutzer selbst nicht einsehbar.
+

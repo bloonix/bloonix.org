@@ -1,0 +1,22 @@
+[
+    { "Grundlegendes zur Bloonix-WebGUI": "bloonix-webgui.textile" },
+    { "Wie überwacht Bloonix Hosts und Services": "how-does-bloonix-checks-your-hosts-and-services.textile" },
+    { "Einen neuen Host anlegen": "add-new-host.textile" },
+    { "Host Parameter im Detail": "host-parameter.textile" },
+    { "Host Variablen": "host-variables.textile" },
+    { "Host Templates einrichten und verwalten": "host-templates.textile" },
+    { "Bauklasse von Hosts": "device-classes.textile" },
+    { "Einen neuen Service anlegen": "add-new-service.textile" },
+    { "Service Parameter im Detail": "service-parameter.textile" },
+    { "Was ist ein Host-Alive-Check?": "host-alive-check.textile" },
+    { "Web-Transactions": "web-transactions.textile" },
+    { "Abhängigkeiten zwischen Hosts und Services": "host-and-service-dependencies.textile" },
+    { "Geplante Wartungsarbeiten einrichten": "scheduled-downtimes.textile" },
+    { "Kontakte und Benachrichtigungen": "contacts-and-notifications.textile" },
+    { "Die Benutzer- und Gruppenverwaltung": "users-and-groups.textile" },
+    { "Eigene Charts erstellen": "user-charts.textile" },
+    { "Notification Screen": "notification-screen.textile" },
+    { "Die Bloonix JSON API": "json-api.textile" },
+    { "Den Bloonix-Agenten installieren": "bloonix-agent-installation.textile" },
+    { "Den Bloonix-Agenten konfigurieren": "bloonix-agent-configuration.textile" }
+]

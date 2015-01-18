@@ -1,0 +1,84 @@
+h1. Web-Transactions
+
+h2. Was sind Web-Transactions
+
+p. Mit den Web-Transactions haben Sie die Möglichkeit, Endbenutzer auf Ihrer Webseite zu simulieren. Stellen Sie sich beispielhaft vor, wie ein Benutzer einen Webshop besucht, nach Artikeln sucht, Artikel in den Warenkorb legt und diese letztendlich nach Ausfüllung eines Formulars bestellt. Dieser Workflow lässt sich über die Web-Transactions simulieren. Auf diese Weise haben Webseitenbetreiber die Möglichkeit Ihren Webshop auf eine Weise zu überwachen, wie es mit gewöhnlichen Checks kaum möglich ist.
+
+h2. Wie funktionieren Web-Transactions
+
+p. Die Web-Transactions werden über einen __Headless Browser__, basierend auf WebKit, simuliert. Dafür ist es notwendig, Regelsätze zu definieren, mit denen Step für Step Benutzeraktionen durchgeführt werden. 
+
+p. Nehmen wir uns als Beispiel die Login-Seite der Bloonix-WebGUI, in die wir uns einloggen möchten. Hierzu schauen wir uns zunächst das HTML-Formular der Login-Seite an:
+
+bc. &lt;form action="/login" method="POST"&gt;
+&lt;input type="text" name="username" value="" /&gt;
+&lt;input type="text" name="password" value="" /&gt;
+&lt;button type="submit" id="submit"&gt;Login&lt;/button&gt;
+&lt;/form&gt;
+
+p. Die Regelsätze zum Login müssten dann wie folgt lauten:
+
+# Besuche die Webseite __https://gui.bloonix.de/login__
+# Gebe den Wert __mein@benutzer.test__ in das Formularfeld __username__ ein
+# Gebe den Wert __geheim__ in das Formularfeld __password__ ein
+# Klicke auf den Button mit der ID __#submit__
+# Warte bis das Element __#content__ geladen ist
+
+p. Das Element __#content__ ist ein eindeutiges Element, welches im Login-Formular nicht existiert. Es wird also solange gewartet, bis die Startseite der WebGUI geladen wurde, denn dort existiert das Element.
+
+h2. Die Einrichtung im Detail
+
+p. Zur Einrichtung der Web-Transactions gelangen Sie wie folgt:
+
+!/public/img/docs/add-new-service-1.png!
+
+p. Bei den Plugins angelangt klicken Sie dann das Plugin __WebTransactions__ an.
+
+!/public/img/docs/select-wtrm-plugin-1.png!
+
+p. Dort angelangt können Sie nun den Workflow einrichten. Als Beispiel verwenden wir den obigen Workflow, um uns in die WebGUI von Bloonix einzuloggen.
+
+h3. 1. Besuche die Webseite __https://gui.bloonix.de/login__
+
+!/public/img/docs/wtrm-step-1.png!
+!/public/img/docs/wtrm-step-2.png!
+!/public/img/docs/wtrm-step-3.png!
+
+h3. 2. Gebe den Wert __mein@benutzer.test__ in das Formularfeld __username__ ein
+
+!/public/img/docs/wtrm-step-4.png!
+!/public/img/docs/wtrm-step-5.png!
+!/public/img/docs/wtrm-step-6.png!
+
+h3. 3. Gebe den Wert __geheim__ in das Formularfeld __password__ ein
+
+!/public/img/docs/wtrm-step-7.png!
+!/public/img/docs/wtrm-step-8.png!
+!/public/img/docs/wtrm-step-9.png!
+
+h3. 4. Klicke auf den Button mit der ID __#submit__
+
+!/public/img/docs/wtrm-step-10.png!
+!/public/img/docs/wtrm-step-11.png!
+!/public/img/docs/wtrm-step-12.png!
+
+h3. 5. Warte bis das Element __#content__ geladen ist
+
+!/public/img/docs/wtrm-step-13.png!
+!/public/img/docs/wtrm-step-14.png!
+!/public/img/docs/wtrm-step-15.png!
+
+h3. Nun klicken Sie auf den Button __Check it!__, um den Workflow zu testen.
+
+!/public/img/docs/wtrm-step-16.png!
+
+p. Ist der Workflow fertig, dann können Sie den Workflow als Service-Check anlegen.
+
+h2. Das Web-Transaction Dashboard
+
+p. Ist der Service-Check angelegt, so können Sie nun das Web-Transaction-Dashboard aufrufen, um die Ergebnisse der Prüfungen einzusehen.
+Zum Dashboard gelangen Sie wie folgt:
+
+!/public/img/docs/wtrm-step-17.png!
+!/public/img/docs/wtrm-step-18.png!
+

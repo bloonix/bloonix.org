@@ -1,0 +1,503 @@
+h1. Die Bloonix JSON API
+
+h2. Allgemeines
+
+p. Die gesamte WebGUI von Bloonix ist in JavaScript entwickelt. Die Daten werden über die JSON-API von Bloonix mittels HTTP-POST Abfragen im JSON-Format ausgetauscht. Aus diesem Grund ist es möglich, alle Komponenten und Objekte übers Web zu verwalten.
+
+p. Sie finden in diesem Dokument nicht alle Komponenten, die abgefragt werden können. Sollten Sie Fragen haben, so wenden Sie sich bitte an den Bloonix-Support. 
+
+h2. HTTP Abfrage
+
+p. Eine Abfrage über die JSON-API sieht beispielhaft wie folgt aus:
+
+bc.. POST /login HTTP/1.1
+Host: gui.bloonix.de
+Content-Type: application/json
+Content-Length: 35
+
+{"username":"your-user-name","password":"your-secret-password"}
+
+p. Dabei sind ein paar Dinge zu beachten.
+
+* Die HTTP-Methode muss POST sein.
+* Der Content-Type muss 'application/json' sein.
+* Der JSON-String muss UTF-8 kodiert sein.
+
+h2. HTTP Antwort
+
+p. Die Antwort der JSON-API erfolgt, wie auch die Anfrage, im JSON-Format. Dabei hat die Antwort beispielhaft folgenden strukturellen Aufbau:
+
+bc. {
+    "server_time" : "1400501371624",
+    "who_am_i" : "starsky.bloonix.de",
+    "status" : "ok",
+    "data" : {
+        "sid" : "sdfah7823fs83k3..."
+    },
+    "total" : 1,
+    "size" : 1,
+    "offset" : 0
+}
+
+p. Folgende Werte können in der Antwort der JSON-API vorkommen:
+
+|_. server_time | Die Uhrzeit des Servers, der die Daten ausgeliefert hat. |
+|_. who_am_i | Der Hostname des Servers, der die Daten ausgeliefert hat. |
+|_. status | Der Status der Anfrage. Diese kann entweder __ok__ oder einen Fehlercode im Format __err-NUMMER__ sein. |
+|_. message | Sollte der Status einer Anfrage nicht ok sein, dann finden Sie hier eine Fehlermeldung. |
+|_. failed | Sollten Sie Formulardaten zum Anlegen oder zur Modifizierung von Objekten senden und der Status der Antwort nicht __ok__ sein, dann finden Sie hier wohlmöglich die Parameter, welche nicht valide Angaben enthalten. |
+|_. data | Hier finden Sie die Daten zur Abfrage, wenn die Abfrage erfolgreich war und der Status __ok__ ist. |
+|_. total, size, offset | Diese Angaben sind immer dann wichtig, wenn Sie eine Liste von Daten abfragen. Wenn Sie zum Beispiel eine Liste von Hosts abfragen, erhalten Sie in der Antwort immer die Information, wieviele Daten (total) tatsächlich vorhanden sind; wieviele Elemente das Datenarrray enthält (size) und wo die Liste beginnt (offset). Diese Angaben sind auch mit OFFSET und LIMIT von SQL-Abrfagen vergleichbar. |
+
+h2. Grundlegender Aufbau von Routen
+
+h3. Was sind Routen?
+
+p. Eine Route ist schlichtweg der Pfad einer URL. Die gesamte JSON-API von Bloonix wird über Routen angesteuert. Wenn Sie zum Beispiel eine Liste aller Hosts abfragen möchten, so geschieht das über die Route __/hosts__. Wenn Sie nun die Daten eines bestimmten Hosts abfragen möchten, so wird an die Route noch die ID des Hosts angehängt, etwa so __/hosts/1000__.
+
+p. Sie können das auch gerne einmal testen. Rufen Sie dazu in der URL-Leiste Ihres Browsers folgende URL auf:
+
+bc. https://gui.bloonix.de/hosts
+
+p. Sie erhalten dann eine Liste aller Hosts im JSON-Format. Mit dem Parameter __pretty__ können Sie der JSON-API mitteilen, dass die Ausgabe etwas leserlicher ausgegeben werden soll.
+
+bc. https://gui.bloonix.de/hosts?pretty
+
+h3. Aufbau von Routen
+
+p. Der Aufbau der Routen ist einheitlich strukturiert. Schauen wir uns doch beispielhaft folgende Route etwas genauer an:
+
+bc. /hosts/1000/services/400/update
+
+p. Mit dieser Route wird die Konfiguration eines Service geupdated und zwar der Service, der die ID 400 hat und zum Host mit der ID 1000 gehört. Schauen wir uns als nächstes die Teilpfade an und welche Ausgabe mit jedem Teilpfad zu erwarten ist:
+
+|_. /hosts | Liste aller Hosts abfragen. |
+|_. /hosts/1000 | Abfrage des Hosts mit der ID 1000. |
+|_. /hosts/1000/services | Alle Services des Hosts 1000 abfragen. |
+|_. /hosts/1000/services/400 | Abfrage des Service mit der ID 400. |
+|_. /hosts/1000/services/400/update | Den Service mit der ID 400 updaten. |
+
+h3. Objekte abfragen, erstellen, updaten, löschen
+
+p. Es folgt eine Übersicht über den allgemeinen Aufbau von Routen.
+
+|_. /hosts | Liste aller Hosts abfragen. |
+|_. /hosts/options | Abfrage der Parameter zum Erstellen eines Hosts. |
+|_. /hosts/create | Einen neuen Host anlegen. |
+|_. /hosts/1000 | Abfrage des Hosts mit der ID 1000. |
+|_. /hosts/1000/options | Abfrage des Parameter zum Updaten des Hosts mit der ID 1000. |
+|_. /hosts/1000/update | Den Host mit der ID 1000 updaten. |
+|_. /hosts/1000/delete | Den Host mit der ID 1000 löschen. |
+
+h2. Grundlegendes zu Abfragen von Listen
+
+h3. Beispielrouten
+
+bc. Route: /hosts
+Route: /services
+Route: /contacts
+
+p. Listen werden immer in Teilen ausgeliefert. Das heißt, wenn es 10000 Hosts gibt, werden doch nur 50 Hosts in einer Antwort geliefert. Dies gilt zur Vorbeugung von zu hoher Speicherauslastung. Die Anzahl der Objekte pro Abfrage kann mit bestimmten POST-Parametern kontrolliert werden.
+
+p. Beispiel einer Anfrage mit folgenden POST-Daten:
+
+bc. {
+    "size" : 3,
+    "offset" : 0
+}
+
+p. Antwort:
+
+bc. {
+    "status" : "ok",
+    "data" : [
+        { "id" : 1 },
+        { "id" : 2 },
+        { "id" : 3 }
+    ],
+    "total" : 10000,
+    "size" : 3,
+    "offset" : 0
+}
+
+p. Die Antwort enthält wie angefordert nur drei Objeke. Um die nächsten drei Objekte abzufragen, muss eine weitere Abfrage gesendet werden. Der __offset__ muss dabei erhöht werden:
+
+bc. {
+    "size" : 3,
+    "offset" : 3
+}
+
+p. Antwort:
+
+bc. {
+    "status" : "ok",
+    "data" : [
+        { "id" : 4 },
+        { "id" : 5 },
+        { "id" : 6 }
+    ],
+    "total" : 10000,
+    "size" : 3,
+    "offset" : 3
+}
+
+h2. Login und Logout
+
+bc. Route: /login
+
+|_. Parameter |_. Datatype |_. Default |_. Required |_. Description |
+| username | STRING (100) | | yes | Username |
+| password | STRING (100) | | yes | Password |
+    
+p. Antwort:
+
+bc. {
+    "status" : "ok",
+    "data" : {
+        "sid" : "a-very-long-session-id"
+    }
+}
+
+p. Die Session-ID muss für jede weitere Abfrage verwendet werden. Setzen Sie die Session-ID daher mit Namen __sid__ als Cookie im HTTP-Header jedes Abfrage.
+
+bc. Route: /logout
+
+p. Verwenden Sie diese Route um sich auszuloggen.
+
+h2. Objekte erstellen, ändern und löschen
+
+h3. Grundlegendes
+
+p. Für alle Aktionen, bei denen Sie Objekte erstellen, ändern oder löschen möchten, ist ein sogenanntes CSRF-Token notwendig. Nur mit diesem Token dürfen Objekte modifiziert werden. Bevor Sie also ein Objekt modifizieren möchten, fordern Sie zunächst ein Token an. Die Route lautet hierzu wie folgt:
+
+bc. Route: /token/csrf
+
+p. Die Antwort enthält das Token:
+
+bc. {
+   "status" : "ok",
+   "data" : "37746962038f0a430c55d3c8d49eb5585b1dac1456ec393cfda9295a9578a5bf",
+}
+
+p. Dieses Token müssen Sie mit dem Parameter __token__ zu den POST-Daten hinzufügen.
+
+p. *Bitte beachten Sie,* dass das Token nur für 30 Sekunden gültig ist. Sollten Sie versuchen, ein Objekt ohne ein Token zu modifizieren oder sollte die Gültigkeitsdauer eines Tokens abgelaufen sein, so erhalten Sie eine Fehlermeldung.
+
+h3. Objekte erstellen und ändern
+p. In diesem Dokument sind die einzelnen Parameter zum Erstellen oder zum Ändern von Objekten bewußt nicht dokumentiert. Stattdessen können Sie die Parameter über die JSON-API abfragen.
+
+p. Angenommen, Sie möchten einen neuen Host erstellen und sich hierzu die Parameter anschauen. Unter folgender Route können Sie die Parameter mit den möglichen Optionen abrufen:
+
+bc. /hosts/options
+
+p. Falls Sie die Parameter eines Hosts abrufen möchten, der bereits angelegt ist, dann können Sie das über folgende Route:
+
+bc. /hosts/:host_id/options
+
+p. Wobei Sie den Platzhalter __:host_id__ einfach mit der ID des Hosts ersetzen.
+
+p. Auf diese Weise können Sie für alle Objekte die Parameter abfragen, die zum Erstellen oder zum Ändern erforderlich sind.
+
+h2. Objekte - Benutzer
+
+h3. Routen
+
+bc. Route: /administration/users
+Route: /administration/users/options
+Route: /administration/users/create
+Route: /administration/users/:user_id
+Route: /administration/users/:user_id/update
+Route: /administration/users/:user_id/delete
+
+h2. Objekte - Benutzergruppen
+
+h3. Routen
+
+bc. Route: /administration/groups
+Route: /administration/groups/options
+Route: /administration/groups/create
+Route: /administration/groups/:group_id
+Route: /administration/groups/:group_id/update
+Route: /administration/groups/:group_id/delete
+Route: /administration/groups/:group_id/hosts/list
+Route: /administration/groups/:group_id/hosts/list-non
+Route: /administration/groups/:group_id/hosts/add
+Route: /administration/groups/:group_id/hosts/remove
+Route: /administration/groups/:group_id/users/list
+Route: /administration/groups/:group_id/users/list-non
+Route: /administration/groups/:group_id/users/add
+Route: /administration/groups/:group_id/users/remove
+
+h2. Objekte - Kontakte
+
+h3. Routen
+bc. Route: /contacts
+Route: /contacts/options
+Route: /contacts/create
+Route: /contacts/:contact_id
+Route: /contacts/:contact_id/update
+Route: /contacts/:contact_id/delete
+
+h2. Objekte - Kontaktgruppen
+
+h3. Routen
+bc. Route: /contactgroups
+Route: /contactgroups/options
+Route: /contactgroups/create
+Route: /contactgroups/:contactgroup_id
+Route: /contactgroups/:contactgroup_id/update
+Route: /contactgroups/:contactgroup_id/delete
+Route: /contactgroups/:contactgroup_id/contacts/in-group
+Route: /contactgroups/:contactgroup_id/contacts/not-in-group
+Route: /contactgroups/:contactgroup_id/contacts/add
+Route: /contactgroups/:contactgroup_id/contacts/remove
+Route: /contactgroups/:contactgroup_id/hosts/in-group
+Route: /contactgroups/:contactgroup_id/hosts/not-in-group
+Route: /contactgroups/:contactgroup_id/hosts/add
+Route: /contactgroups/:contactgroup_id/hosts/remove
+Route: /contactgroups/:contactgroup_id/services/in-group
+Route: /contactgroups/:contactgroup_id/services/not-in-group
+Route: /contactgroups/:contactgroup_id/services/add
+Route: /contactgroups/:contactgroup_id/services/remove
+
+h2. Objekte - Hosts
+
+h3. Routen
+
+bc. Route: /hosts
+Route: /hosts/options
+Route: /hosts/create
+Route: /hosts/:host_id
+Route: /hosts/:host_id/update
+Route: /hosts/:host_id/delete
+
+h2. Objekte - Templates
+
+h3. Routen
+
+bc. Route: /templates/hosts
+Route: /templates/hosts/options
+Route: /templates/hosts/create
+Route: /templates/hosts/:template_id
+Route: /templates/hosts/:template_id/update
+Route: /templates/hosts/:template_id/delete
+
+h2. Objekte - Timeperiods
+
+h3. Routen
+
+bc. Route: /timeperiods
+Route: /timeperiods/options
+Route: /timeperiods/create
+Route: /timeperiods/:timperiod_id
+Route: /timeperiods/:timperiod_id/update
+Route: /timeperiods/:timperiod_id/delete
+Route: /timeperiods/:timperiod_id/timeslices
+Route: /timeperiods/:timperiod_id/timeslices/create
+Route: /timeperiods/:timperiod_id/timeslices/:timeslice_id
+Route: /timeperiods/:timperiod_id/timeslices/:timeslice_id/update
+Route: /timeperiods/:timperiod_id/timeslices/:timeslice_id/delete
+
+h2. Chart Daten
+
+bc. Route: /hosts/:host_id/charts
+
+p. Mit dieser Abfrage werden alle verfügbaren Chart-Daten eines Hosts gezeigt. Beispiel:
+
+bc. {
+    "server_time" : "1400514110002",
+    "status" : "ok",
+    "who_am_i" : "starsky.bloonix.de",
+    "data" : [
+        {
+            "plugin" : "Apache2.Statistics",
+            "options" : {
+                "chart-type" : "area",
+                "ylabel" : "workers",
+                "series" : [
+                    {
+                        "color" : "#ff7a0d",
+                        "name" : "busyworkers"
+                    },
+                    {
+                        "color" : "#005467",
+                        "name" : "idleworker"
+                    }
+                ]
+            },
+            "host_id" : "60",
+            "chart_id" : "215",
+            "hostname" : "test1.bloonix.de",
+            "service_id" : "149",
+            "subkeys" : "",
+            "service_name" : "Apache2 process status",
+            "title" : "Apache - workers",
+            "ipaddr" : "127.0.0.1"
+        }
+    ],
+    "total" : "10",
+    "size" : 1,
+    "offset" : 0
+}
+
+bc. Route: /hosts/charts/data
+
+p. Um nun die Daten eines Charts abzurufen, ist folgende Abfrage notwendig:
+
+bc. {
+    "service_id" : "149",
+    "chart_id" : "215",
+    "preset" : "3h",
+    "avg" : "600p"
+}
+
+p. Die einzelnen Parameter haben folgende Bedeutung:
+
+|_. service_id | Die ID des Service, für welchen die Chart-Daten abgerufen werden sollen. |
+|_. chart_id | Die ID des Charts. Jeder Service kann mehrere Charts haben. |
+|_. preset | Der Zeitrahmen der Daten. Der Wert __3h__ bedeuted: die letzten 3 Stunden. Folgende Voreinstellungen sind möglich: 3h, 6h, 12h, 18h, 1d, 3d, 5d, 7d |
+|_. avg | Mit diesem Parameter wird bestimmt, auf wieviele Datenpunkte die Daten runter berechnet werden sollen. Weitere Informationen finden Sie hierzu weiter unten. |
+
+h3. Der Parameter __avg__
+
+p. Der Parameter __avg__ ist ein sehr nützlicher, aber auch wichtiger Parameter.
+
+p. Angenommen, Sie möchten einen Chart mit einer Weite von 800 Pixel erzeugen. In diesem Chart könnte man 800 Datenpunkte unterbringen - ein Datenpunkt pro Pixel -, ohne das sich Datenpunkte überschreiben würden. Wenn man nun Chart-Daten aus den letzten 3 Tagen anfordert, dann kommen da ca. 4320 Datenpunkte zusammen (pro Minute ein Datenpunkt bei einem Check-Intervall von 60 Sekunden).
+
+p. Um diese Datenpunkte nun optimal im Chart anzuzeigen, kann man über den Parameter __avg__ mitteilen, wieviele Datenpunte maximal benötigt werden. Sprich, bei einer Weite von 800 Pixel würde man der Wert von __avg__ auf __800p__ setzen.
+
+p. Was nun passiert ist, dass aus 4320 Datenpunkten 800 Datenpunkte berechnet werden. Dabei werden jede 6 Datenpunkte (4320 / 800 aufgerundet) zusammengefasst und ein Durchschnitt berechnet. Bei der Zusammenfassung der Datenpunte wird der Zeitstempel des ersten Datenpunkts verwendet. Auf diese Weise wird die Datenmenge auf ca. 720 Datenpunkte gesenkt.
+
+h3. Chart Daten
+
+p. Die Struktur der Chart-Daten sieht wie folgt aus:
+
+bc. {
+    "server_time" : "1400516771622",
+    "status" : "ok",
+    "who_am_i" : "starsky.bloonix.de",
+    "data" : {
+        "stats" : {
+             "sendrep" : [
+                [
+                    1400506030000,
+                    1
+                ],
+                [
+                    1400516747000,
+                    250
+                ]
+            ]
+        },
+        "service" : {
+             "options" : {
+                "chart-type" : "area",
+                "ylabel" : "workers",
+                "series" : [
+                    {
+                        "color" : "#ff7a0d",
+                        "name" : "busyworkers"
+                    },
+                    {
+                        "color" : "#005467",
+                        "name" : "idleworker"
+                    }
+                ]
+            },
+            "host_id" : "60",
+            "service_id" : "149",
+            "chart_id" : "215",
+            "hostname" : "test1.bloonix.de",
+            "service_name" : "Apache2 process status",
+            "category" : "System,Webserver,Apache2",
+            "ipaddr" : "127.0.0.1",
+            "plugin" : "Apache2.Statistics",
+            "description" : "Apache2 webserver statistics and process status.",
+            "title" : "Apache - workers"
+        }
+    }
+}
+
+p. Die Chart-Daten selbst finden Sie im Baum unter __data/stats/key__. Der erste Wert ist immer der UNIX-Timestamp in Millisekunden und der zweite Wert ist der Wert des Statistik-Keys, welcher in diesem Beispiel __sendrep__ ist.
+
+h3. Beschreibung der Statistiken
+
+bc. Route: /plugin-stats/:plugin
+
+p. Im obigen Beispiel sind die Chart-Daten des Plugins __Apache2.Statistics__ abgerufen worden. Wenn Sie nun eine detaillierte Beschreibung der einzelnen Statistik-Keys benötigen, so können Sie diese über folgende die Abfrage __/plugin-stats/Apache2.Statistics__ erhalten.
+
+h2. Host Downtimes einrichten (Kurzbeschreibung)
+
+p. Dies ist eine Kurzbeschreibung um eine Downtime für mehrere Hosts einzurichten und wieder zu löschen. Die Hosts werden mit dem Schlüssel __host_id__ angegeben. Wichtig ist, dass Sie den Parameter __flag__ setzen. Anhand dieses Flags können Downtimes eindeutig identifiziert und später wieder gelöscht werden.
+
+h3. Einloggen
+bc. curl -H 'Content-Type: application/json' https://gui.bloonix.de/login/ -d '
+{
+    "username" : "username",
+    "password" : "password"
+}'
+
+p. Die Session-ID aus __sid__ muss für alle weiteren Requests verwendet werden.
+
+h3. Token abfragen und Downtimes einrichten
+p. Das Token aus __data__ muss für den Request zum Anlegen der Downtimes verwendet werden. Das Token ist nur für 30 Sekunden gültig.
+
+p. Zur Angabe der Dauer der Downtime gibt es drei Typen: __preset__, __absolute__ und __timeslice__
+
+h4. preset (2h bedeuted __ab jetzt plus 2 Stunden__)
+
+p. bc. {
+    "type" : "preset",
+    "preset" : "2h"
+}
+
+h4. absolute (Einrichtung einer Downtime zu einer festen Uhrzeit)
+
+bc. {
+    "type" : "absolute",
+    "begin" : "2014-10-10 10:00:00",
+    "end" : "2014-10-11 10:00:00"
+}
+
+h4. timeslice (Einrichtung einer wiederkehrenden Downtime.)
+
+bc. {
+    "type" : "timeslice",
+    "timeslice" : "Monday - Sunday 00:00 - 01:00"
+}
+
+p. Eine Beschreibung der einzelnen Zeitangaben finden Sie hier: "Geplante Wartungsarbeiten einrichten":/de/docs/webgui/scheduled-downtimes.html
+
+bc. curl -H 'Content-Type: application/json' https://gui.bloonix.de/token/csrf -d '
+{
+    "sid" : "sid"
+}'
+
+curl -H 'Content-Type: application/json' https://gui.bloonix.de/hosts/create-downtime/ -d '
+{
+    "sid" : "sid",
+    "token" : "token",
+    "host_id" : [60, 62, 96],
+    "description" : "Test",
+    "timezone" : "Europe/Berlin",
+    "preset" : "2h",
+    "type" : "preset",
+    "flag" : "backup"
+}'
+
+h3. Token abfragen und Downtimes löschen
+p. Das Token aus __data__ muss für den Request zum Löschen der Downtimes verwendet werden. Das Token ist nur für 30 Sekunden gültig.
+
+bc. curl -H 'Content-Type: application/json' https://gui.bloonix.de/token/csrf -d '
+{
+    "sid" : "sid"
+}'
+
+curl -H 'Content-Type: application/json' https://gui.bloonix.de/hosts/delete-downtime/ -d '
+{
+    "sid" : "sid",
+    "token" : "token",
+    "host_id" : [60, 62, 96],
+    "flag" : "backup"
+}'
+

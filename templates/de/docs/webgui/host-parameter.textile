@@ -1,0 +1,89 @@
+h1. Host Parameter im Detail
+
+h2. Formularfeld: %%schema.company.attr.company%%
+
+p. Benutzer mit der Rolle __admin__ können hier den Host einer Unternehmsgruppe zuordnen. Sollten Sie nur die Rolle __operator__ haben, bleibt Ihnen wahrscheinlich nur die Angabe der Unternehmensgruppe, der Sie selbst angehören.
+
+h2. Formularfelder: %%schema.host.attr.hostname%%, %%schema.host.attr.ipaddr%%
+
+p. Diese Parameter sollten selbsterklärend sein. Zu beachten ist allerdings, dass der Hostname eindeutig sein muss.
+
+h2. Formularfelder: %%schema.host.attr.description%%, %%schema.host.attr.comment%%
+
+p. Diese zwei Felder sind selbsterklärend. Setzen Sie eine Beschreibung des Hosts wie zum Beispiel "Webserver" oder "Mailserver". Als Kommentar eignen sich besonders kurzlebige Informationen wie zum Beispiel "Es finden Wartungsarbeiten statt" oder "in Bearbeitung von Admin Tom". Sobald ein Feld gesetzt ist, erscheint es auch in den Statusmails.
+
+h2. Formularfeld: %%schema.host.attr.password%%
+
+p. Dieses Passwort wird vom Bloonix-Agenten verwendet, damit dieser sich mit der ID und dem Passwort des Hosts beim Bloonix-Server authentifizieren kann und um Daten zu Services für den Host abliefern zu können.
+
+h2. Formularfeld: %%schema.host.attr.sysinfo%%
+
+p. Mit dem Parameter __%%schema.host.attr.sysinfo%%__ haben Sie die Möglichkeit, einen externen Link einzutragen. Am besten eignet sich die Angabe eines Links zu einer firmeninternen Hardwareerfassung.
+
+p. Beispiel für den Parameter __%%schema.host.attr.sysinfo%%__:
+
+bc. 12345=https://mysite.test/?id=12345
+
+p. Der Parameter hat den Aufbau:
+
+bc. Alias=Link
+
+p. Der Alias wird dabei in den Beschreibungen zum Host als Link angezeigt.
+
+h2. Formularfelder: %%schema.host.attr.sysgroup%%, %%schema.host.attr.device_class%%, %%schema.host.attr.hw_manufacturer%%, %%schema.host.attr.hw_product%%, %%schema.host.attr.os_manufacturer%%, %%schema.host.attr.os_product%%, %%schema.host.attr.virt_manufacturer%%, %%schema.host.attr.virt_product%%, %%schema.host.attr.location%%
+
+p. Mit diesen Feldern können Sie genauere Angaben zu einem Host machen. Zum Beispiel ob es sich bei dem Host um einen Server, einen Drucker oder einen Router handelt. Ebenfalls können Sie Informationen zum Betriebssystemhersteller oder der Version eintragen.
+
+p. Bitte beachten Sie, dass diese Felder über eine Autovervollständigung verfügen. Das heisst, dass wenn Sie die Felder einmal für einen Host ausgefüllt haben, e
+rhalten Sie beim nächsten Host die bereits existierenden Werte als Vorschlag. Falls die Liste der Einträge zu lang ist, dann tippen Sie ein paar Buchstaben ein um die Anzeige zu verfeinern.
+
+p. Zum Parameter __%%schema.host.attr.device_class%%__ gibt es weitere Informationen im folgenden Dokument: <a data-id="device-classes">%%site.help.doc.device-classes%%</a>
+
+h2. Formularfeld: %%schema.host.attr.coordinates%%
+
+p. Bitte wählen Sie hier den genauen Standort Ihres Servers aus. Dieser Wert wird verwendet, um Ihren Host auf einer Weltkarte anzuzeigen.
+
+h2. Formularfeld: %%schema.host.attr.active%%
+
+p. Mit diesem Parameter können Sie einen Host aktivieren oder deaktivieren. Mit der Deaktivierung eines Hosts werden alle Services eines Hosts nicht mehr überwacht.
+
+h2. Formularfeld: %%schema.host.attr.allow_from%%
+
+p. Dieser Parameter sorgt in Kombination mit dem Passwort für optimale Sicherheit. Mit dem Parameter kann festgelegt werden, von welcher IP-Adresse ein Agent Daten für den Host abliefern darf. Die IP-Adresse 127.0.0.1 ist standardmäßig immer freigeschaltet.
+
+p. Falls der Bloonix-Agent von mehr als einer IP-Adresse aus Daten abliefern kann, dann können Sie hier eine kommaseparierte Liste von IP-Adressen eintragen. Der Eintrag "all" sorgt dafür, dass alle IP-Adressen freigeschaltet sind.
+
+h2. Formularfeld: %%schema.host.attr.interval%%
+
+p. Der Intervall hat einen entscheidenen Verwendungszweck bei der Erstellung der RRDs (Round Robin Databases). Der Wert sollte analog zum Parameter "interval" eingestellt werden, der beim zuständigen Bloonix-Agenten eingerichtet ist. Ist also der Bloonix-Agent, der die Checks für diesen Hosts ausführt, zum Beispiel auf einen Intervall von 60 Sekunden eingestellt, dann sollte dieser Wert ebenfalls auf 60 Sekunden gesetzt werden.
+
+h2. Formularfeld: %%schema.host.attr.timeout%%
+
+p. Mit diesem Wert wird bestimmt, nach wievielen Sekunden der Status eines Service als veraltet markiert wird und sollte um ein vielfaches von "Intervall" gesetzt werden. Das ist zum Beispiel dann wichtig, wenn ein Bloonix-Agent aus irgendeinem Grund den Status eines Service nicht mehr aktualisiert, vielleicht weil er ausgefallen oder zu stark überlastet ist.
+
+p. Zu beachten ist, dass dieser Wert für alle Services gilt. Sollte einmal ein Service tatsächlich auf diesem Timeout laufen, dann wird der Status des Service auf folgende Meldung gesetzt:
+
+bc. Service check timeout after 180s (host/agent dead?)
+
+h2. Formularfeld: %%schema.host.attr.max_services%%
+
+p. Falls Sie den Wunsch haben, die maximal konfigurierbaren Services für einen Host festzulegen, dann ist das über diesen Parameter möglich. Der Wert 0 bedeutet, dass es keine Einschränkung gibt.
+
+h2. Formularfeld: %%schema.host.attr.max_sms%%
+
+p. Mit dieser Option können Sie kontrollieren, wieviele SMS pro Monat höchstens für einen Host mit all seinen Services versendet werden dürfen. Ist das Maximum erreicht, dann werden keine Warnmeldungen mehr per SMS versendet. Natürlich erhalten Sie in jeder SMS und Mail eine zusächtliche Warnung, sollten nur noch 10% oder weniger als 5 SMS verfügbar sein.
+
+p. In Statusmails sieht die Warnung wie folgt aus:
+
+bc. === WARNING ===
+460/500 SMS used
+Please increase the maximal allowed SMS per month!
+
+p. Per SMS erhalten Sie selbstverständlich eine abgekürzte Warnmeldung:
+
+bc. Hostname ip-addresse [461/500 SMS USED] status
+
+h2. Formularfeld: %%schema.host.attr.variables%%
+
+p. Bitte lesen Sie unbedingt das Dokument: <a data-id="host-variables">%%site.help.doc.host-variables%%</a>
+

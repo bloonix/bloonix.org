@@ -1,0 +1,37 @@
+h1. Abhängigkeiten zwischen Hosts und Services
+
+h2. Allgemeines zu Abhängigkeiten
+
+p. Abhängigkeiten sind in einer Monitoring-Software einer der wichtigsten Bestandteile, wenn man als Administrator bei einem Ausfall einer größeren Umgebung nicht von einer Flut von SMS und E-Mails überschwemmt werden möchte. Mit den Abhängigkeiten, die Sie zwischen Hosts und Services konfigurieren, können Sie genau dieses Szenario vermeiden und die Benachrichtigungen auf ein Minimum reduzieren, um schnell und zielführend zu erkennen, wo genau in der Kette von Ausfällen der eigentliche Grund besteht und andere Bereiche Ihrer IT-Infrastruktur beeinträchtigen.
+
+p. Ich möchte das gerne anhand der folgenden Grafik näher erklären.
+
+!/public/img/docs/host-and-service-dependencies-1.png! 
+
+p. Nehmen wir zum Beispiel einmal an, Sie betreiben einen NFS-Server, auf dem der Content Ihrer Webapplikationen liegt und der über einen NFS-Share auf mehrere Webfrontends geshared ist. Wenn nun der NFS-Server ausfallen würde, hätte das zur Folge, dass Sie nicht nur für den NFS-Server eine Fehlermeldung erhalten, sondern auch für alle Webfrontends und alle weiteren Services, die auf die NFS-Shares zugreifen. Genau dieses Szenario können Sie mit den Abhängigkeiten vermeiden. Sie würden, wenn die Abhängigkeiten korrekt konfiguriert sind, nur eine einzige Fehlermeldung erhalten und zwar die, dass der NFS-Server ein Problem hat.
+
+h2. Vererbung
+
+p. Vererbung tritt immer dann auf, wenn es eine Kette von Abhängigkeiten von Services gibt. In der folgenden Grafik möchte ich gerne kurz und knapp Vererbung von Services erläutern.
+
+!/public/img/docs/host-and-service-dependencies-2.png!
+
+p. Die Webfrontend haben nicht nur die NFS-Server als Abhängigkeit für ihre Funktionstüchtigkeit, sondern auch das iSCSI-Device. Fällt zum Beispiel die SAN aus, dann funktionieren die Mounts der NFS-Shares genausowenig, als wenn die zwei Server im NFS-Cluster ausfallen. Wenn Sie also die Vererbung für die Service-Checks der NFS-Server aktivieren, dann wird ebenfalls der Status des iSCSI-Devices mit einbezogen.
+
+p. Fazit: fällt die SAN aus, erhalten Sie nur eine Benachrichtigung, dass die SAN ausgefallen ist, aber keine Meldung zum Ausfall der NFS-Server und der Webfrontends.
+
+h2. Konfiguration von Abhängigkeiten
+
+p. Den Bereich zur Konfiguration von Abhängigkeiten erreichen Sie über den Bereich __MONITORING__.
+
+!/public/img/docs/host-and-service-dependencies-3.png! 
+
+p. Es gibt vier verschiedene Möglichkeiten, eine Abhängigkeit zwischen Hosts und Services einzurichten.
+
+* Host zu Host
+* Host zu Service
+* Service zu Host
+* und Service zu Service
+
+p. Jede Abhängigkeit besagt, dass wenn der Host oder Service, auf den die Abhängigkeit beruht, sich in einem definiertem Status befindet, keine Warnmeldungen für die Hosts und Services versendet werden, die davon abhängen.
+

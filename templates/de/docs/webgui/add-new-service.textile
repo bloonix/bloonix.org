@@ -1,0 +1,16 @@
+h1. Einen neuen Service anlegen
+
+h2. Einen neuen Service anlegen
+
+p. Neue Services können Sie im Bereich __MONITORING -> Hosts -> Hostname__ anlegen.
+
+!/public/img/docs/add-new-service-1.png!
+
+p. Es gibt eine Vielzahl von Plugins, die Sie zur Überwachung Ihrer Services auswählen können:
+
+!/public/img/docs/add-new-service-2.png!
+
+p. Nachdem Sie ein Plugin ausgewählt haben, landen Sie im Formular zur Konfiguration des Service-Checks.
+
+p. Weitere Informationen zu den einzelnen Parametern finden Sie in der folgenden Dokumentation: "Service Parameter im Detail":/de/docs/webgui/service-parameter.html
+

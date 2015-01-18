@@ -1,0 +1,148 @@
+h1. Service Parameter im Detail
+
+h2. Formularfeld: %%schema.service.attr.service_name%%
+
+p. Dieses Feld dient lediglich einer einfachen und kurzen Beschreiung eines Service-Checks und wird in der Übersicht aller Services von Hosts angezeigt. Für ausführlichere Informaionen kann das Feld __%%schema.service.attr.description%%__ verwendet werden.
+
+h2. Formularfeld: %%schema.service.attr.description%%, %%schema.service.attr.comment%%
+
+p. Dieses Feld bietet die Möglichkeit zur Angabe einer Beschreibung des Services. Dieses Feld wird auch in Statusmeldungen angezeigt, wenn es einen Text enthält.
+
+p. Das Feld __%%schema.service.attr.comment%%__ bietet wie das Feld __%%schema.service.attr.description%%__ eine Möglichkeit um Zusatzinformationen abzulegen. Dieses Feld wird auch in Statusmeldungen angezeigt, wenn es einen Text enthält.
+
+h2. Formularfeld: %%schema.service.attr.active%%
+
+p. Jeder Service kann aktiviert und deaktiviert werden. Ist ein Service deaktiviert, so wird der Service nicht weiter überwacht. Der Service wird zusätzlich in den Status __INFO__ versetzt und erhält in der Statusmeldung eine Zusatzinformation.
+
+h2. Formularfeld: %%schema.service.attr.host_alive_check%%
+
+p. Mit diesem Parameter lässt sich bestimmen, ob der Service-Check als Host-Alive-Check markiert wird. Weitere Informationsn zum Host-Alive-Check finden Sie im folgenden Dokument: <a data-id="host-alive-check">%%site.help.doc.host-alive-check%%</a>
+
+h2. Formularfeld: %%schema.service.attr.passive_check%%
+
+p. Ein passiver Check ist ein Check, der nicht von Bloonix selbst geprüft wird, sondern von einem externen Service. Passive Checks haben keinen Timeout und der Status wird erst aktualisiert, wenn sich der externe Service meldet und einen Status liefert. Es wäre zum Beispiel denkbar, SNMP Traps bei bestimmten Ereignissen an den Bloonix-Agenten zu versenden, dieser wiederrum sendet den Status an den Bloonix-Server. Falls Sie weitere Fragen zur Konfiguration von passive Checks haben, so wenden Sie sich bitte an den Bloonix-Support.
+
+h2. Formularfeld: %%schema.service.attr.agent_id%%
+
+p. Jeder Service-Check, der in der WebGUI von Bloonix eingerichtet wird, wird mit einer sogenannten Agenten-Lokation versehen. Diese Lokation bestimmt, welcher Bloonix-Agent für die Überwachung des Service verantwortlich ist. Es gibt insgesamt drei mögliche Optionen zur Auswahl des Standorts: __localhost__, __intranet__ und __remote__.
+
+h3. localhost
+
+p. Mit der Option __localhost__ soll der Check lokal auf Ihrem Server ausgeführt werden. Installieren Sie hierzu den Bloonix-Agent auf Ihrem Server. Diese Option ist besonders sinnvoll, wenn Sie die Systemvitals, wie zum Beispiel die CPU, den Hauptspeicher oder auch die Festplatten überwachen möchten.
+
+h3. intranet
+
+p. Mit der Option __intranet__ ist ihr lokales Netzwerk gemeint. Installieren Sie hierzu den Bloonix-Agenten in Ihrem lokalen Netzwerk auf einem zentralen Server. Von diesem Server aus sollen die Checks ausgeführt werden. Diese Option ist sinnvoll, wenn Sie Hosts haben, auf denen entweder der Bloonix-Agent nicht installiert werden kann oder die Services über SNMP in Ihrem lokalen Netzwerk überwacht werden sollten. Das können zum Beispiel Router, Switches etc. sein.
+
+h3. remote
+
+p. Mit der Option __remote__ soll der Check von einem externen Server ausgeführt werden, also ein Server, der nicht in Ihrem lokalen Netzwerk steht. Dies ist besonders für Internetservices sinnvoll. Zum Beispiel können Sie über einen externen Check die Funktionalität Ihres Webservers, Mailservers oder auch DNS-Servers überprüfen.
+
+p. Für weitere Informationen lesen Sie unbedingt das Dokument <a data-id="how-does-bloonix-checks-your-hosts-and-services">%%site.help.doc.how-does-bloonix-checks-your-hosts-and-services%%</a>.
+
+h2. Formularfelder: %%schema.service.text.command_options%%
+
+p. Mit den Check Einstellungen können Sie die Einstellungen für den Check bestimmen. Dies können beispielsweise eine IP und ein Port Ihres Service sein, oder auch Schwellwerte und Timeouts. Jeder Check hat ein eigenes Set von Optionen. Eine kurze Beschreibung zu den Check Optionen finden Sie direkt im Formular. Klicken Sie hierzu einfach auf das kleine Info-Icon zu jeder Option.
+
+!/public/img/docs/service-parameter-1.png!
+
+p. Bitte lesen Sie unbedingt das Dokument: <a data-id="host-variables">%%site.help.doc.host-variables%%</a>
+
+h2. Formularfeld: %%schema.service.attr.agent_options.timeout%%
+
+p. Mit diesem Paramter wird der globale Timeout eines Checks festgesetzt. Wenn die Ausführungszeit des Checks länger dauert, dann wird der Prozess mit einem Kill-Signal hart beendet und der Status des Service wird auf CRITICAL gesetzt.
+
+h2. Formularfeld: %%schema.service.attr.acknowledged%%
+
+p. Die Option __%%schema.service.attr.acknowledged%%__ bietet die Möglichkeit, den Status eines Services als "bestätigt" zu markieren, wenn der Status des Service nicht __OK__ ist. Das bedeutet, dass jegliche Benachrichtiung solange für den Service eingestellt wird, bis der Status des Service wieder __OK__ ist. Die Markierung wird aufgehoben, wenn der Service wieder im Status __OK__ ist.
+
+p. Diese Option ist sehr hilfreich, wenn Sie zum Beispiel genau wissen, dass sich der Status eines Service zunächst nicht ändern wird und wenn Sie erst wieder benachrichtigt werden möchten, wenn der Status wieder __OK__ ist und dann wieder in einen kritischen Status wechselt.
+
+h2. Formularfeld: %%schema.service.attr.notification%%
+
+p. Mit der Option __%%schema.service.attr.notification%%__  können Warnmeldungen per E-Mail und SMS auf unbestimmte Zeit deaktiviert werden.
+
+h2. Formularfeld: %%schema.service.attr.attempt_max%%
+
+p. Dieser Parameter gibt an, nach wievielen Prüfungen, die nicht __OK__ waren, Sie über den Status eines Services per E-Mail oder SMS benachrichtig werden. Standardmäßig ist der Wert auf 3 gesetzt. Das bedeutet, dass eine Warnmeldung erst versendet wird, wenn ein Service-Check drei Mal hintereinander ein __WARNING__, __CRITICAL__ oder __UNKNOWN__ geliefert hat.
+
+p. Mit dieser Option lassen sich sogenannte "false positives" abfangen. Wenn es zum Beispiel einen kurzen "Netzwerkhänger" oder eine "Lastspitze" gab, so möchte man sicherlich nicht gleich mit E-Mails und SMS bombardiert werden, sondern erst, wenn der Service bei einer zweiten oder dritten Prüfung noch immer einen nicht-__OK__ Status liefert.
+
+h2. Formularfeld: %%schema.service.attr.attempt_warn2crit%%
+
+p. Wenn diese Options auf __yes__ gesetzt ist, dann wird ein Service als __CRITICAL__ markiert, sobald der Service __Attempt max__ erreicht hat und sich eigentlich im Status __WARNING__ befindet.
+
+p. Die Option ist standardmäßig auf __no__ gesetzt.
+
+h2. Formularfelder: %%schema.service.attr.fd_enabled%%, %%schema.service.attr.fd_time_range%%, %%schema.service.attr.fd_flap_count%%
+
+p. Die Erkennung von zu häufigen Statuswechseln ist ein sehr wichtiger Teil des Benachrichtigungssystems. Es bewahrt Sie davor, mit E-Mails und SMS geradezu bombardiert zu werden.
+
+p. Immer dann, wenn ein Service den Status wechselt, wird der Wechsel im Event-Log des Hosts vermerkt. Wenn nun ein Status in einem bestimmten Zeitraum den Status zu häufig wechselt, dann wird das Versenden von Benachrichtigungen eingestellt und der Service erhält in der Statusmeldung den Zusatz: [SERVICE IS FLAPPING BETWEEN STATES]
+
+p. Zur Konifguration dieses Features gehören folgende Parameter:
+
+* Flap detection enabled
+* Flap detection time range
+* Flap detection max attempt
+
+p. Mit den drei Parametern können Sie die Funktion ein- oder ausgeschalten, den Zeitraum in Sekunden angeben, in dem der Wechsel eines Status gezählt wird und die maximale Anzahl bestimmen, wie oft ein Status im dem definierten Zeitraum wechseln darf.
+
+p. Fallbeispiel:
+
+p. Nehmen wir an, dass der Zeitbereich zur Erkennung von zu häufigen Statuswechsel auf 1800 Sekunden und in die maximale Anzahl von Statuswechsel auf 8 gesetzt ist. In diesem Fall würde der Statuswechsel des Services aus den letzten 30 Minuten gezählt werden und sollte die Anzahl größer oder gleich 8 sein, dann wurde erkannt, das zu häufig der Status in diesem Zeitraum wechselte und es werden keine weiteren Statusmeldungen mehr versendet, solange bis die Anzahl der Statuswechsel der letzten 30 Minuten wieder kleiner 8 beträgt.
+
+h2. Formularfelder: %%schema.service.attr.is_volatile%%, %%schema.service.attr.volatile_retain%%
+
+p. Ein flüchtiger Service ist ein Service, dessen Status nur für einen sehr kurzen Zeitraum kritisch ist. Dies kann zum Beispiel bei der Prüfung von Logdateien der Fall sein. Nehmen wir zum Beispiel an, es wird eine Logdatei nach kritischen Ereignissen untersucht. Sollte ein Ereignis gefunden und der Status __CRITICAL__ zurückgegeben werden, dann ist es sehr gut möglich, dass der Status bei der nächsten Prüfung der Logdatei nicht mehr vorkommt. Der Status würde also sofort wieder zurück in den Status __OK__ wechseln. Genau für diesen Zweck kann ein Service als __flüchtig__ markiert werden.
+
+p. Ist also ein Service als __flüchtig__ markiert, dann bleibt der Service solange im Status __WARNING__, __CRITICAL__ oder __UNKNOWN__, bis der Status in der WebGUI manuell zurücksetzt wurde oder bis die Vorhaltezeit abgelaufen ist.
+
+p. Die Vorhaltezeit ist eine Zeitangabe in Sekunden, wann der Service-Check automatisch wieder zurück auf __OK__ gesetzt werden soll, nachdem dieser als kritisch markiert wurde. Ein Wert von 0 besagt, dass die Zeit nie abläuft. Der Wert 0 ist auch der Standardwert für diese Option.
+
+p. Für das manuelle Zurücksetzen des volatile Status gibt es einen Link, den Sie in der Navigation von Hosts und Services finden.
+
+h2. Formularfeld: %%schema.service.attr.mail_soft_interval%%, %%schema.service.attr.mail_hard_interval%%
+
+p. Bitte beachten Sie den Abschnitt __%%schema.service.attr.sms_soft_interval%%__ und __%%schema.service.attr.sms_hard_interval%%__, da sich die Technik zum Versenden von Benachrichtungen nicht unterscheidet.
+
+h2. Formularfeld: %%schema.service.attr.mail_warnings%%
+
+p. Mit dieser Option kann festgelegt werden, ob Meldungen mit dem Status WARNING per E-Mail versendet werden sollen. Standardmäßig steht die Option auf __no__.
+
+h2. Formularfeld: %%schema.service.attr.mail_ok%%
+
+p. Mit dieser Option kann festgelegt werden, ob Benachrichtigungen für Services im Status __OK__ per Mail versendet werden. Das bedeutet, wenn ein Service im Status __WARNING__, __CRITICAL__ oder __UNKNOWN__ war und hierfür eine Notification per Mail versendet wurde, dann wird auch eine Notification versendet, wenn der Service wieder in den Status __OK__ wechselt.
+
+h2. Formularfeld: %%schema.service.attr.send_sms%%
+
+p. Mit dieser Option kann das Versenden von Warnmeldungen aktiviert oder deaktiert werden. Standardmäßig ist die Option auf __yes__ gesetzt.
+
+h2. Formularfeld: %%schema.service.attr.sms_soft_interval%%
+
+p. Ein Softintervall beeinflußt das erneute Versenden von Warnmeldungen. Wenn ein Service aus dem Status __OK__ in den Status __WARNING__ wechselt, dann wird für den betroffenen Service eine Benachrichtigung per E-Mail und/oder SMS versendet. Wenn der Status des Services sich in der angegeben Zeit des Softintervalls nicht ändert, dann wird eine erneute Benachrichtigung versendet. Auf diese Weise werden Sie als Administrator in einem regelmäßigen Intervall daran erinnert, in welchem Status sich ein Service befindet.
+
+p. Zu beachten ist hierbei jedoch, dass wenn der Status des Service zurück auf __OK__ und dann wieder auf __WARNING__ wechselt, der Softintervall sofort verfällt. So verhält es sich auch, wenn sich der Status von __WARNING__ zu __CRITICAL__ oder von __CRITICAL__ zu __UNKNOWN__ ändert, also zu einem höheren Status wechselt.
+
+p. Der Grund für dieses Verfahren ist recht einfach zu verstehen. Stellen Sie sich vor, Sie erhalten nachts um 2 Uhr eine Mail über den kritischen Zustand eines wichtigen Service. Nun beheben Sie das Problem und legen sich mit der Gewissheit wieder schlafen, dass das Problem behoben ist. Wenn nun der Service erneut in den kritischen Zustand wechselt, dann möchten Sie natürlich erneut über den Zustand informiert werden.
+
+p. Die gleiche Situation lässt sich auch mit einem Statuswechsel von WARNING zu CRITICAL beschreiben. Sie erhalten wieder nachts um 2 Uhr eine Meldung, diesmal aber nur eine Warnmeldung. "Ok", denken Sie sich, "WARNING heißt noch lange nicht CRITICAL" und das Sie vielleicht noch ein paar Stunden Zeit haben das Problem zu lösen. Nun passiert es aber, dass der Service innerhalb kurzer Zeit von __WARNING__ auf __CRITICAL__ wechselt. In diesem Fall möchten Sie natürlich sofort erneut informiert werden um den Fehler zu beheben.
+
+p. Der Standardwert für Softintervalle ist auf 3600 Sekunden gesetzt.
+
+h2. Formularfeld: %%schema.service.attr.sms_hard_interval%%
+
+p. Ein Hartintervall ist im Gegensatz zum Softintervall sehr viel einfacher. Der Hartintervall bestimmt, in welchem Intervall eine Benachrichtigung versendet werden darf, egal wie oft ein Service den Status wechselt und auch in welche Richtung. Das heißt, wenn um 02:00 Uhr nachts eine SMS versendet wurde und der Hartintervall auf 30 Minuten konfiguriert ist, dann wird die nächste SMS erst 02:30 Uhr versendet!
+
+p. Mit dieser Option haben Sie die Möglichkeit, das Aufkommen von Benachrichtigungen etwas zu vermindern, natürlich mit dem Nachteil, dass wenn ein Service von __CRITICAL__ zu __OK__ und dann wieder zu __CRITICAL__ wechselt, erst nach Ablauf des Intervalls erneut eine Benachrichtigung versendet wird.
+
+p. Der Standardwert für Hartintervalle ist auf 0 Sekunden gesetzt.
+
+h2. Formularfeld: %%schema.service.attr.sms_warnings%%
+
+p. Diese Option funktioniert wie __Send WARNINGS per mail__. Ist die Option auf __no__ gesetzt, so werden keine Warnmeldungen für den Service per SMS versendet, sondern nur, wenn der Status __CRITICAL__ oder __UNKNOWN__ ist. Standardmäßig ist die Option auf __no__ gesetzt.
+
+h2. Formularfeld: %%schema.service.attr.sms_ok%%
+
+p. Diese Option funktioniert nach dem gleichen Prinzip wie __Send OK notifications per mail__.
+

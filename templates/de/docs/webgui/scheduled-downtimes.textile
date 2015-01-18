@@ -1,0 +1,60 @@
+h1. Geplante Wartungsarbeiten einrichten
+
+h2. Allgemeines
+
+p. Wartungsabeiten sind in der IT Gang und Gebe. Nachts um 03:00 Uhr müssen Updates eingespielt werden. Am Tage steht ein wichtiges RAM-Upgrade an, um die Performance des Servers zu verbessern und das nächtliche Backup der Datenbank kann für längere Ladezeiten sorgen. Für solche Zwecke gibt es die Möglichkeit geplante Wartungsarbeiten einzurichten.
+
+h2. Zeitliche Planung
+
+p. Wartungsarbeiten, oder auch Scheduled Downtimes, lassen sich für jeden Host und Service konfigieren. Navigieren Sie hierzu einfach zum gewünschten Objekt, für welches Sie eine Wartungsarbeit einrichten möchten und klicken Sie auf den Link zur Einrichtung eines Zeitplans.
+
+p. Die Zeitangabe für Wartungsarbeiten geschieht entweder über eine feste Uhrzeit mittels oder über wiederkehrende Zeitangaben über sogenannte Zeitbereiche.
+
+p. Eine feste Zeitangabe könnte wie folgt aussehen:
+
+!/public/img/docs/scheduled-downtimes-1.png!
+
+p. Hier ist zu erkennen, dass die geplante Wartungsarbeit, die das Update eines Webservers betrifft, zwischen 01 und 03 Uhr am 30.03.2014 stattfindet.
+
+h2. Wiederkehrende Wartungsarbeiten
+
+p. Eine Zeitangabe über für eine wiederkehrende Wartungsarbeit könnte so aussehen:
+
+!/public/img/docs/scheduled-downtimes-2.png!
+
+p. Diese Einstellungen haben den großen Vorteil, dass sich die Zeitangabe nicht auf ein einmaliges, sondern auf ein wiederkehrendes Ereignis bezieht. So können Sie zum Beispiel Benachrichtigungen verhindern, wenn zum Beispiel das Backup Ihres Servers die Performance nächtlich stark beeinflußt. Die Planung von Wartungsarbeiten können für einzelne Services, sowie für einen gesamten Host getätigt werden, was alle Services mit einbeziehen würde.
+
+p. Die Syntax für wiederkehrende Zeitbereiche ist wie folgt:
+
+bc. Syntax: DAY-RANGE TIME-RANGE
+
+DAY RANGE                       EXAMPLES
+------------------------------------------------------------
+Weekday                         Monday
+Weekday - Weekday               Monday - Friday
+Month                           Januar
+Month - Month                   Januar - July
+Month Day                       Januar 1
+Month Day - Month Day           Januar 1 - July 15
+Year                            2010
+Year - Year                     2010 - 2012
+YYYY-MM-DD                      2010-01-01
+YYYY-MM-DD - YYYY-MM-DD         2010-01-01 - 2012-06-15
+
+TIME RANGE                      EXAMPLES
+------------------------------------------------------------
+HH:MM - HH:MM                   09:00 - 17:00
+HH:MM - HH:MM, HH:MM - HH:MM    00:00 - 08:59, 17:01 - 23:59
+
+p. *Beispiele:*
+
+bc. Monday - Friday     09:00 - 17:00
+Monday - Friday     00:00 - 08:59, 17:01 - 23:59
+Saturday - Sunday   00:00 - 23:59
+
+h2. Status INFO
+
+p. Ist für ein Host oder ein einzelner Services eine Wartungsarbeit geplant und eingetragen, so werden die betroffenen Services mit dem Status __INFO__ versehen. Zusätzlich wird jeder Eintrag im Event-Log des Hosts mit einer Notiz versehen, wer die Wartungsarbeit eingerichtet hat und wie lange diese anhält. Dies hat den Vorteil, dass man zum Einen sofort erkennt, ob eine geplante Wartungsarbeit stattfindet und zum Anderen sind geplante Wartungsarbeiten wichtig, um die Verfügbarkeitsberichte nicht zu verfälschen, denn eine geplante Wartungsarbeit sollte nicht als Warnung in die Berichte einfließen.
+
+p. *Hinweiß:* In der Übersicht über aller Host- und Services im Bereich __MONITORING__ besteht die Möglichkeit, multiple Hosts oder Services mit einer Mausbewegung und Mausklick auszuwählen, um für mehrere Objekte gleichzeitg eine Wartungsarbeit einzuplanen. Sie können dort auch mit Tastenkombinationen wie STRG+Klick Objekte auswählen. Um für die ausgewählten Objekte eine Wartungsarbeit einzurichten, klicken Sie einfach auf den entsprechende Icon oben rechts in der Tabellenüberschrift.
+

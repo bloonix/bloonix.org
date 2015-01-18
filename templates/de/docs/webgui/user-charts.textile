@@ -1,0 +1,19 @@
+h1. Eigene Charts erstellen
+
+h2. Benutzerdefinierte Charts
+
+p. Die Plugins von Bloonix bieten bereits eine Menge vordefinierter Charts zur Ansicht von Statistiken. Diese Charts sind für die Sicht auf einen einzelnen Service sehr hilfreicht, es kann jedoch auch vorkommen, dass man gerne eigene Charts erstellen möchte, zum Beispiel um in einem Chart die CPU-Auslastung mehrerer Server gleichzeitig zu sehen. Für diesen Zweck gibt die Möglichkeit der __Benutzer-Charts__.
+
+p. Um einen eigenen Chart zu erstellen, navigieren Sie zunächst in den Bereich __User-Chart-Editor__:
+
+!/public/img/docs/list-user-charts.png!
+
+p. Hier können Sie mit einem Klick oben rechts auf das Plus-Icon einen eigenen Chart erstellen:
+
+!/public/img/docs/create-user-chart.png!
+
+p. Ist der Chart erstellt, so können Sie diesen nun im Chart-Bereich sehen und anzeigen lassen:
+
+!/public/img/docs/select-user-charts.png!
+
+!/public/img/docs/generate-user-charts.png!

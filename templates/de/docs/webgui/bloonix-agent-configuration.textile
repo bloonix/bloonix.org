@@ -1,0 +1,87 @@
+h1. Den Bloonix-Agenten konfigurieren
+
+h2. Die einfache Konfiguration
+
+p. Zur Konfiguration des Bloonix-Agenten benötigen Sie zunächst den *Host-Key*. Diesen Key finden Sie im Formular zur Konfiguration des Hosts:
+
+!/public/img/docs/bloonix-agent-configuration-1.png!
+
+p. Führen Sie nach der Installation des Bloonix-Agenten folgendes Kommando auf Ihrem Server aus:
+
+bc. bloonix-init-host [ HOST-KEY ] [ SERVER ]
+
+p. Ersetzen Sie den Platzhalter *[ HOST-KEY ]* mit dem Host-Key. Den Platzhalter *[ SERVER ]* ersetzen Sie mit der Adresse des Bloonix-Servers:
+
+bc. bloonix-init-host  60.EAjCK1LlI9E7IWq36vO4c8psqCb5CC  bloonix.server.example:8443
+
+p. Und schon ist der Agent fertig konfiguriert und beginnt für Sie die Services zu überwachen, die Sie in der WebGUI konfiguriert haben.
+
+h2. Die manuelle Konfiguration
+
+p. Administratoren, die sich mehr trauen, können den Agenten natürlich auch manuell konfigurieren. Dafür sind zwei Schritte notwendig.
+
+p. Zunächst einmal müssen Sie in der Konfiguration des Agenten den Bloonix-Server eintragen, damit der Agent weiß, zu welchem Server er sich verbinden muss. Die Konfiguration des Agenten lautet:
+
+bc. /etc/bloonix/agent/main.conf
+
+p. Editieren Sie die Konfiguration und tragen in der Sektion __server__ die IP-Adresse oder den Hostnamen des Bloonix-Servers ein.
+
+bc. server {
+    host bloonix.server.example
+    proto https
+    mode failover
+    ssl_options {
+        ssl_verify_mode 1
+        ssl_ca_path /etc/ssl/certs
+    }
+}
+
+p. Als nächstes müssen Sie die Host-ID und das Passwort konfigurieren. Hierfür gehen Sie wie folgt vor. Erstellen Sie eine neue Datei namens
+
+bc. /etc/bloonix/agent/conf.d/host-60.conf
+
+p. und tragen dort folgende Optionen ein:
+
+bc. host {
+    host_id 60
+    password EAjCK1LlI9E7IWq36vO4c8psqCb5CC
+    agent_id localhost
+}
+
+p. Der Zahl im Dateinamen __host-60.conf__ ist die Host-ID, welche Sie konfigurieren.
+
+h2. sudo für bestimmte Services konfigurieren
+
+h3. Root-Rechte
+
+p. Für einige Service-Checks werden zwingend Root-Rechte benötigt. Da der Bloonix-Agent in der Standardkonfiguration nicht mit Root-Rechten läuft, ist es notwendig, __sudo__ für die Service-Checks einzurichten.
+
+p. Die Einrichtung kann aus Sicherheitsgründen nicht in der WebGUI von Bloonix durchgeführt werden, sondern nur direkt auf dem Host selbst, auf dem der Bloonix-Agent den entsprechenden Service-Check prüfen soll.
+
+h3. Beispielkonfiguration
+
+p. Als Beispiel nehmen wir zwei Service-Checks:
+
+|_. Plugin |_. Kommando |
+| Linux.MDADM.Check | check-mdadm |
+| Linux.Smart.Health | check-smart-health |
+
+p. Um nun für diese zwei Service-Checks __sudo__ einzurichten, gehen Sie folgt vor. Editieren Sie die sudo-Datei mittels dem Kommando __visudo__ und tragen dort die folgenden Zeilen ein:
+
+bc. bloonix ALL=NOPASSWD: /usr/lib/bloonix/plugins/check-mdadm
+bloonix ALL=NOPASSWD: /usr/lib/bloonix/plugins/check-smart-health
+Defaults env_keep += "PLUGIN_LIBDIR CONFIG_PATH"
+Defaults secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+
+p. _Bitte beachten Sie_, dass der Parameter __secure_path__ lediglich um den Pfad __/usr/sbin__ erweitert werden sollte, da das Programm __smartctl__ beispielsweise unter diesem Pfad liegt, dieser aber nicht bei allen Linux-Distributionen gesetzt ist.
+
+p. Als nächstes editieren Sie die Konfiguration des Bloonix-Agenten. Die Konfigurationdatei, in welcher der Host konfiguriert ist, ist entweder __/etc/bloonix/agent/conf.d/host-$id.conf__ oder __/etc/bloonix/agent/main.conf__. Fügen Sie in der Host-Sektion den Parameter __use_sudo__ wie folgt hinzu:
+
+bc. host {
+    use_sudo check-mdadm, check-smart-health
+    host_id 12345
+    passsord secret
+}
+
+p. Stoppen und starten Sie den Bloonix-Agenten nach der Konfiguration, damit der Bloonix-Agent diese zwei Service-Checks mittels __sudo__ prüft.
+

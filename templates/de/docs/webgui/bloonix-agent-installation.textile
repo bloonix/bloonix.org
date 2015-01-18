@@ -1,0 +1,4 @@
+h1. Den Bloonix-Agenten installieren
+
+p. Die Installation des Bloonix Agenten ist im Kapitel "Installation":/de/docs/installation/common.html beschrieben.
+

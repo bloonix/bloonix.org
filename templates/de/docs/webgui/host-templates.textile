@@ -1,0 +1,58 @@
+h1. Host Templates einrichten und verwalten
+
+h2. Was sind Host-Templates?
+
+p. Mit den Host-Templates haben Sie die Möglichkeit, Gruppen mit Service-Checks zu definieren, die an Hosts vererbt werden. So ein Host-Template, welches zunächst nur aus einem Namen und einer Beschreibung besteht, können Sie sich wie eine Gruppe vorstellen. Dieser Gruppe können Sie Service-Checks hinzufügen, so, wie Sie auch Service-Checks zu einem Host hinzufügen würden. Nachdem ein Host-Template mit Service-Checks erstellt wurde, können Hosts dieser Gruppe zugeordnet werden. Der Host erbt dann alle Service-Checks, die in diesem Host-Template konfiguriert sind.
+
+h2. Wer darf Host-Templates verwalten?
+
+p. Nur Benutzer mit der Rolle __operator__ dürfen Host-Templates und Service-Checks eines Host-Templates verwalten.
+
+h2. Einrichtung von Host-Templates
+
+p. Host-Templates lassen sich im Bereich __MONITORING ⇒ Templates__ verwalten.
+
+!/public/img/docs/add-host-templates-1.png!
+
+p. Dort können Sie neue Host-Templates anlegen und bestehende Host-Templates verwalten. Klicken Sie einfach auf den Namen eines Host-Template. Es wird sich ein Menü öffnen, über welches Sie zu den Seiten gelangen, um die Service-Checks eines Host-Template zu verwalten oder auch Hosts hinzuzufügen oder zu entfernen.
+
+!/public/img/docs/host-template-click-menu-1.png!
+
+h2. Service-Checks in Host-Templates verwalten
+
+p. Das Verwalten von Service-Checks eines Host-Templates funktioniert analog zur Verwaltung von Service-Checks eines Hosts. Sie können Service-Checks hinzufügen, entfernen und die Parameter der Service-Checks anpassen.
+
+p. *Bitte beachten Sie:* Änderungen eines Host-Templates wirken sich auf alle Hosts aus, die einem Host-Template zugeordnet sind. Das heißt, wenn Sie einen Service-Check löschen, so löschen Sie den Service-Check ebenfalls von allen Hosts, die diesem Host-Template zugeordnet sind. Das gleiche gilt für das Hinzufügen neuer Service-Checks oder das Ändern von Parametern. Wenn Sie zum Beispiel einen Schwellwert eines Service-Checks anpassen, so wird die Änderung umgehend an alle Service-Checks aller Hosts vererbt, die diesem Host-Template zugeordnet sind.
+
+p. In der folgenden Grafik sehen Sie beispielhaft ein Host-Template mit drei konfigurierten Service-Checks.
+
+!/public/img/docs/manage-host-template-services-1.png!
+
+h2. Hosts in Host-Templates verwalten
+
+p. Haben Sie nun den Wunsch, einen Host mehreren Host-Templates zuzuordnen, so können Sie das an verschiedenen Stellen machen. Zum Einen können Sie direkt beim Anlegen eines neuen Hosts beliebig viele Host-Templates auswählen. Der Host erbt daraufhin umgehend alle Service-Checks der Host-Templates, die dem Host zugeordnet wurden.
+
+!/public/img/docs/add-host-template-to-host-1.png!
+
+p. Ist ein Host bereits angelegt, so können Sie die Verwaltung von Host-Templates eines Hosts über folgende Navigation erreichen:
+
+!/public/img/docs/manage-host-template-of-host-1.png!
+
+p. *Bitte beachten Sie:* Wenn Sie ein Host-Template einem Host zuordnen, so werden umgehend alle Service-Checks des Host-Templates an den Host vererbt. Wenn Sie ein Host-Template von einem Host entfernen, so werden auch die Service-Checks mit allen Daten umgehend entfernt. Seien Sie daher vorsichtig bei der Konfiguration der Gruppen.
+
+h2. Host-Template Variablen
+
+p. Es ist möglich, Variablen für Hosts und Host-Templates einzurichten. Diese Variablen können zur Definition von Schwellwerten eingesetzt werden. Auf diese Weise bekommen Sie ein Stück Dynamik trotz der starren Host-Templates zurück. Weitere Informationen hierzu finden Sie im Dokument: <a data-id="host-variables">%%site.help.doc.host-variables%%</a>
+
+h2. Änderung von Parametern eines Service-Checks
+
+p. Die Parameter von Service-Checks, die aus einem Host-Template vererbt wurden, können nicht mehr für einzelne Hosts angepasst werden. Wenn Sie die Parameter ändern möchten, dann geht das nur über die Service-Checks, die in den entsprechenden Host-Templates konfiguriert sind.
+
+p. *Bitte beachten Sie,* dass es möglich ist, Variablen für Hosts und Host-Templates einzurichten. Diese Variablen können zur Definition von Schwellwerten eingesetzt werden. Auf diese Weise bekommen Sie ein Stück Dynamik trotz der starren Host-Templates zurück. Weitere Informationen hierzu finden Sie im Dokument: <a data-id="host-variables">%%site.help.doc.host-variables%%</a>
+
+p. In der Übersicht der konfigurierten Service-Checks eines Hosts lassen sich Service-Checks, die aus einem Host-Template vererbt wurden, auch sehr leicht erkennen. In der folgenden Grafik sind diese Service-Checks mit dem Icon !/public/img/docs/host-template-icon.png! markiert.
+
+!/public/img/docs/host-template-services-view-1.png! 
+
+p. Wenn Sie also die Parameter eines Service-Checks ändern möchten, der aus einem Host-Template vererbt wurde, dann müssen Sie den Service-Check im Host-Template selbst editieren.
+

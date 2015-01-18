@@ -1,0 +1,99 @@
+h1. Wie überwacht Bloonix Hosts und Services
+
+h2. Allgemeines
+
+p. In diesem Dokument möchten wir beschreiben, wie die Bloonix Software Hosts und Services überwacht. Dabei werden wir auf weitere essentielle Funktionen von Bloonix eingehen, wie zum Beispiel die Überwachung eines Hosts von mehreren Bloonix-Agenten.
+
+h2. Einrichtung von Hosts und Services im Webinterface
+
+p. Im Webinterface von Bloonix werden alle Hosts eingerichtet, die Sie überwachen möchten. Ein Host kann im Kontext von Bloonix ein Server, ein virtueller Server, ein Router, ein Switch oder auch ein Drucker sein. Oberflächlich betrachtet ist ein Host ein Kontainer für Metainformationen. Diese Metainformationen beinhalten beispielsweise eine eindeutige Host-ID, verknüpft mit einem Passwort, einem Hostnamen, einer IP-Adresse, oder auch Informationen über den Hersteller der Hardware oder dem Betriebssystem, das auf dem Host installiert ist.
+
+!/public/img/docs/host-metainfo-1.png!
+
+p. Bitte beachten Sie, dass wenn ein Host im Webinterface eingerichtet wird, erhält dieser eine eindeutige ID und ein dazugehöriges Passwort. Diese Daten werden später für den Bloonix-Agenten benötigt.
+
+p. Neben den Metainformationen ist ein Host auch ein Kontainer für Service-Checks, denn jeder Service-Check, welcher im Webinterface von Bloonix konfiguriert wird, gehört immer fest zu einem Host. Um Service-Checks besser verstehen zu können, schauen wir uns das bildlich einmal genauer an:
+
+!/public/img/docs/services-with-location-1.png!
+
+p. Wie man anhand der Grafik erkennen kann, kann ein Service-Check zum Beispiel ein Check sein, welcher die Auslastung der CPU Ihres Servers überprüft oder auch die Verfügbarkeit Ihrer Webseite über einen HTTP-Aufruf. Bitte beachten Sie insbesonders die Spalte „Agent location“ in der Grafik, zu deutsch „Lokation des Agenten“.
+
+p. Ist ein Host im Webinterface eingerichtet, so muss als nächstes der Bloonix-Agent auf dem zu überwachenden Server installiert und konfiguriert werden. Zusätzlich müssen die Plugins zur Überwachung der Services installiert werden. Möchten Sie zum Beispiel eine MySQL-Datenbank überwachen, so müssen auch die Plugins zur Überwachung der MySQL-Datenbank installiert werden.
+
+p. Damit der Agent nun weiß, welche Services dieser überwachen soll, werden die Host-ID, das Passwort des Hosts und die Lokation des Agenten, welche im Webinterface zu finden sind, in der Konfigurationsdatei des Agenten eingetragen.
+
+bc. host {
+    host_id 12345
+    password a-very-long-password
+    agent_id localhost
+}
+
+p. Mit diesen Daten authentifiziert sich der Agent beim Bloonix-Server und fordert die Konfiguration der Service-Checks an, die für den Host mit der Lokation __localhost__ konfiguriert sind. Das heißt, dass der Agent letztendlich folgende Service-Checks überwacht:
+
+* Check Logfile
+* CPU Check
+* Load average check
+* Netstat port check 5432
+
+p. Die Service-Checks mit der Lokation __remote__ würde der Agent nur überprüfen, wenn der Parameter __agent_id__ auf __remote__ gesetzt würde. Wenn Sie sich nun fragen, welcher Sinn dahinter steckt, ist die Antwort recht einfach. Bei Bloonix werden Service-Checks in drei Kategorien unterteilt:
+
+* Systemvitals, perfekt zur Überwachung direkt vom lokalen Host
+* Netzwerkdienste, welche man über ein abgesichertes Netzwerk überwachen möchte
+* Serverdienste, die über das Internet verfügbar sind
+
+p. Diese drei Kategorien werden bei Bloonix in drei Typen definiert, welche für die Lokation eines Agenten verwendet werden. Diese sind __localhost__, __intranet__ und __remote__.
+
+h3. Lokation eines Agenten (auch Agenten-ID genannt)
+
+p. Die Lokation des Agenten ist immer dann wichtig, wenn Sie Service-Checks haben, die Sie von unterschiedlichen Agenten überwachen lassen möchten. Bei Bloonix gibt es drei Typen zur Einrichtung der Lokation:
+
+h4. localhost
+
+p. Mit der Option __localhost__ soll der Check lokal auf Ihrem Server ausgeführt werden.
+Installieren Sie hierzu den Bloonix-Agent auf Ihrem Server. Diese Option ist besonders 
+sinnvoll, wenn Sie die Systemvitals, wie zum Beispiel die CPU, den Hauptspeicher oder 
+auch die Festplatten überwachen möchten.
+
+h4. intranet
+
+p. Mit der Option __intranet__ ist ihr lokales Netzwerk gemeint. Installieren Sie hierzu den
+Bloonix-Agenten in Ihrem lokalen Netzwerk auf einem zentralen Server. Von diesem Server aus 
+sollen die Checks ausgeführt werden. Diese Option ist sinnvoll, wenn Sie Hosts haben, 
+auf denen entweder der Bloonix-Agent nicht installiert werden kann oder die Services über
+SNMP in Ihrem lokalen Netzwerk überwacht werden sollten. Das können zum Beispiel Router, Switches
+etc. sein.
+
+h4. remote
+
+p. Mit der Option __remote__ soll der Check von einem externen Server ausgeführt werden, also 
+ein Server, der nicht in Ihrem lokalen Netzwerk steht. Dies ist besonders für Internetservices
+sinnvoll. Zum Beispiel können Sie über einen externen Check die Funktionalität Ihres Webservers, 
+Mailservers oder auch DNS-Servers überprüfen. 
+
+h3. Multiple Bloonix-Agenten
+
+p. Schauen wir uns erneut folgende Grafik an:
+
+!/public/img/docs/services-with-location-1.png!
+
+p. Um alle Services überwachen zu können, benötigen wir mindestens zwei Agenten. Beide Agenten werden nahezu indentisch konfiguriert.
+
+p. Den ersten Agenten installieren Sie auf dem Server direkt. Dieser wird wie folgt konfiguriert:
+
+bc. host {
+    host_id 12345
+    password a-very-long-password
+    agent_id localhost
+}
+
+p. Den zweiten Agenten installieren Sie auf einem beliebigen externen Server und konfigurieren diesen wie folgt:
+
+bc. host {
+    host_id 12345
+    password a-very-long-password
+    agent_id remote
+}
+
+p. Auf diese Weise wird Ihr Server von zwei Agenten überwacht.
+
+

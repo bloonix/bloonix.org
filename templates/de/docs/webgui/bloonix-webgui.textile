@@ -1,0 +1,52 @@
+h1. Grundlegendes zur Bloonix-WebGUI
+
+h2. Was sind Hosts?
+
+p. Im Kontext von Bloonix kann ein Host jedes beliebige System sein, das über eine eigene IP-Adresse besitzt. Das können Server, Router, Loadbalancer, Switche, Serverschränke oder sogar die Klimaanlage eines Rechenzentrums sein. Darüber hinaus sind Hosts lediglich Metaobjekte, denen Services zugeordnet werden.
+
+h2. Was sind Services?
+
+p. Im Kontext von Bloonix ist ein Service ein einzelner Service-Check. Zum Beispiel ist der Apache-Webserver zwar ein Service, dieser kann jedoch über diverse Service-Checks geprüft werden. Sie können den Apache-Webserver zum Beispiel über eine HTTP-Abfrage prüfen, oder aber den Status des laufenden Prozesses auf dem Server überwachen. Dies wären zwei unterschiedliche Service-Checks, die den Apache-Service überprüfen.
+
+h2. Welche Status-Codes gibt es?
+
+p. Es gibt insgesamt 5 Status Codes für Hosts und Services. Jeder Statuscode ist zusätzlich mit einer eigenen Farbe gekennzeichnet.
+
+*(status-UNKNOWN inline) UNKNOWN
+*(status-CRITICAL inline) CRITICAL
+*(status-WARNING inline) WARNING
+*(status-INFO inline) INFO
+*(status-OK inline) OK
+
+h3. Status: UNKNOWN
+
+p. Der Status __UNKNOWN__ bedeuted, dass ein Service aufgrund eines Fehlers nicht geprüft werden konnte. Dies könnte zum Beispiel passieren, wenn ein Plugin nicht installiert ist oder ein Systemkommando nicht gefunden werden konnte. Wenn solch ein Fehler auftritt und die Fehlermeldung nicht aussagekräftig genug ist, so wenden Sie sich bitte an den Support von Bloonix.
+
+h3. Status: CRITICAL und WARNING
+
+p. Jeder Service hat einen oder mehrere Schwellwerte definiert. Wird einer dieser Schwellwerte überschritten, so wird der Status auf __WARNING__ oder auf __CRITICAL__ gesetzt, je nach dem, welcher Schwellwert überschritten wurde. Werden beide Schwellwerte für __WARNING__ und __CRITICAL__ überschritten, so wird der Service immer auf den höheren Status gesetzt. Jeder Service hat mindestens einen Timeout-Schwellwert definiert, der die maximale Ausführungszeit einer Prüfung bestimmt. Wenn ein Service in diesem Zeitraum nicht geprüft werden konnte, so wird der Status automatisch auf __CRITICAL__ gesetzt. Der Schwellwert für Timeouts ist standardmäßig auf 30 Sekunden gesetzt.
+
+h3. Status: INFO
+
+p. Der Status __INFO__ bedeuted, dass ein Service zum aktuellen Zeitpunkt nicht überwacht wird. Dies kann vorkommen, wenn ein Service deaktiviert wurde oder eine geplante Wartungsarbeit aktiv ist. Wenn ein Service über die Weboberfläche neu eingerichtet wurde, erhält der Service als initialen Status ebenfalls __INFO__.
+
+h3. Status: OK
+
+p. Der Status __OK__ sagt aus, dass der Service erfolgreich ohne das Überschreiten von Schwellwerten gefrüft wurde.
+
+h3. Der Status von Hosts
+
+p. Bitte beachten Sie, dass ein Host selbst nicht über einen eigenen Status verfügt, sondern immer den höchsten Status der für ihn konfigurierten Services anzeigt.
+
+h2. Kontakte und Kontaktgruppen
+
+p. Das Benachrichtigungssystem von Bloonix wird mit Kontakten und Kontaktgruppen geregelt. Möchten Sie also über den Status Ihrer Hosts und Services informiert werden, so müssen Sie zunächst Kontakte einrichten. Diese werden dann gemeinsam mit Hosts und Services in einer Kontaktgruppe zusammengeführt. Kontakte erhalten eine Benachrichtigung für die Hosts und Services, mit denen sie gemeinsam in einer Kontaktgruppe konfiguriert sind.
+
+p. Weitere Informationen zu Kontakten und dem Benachrichtigungssystem finden Sie hier: "Kontakte und Benachrichtigungen":/de/docs/webgui/contacts-and-notifications.html
+
+h2. Benutzer und Gruppen
+
+p. Bloonix verfügt über eine Benutzer- und Gruppenverwaltung, mit der Sie genauestens festlegen können, welche Benutzer welche Hosts und Services in der WebGUI betrachten und sogar konfigurieren, neu anlegen oder auch löschen dürfen.
+
+p. Weitere Informationen zur Administration von Benutzer und Gruppen finden Sie hier: "Die Benutzer- und Gruppenverwaltung":/de/docs/webgui/users-and-groups.html
+

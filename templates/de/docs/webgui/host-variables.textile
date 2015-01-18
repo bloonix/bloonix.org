@@ -1,0 +1,36 @@
+h1. host-variables.textile
+
+h2. Was sind Host-Variablen?
+
+h3. Was sind Host-Variablen?
+
+p. Die Host-Variablen sind ein sehr nützliches Feature. Mit den Host-Variablen haben Sie die Möglichkeit, Variablen mit Werten zu definieren und diese Variablen in der Konfiguration von Services zu verwenden. Host-Variablen können an drei Stellen konfiguriert werden:
+
+* im Formular zur Konfiguration von Hosts
+* im Formular zur Konfiguration von Host-Templates
+* im Bereich __Administration__ können globale Variablen für alle Hosts konfiguriert werden (nur für Benutzer mit der Rolle Operator möglich)
+
+p. *Bitte beachten Sie,* dass die Variablen eines Hosts die höchste Priorität haben, danach kommen die Variablen eines Templates und die niedrigste Priorität haben die globlen Variablen. Das heißt, das die Variablen je nach Priorität überschrieben werden.
+
+h2. Wie können Host-Variablen optimal eingesetzt werden?
+
+h3. Einsatz der Variablen
+
+p. Host-Variablen eignen sich insbesondere für den Einsatz von Host-Templates. Nehmen Sie zum Beispiel an, Sie möchten 100 Linux-Server überwachen. All diese Server haben eine ähnliche Hardwareausstattung und weichen nur minimal voneinander ab. Nun können Sie bei der Konfiguration eines Host-Templates Variablen vordefinieren und diese Variablen als Standardwerte verwenden. Für alle Server, die in geringer Zahl abweichen, können Sie die Variablen in der Host Konfiguration überschreiben. Auf diese Weise behalten Sie volle Dynamik beim Einsatz von Host-Templates.
+
+h2. Wie werden Host-Variablen konfiguriert?
+
+p. Die Konfiguration von Host-Variablen ist sehr einfach. Das Format ist __NAME=WERT__. Erlaubte Zeichen für den Namen einer Variable sind a-z, A-Z, 0-9, Punkt und Unterstrich. Somit wären auch CamelCase Variablennamen möglich.
+
+p. Beispiel:
+
+!/public/img/docs/host-variables-1.png!
+
+p. Diese Variablen können nun bei der Konfiguration eines Service-Checks verwendet werden:
+
+!/public/img/docs/host-service-variables-1.png!
+
+h2. Vordefinierte Variablen
+
+p. Bitte beachten Sie, dass es zwei vordefinierte Variablen gibt: __%IPADDR%__ und __%HOSTNAME%__. Diese Variablen werden immer mit der IP-Adresse und dem Hostnamen des Hosts ersetzt.
+

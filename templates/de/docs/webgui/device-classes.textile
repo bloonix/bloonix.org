@@ -1,0 +1,26 @@
+h1. %%site.help.doc.device-classes%%
+
+h2. Wie funktioniert dieses Feature
+
+p. Im Formular zur Konfiguration von Hosts gibt es das Feld __Bauklasse__. In diesem Feld haben Sie die Möglichkeit, den Host einer Klasse zuzuordnen. Wenn Sie zum Beispiel einen Linux Server auf Basis von Debian einrichten möchten, so können Sie als Klasse folgenden Eintrag tätigen:
+
+bc. /Server/Linux/Debian/Wheezy
+
+p. Der Server würde dann in der Hierarchie wie folgt auftauchen:
+
+bc. 
+  All (1)
+    Server (1)
+      Linux (1)
+        Debian (1)
+          Wheezy (1)
+
+p. In der folgenden Grafik erhalten Sie ein Beispiel, wie die Hierarchie der Klassen ausschaut:
+
+!/public/img/docs/device-classes-1.png! 
+
+p. Auf jeder Ebene der Hierarchie wird ein Icon angezeigt, dass Ihnen den höchsten Status aller Hosts in dieser Ebene anzeigt. Ist beispielsweise ein Host im Status CRITICAL, so wird die Ebene mit einem roten Icon markiert. Zusätzlich wird die Anzahl der Hosts angezeigt, die sich nicht im Status OK befinden.
+
+p. In der folgenden Grafik sehen Sie zum Beispiel, dass es 146 Hosts mit der Klasse __/Server__ gibt und davon ist 1 Host nicht OK. Hat ein Host weitere Subklassen, so können Sie sich weiter durch die Ebenen klicken. Letztendlich befindet sich der Host, der sich im Status UNKNOWN befindet, auf der Ebene __/Server/Linux/Debian/Wheezy__.
+
+!/public/img/docs/device-classes-2.png!

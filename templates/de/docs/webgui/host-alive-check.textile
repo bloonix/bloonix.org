@@ -1,0 +1,12 @@
+h1. Was ist ein Host-Alive-Check?
+
+h2. Der Host lebt
+
+p. Stellen Sie sich vor, Sie haben einen Host mit sehr vielen Services konfiguriert, der dazu noch von verschiedenen Standorten aus überwacht wird. Würde der gesamte Server ausfallen, dann kann es recht schnell passieren, dass Sie mit E-Mail und SMS Benachrichtigungen regelrecht bombadiert werden. Um das zu vermeiden, gibt es die Möglichkeit, einen oder auch mehrere Services eines Hosts als Host-Alive-Check zu markieren.
+
+p. Das bedeutet, dass wenn sich ein Service, der als Host-Alive-Check konfiguriert ist, im Status __CRITICAL__, __UNKNOWN__ oder sogar im Status __INFO__ befindet, dass Sie nur für diesen einen Service eine Benachrichtigung erhalten und sonst für keine weiteres Services.
+
+p. Für Host-Alive-Checks eignen sich insbesondere Ping-Checks, da Pings häufig selbst dann noch funktionieren, wenn ein Server unter enormer Last steht.
+
+p. Um einen Service als Host-Alive-Check zu konfigurieren, müssen Sie lediglich im Formularfeld zur Konfiguration von Service einen Haken bei __Host-Alive-Check__ setzen. Host-Alive-Checks eigenen sich auch besonders um Hosts über Abhängigkeiten und Vererbung miteinander zu verketten.
+

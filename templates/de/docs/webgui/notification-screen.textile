@@ -1,0 +1,44 @@
+h1. Notification Screen
+
+h2. Der Notification Screen
+
+p. Mit dem Notification Screen haben Sie die Möglichkeit, die für einen Benutzer konfigurierten Hosts mit einem Status zu sehen. Diese Übersicht eignet sich besonders für große Wandmonitore in Ihrem Büro. Dort haben Sie dann zu jeder Zeit den Status Ihrer Hosts und Services im Blickfeld und können deutlich schneller reagieren, wenn etwas ausfällt.
+
+!/public/img/docs/notification-screen-1.png!
+
+p. *Es wird empfohlen,* für den Notification Screen einen oder mehrere Benutzer zu erstellen, die nur lesenden Zugriff auf die gesamte WebGUI haben. Um so einen Benutzer anzulegen, müssen Sie den Benutzer mit folgenden Rechten konfigurieren:
+
+* Der Benutzer muss die Rolle __user__ erhalten
+* Der Benutzer darf keine Kontakte verwalten
+* Auf Wunsch erlauben Sie den Login des Benutzers nur von bestimmten IPs
+* Wenn der Benutzer zu Gruppen hinzugefügt wird, dann ohne die Berechtigung Services anzulegen, zu ändern oder zu löschen können
+
+h2. Notification Screen und Charts ohne Login abrufen
+
+h3. Notification Screen ohne Login abrufen
+
+p. Im Formular zur Konfiguration der Benutzer haben Sie die Möglichkeit, einen *Authenfication-Key* zu erstellen. Mit diesem Key kann der Notification Screen abgerufen werden, ohne sich einloggen zu müssen.
+
+!/public/img/docs/authentificaton-key-1.png
+
+p. Mit dieser Einstellung können Sie den Notification Screen nun wie folgt aufrufen:
+
+bc. https://gui.bloonix.de/screen/?username=test@bloonix.de;authkey=yOH1doaktzMjrMza69JcQwxrfKeRGP
+
+h3. Charts ohne Login abrufen
+
+p. Mit dem *Authenfication-Key* können Sie ebenfalls Charts abrufen ohne sich einloggen zu müssen. Hierfür sind nur wenige Schritte notwendig:
+
+* Suchen Sie sich in der Chart-Übersicht einen oder mehrere Charts aus
+* Wählen Sie die Chart-Einstellungen aus (wieivel Charts nebeneinander etc.)
+* Speichern Sie die Charts unter einem Namen ab
+* Merken Sie sich die Chart ID
+
+!/public/img/docs/chart-view-selection-1.png!
+
+p. Anhand des Beispiels in der Grafik verwenden wir nun die Charts, welche unter dem Namen __CPU-Charts__ mit der ID __21__ abgespeichert sind. Diese Charts können Sie nun wie folgt abrufen:
+
+bc. https://gui.bloonix.de/screen/charts/?username=test@bloonix.de;authkey=yOH1doaktzMjrMza69JcQwxrfKeRGP;id=21
+
+p. Die ID __21__ wird einfach als Query-String __id=21__ angehangen und der Pfad lautet __/screen/charts__.
+
