@@ -10,7 +10,7 @@
 }
 #doc-nav ul, #doc-nav ol {
     margin: 0 0 0 20px;
-    list-style-type: none;
+    /*list-style-type: none;*/
     font-size: 15px;
 }
 #doc-nav ul li, #doc-nav ol li {
