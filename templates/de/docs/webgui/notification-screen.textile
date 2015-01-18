@@ -19,7 +19,7 @@ h3. Notification Screen ohne Login abrufen
 
 p. Im Formular zur Konfiguration der Benutzer haben Sie die Möglichkeit, einen *Authenfication-Key* zu erstellen. Mit diesem Key kann der Notification Screen abgerufen werden, ohne sich einloggen zu müssen.
 
-!{width: 100%; margin: 40px 0;}/public/img/authentificaton-key-1.png
+!{margin: 40px 0;}/public/img/authentificaton-key-1.png
 
 p. Mit dieser Einstellung können Sie den Notification Screen nun wie folgt aufrufen:
 
@@ -34,7 +34,7 @@ p. Mit dem *Authenfication-Key* können Sie ebenfalls Charts abrufen ohne sich e
 * Speichern Sie die Charts unter einem Namen ab
 * Merken Sie sich die Chart ID
 
-!{width: 100%; margin: 40px 0;}/public/img/chart-view-selection-1.png!
+!{margin: 40px 0;}/public/img/chart-view-selection-1.png!
 
 p. Anhand des Beispiels in der Grafik verwenden wir nun die Charts, welche unter dem Namen __CPU-Charts__ mit der ID __21__ abgespeichert sind. Diese Charts können Sie nun wie folgt abrufen:
 

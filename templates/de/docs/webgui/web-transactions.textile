@@ -40,37 +40,37 @@ p. Dort angelangt können Sie nun den Workflow einrichten. Als Beispiel verwende
 
 h3. 1. Besuche die Webseite __https://gui.bloonix.de/login__
 
-!{width: 100%; margin: 40px 0;}/public/img/wtrm-step-1.png!
-!{width: 100%; margin: 40px 0;}/public/img/wtrm-step-2.png!
-!{width: 100%; margin: 40px 0;}/public/img/wtrm-step-3.png!
+!{margin: 40px 0;}/public/img/wtrm-step-1.png!
+!{margin: 40px 0;}/public/img/wtrm-step-2.png!
+!{margin: 40px 0;}/public/img/wtrm-step-3.png!
 
 h3. 2. Gebe den Wert __mein@benutzer.test__ in das Formularfeld __username__ ein
 
-!{width: 100%; margin: 40px 0;}/public/img/wtrm-step-4.png!
-!{width: 100%; margin: 40px 0;}/public/img/wtrm-step-5.png!
-!{width: 100%; margin: 40px 0;}/public/img/wtrm-step-6.png!
+!{margin: 40px 0;}/public/img/wtrm-step-4.png!
+!{margin: 40px 0;}/public/img/wtrm-step-5.png!
+!{margin: 40px 0;}/public/img/wtrm-step-6.png!
 
 h3. 3. Gebe den Wert __geheim__ in das Formularfeld __password__ ein
 
-!{width: 100%; margin: 40px 0;}/public/img/wtrm-step-7.png!
-!{width: 100%; margin: 40px 0;}/public/img/wtrm-step-8.png!
-!{width: 100%; margin: 40px 0;}/public/img/wtrm-step-9.png!
+!{margin: 40px 0;}/public/img/wtrm-step-7.png!
+!{margin: 40px 0;}/public/img/wtrm-step-8.png!
+!{margin: 40px 0;}/public/img/wtrm-step-9.png!
 
 h3. 4. Klicke auf den Button mit der ID __#submit__
 
-!{width: 100%; margin: 40px 0;}/public/img/wtrm-step-10.png!
-!{width: 100%; margin: 40px 0;}/public/img/wtrm-step-11.png!
-!{width: 100%; margin: 40px 0;}/public/img/wtrm-step-12.png!
+!{margin: 40px 0;}/public/img/wtrm-step-10.png!
+!{margin: 40px 0;}/public/img/wtrm-step-11.png!
+!{margin: 40px 0;}/public/img/wtrm-step-12.png!
 
 h3. 5. Warte bis das Element __#content__ geladen ist
 
-!{width: 100%; margin: 40px 0;}/public/img/wtrm-step-13.png!
-!{width: 100%; margin: 40px 0;}/public/img/wtrm-step-14.png!
-!{width: 100%; margin: 40px 0;}/public/img/wtrm-step-15.png!
+!{margin: 40px 0;}/public/img/wtrm-step-13.png!
+!{margin: 40px 0;}/public/img/wtrm-step-14.png!
+!{margin: 40px 0;}/public/img/wtrm-step-15.png!
 
 h3. Nun klicken Sie auf den Button __Check it!__, um den Workflow zu testen.
 
-!{width: 100%; margin: 40px 0;}/public/img/wtrm-step-16.png!
+!{margin: 40px 0;}/public/img/wtrm-step-16.png!
 
 p. Ist der Workflow fertig, dann können Sie den Workflow als Service-Check anlegen.
 
@@ -79,6 +79,6 @@ h2. Das Web-Transaction Dashboard
 p. Ist der Service-Check angelegt, so können Sie nun das Web-Transaction-Dashboard aufrufen, um die Ergebnisse der Prüfungen einzusehen.
 Zum Dashboard gelangen Sie wie folgt:
 
-!{width: 100%; margin: 40px 0;}/public/img/wtrm-step-17.png!
-!{width: 100%; margin: 40px 0;}/public/img/wtrm-step-18.png!
+!{margin: 40px 0;}/public/img/wtrm-step-17.png!
+!{margin: 40px 0;}/public/img/wtrm-step-18.png!
 

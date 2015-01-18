@@ -13,7 +13,7 @@ p. Ein Kontakt ist mit einer Visitenkarte vergleichbar, bestehend aus einem Name
 
 p. Zunächst einmal ist es notwendig, dass Kontakte konfiguriert werden, damit diese später den einzelnen Kontaktgruppen hinzugefügt werden können. Hierfür klicken Sie einfach auf den Link Kontakte in der linken Navigationsleiste und danach auf "Einen neuen Kontakt hinzufügen".
 
-!{width: 100%; margin: 40px 0;}/public/img/contacts-and-notifications-1.png! 
+!{margin: 40px 0;}/public/img/contacts-and-notifications-1.png! 
 
 p. *Bitte beachten Sie* den Teil für die Timeperiods... diese Box erscheint erst, wenn ein Kontakt mit den Grundeinstellungen angelegt wurde. In diesem Teil wird der Zeitraum eingerichtet, in dem der Kontakt über Ereignisse benachrichtigt wird.
 
@@ -26,7 +26,7 @@ p. Kommen wir nun zu den bereits erwähnten Zeitbereichen, die im Formular zu se
 
 p. *Eine kleine Info:* Falls diese Zeitbereiche nicht auf Ihre Geschäftszeiten passen, so können Sie auch eigene Zeitpläne (Timeperiods) festlegen.
 
-!{width: 100%; margin: 40px 0;}/public/img/contacts-and-notifications-2.png!
+!{margin: 40px 0;}/public/img/contacts-and-notifications-2.png!
 
 p. Weiterhin haben Sie die Möglichkeit, festzulegen, welche Form der Benachrichtigung für diesen Zeitraum aktiv ist:
 

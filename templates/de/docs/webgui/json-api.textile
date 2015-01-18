@@ -468,7 +468,7 @@ bc. {
 
 p. Eine Beschreibung der einzelnen Zeitangaben finden Sie hier: "Geplante Wartungsarbeiten einrichten":/de/docs/webgui/scheduled-downtimes.html
 
-bc. curl -H 'Content-Type: application/json' https://gui.bloonix.de/token/csrf -d '
+bc.. curl -H 'Content-Type: application/json' https://gui.bloonix.de/token/csrf -d '
 {
     "sid" : "sid"
 }'
@@ -488,7 +488,7 @@ curl -H 'Content-Type: application/json' https://gui.bloonix.de/hosts/create-dow
 h3. Token abfragen und Downtimes löschen
 p. Das Token aus __data__ muss für den Request zum Löschen der Downtimes verwendet werden. Das Token ist nur für 30 Sekunden gültig.
 
-bc. curl -H 'Content-Type: application/json' https://gui.bloonix.de/token/csrf -d '
+bc.. curl -H 'Content-Type: application/json' https://gui.bloonix.de/token/csrf -d '
 {
     "sid" : "sid"
 }'

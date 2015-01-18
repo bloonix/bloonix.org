@@ -6,14 +6,14 @@ p. Die Plugins von Bloonix bieten bereits eine Menge vordefinierter Charts zur A
 
 p. Um einen eigenen Chart zu erstellen, navigieren Sie zunächst in den Bereich __User-Chart-Editor__:
 
-!{width: 100%; margin: 40px 0;}/public/img/list-user-charts.png!
+!{margin: 40px 0;}/public/img/list-user-charts.png!
 
 p. Hier können Sie mit einem Klick oben rechts auf das Plus-Icon einen eigenen Chart erstellen:
 
-!{width: 100%; margin: 40px 0;}/public/img/create-user-chart.png!
+!{margin: 40px 0;}/public/img/create-user-chart.png!
 
 p. Ist der Chart erstellt, so können Sie diesen nun im Chart-Bereich sehen und anzeigen lassen:
 
-!{width: 100%; margin: 40px 0;}/public/img/select-user-charts.png!
+!{margin: 40px 0;}/public/img/select-user-charts.png!
 
-!{width: 100%; margin: 40px 0;}/public/img/generate-user-charts.png!
+!{margin: 40px 0;}/public/img/generate-user-charts.png!
