@@ -4,7 +4,7 @@ h2. Die einfache Konfiguration
 
 p. Zur Konfiguration des Bloonix-Agenten benötigen Sie zunächst den *Host-Key*. Diesen Key finden Sie im Formular zur Konfiguration des Hosts:
 
-!/public/img/docs/bloonix-agent-configuration-1.png!
+!/public/img/bloonix-agent-configuration-1.png!
 
 p. Führen Sie nach der Installation des Bloonix-Agenten folgendes Kommando auf Ihrem Server aus:
 

@@ -44,7 +44,7 @@ h2. Formularfelder: %%schema.service.text.command_options%%
 
 p. Mit den Check Einstellungen können Sie die Einstellungen für den Check bestimmen. Dies können beispielsweise eine IP und ein Port Ihres Service sein, oder auch Schwellwerte und Timeouts. Jeder Check hat ein eigenes Set von Optionen. Eine kurze Beschreibung zu den Check Optionen finden Sie direkt im Formular. Klicken Sie hierzu einfach auf das kleine Info-Icon zu jeder Option.
 
-!/public/img/docs/service-parameter-1.png!
+!/public/img/service-parameter-1.png!
 
 p. Bitte lesen Sie unbedingt das Dokument: <a data-id="host-variables">%%site.help.doc.host-variables%%</a>
 
