@@ -44,7 +44,7 @@ my $plugin = Bloonix::Plugin->new(version => "0.1");
 # der Ausgabe in etwa so aussehen:
 #   check-test --url https://www.bloonix.de/ --warning 3 --critial 5
 $plugin->example(
-    description => "Check the URL",
+    description => "How to check a URL",
     arguments => [
         url => "https://www.bloonix.de/",
         warning => 3,
@@ -63,8 +63,9 @@ $plugin->add_option(
     option => "url",
 
     # Der Typ des Werts. Mögliche Angaben sind string, int, number.
-    # string ist eine Zeichenkette. int ist eine Zahl von 0-n.
-    # Number ist eine Zahl von 1-n.
+    # - string ist eine Zeichenkette
+    # - int ist eine Zahl von 0-n
+    # - number ist eine Zahl von 1-n
     value_type => "string",
 
     # Eine sehr kurze Beschreibung des Wertes. Die Beschreibung
@@ -78,9 +79,9 @@ $plugin->add_option(
     multiple => 0,
 
     # Es kann mittels Regexp geprüft werden, ob der übergebene Wert
-    # korrekt ist. Hier wird beispielhaft geprüft, ob die URL vereinfacht
+    # korrekt ist. Hier wird beispielhaft geprüft, ob die URL
     # einem bestimmten Format entspricht:
-    regex => qr!^https{0,1}://[^\s]+!,
+    regex => qr!https{0,1}://[a-zA-Z0-9]+([.-][a-zA-Z0-9]+)*(:\d+){0,1}(/[^\s']*){0,1}\z!,
 
     # Eine Beschreibung der Option.
     description => "Check the response time of a URL."
@@ -141,6 +142,10 @@ if ($opt->{critical} && $time >= $opt->{critical}) {
     $status = "WARNING";
 }
 
+# Die Methode exit() wird aufgerufen, um das Plugin zu beenden. Folgende Parameter sind erlaubt:
+# status = Der Status der Prüfung. Dies kann OK, WARNING, CRITICAL oder UNKNOWN sein.
+# message = Eine sprechende Statusmeldung.
+# stats = Hier werden die Statistiken des Plugins im Format key->value gespeichert.
 $plugin->exit(
     status => $status,
     message => "response time ${time}s",
