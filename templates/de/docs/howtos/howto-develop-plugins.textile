@@ -17,11 +17,11 @@ p. Zu jedem Plugin gibt es eine spezielle Datei, in der Metadaten abgelegt werde
 * check-http - das Skript, welches ausgeführt wird
 * plugin-http - Metadaten zum Plugin sowie die Konfiguration der Charts
 
-p. Zu beachten ist hier der Prefix beider Dateien. Für Skripts wird immer der Prefix __check__ verwendet und für die Datei mit den Metadaten der Prefix __plugin__.  Beide Dateien werden später benötigt, um die Metadaten in die Datenbank der WebGUI von Bloonix zu importiern, damit das Plugin in der WebGUI als Service eingerichtet werden kann.
+p. Zu beachten ist hier der Prefix beider Dateien. Für Skripts wird immer der Prefix __check__ verwendet und für die Datei mit den Metadaten der Prefix __plugin__.  Beide Dateien werden später benötigt, um die Metadaten in die Datenbank der WebGUI von Bloonix zu importieren, damit das Plugin in der WebGUI als Service eingerichtet werden kann.
 
 h2. Plugins entwickeln
 
-p. In diesem Kapitel wird beispielhaft ein Plugin namens __Test.Check__ entwickelt. Das Plugin enthält die Dateien __check-test__ und __plugin-test__.
+p. In diesem Abschnitt versuchen wir die Entwicklung eines Plugins von Bloonix anhand eines Beispiels aufzuzeigen. Dazu verwenden wir den Pluginnamen __check-test__. Beachten Sie bitte die Kommentare im Skript.
 
 h3. Entwicklung: check-test
 
@@ -39,9 +39,9 @@ use Bloonix::Plugin;
 # die Versionsnummer des Plugins setzen.
 my $plugin = Bloonix::Plugin->new(version => "0.1");
 
-# Es sollte immer ein Beispiel angegeben werden, wie das Plugins
-# ausgeführt werden kann. Ruft man die Hilfe auf, so wird das
-# Beispiel etwa so aussehen:
+# Es sollte immer ein Beispiel angegeben werden, wie das Plugin
+# ausgeführt werden kann. Ruft man die Hilfe auf, so wird das in
+# der Ausgabe in etwa so aussehen:
 #   check-test --url https://www.bloonix.de/ --warning 3 --critial 5
 $plugin->example(
     description => "Check the URL",
