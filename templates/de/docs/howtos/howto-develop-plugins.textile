@@ -8,16 +8,16 @@ h2. Allgemeines
 
 h3. Programmiersprache Perl
 
-p. Bloonix Plugins sollten in der Programmiersprache Perl entwickelt werden, da es für Perl ein Modul names __Bloonix::Plugin__ gibt, was die Entwicklung von Plugins deutlich vereinfacht und beschleunigt. Derzeit ist es nicht geplant, ein gleichwertiges Modul für andere Sprachen zu entwickeln.
+p. Bloonix Plugins sollten in der Programmiersprache Perl entwickelt werden, da es für Perl ein Modul names __Bloonix::Plugin__ gibt, mit dem die Entwicklung von Plugins deutlich vereinfacht und beschleunigt wird. Derzeit ist es nicht geplant, ein gleichwertiges Modul für andere Sprachen zu entwickeln.
 
-h3. Dateien eines Plugins
+h3. Metadaten
 
-p. Ein Plugin von Bloonix besteht aus zwei Dateien. Zum Beispiel besteht der HTTP Check von Bloonix aus den Dateien
+p. Zu jedem Plugin gibt es eine spezielle Datei, in der Metadaten abgelegt werden. Schauen wir uns beispielhaft das Plugin __check-http__ an:
 
 * check-http - das Skript, welches ausgeführt wird
 * plugin-http - Metadaten zum Plugin sowie die Konfiguration der Charts
 
-p. Beide Dateien werden später benötigt, um die Metadaten eines Plugins in die Datenbank der WebGUI von Bloonix zu importiern, damit das Plugin in der WebGUI als Service eingerichtet werden kann.
+p. Zu beachten ist hier der Prefix beider Dateien. Für Skripts wird immer der Prefix __check__ verwendet und für die Datei mit den Metadaten der Prefix __plugin__.  Beide Dateien werden später benötigt, um die Metadaten in die Datenbank der WebGUI von Bloonix zu importiern, damit das Plugin in der WebGUI als Service eingerichtet werden kann.
 
 h2. Plugins entwickeln
 
