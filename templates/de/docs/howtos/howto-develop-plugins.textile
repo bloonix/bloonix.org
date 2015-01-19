@@ -94,6 +94,7 @@ $plugin->add_option(
     value_desc => "seconds",
     mandatory => 0,
     multiple => 0,
+    default => 3,
     description => "Trigger a WARNING status if the request takes longer."
 );
 
@@ -104,6 +105,7 @@ $plugin->add_option(
     value_desc => "seconds",
     mandatory => 0,
     multiple => 0,
+    default => 5,
     description => "Trigger a CRITICAL status if the request takes longer."
 );
 
@@ -167,13 +169,15 @@ Usage: check-test [ OPTIONS ]
 
 Options:
 
---url<url to check>
+--url <url to check>
     Check the response time of a URL.
     This option is mandatory.
---warning<seconds>
+--warning <seconds>
     Trigger a WARNING status if the request takes longer.
---critical<seconds>
+    Default: 3
+--critical <seconds>
     Trigger a CRITICAL status if the request takes longer.
+    Default: 5
 --version
     Print the version.
 --help
@@ -225,6 +229,7 @@ bc.. # perl check-test --plugin-info --pretty
          "option" : "warning",
          "mandatory" : 0,
          "multiple" : 0,
+         "default" : 3,
          "value_desc" : "seconds"
       },
       {
@@ -235,6 +240,7 @@ bc.. # perl check-test --plugin-info --pretty
          "option" : "critical",
          "mandatory" : 0,
          "multiple" : 0,
+         "default" : 5,
          "value_desc" : "seconds"
       }
    ],
