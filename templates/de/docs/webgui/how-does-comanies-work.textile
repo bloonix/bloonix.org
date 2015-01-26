@@ -1,0 +1,10 @@
+h1. Companies und wie diese funktionieren
+
+p. In der WebGUI von Bloonix gibt es die Möglichkeit zur Einrichtung von Companies. Companies, zu deutsch __Firmen__, haben den Zweck, Kunden virtuell in einer Bloonix-Instanz nebeneinander zu betreiben, ohne das die Kunden etwas voneinander wissen.
+
+p. Sie können Companies mit einem virtuellen Server vergleichen. Oftmals ist es so, dass sich ein eigener Server für einen Kunden finanziell nicht rentiert oder das der Aufwand einfach zu groß ist, um für jeden Kunden einen dedizierten Server bereitzustellen. Aus diesem Grund gibt es viele Kunden, für die ein virtueller Server vollkommen ausreichend ist.
+
+p. Das gleiche Prinzip gilt auch für Bloonix. Wenn ein Kunde keinen eigenen Server mit einer eigenen Bloonix-Instanz betreiben möchte, so können Sie einem Kunden einen virtuellen Account unter Bloonix einrichten, in dem Sie ihm eine Company mit einem eigenen Benutzer einrichten, der Operator-Rechte hat.
+
+p. Das einzige, was Sie beachten sollten ist, dass Sie selbst ebenfalls mit einer eigenen Company arbeiten sollten. Die Company __Bloonix__ mit dem dazugehörigen Adminsitrator-Account __admin__ sollten nur verwendet werden, um im Bereich __ADMINISTRATION__ zu agieren und um neue Companies, Benutzer und Gruppen anzulegen.
+

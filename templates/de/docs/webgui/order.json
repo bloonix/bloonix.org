@@ -1,5 +1,6 @@
 [
     { "Die Bloonix-WebGUI": "bloonix-webgui.textile" },
+    { "Commpanies und wie diese funktionieren": "how-does-comanies-work.textile" },
     { "Wie überwacht Bloonix Hosts und Services": "how-does-bloonix-checks-your-hosts-and-services.textile" },
     { "Einen neuen Host anlegen": "add-new-host.textile" },
     { "Host Parameter im Detail": "host-parameter.textile" },
