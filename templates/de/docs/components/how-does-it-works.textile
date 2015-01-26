@@ -38,3 +38,9 @@ p. Da der Bloonix-Agent nicht für Windows-Systeme zur Verfügung steht und auch
 p. Hierfür wird der Bloonix-Agent auf einem zentralen Linux-Server installiert, der in Ihrer lokalen Infrastruktur integriert ist, also in dem LAN Ihres Unternehmens. Von dort aus werden alle Netzwerksysteme und Server über SNMP, HTTP und anderen Protokollen überwacht. Der Bloonix-Agent ist so konzipiert, dass er beliebig viele Hosts und Services überwachen kann.
 
 !{width: 100%; margin: 40px 0;}/public/img/bloonix-howto-agent-server-snmp.png!
+
+h2. Detailierte Beschreibung
+
+p. Wenn Sie eine detaillierte Beschreibung lesen möchten, wie die Services von Hosts überwacht werden, so finden Sie diese hier:
+
+p. "Wie überwacht Bloonix Hosts und Services":/de/docs/webgui/how-does-bloonix-checks-your-hosts-and-services.html
