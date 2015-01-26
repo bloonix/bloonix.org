@@ -93,7 +93,9 @@ p. *Wichtig:* Der initiale Zugang zur WebGUI lautet:
 bc. Benutzername: admin
 Passwort: admin
 
-p. *Auch wichtig:* Falls Sie mal das Passwort vergessen haben, so können Sie das Skript __/srv/bloonix/webgui/bin/generate-password__ verwenden, um ein neues Passwort zu generieren. Das Skript gibt zwei Update-Statements aus, die auf der Datenbank von Bloonix ausgeführt werden müssen.
+p. Falls Sie mal das Passwort vergessen haben, so können Sie das Skript __/srv/bloonix/webgui/bin/generate-password__ verwenden, um ein neues Passwort zu generieren. Das Skript gibt zwei Update-Statements aus, die auf der Datenbank von Bloonix ausgeführt werden müssen.
+
+p. _Bitte beachten Sie_, dass der Benutzer __admin__ nur verwendet werden sollte, um im Bereich __ADMINISTRATION__ zu agieren. Bitte erstellen Sie als aller erstes eine eigene __Company__, eine eigene Gruppe und einen eigenen Benutzer. Der Benutzer und die Gruppe müssen der neuen Company zugeordnet werden und der Benutzer sollte Operator-Rechte haben.
 
 h2. Nginx restarten
 
