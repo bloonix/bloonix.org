@@ -75,6 +75,9 @@
     font-weight: 500;
     color: #555555;
 }
+#doc-content i {
+    color: #555555;
+}
 #doc-content em {
     color: #aa0000;
     font-style: normal;
