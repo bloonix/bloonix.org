@@ -15,7 +15,7 @@ apt-get install apt-transport-https ca-certificates curl
 
 p. Als nächstes muss der Public-Signing-Key von Bloonix runtergeladen und installiert werden:
 
-bc. wget https://download.bloonix.de/repos/debian/bloonix.gpg -O- | apt-key add -
+bc. wget -q -O- https://download.bloonix.de/repos/debian/bloonix.gpg | apt-key add -
 
 p. Jetzt muss nur noch das passende Bloonix Repository in __/etc/apt/sources.list.d/bloonix.list__ eingetragen werden:
 

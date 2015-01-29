@@ -72,14 +72,22 @@ bc. email {
 
 h2. Sektion: redirect_remote_agent_timeouts
 
+p. Die Sektion __redirect_remote_agent_timeouts__ bietet ein ganz spezielles Feature an, welches nur verwendet werden sollte, wenn Sie Kundenserver über Bloonix überwachen und wenn die Kunden als Kontakt für Benachrichtigungen eingerichtet sind.
+
+p. Stellen Sie sich folgendes Szenario vor:
+
+p. Sie bieten Ihren Kunden Monitoring über Bloonix an und haben hierfür einen Agenten eingerichtet, der zum Beispiel per Remote-Check die Webseiten Ihrer Kunden überwacht. Wenn dieser Agent ausfallen würde, dann würden Ihre Kunden nach Ablauf eines Timeouts eine kritische Meldung per E-Mail oder SMS erhalten, da der Service seit mehreren Minuten nicht mehr geprüft wurde. Was hier beachtet werden muss ist, dass weder der Webserver des Kunden ausgefallen ist, noch ein Agent, der auf einem Kundenserver läuft. Der Kunde würde also über einen kritischen Zustand informiert, den der Kunde jedoch nicht zu verantworten hat, da hier der Agent ausgefallen ist, der auf Ihrem Server läuft, um die Webseiten Ihrer Kunden zu überwachen. Für diesen Zweck gibt es die Sektion __redirect_remote_agent_timeouts__. Der Kunde selbst würde keine SMS und auch keine E-Mail mehr für Services erhalten, die mit der Option __Standort des Agenten: remote__ konfiguriert sind, stattdessen würden die Benachrichtigungen per E-Mail an die Adresse umgeleitet, die mit dem Parameter __mail_to__ gesetzt ist.
+
+p. Die Konfiguration der Sektion ist sehr einfach:
+
 bc. redirect_remote_agent_timeouts {
-    sms_to 012345
     mail_to foo@example.test
 }
 
 |_. Parameter |_. Standard |_. Beschreibung |
-| sms_to |  | Die Mobilfunknummer, zu der die Nachricht umgeleitet werden soll. |
-| mail_to |  | Die E-Mail-Adresse, zu der die Nachricht umgeleitet werden soll. |
+| mail_to |  | Die E-Mail-Adresse, zu der Nachrichten umgeleitet werden sollen. |
+
+p. Möchten Sie diese Funktion nicht einsetzen, so können Sie die Sektion auskommentieren.
 
 ==
 % $stash->{item_logfile} = "bloonix-server-database.log";
