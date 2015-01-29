@@ -15,8 +15,30 @@ group bloonix
 | user | bloonix | Mit welchem Benutzer soll der Daemon laufen. |
 | group | bloonix | Mit welcher Gruppe soll der Daemon laufen. |
 
+h2. Sektion: server
+
+p. In dieser Sektion werden die Verbindungsparameter zum Bloonix-Server konfiguriert.
+
+p. _Hinweis:_ Diese Sektion ist identisch zur Konfiguration der Sektion __server{}__ des Bloonix-Agenten.
+
+|_. Parameter |_. Standard |_. Beschreibung |
+| proto | http | Das Protokoll, unter dem der Bloonix-Server erreichbar ist. |
+| host | 127.0.0.1 | Der Hostname bzw. die IP-Adresse zum Bloonix-Server. Dies kann auch eine komma-separierte Liste von IP-Adressen sein. |
+| timeout | 60 | Die maximale Zeit pro Request. Danach wird der Request abgebrochen. |
+| mode | balanced | Es ist möglich, die Requests auf mehrere Bloonix-Server zu verteilen oder aber ein Failover einzurichten. Mögliche Werte sind __balanced__ und __failover__. |
+| timeout | 60 | Der Timeout für den kompletten Request zum Bloonix-Server. |
+
+h3. Untersektion: ssl_options
+
+p. In dieser Sektion werden die SSL Parameter konfiguriert und ob das Zertifikat des Servers validiert werden soll.
+
+p. Falls eine Validierung nicht stattfinden soll, weil zum Beispiel selbst-signierte Zertifikate eingesetzt werden und diese nicht auf allen Servern verteilt sind, so können die SSL Parameter entfernt werden.
+
+|_. Parameter |_. Standard |_. Beschreibung |
+| ssl_verify_mode |  | Dieser Parameter aktiviert oder deaktiviert die Validierung des Serverzertifikats. 0 = nein, 1 = ja. |
+| ssl_ca_path |  | Der Pfad zu den installierten CAs. |
+
 ==
-<% include /de/docs/configuration/template-rest-server.textile %>
 % $stash->{item_logfile} = "bloonix-srvchk-database.log";
 <% include /de/docs/configuration/template-database.textile %>
 % $stash->{item_logfile} = "bloonix-srvchk.log";
