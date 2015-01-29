@@ -1,5 +1,7 @@
 h2. Sektion: server
 
+p. _Hinweis:_ Diese Sektion ist in den Konfigurationen des Bloonix-Agenten und des Bloonix-Service-Checkers identisch.
+
 p. In dieser Sektion werden die Verbindungsparameter zum Bloonix-Server konfiguriert.
 
 |_. Parameter |_. Standard |_. Beschreibung |
