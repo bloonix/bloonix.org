@@ -1,0 +1,4 @@
+h1. The Bloonix documentation
+
+p. We are really sorry but the documentation is currently only available in the german language.
+
