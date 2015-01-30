@@ -14,9 +14,7 @@ h2. Skripte
 | bloonix-create-plugin | bloonix-plugin-config | Erzeugung einer importfähigen Konfigurationsdatei eines Plugins. |
 | bloonix-load-plugins | bloonix-plugin-config | Eine Konfigurationdatei eines Plugins in die Datenbank importieren. |
 
-h3. Detaillierte Beschreibung der Skripte
-
-h4. bloonix-check-for-maintenance
+h2. bloonix-check-for-maintenance
 
 p. Mit diesem Skript kann geprüft werden, ob der Monitoring-Server eventuell Netzwerkprobleme hat. Die Prüfung erfolgt über einfache Ping-Checks zu einem externen Server. Der Aufruf des Skripts sieht beispielhaft wie folgt aus:
 
@@ -32,15 +30,15 @@ p. Beispiel: Auf einem Server haben Sie den Bloonix-Agenten installiert. Dieser 
 
 p. Nun, genau betrachtet gibt es jedoch kein Problem mit dem Host oder den Services, für die in diesem Fall eine Warnmeldung generiert würde, denn das Problem liegt nicht am Host, der überwacht wird, sondern beim Monitoring-Server selbst. Diese Warnmeldung könnte somit irreführend sein. Das Skript __bloonix-check-for-maintenance__ würde also einen Eintrag in der Bloonix-Datenbank tätigen, die alle Bloonix-Server dazu veranlasst, Warnmeldungen via SMS oder E-Mail zu unterdrücken.
 
-h4. bloonix-count-es-service-documents
+h2. bloonix-count-es-service-documents
 
 p. Dieses Skript zeigt die Anzahl Dokumente für jeden Service, welche in Elasticsearch gespeichert sind. Je nach Menge hat das Skript eine sehr lange Laufzeit, da es jeden Index befragen muss, wieviel Dokumente zu einer Service-ID gespeichert sind.
 
-h4. bloonix-delete-es-host-data
+h2. bloonix-delete-es-host-data
 
 p. Mit diesem Skript können Daten von Hosts aus Elasticsearch entfernt werden. Die Aufbewahrungsdauer der Daten wird bei der Konfiguration der Hosts in der WebGUI bestimmt. Der Parameter hierzu lautet __Aufbewahrungszeit__.
 
-h4. bloonix-get-sms-count
+h2. bloonix-get-sms-count
 
 p. Dieses Skript erstellt gibt die Anzahl versendeter SMS eines __Unternehmens__ aus. Der Aufruf des Skripts ist sehr einfach:
 
@@ -52,7 +50,7 @@ bc. COMPANY-ID ; REAL-COMPANY-ID ; SMS-COUNT
 
 p. Der Unterschied zwischen __COMPANY-ID__ und __REAL-COMPANY-ID__ ist, dass die __COMPANY-ID__ das Auto-Increment Feld der Tabelle __COMAPNY__ ist, während __REAL-COMPANY-ID__ frei vergeben werden kann. Der Wert kann zum Beispiel verwendet werden, um die ID mit einer fremden Kundendatenbank abzugleichen.
 
-h4. bloonix-roll-forward-log
+h2. bloonix-roll-forward-log
 
 p. Mit diesem Skript können Daten importiert werden, die während eines Ausfalls von Elasticsearch nicht über den Bloonix-Server gespeichert werden konnten.
 
@@ -62,7 +60,7 @@ p. Der Bloonix-Server speichert Events und Statistiken von Services in Elasticse
 
 p. _Bitte beachten Sie_, dass die Daten, vorallem die Event-Daten, extrem wichtig sind für die Reports und zur Ermittlung der Flap-Detection von Services. Wenn Events in Elasticsearch fehlen, dann führt das dazu, dass die Reports von betroffenen Services verfälscht sind. Um sicherzustellen, dass dies nie der Fall ist, sollten Sie die Größe der Datei __/var/log/bloonix/elasticsearch-roll-forward.json__ über das Plugin __Filestat.Check__ überwachen. Sobald sich Daten darin befinden, sollten diese umgehend importiert werden. Die Log-Datei muss auf allen Server überwacht werden, auf denen der Bloonix-Server aktiv ist.
 
-h4. bloonix-update-agent-host-config
+h2. bloonix-update-agent-host-config
 
 p. Mit diesem Skript können Sie die Host-Konfiguration eines Agenten automatisiert pflegen. Angenommen, Sie möchten einen zentralen Agenten einrichten, der alle Service-Checks mit der Agenten-Lokation __remote__ überwachen soll.
 
@@ -78,7 +76,7 @@ p. Bitte beachten Sie, dass über den Parameter __--agent-id__ auch mehrere Loka
 
 bc. bloonix-update-agent-host-config --addr agent.bloonix.net --agent-id intranet,remote --run
 
-h4. bloonix-cli
+h2. bloonix-cli
 
 p. Mit diesem Skript kann vereinfacht mit der WebGUI kommuniziert werden. Der Aufruf des Skripts ist recht einfach:
 
@@ -86,7 +84,7 @@ bc. bloonix-cli https://webgui/hosts -d '{ "limit": 10 }'
 
 p. Auf Wunsch kann man die Session-ID im Home-Verzeichnis des Benutzers speichern, um nicht bei jedem Aufruf den Benutzernamen und das Passwort eingeben zu müssen.
 
-h4. bloonix-init-host
+h2. bloonix-init-host
 
 p. Dieses Skript haben Sie eventuell bereits kennengelernt, wenn Sie einen Agenten initial eingerichtet haben. Mit diesem Skript können Sie vereinfacht einen einzelnen Host einer Agenten-Konfiguration hinzufügen.
 
@@ -100,7 +98,7 @@ bc. bloonix-init-host 1000.a9f8hawefhvwfhv98sahdfvauish  server1.bloonix.net,ser
 
 p. Nachdem das Skript ausgeführt wurde, wird eine Konfigurationsdatei names __/etc/bloonix/agent/conf.d/host-1000.conf__ angelegt und der Agent wird neu gestartet, damit dieser sofort mit der Überwachung des Hosts beginnen kann.
 
-h4. bloonix-create-plugin, bloonix-load-plugins
+h2. bloonix-create-plugin, bloonix-load-plugins
 
 p. Diese Skripts sind für Entwickler interessant, die eigene Plugins für Bloonix entwickeln möchten. Bitte lesen Sie hierzu das Dokument "HowTo: Plugins entwickeln":/de/docs/howtos/howto-write-plugins.html .
 

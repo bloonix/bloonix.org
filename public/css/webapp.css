@@ -33,7 +33,7 @@
     padding-bottom: 40px;
     float: left;
 }
-#doc-content h1 {
+#doc-content h1, #doc-content h1 a {
     font-family: "Roboto","Arial","sans-serif";
     letter-spacing: -1px;
     text-align: left;
@@ -42,7 +42,7 @@
     color: #116c77;
     margin: 0 auto 20px auto;
 }
-#doc-content h2 {
+#doc-content h2, #doc-content h2 a {
     font-family: "Roboto","Arial","sans-serif";
     text-align: left;
     font-size: 24px;
