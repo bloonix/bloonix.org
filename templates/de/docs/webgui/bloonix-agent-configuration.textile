@@ -70,8 +70,9 @@ p. Um nun für diese zwei Service-Checks __sudo__ einzurichten, gehen Sie folgt 
 
 bc. bloonix ALL=NOPASSWD: /usr/lib/bloonix/plugins/check-mdadm
 bloonix ALL=NOPASSWD: /usr/lib/bloonix/plugins/check-smart-health
-Defaults env_keep += "PLUGIN_LIBDIR CONFIG_PATH"
-Defaults secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+Defaults:bloonix !requiretty
+Defaults:bloonix env_keep += "PLUGIN_LIBDIR CONFIG_PATH"
+Defaults:bloonix secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
 p. _Bitte beachten Sie_, dass der Parameter __secure_path__ lediglich um den Pfad __/usr/sbin__ erweitert werden sollte, da das Programm __smartctl__ beispielsweise unter diesem Pfad liegt, dieser aber nicht bei allen Linux-Distributionen gesetzt ist.
 
