@@ -19,7 +19,7 @@ p. Die Konfigurationdatei des Bloonix-Servers lautet
 
 bc. /etc/bloonix/server/main.conf
 
-p. und ist sehr gut dokumentiert. Editieren Sie die Konfiguration des Servers und tragen dort das _Passwort_ zur Datenbank ein:
+p. und ist sehr gut dokumentiert. _Bitte beachten_ Sie, dass der Bloonix-Server einen Zugang zu Datenbank benötigt. Dieses wurde bei der Einrichtung der WebGUI generiert und in die Konfigurationsdatei __/etc/bloonix/database/main.conf__ geschrieben. Diese Datei sollte in der Konfigurationsdatei des Bloonix-Servers in der Sektion __database__ inkludiert werden.
 
 p. Der Bloonix-Server wird über ein Init-Skript gestartet und gestoppt.
 

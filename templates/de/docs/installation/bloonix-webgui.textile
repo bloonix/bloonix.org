@@ -70,7 +70,7 @@ p. Um das Schema für die PostgreSQL-Datenbank anzulegen, muss folgendes Kommand
 
 bc. /srv/bloonix/webgui/schema/init-database
 
-p. Das Passwort für die Datenbank wird dabei automatisch generiert und in die Konfigurationsdatei geschrieben.
+p. Das Skript erstellt das Datenbank-Schema sowie einen Zugang für den Benutzer __bloonix__. Das Passwort für die Datenbank wird dabei automatisch generiert und in die Konfigurationsdatei __/etc/bloonix/database/main.conf__ geschrieben. Diese Datei wird von allen Komponenten, die einen Zugang zu Datenbank benötigen, inkludiert.
 
 p. Um das Template für Elasticsearch anzulegen, muss folgendes Kommando ausgeführt werden:
 
