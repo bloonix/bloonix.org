@@ -32,7 +32,6 @@
     width: 900px;
     padding-bottom: 40px;
     float: left;
-    letter-spacing: 0 !important;
 }
 #doc-content h1, #doc-content h1 a {
     font-family: "Roboto","Arial","sans-serif";

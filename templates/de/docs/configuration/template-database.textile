@@ -2,13 +2,16 @@ h2. Sektion: database
 
 p. In dieser Sektion werden die Parameter für die Datenbank konfiguiert und sind selbsterklärend.
 
-bc. database {
-    driver Pg
-    host 127.0.0.1
-    port 5432
-    database bloonix
-    user bloonix
-    password bloonix
+bc.. database {
+    include /etc/bloonix/database/main.conf
+
+    #driver Pg
+    #host 127.0.0.1
+    #port 5432
+    #database bloonix
+    #user bloonix
+    #password secret
+
     logger {
         file {
             filename /var/log/bloonix/<% item_logfile %>
