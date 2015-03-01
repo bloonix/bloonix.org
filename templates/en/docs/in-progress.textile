@@ -1,0 +1,3 @@
+h1. The Bloonix documentation
+
+p. We are really sorry but the documentation is not fully available in english. If you like to investigate please contact me (Jonny) via mail: jonny.schulz(a)bloonix.de :-)
