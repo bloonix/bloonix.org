@@ -1,4 +1,5 @@
 [
     { "The Bloonix documentation": "in-progress.textile" },
-    { "About Bloonix": "about.textile" }
+    { "About Bloonix": "about.textile" },
+    { "License": "license.textile" }
 ]

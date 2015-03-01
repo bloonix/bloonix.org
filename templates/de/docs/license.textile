@@ -1,6 +1,6 @@
 h1. Lizenzen
 
-p. Die gesamte Bloonix-Software ist freie Software und lizenziert unter der GPLv3 (GNU Public License version 3).
+p. Die Bloonix-Software ist freie Software und lizenziert unter der GPLv3 (GNU Public License version 3).
 
 p. Informationen zu den GPL Lizenzen finden Sie auf der folgenden Webseite: "http://www.gnu.org/licenses/":http://www.gnu.org/licenses/
 
@@ -26,8 +26,8 @@ p. Die Bloonix-WebGUI verwendet zur visuellen Darstellung von Statistiken divers
 
 h2. Lizenzen für Highcharts und Highmaps
 
-p. Die Bloonix-WebGUI ist zur visuellen Darstellung für den Einsatz von Highcharts und Highmaps optimiert. Entgegen der Lizenzen von Bloonix darf die Software von Highcharts und Highmaps jedoch nicht für kommerzielle Zwecke verwendet werden. Falls Sie dennoch den Wunsch haben, Highcharts und Highmaps anstelle der kostenfreien Tools Flot, D3js, topojson und datamaps einzusetzen, so müssen Sie beim Anbieter Highsoft eine Lizenz erwerben.
+p. Die Bloonix-WebGUI ist zur visuellen Darstellung für den Einsatz von Highcharts und Highmaps optimiert. Entgegen der Lizenzen von Bloonix darf die Software von Highcharts und Highmaps jedoch nicht für kommerzielle Zwecke verwendet werden. Falls Sie dennoch den Wunsch haben, Highcharts und Highmaps anstelle der kostenfreien Tools Flot und JVQMap einzusetzen, so müssen Sie beim Anbieter Highsoft eine Lizenz erwerben.
 
 p. Weitere Details zu Highcharts und Highmaps gibt es auf den Webseiten "http://www.highcharts.com":http://www.highcharts.com/ und "http://shop.highsoft.com/":http://shop.highsoft.com/ .
 
-p. *Hinweiß:* Die Bloonix-WebGUI wird bereits mit der JavaScript-Library für Highcharts und Highmaps ausgeliefert. Falls Sie eine Lizenz für Highcharts und Highmaps erworben haben, so können Sie den Einsatz der Chart-Libraries über einen Konfigurationsparameter einschalten. Dieser befindet sich in der Konfigurationsdatei __/etc/bloonix/webgui/main.conf__ und lautet __chart_library__. Weitere Informationen können in der Konfigurationsdatei nachgelesen werden.
+p. *Hinweis:* Die Bloonix-WebGUI wird bereits mit der JavaScript-Library für Highcharts und Highmaps ausgeliefert. Falls Sie eine Lizenz für Highcharts und Highmaps erworben haben, so können Sie den Einsatz der Chart-Libraries über einen Konfigurationsparameter einschalten. Dieser befindet sich in der Konfigurationsdatei __/etc/bloonix/webgui/main.conf__ und lautet __chart_library__. Weitere Informationen können in der Konfigurationsdatei nachgelesen werden.
