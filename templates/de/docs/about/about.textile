@@ -1,0 +1,22 @@
+h1. Über Bloonix
+
+h2. Was ist Bloonix
+
+p. Bloonix ist ein Monitoring-System und dient der Überwachung von IT-Infrastrukturen. Die Software ist in den Programmiersprachen Perl und JavaScript entwickelt, wobei JavaScript nur clientseitig im Browser verwendet wird.
+
+p. Mit Bloonix lässt sich alles überwachen, was über eine Netzwerkverbindung zu erreichen ist und wofür es ein Plugin gibt. Es lassen sich auch Hardwarekomponenten überwachen, auf denen Bloonix nicht installiert werden kann, wie zum Beispiel Router, Switches, Loadbalancer oder andere Hardware, dessen Status über SNMP oder jedes beliebige Protokoll abgefragt werden kann.
+
+h2. Plugin-basiertes Monitoring
+
+p. Bloonix ist ein plugin-basiertes Monitoring-System und verfügt unter anderem über Plugins zur Überwachung von Linux, Windows, Apache, Nginx, Varnish, Memcached, Redis, MySQL und PostgreSQL. Die Plugins werden stetig weiterentwickelt. Eine grobe Übersicht der zur Verfügung stehende Plugins finden Sie hier: "Bloonix-Plugins":/de/docs/components/plugins.html
+
+h2. Nagios Kompabilität
+
+p. Nagios-Plugins sind kompatibel und es besteht die Möglichkeit, Nagios-Plugins über einen Wrapper von Bloonix zu verwenden. Es kann somit der Status von Services abgefragt werden. Wir empfehlen jedoch, Nagios-Plugins nur einzusetzen, wenn es von Bloonix noch kein passendes Plugin zur Überwachung des gewünschten Service gibt.
+
+h2. Unterstütze Betriebssysteme
+
+p. Für den Einsatz von Bloonix wird ein unixoides Betriebssystem und ein Perl ab Version 5.14 benötigt. Wir empfehlen den Einsatz von Linux, gerne Debian, Ubuntu, Red Hat, CentOS, Fedora oder auch openSUSE, da es hierfür fertige Pakete zur Installation von Bloonix gibt. Die Software kann auch auf anderen Linux Distributionen eingesetzt werden, muss dann jedoch manuell installiert und konfiguriert werden.
+
+p. Der Bloonix-Agent, der für die Überwachung von Systemen verantwortlich ist, ist auch für ältere Linux Versionen verfügbar. Hier reicht ein Perl ab Version 5.8, die Installation erfolgt jedoch manuell (configure, make, make install).
+
