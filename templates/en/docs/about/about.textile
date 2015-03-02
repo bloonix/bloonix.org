@@ -1,0 +1,21 @@
+h1. About Bloonix
+
+h2. What is Bloonix
+
+p. Bloonix is a monitoring solution that helps businesses to ensure high availability and performance. The software is developed in the programming languages Perl and Javascript, whereat JavaScript is only used at the client side in a browser.
+
+p. With Bloonix everything can be monitored what is to be reached about a network connection and for which there is a Plugin. Hardware components can be also monitord on which Bloonix cannot be installed, as for example Router, Switches, Loadbalancer or other hardware whose status about SNMP or any protocol can be questioned.
+
+h2. Plugin based monitoring
+
+p. Bloonix is a plugin-based monitoring system and, among the rest, disposes of Plugins for the monitoring of Linux, Windows, Apache, Nginx, Varnish, Memcached, Redis, MySQL and PostgreSQL. The Plugins are developed steadily. You find a coarse overview the available Plugins here: "Bloonix-Plugins":/de/docs/components/plugins.html
+
+h2. Nagios compability
+
+p. Nagios plugins are compatible and can be used with a wrapper of Bloonix. Hence, we recommend to use only Nagios plugins if there is still no suitable Bloonix plugin for the monitoring of the desired service.
+
+h2. Supported operating systems
+
+p. For the application of Bloonix an unix based operating system and a Perl from version 5.14 is required. We recommend the use of Linux, with pleasure Debian, Ubuntu, Red Hat, CentOS, Fedora or also openSUSE, because there are ready packages for the distributions.
+
+p. The Bloonix agent who is responsible for the monitoring of systems is also available for older Linux versions. Here reaches a Perl from version 5.8, nevertheless, the installation occurs by hand (configure, make, make instal).
