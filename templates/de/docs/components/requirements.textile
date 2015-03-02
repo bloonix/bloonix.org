@@ -9,7 +9,7 @@ p. Die Systemanforderungen von Bloonix sind von verschiedenen Faktoren abhängig
 
 p. All diese Faktoren und noch einige mehr tragen dazu bei, dass die Anforderungen an die Hardware steigen. Sollte ein Server alleine für die Auslastung nicht mehr ausreichen, so ist es möglich, die Komponenten auf mehrere Server hinter einem Loadbalancer zu verteilen. 
 
-p. Natürlich ist die Empfehlung, mit den Hardwarekomponenten nicht sparsam zu sein. Beispielsweise wird der Preisunterschied von SSDs zu 15krpm SAS Platten immer geringer. Statt 4 x 15krpm Platten in einem RAID 10 einzusetzen, könnte man auch 2 SSD Platten in einem RAID 1 einsetzen.
+p. Natürlich ist die Empfehlung, mit den Hardwarekomponenten nicht sparsam zu sein. Beispielsweise wird der Preisunterschied von SSDs zu 15krpm SAS Platten immer geringer. Statt 4 x 15krpm Platten in einem RAID 10 einzusetzen, könnte man auch 2 SSD Platten in einem RAID 1 einsetzen. Es ist aber auch möglich, Bloonix auf einer kleinern virutellen Maschine zu betreiben, wenn Sie nur ein paar wenige Hosts und Services überwachen möchten.
 
 h2. Anzahl der überwachten Services
 
@@ -78,13 +78,13 @@ p. Nun stellen Sie sich vor, Sie möchten sich über die WebGUI die Statistiken 
 bc. 100 Services * 1440 Minuten (1 Tag) * 7 Tage
     = 1.008.000 Dokumente
 
-p. Es würden ca. 1 Million Dokumente abgefragt, komprimiert und zum Browser gesendet, um im Browser visuell dargestellt werden zu können. Damit das Auslesen der Statistiken aus Elasticsearch sehr schnell abläuft, sollten die Festplatten schnell sein und auch genüngend Hauptspeicher zur Verfügung stehen, damit Elasticsearch die Datenmengen verarbeiten kann.
+p. Es würden ca. 1 Million Dokumente abgefragt, komprimiert und zum Browser gesendet, um im Browser visuell dargestellt werden zu können. Damit das Auslesen der Statistiken aus Elasticsearch sehr schnell abläuft, sollten die Festplatten schnell sein und auch genüngend Hauptspeicher zur Verfügung stehen, damit Elasticsearch die Datenmengen zügig verarbeiten kann.
 
 h3. Benutzer in der WebGUI
 
 p. Je nach Anzahl der Benutzer, die gleichzeitig in der WebGUI eingeloggt sind und Daten abrufen, steigen natürlich die Anzahl der Abfragen zur Datenbank und zu Elasticsearch. Genaue Angaben sind leider nicht möglich, da es natürlich auch auf das Benutzerverhalten ankommt, welche Daten gerade über die WebGUI abgerufen werden.
 
-p. Die WebGUI selbst ist sehr schnell und kann auf einer Single-Core Maschine mit einem 2GHz Prozssor mehrere tausend HTTP-Abfragen verarbeiten. Der Bottleneck hier kann also entweder nur die Datenabank oder Elasticsearch sein und auch der zur Verfügung stehende Hauptspeicher.
+p. Die WebGUI selbst ist sehr schnell und kann auf einer Single-Core Maschine mit einem 2GHz Prozssor mehrere tausend HTTP-Abfragen pro Sekunde verarbeiten. Der Bottleneck kann also entweder nur die Datenabank oder Elasticsearch sein und auch der zur Verfügung stehende Hauptspeicher.
 
 h3. Empfehlung
 
@@ -112,9 +112,9 @@ bc. 10% PostgreSQL
 50% Elasticsearch
 40% System für Prozesse und Filesystemcache
 
-p. Bitte beachten Sie, dass der Einsatz von Bloonix auf virtuellen Servern nur für sehr kleine Umgebungen sinnvoll ist.
+p. Bitte beachten Sie, dass der Einsatz von Bloonix auf virtuellen Servern nur für sehr kleine Umgebungen sinnvoll ist. Wenn Sie zum Beispiel nur 10 Hosts mit je 10 Services überwachen möchten, so reicht auch eine kleine virtuelle Maschine mit 2GB RAM.
 
 h2. Alle Angaben ohne Gewähr
 
-p. Alle Berechnungen und Angaben sind ohne Gewähr und können variieren. Sollten Sie ein Beratungsgespräch wünschen, so nehmen Sie bitte Kontakt mit dem Support von Bloonix auf.
+p. Alle Berechnungen und Angaben sind ohne Gewähr und können variieren.
 
