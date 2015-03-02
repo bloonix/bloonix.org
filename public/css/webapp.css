@@ -22,10 +22,10 @@
 #doc-nav .chapter {
     padding-right: 6px;
 }
-#doc-nav .chapter-title {
+#doc-nav .chapter-title, #doc-nav .chapter-title a {
     font-weight: bold;
 }
-#doc-nav .chapter-sub-title {
+#doc-nav .chapter-sub-title, #doc-nav .chapter-sub-title a {
 }
 #doc-nav .active-chapter {
     color: #116c77;
