@@ -32,7 +32,7 @@
 }
 #doc-nav .active-chapter {
     color: #116c77;
-    font-weight: bold;
+    font-weight: bold !important;
 }
 #doc-content {
     width: 900px;
