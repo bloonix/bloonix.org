@@ -23,6 +23,9 @@
     padding-right: 6px;
 }
 #doc-nav .chapter-title {
+    font-weight: bold;
+}
+#doc-nav .chapter-sub-title {
 }
 #doc-nav .active-chapter {
     color: #116c77;
