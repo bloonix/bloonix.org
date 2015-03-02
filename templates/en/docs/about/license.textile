@@ -18,13 +18,13 @@ h2. Special license for the WebGUI
 
 p. There is a huge number of software which is delivered with the Bloonix-WebGUI. This software stands mainly under the MIT  or the BSD licence. A listing of the software with the jweiligen licences is here: "LICENSE-WEBGUI":https://download.bloonix.de/LICENSE-WEBGUI
 
-<br/><br/>
+<br/>
 
 h1. Chart libraries
 
 h2. Free of charge libraries
 
-p. For the visual representation of statistics Bloonix uses various JavaScript libraries. For the free variation the libraries Flot and JQVMap are used. These Libraries stand under the MIT licence and permit therefore a commercial use. There are further details to the Libraries here: "LICENSE-WEBGUI":https://download.bloonix.de/LICENSE-WEBGUI
+p. For the visual representation of statistics Bloonix uses various JavaScript libraries. For the free variation the libraries Flot and JQVMap are used. These Libraries stand under the MIT licence and permit therefore a commercial use. For further details to the libraries read the following document: "LICENSE-WEBGUI":https://download.bloonix.de/LICENSE-WEBGUI
 
 h2. License for Highcharts and Highmaps
 
