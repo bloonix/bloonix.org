@@ -18,6 +18,8 @@ h2. Special license for the WebGUI
 
 p. There is a huge number of software which is delivered with the Bloonix-WebGUI. This software stands mainly under the MIT  or the BSD licence. A listing of the software with the jweiligen licences is here: "LICENSE-WEBGUI":https://download.bloonix.de/LICENSE-WEBGUI
 
+<br/><br/>
+
 h1. Chart libraries
 
 h2. Free of charge libraries
