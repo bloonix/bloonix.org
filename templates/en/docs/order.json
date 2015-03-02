@@ -1,6 +1,7 @@
 [
     { "About Bloonix": "about" },
     { "Components": "components" },
+    { "Installation": "installation" },
     { "Configuration": "configuration" },
     { "HowTos": "howtos" },
     { "WebGUI": "webgui" }
