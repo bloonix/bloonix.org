@@ -23,13 +23,15 @@
     padding-right: 6px;
 }
 #doc-nav .chapter-title, #doc-nav .chapter-title a {
+    color: #404040;
     font-weight: bold;
 }
 #doc-nav .chapter-sub-title, #doc-nav .chapter-sub-title a {
+    font-weight: normal;
 }
 #doc-nav .active-chapter {
     color: #116c77;
-    font-weight: 500;
+    font-weight: bold;
 }
 #doc-content {
     width: 900px;
