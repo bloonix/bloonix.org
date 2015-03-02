@@ -29,6 +29,7 @@
 #doc-nav .chapter-sub-title, #doc-nav .chapter-sub-title a {
     color: #116c77;
     font-weight: normal;
+    font-size: 14px;
 }
 #doc-nav .active-chapter {
     color: #116c77;
