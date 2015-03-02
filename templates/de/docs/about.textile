@@ -12,7 +12,7 @@ p. Bloonix ist ein plugin-basiertes Monitoring-System und verfügt unter anderem
 
 h2. Nagios Kompabilität
 
-p. Nagios-Plugins sind nicht kompatibel, es besteht jedoch die Möglichkeit, Nagios-Plugins über einen Wrapper von Bloonix zu verwenden. Es kann somit der Status von Services abgefragt werden, jedoch keine statitischen Daten gesammelt werden. Wir empfehlen daher, Nagios-Plugins nur einzusetzen, wenn es von Bloonix noch kein passendes Plugin zur Überwachung des gewünschten Service gibt.
+p. Nagios-Plugins sind kompatibel und es besteht die Möglichkeit, Nagios-Plugins über einen Wrapper von Bloonix zu verwenden. Es kann somit der Status von Services abgefragt werden. Wir empfehlen jedoch, Nagios-Plugins nur einzusetzen, wenn es von Bloonix noch kein passendes Plugin zur Überwachung des gewünschten Service gibt.
 
 h2. Unterstütze Betriebssysteme
 
