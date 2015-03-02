@@ -36,6 +36,8 @@ p. The *Bloonix-WebGUI* is the user interface and runs on the client side as a J
 
 p. For the WebGUI a modern HTML5 browser is required. We recommend the use of Chrome, Safari, Firefox or also Opera. The Internet Explorer in version 11 should also work, nevertheless, this browser is supported in no version.
 
+<br/><br/>
+
 h1. Storage and Webserver
 
 h2. PostgreSQL
