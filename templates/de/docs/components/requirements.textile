@@ -9,7 +9,7 @@ p. Die Systemanforderungen von Bloonix sind von verschiedenen Faktoren abhängig
 
 p. All diese Faktoren und noch einige mehr tragen dazu bei, dass die Anforderungen an die Hardware steigen. Sollte ein Server alleine für die Auslastung nicht mehr ausreichen, so ist es möglich, die Komponenten auf mehrere Server hinter einem Loadbalancer zu verteilen. 
 
-p. Natürlich ist die Empfehlung, mit den Hardwarekomponenten nicht sparsam zu sein. Beispielsweise wird der Preisunterschied von SSDs zu 15krpm SAS Platten immer geringer. Statt 4 x 15krpm Platten in einem RAID 10 einzusetzen, könnte man auch 2 SSD Platten in einem RAID 1 einsetzen. Es ist aber auch möglich, Bloonix auf einer kleinern virutellen Maschine zu betreiben, wenn Sie nur ein paar wenige Hosts und Services überwachen möchten.
+p. Natürlich ist die Empfehlung, mit den Hardwarekomponenten nicht sparsam zu sein. Beispielsweise wird der Preisunterschied von SSDs zu 15krpm SAS Platten immer geringer. Statt 4 x 15krpm Platten in einem RAID 10 einzusetzen, könnte man auch 2 SSD Platten in einem RAID 1 einsetzen. Es ist aber auch möglich, Bloonix auf einer kleinen virutellen Maschine zu betreiben, wenn Sie nur ein paar wenige Hosts und Services überwachen möchten.
 
 h2. Anzahl der überwachten Services
 
