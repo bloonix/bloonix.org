@@ -1,5 +1,9 @@
 [
     { "The Bloonix documentation": "in-progress.textile" },
     { "About Bloonix": "about.textile" },
-    { "License": "license.textile" }
+    { "License": "license.textile" },
+    { "Components": "components" },
+    { "Configuration": "configuration" },
+    { "HowTos": "howtos" },
+    { "WebGUI": "webgui" }
 ]
