@@ -1,6 +1,5 @@
 [
-    { "About Bloonix": "about.textile" },
-    { "License": "license.textile" },
+    { "About Bloonix": "about" },
     { "Components": "components" },
     { "Configuration": "configuration" },
     { "HowTos": "howtos" },
