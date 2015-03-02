@@ -16,11 +16,11 @@ p. The monitoring software of Bloonix exists of five main components:
 
 h2. Bloonix-Server
 
-p. The *Bloonix-Server* is the core of the monitoring frameworks and the interface for the Bloonix agents. The Bloonix server sends on request of an agent the configuration of the services and accepts the status and also statistical data of the Bloonix agents. The data will be validated and stored into the database. The Bloonix server also checks whether an event must be released to send a e-mail to an administrator to inform him about the fact that a service is overloaded or is not available any more.
+p. The *Bloonix-Server* is the core of the monitoring framework and the interface for the Bloonix agents. The Bloonix server sends on request of an agent the configuration of the services and accepts the status and also statistical data of the Bloonix agents. The data will be validated and stored into the database. The Bloonix server also checks whether an event must be released to send a e-mail to an administrator to inform him about the fact that a service is overloaded or is not available any more.
 
 h2. Bloonix-Service-Checker
 
-p. The *Bloonix-Service-Checker* is a part of the Bloonix server and monitors the actuality of the status of Hosts and service. If, for example, the CPU utilisation of a host was not checked since several minutes any more, this can be due to the fact that a Bloonix agent has fallen out. In this case the service-checker would step in as a pseudo agent and deliver a critical status for the service.
+p. The *Bloonix-Service-Checker* is a part of the Bloonix server and monitors the actuality of the status of hosts and services. If, for example, the CPU utilisation of a host was not checked since several minutes any more, this can be due to the fact that a Bloonix agent has fallen out. In this case the service-checker would step in as a pseudo agent and deliver a critical status for the service.
 
 h2. Bloonix-Agent
 
