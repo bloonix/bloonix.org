@@ -22,7 +22,7 @@ h1. Chart libraries
 
 h2. Free of charge libraries
 
-p. The Bloonix-WebGUI uses to the visual representation of statistics various JavaScript libraries. For the free variation the libraries Flot and JQVMap are used. These Libraries stand under the MIT licence and permit therefore a commercial use. There are further details to the Libraries here: LICENSE-WEBGUI":https://download.bloonix.de/LICENSE-WEBGUI
+p. The Bloonix-WebGUI uses to the visual representation of statistics various JavaScript libraries. For the free variation the libraries Flot and JQVMap are used. These Libraries stand under the MIT licence and permit therefore a commercial use. There are further details to the Libraries here: "LICENSE-WEBGUI":https://download.bloonix.de/LICENSE-WEBGUI
 
 h2. License for Highcharts and Highmaps
 
