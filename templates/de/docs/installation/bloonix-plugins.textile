@@ -13,7 +13,7 @@ zypper search bloonix-plugins
 
 p. Wenn Sie nun zum Beispiel eine MySQL-Datenbank überwachen möchten, so müssen Sie das Plugin __bloonix-plugins-mysql__ installieren.
 
-p. _Bitte beachten Sie,_ dass die Plugins immer auf dem Server installiert werden müssen, auf oder von dem Sie die Komponenten überwachen möchten.
+p. _Bitte beachten Sie,_ dass die Plugins immer auf dem Server installiert werden müssen, auf oder von dem Sie die Komponenten überwachen möchten. Dies ist in der Regel der Server, auf dem auch der Bloonix-Agent installiert ist.
 
 h1. Verfügbare Plugins
 
