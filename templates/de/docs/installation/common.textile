@@ -7,7 +7,7 @@ p. Im Forum von Bloonix werden Release Notes veröffentlicht. Bevor Ihr Bloonix 
 p. _Hinweis zu einem bevorstehenden Update_: In wenigen Tagen gibt es ein größeres Update. Weitere Informationen zum Update gibt es im Forum von Bloonix:
 
 * "Wichtige Informationen zu einem bevorstehenden Update":https://forum.bloonix.org/index.php/Thread/86-Wichtige-Informationen-zu-einem-bevorstehenden-Update/
-* "Wichtig: Upgrade Guide für die aktuellen Pakete":https://forum.bloonix.org/index.php/Thread/91-Wichtig-Upgrade-Guide-für-die-aktuellen-Pakete/
+* "Wichtig - Upgrade Guide für die aktuellen Pakete":https://forum.bloonix.org/index.php/Thread/91-Wichtig-Upgrade-Guide-für-die-aktuellen-Pakete/
 
 h2. Perl Module
 
