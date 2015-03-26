@@ -4,6 +4,11 @@ h2. Release Notes
 
 p. Im Forum von Bloonix werden Release Notes veröffentlicht. Bevor Ihr Bloonix installiert oder aktualisiert, solltet Ihr im Forum kurz nach wichtigen Hinweisen schauen: "Release Notes im Bloonix Forum":https://forum.bloonix.org/index.php/Board/17-Release-Notes/
 
+p. _Hinweis zu einem bevorstehenden Update_: In wenigen Tagen gibt es ein größeres Update. Weitere Informationen zum Update gibt es im Forum von Bloonix:
+
+* "Wichtige Informationen zu einem bevorstehenden Update":https://forum.bloonix.org/index.php/Thread/86-Wichtige-Informationen-zu-einem-bevorstehenden-Update/
+* "Wichtig: Upgrade Guide für die aktuellen Pakete":https://forum.bloonix.org/index.php/Thread/91-Wichtig-Upgrade-Guide-für-die-aktuellen-Pakete/
+
 h2. Perl Module
 
 p. Auf älteren Linux-Systemen werden aus dem Bloonix-Repository diverse Perl-Module installiert, wenn hierfür keine höheren Versionen aus einem anderen Repository zur Verfügung stehen. Diese Module sind
