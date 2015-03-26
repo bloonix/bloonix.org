@@ -1,5 +1,11 @@
 h1. Wichtige Information vorab
 
+h2. Release Notes
+
+p. Im Forum von Bloonix werden Release Notes veröffentlicht. Bevor Ihr Bloonix installiert oder aktualisiert, solltet Ihr im Forum kurz nach wichtigen Hinweisen schauen: "https://forum.bloonix.org/index.php/Board/17-Release-Notes/":https://forum.bloonix.org/index.php/Board/17-Release-Notes/
+
+h2. Perl Module
+
 p. Auf älteren Linux-Systemen werden aus dem Bloonix-Repository diverse Perl-Module installiert, wenn hierfür keine höheren Versionen aus einem anderen Repository zur Verfügung stehen. Diese Module sind
 
 bc. IO::Socket::SSL Version 1.77
@@ -8,7 +14,7 @@ Log::Handler Version 0.84
 
 p. Diese Versionen werden mindestens zum Einsatz der Bloonix-Software benötigt. Bitte prüfen Sie vor der Installation der Bloonix-Software, ob andere Software, die von Ihnen eingesetzt wird, mit diesen Versionen nicht kompatibel sind oder ob es zu Problemen kommen kann.
 
-h1. Source-Code
+h2. Source-Code
 
 p. Der Source-Code von Bloonix ist auf Github zu finden: "https://github.com/bloonix/bloonix":https://github.com/bloonix/bloonix
 
