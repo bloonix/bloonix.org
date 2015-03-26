@@ -46,7 +46,7 @@ bc.. foreach my $var (qw(a b c)) {
 
 $var =~ s/\/\/a\/\//b/g;
 
-$var = join(",", $a, $b, @c, "and this");
+my $var = join(",",$a,$b,@c,"and this");
 
 open(FH,">$foo") or die $!;
 
@@ -56,7 +56,7 @@ bc.. foreach my $var (qw/a b c/) {
 
 $var =~ s!//a//!b!g;
 
-my $var = join(",",$a,$b,@c,"and this");
+$var = join(",", $a, $b, @c, "and this");
 
 open my $fh, ">", $foo or die $!;
 
