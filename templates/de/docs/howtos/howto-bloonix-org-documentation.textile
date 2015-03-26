@@ -53,7 +53,7 @@ h2. Anker und Links
 
 h3. h2-Tags
 
-p. Aus den h2-Tags wird das Inhaltsverzeichnis eines Dokuments mittels Javascript automatisch generiert. Dieses erscheint dann oben rechts. Der Text aus den h2-Tags wird als Anker verwendet und sollte daher nur aus bestimmten Zeichen entstehen. Aussen den normalen Zahlen und Buchstaben sollten nur folgende Sonderzeichen verwendet werden: Leerzeichen und __+-_.,;:__
+p. Aus den h2-Tags wird das Inhaltsverzeichnis eines Dokuments mittels Javascript automatisch generiert. Dieses erscheint dann oben rechts. Der Text aus den h2-Tags wird als Anker verwendet und sollte daher nur aus bestimmten Zeichen bestehen. Ausser den normalen Zahlen und Buchstaben sollten nur folgende Sonderzeichen verwendet werden: Leerzeichen und __+-_.,;:__
 
 h3. a-Tags
 
