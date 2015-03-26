@@ -2,7 +2,7 @@ h1. Wichtige Information vorab
 
 h2. Release Notes
 
-p. Im Forum von Bloonix werden Release Notes veröffentlicht. Bevor Ihr Bloonix installiert oder aktualisiert, solltet Ihr im Forum kurz nach wichtigen Hinweisen schauen: "https://forum.bloonix.org/index.php/Board/17-Release-Notes/":https://forum.bloonix.org/index.php/Board/17-Release-Notes/
+p. Im Forum von Bloonix werden Release Notes veröffentlicht. Bevor Ihr Bloonix installiert oder aktualisiert, solltet Ihr im Forum kurz nach wichtigen Hinweisen schauen: "Release Notes im Bloonix Forum":https://forum.bloonix.org/index.php/Board/17-Release-Notes/
 
 h2. Perl Module
 
