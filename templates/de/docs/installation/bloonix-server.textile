@@ -45,9 +45,7 @@ systemctl start bloonix-server.service
 
 h1. Der Bloonix-Service-Checker
 
-p. Mit der Installation des Bloonix-Servers wird auch ein Dienst namens Service-Checker installiert.
-
-p. Dieser Dienst ist dafür zuständig, Hosts und Services zu prüfen, dessen Überwachung auf einen Timeout gelaufen ist. Das bedeutet, dass wenn zum Beispiel die CPU-Auslastung eines Servers seit mehreren Minuten nicht mehr überprüft wurde, so wird der Service-Checker einen kritischen Status für den Service liefern.
+p. Mit der Installation des Bloonix-Servers wird auch ein Dienst namens Service-Checker installiert. Dieser Dienst ist dafür zuständig, Hosts und Services zu prüfen, dessen Überwachung auf einen Timeout gelaufen ist. Das bedeutet, dass wenn zum Beispiel die CPU-Auslastung eines Servers seit mehreren Minuten nicht mehr überprüft wurde, weil ein Agent ausgefallen ist oder sogar der Server selbst, auf dem ein Agent läuft, so wird der Service-Checker nach einem Timeout einen kritischen Status für den Service liefern. Es ist somit sehr wichtig, dass der Dienst ebenfall gestartet wird.
 
 p. Die Konfigurationsdatei des Service-Checkers lautet:
 
