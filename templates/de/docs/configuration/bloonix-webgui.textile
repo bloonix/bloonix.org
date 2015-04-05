@@ -31,11 +31,13 @@ bc. system {
 % $stash->{item_name} = "die Bloonix-WebGUI";
 % $stash->{item_type} = "webgui";
 ==
+
 <% include /de/docs/configuration/template-proc-manager.textile %>
 
 ==
 % $stash->{item_port} = "9001";
 ==
+
 <% include /de/docs/configuration/template-fcgi-server.textile %>
 <% include /de/docs/configuration/template-server-status.textile %>
 
@@ -79,6 +81,7 @@ bc. email {
 ==
 % $stash->{item_logfile} = "bloonix-webgui-database.log";
 ==
+
 <% include /de/docs/configuration/template-database.textile %>
 <% include /de/docs/configuration/template-elasticsearch.textile %>
 
@@ -93,5 +96,6 @@ p. Diese Parameter sind für das Template-System und sollten nicht geändert wer
 ==
 % $stash->{item_logfile} = "bloonix-webgui.log";
 ==
+
 <% include /de/docs/configuration/template-logger.textile %>
 
