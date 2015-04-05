@@ -25,7 +25,7 @@ h2. Sektion: tcp_server
 
 p. In dieser Sektion werden die Parameter für den FastCGI Server konfiguriert. Die Konfiguration ist sehr einfach.
 
-bc. server {
+bc.. server {
     host p1.bloonix.de, s1.bloonix.de
     port 5460
     mode failover
