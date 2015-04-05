@@ -1,4 +1,4 @@
-h3. Sektion: server_status
+h2. Sektion: server_status
 
 p. Über Server-Status lässt sich der Status der Server-Prozesse abrufen.
 
