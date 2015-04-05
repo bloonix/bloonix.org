@@ -29,42 +29,11 @@ systemctl start bloonix-server.service
 
 p. *Achtung:* bevor der Bloonix-Server gestartet wird, sollte das Datenbankschema und das Template für Elasticsearch angelegt sein. Die Installation dieser Komponenten wird mit der Installtion der Bloonix-WebGUI durchgeführt.
 
-h2. Nginx konfigurieren
+h1. SSL Zertifikate
 
-p. Da der Bloonix-Server als externe FastCGI Applikation läuft, ist es notwendig, Nginx als Reverse-Proxy einzurichten.
+p. Die Kommunikation zwischen dem Server und den Agenten wird via SSL verschlüsselt. Hierzu wird selbstverständlich ein SSL-Schlüsselpaar für den Server benötigt, welches nach der initialen Installation des Bloonix-Servers generiert und unter __/etc/bloonix/server/pki__ abgelegt wird.
 
-p. Die Konfiguration kann in der folgenden Datei eingerichtet werden:
-
-bc. /etc/nginx/conf.d/bloonix-server.conf
-
-p. Die Konfiguration:
-
-bc.. server {
-    listen 8443;
-    server_name bloonix-server;
-
-    access_log /var/log/nginx/bloonix-server.access.log;
-    error_log /var/log/nginx/bloonix-server.error.log;
-
-    location / {
-        expires off;
-        include /etc/nginx/fastcgi_params;
-        root /srv/bloonix/server;
-        fastcgi_pass 127.0.0.1:9001;
-    }
-
-    ssl on;
-    ssl_certificate /etc/nginx/ssl/server.crt;
-    ssl_certificate_key /etc/nginx/ssl/server.key;
-}
-
-p. Der Paramter __server_name__ sollte noch angepasst werden. Es muss ebenfalls ein SSL-Zertifikat generiert werden, falls noch keines vorhanden ist:
-
-bc. mkdir /etc/nginx/ssl
-cd /etc/nginx/ssl
-openssl req -new -x509 -nodes -out server.crt -keyout server.key
-
-p. _Portnummer:_ Der Bloonix-Server kann auch auf den Standardport für HTTPS eingerichtet werden.
+p. Wenn Sie über ein gültiges SSL-Zertifikat verfügen, dann sollten Sie dieses auch verwenden, da Sie ansonsten die Bloonix-Agenten so konfigurieren müssen, so dass diese nicht das Zertifikat des Servers validieren.
 
 h1. Bloonix-Server starten
 

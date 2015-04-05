@@ -22,18 +22,16 @@ h2. Sektion: server
 p. Beispielkonfiguration:
 
 bc.. server {
-    proto https
-    host p1.bloonix.de:8443, s1.bloonix.de:8443
+    host p1.bloonix.de, s1.bloonix.de
+    port 5460
     mode failover
-    ssl_options {
-        ssl_verify_mode 1
+    ssl_verify_mode peer
 
-        # Debian / SuSE / SLES
-        ssl_ca_path /etc/ssl/certs
+    # Debian / SuSE / SLES
+    ssl_ca_path /etc/ssl/certs
 
-        # Red Hat / CentOS / Fedora
-        ssl_ca_file /etc/pki/tls/certs/ca-bundle.crt
-    }
+    # Red Hat / CentOS / Fedora
+    ssl_ca_file /etc/pki/tls/certs/ca-bundle.crt
 }
 
 p. _Bitte ersetzen</em> Sie den Hostnamen und die Portnummer mit dem Host und Port, welche für den Bloonix-Server im Nginx konfiguriert wurde.

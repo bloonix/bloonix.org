@@ -17,7 +17,7 @@ zypper install bloonix-webgui
 
 h2. Nginx konfigurieren
 
-p. Die Bloonix-WebGUI läuft als externe FastCGI Applikation und benötigt Nginx als Reverse Proxy.
+p. Die Bloonix-WebGUI läuft als externe FastCGI Applikation und benötigt Nginx als Reverse Proxy. Sie können natürlich auch einen anderen Webserver verwenden. Zu beachten ist nur, dass der Webserver HTTP Requests zu einer externen FastCGI Applikation über IP:Port weiterleiten kann. Wir verwenden Nginx, da Nginx sehr populär, einfach zu konfigurieren und sehr, sehr schnell ist.
 
 p. Die Konfiguration kann in der folgenden Datei eingerichtet werden:
 
