@@ -40,6 +40,7 @@ p. Ist das Skript einmal gestartet, sollte es auf keinen Fall gestoppt werden. D
 ==
 % $stash->{item_name} = "der Bloonix-Server";
 ==
+
 <% include /de/docs/configuration/template-proc-manager.textile %>
 
 h2. Sektion: tcp_server
@@ -109,6 +110,7 @@ p. Möchten Sie diese Funktion nicht einsetzen, so können Sie die Sektion ausko
 % $stash->{item_logfile} = "bloonix-server-database.log";
 % $stash->{item_filename} = "bloonix-server.log";
 ==
+
 <% include /de/docs/configuration/template-database.textile %>
 
 <% include /de/docs/configuration/template-elasticsearch.textile %>
