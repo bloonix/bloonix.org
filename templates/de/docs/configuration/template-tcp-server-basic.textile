@@ -4,7 +4,7 @@
 | ssl_cert_file |  | Die Zertifikatsdatei. |
 | ssl_key_file |  | Die Datei des privaten Schlüssels. |
 | ssl_verify_mode | peer | Einstellung, ob das Zertifikat des Servers validiert werdne soll. Mögliche Werte: none, peer |
-| recv_max_bytes | 1m | Die maximale Datenmenge, die pro Request empfangen werden darf. Mögliche Werte: unlimited, Angabe in Bytes, Kilobytes etc., Beispiel: 512k für 512 Kilobytes, 2m für 2 Megabytes |
+| recv_max_bytes | 512k | Die maximale Datenmenge, die pro Request empfangen werden darf. Mögliche Werte: unlimited, Angabe in Bytes, Kilobytes etc., Beispiel: 512k für 512 Kilobytes, 2m für 2 Megabytes |
 | send_max_bytes | unlimited | Die maximale Datenmenge, die pro Request versendet werden darf. Mögliche Werte: unlimited, Angabe in Bytes, Kilobytes etc., Beispiel: 512k für 512 Kilobytes, 2m für 2 Megabytes |
 | recv_timeout | 15 | Die Zeitspanne, in der Daten gelesen sein müssen. Die Angabe erfolgt in Sekunden. |
 | send_timeout | 15 | Die Zeitspanne, in der Daten versendet sein müssen. Die Angabe erfolgt in Sekunden. |
