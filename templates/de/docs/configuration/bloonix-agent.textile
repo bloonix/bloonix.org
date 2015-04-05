@@ -59,6 +59,8 @@ bc.. server {
     ssl_ca_file /etc/pki/tls/certs/ca-bundle.crt
 }
 
+h3. Parameter
+
 ==
 <% include /de/docs/configuration/template-tcp-server-client.textile %>
 <% include /de/docs/configuration/template-tcp-server-basic.textile %>

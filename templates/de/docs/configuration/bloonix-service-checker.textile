@@ -25,16 +25,20 @@ h2. Sektion: tcp_server
 
 p. In dieser Sektion werden die Parameter für den FastCGI Server konfiguriert. Die Konfiguration ist sehr einfach.
 
-bc.. server {
+bc. server {
     host p1.bloonix.de, s1.bloonix.de
     port 5460
     mode failover
     ssl_verify_mode peer
+
     # Debian / SuSE / SLES
     ssl_ca_path /etc/ssl/certs
+
     # Red Hat / CentOS / Fedora
     ssl_ca_file /etc/pki/tls/certs/ca-bundle.crt
 }
+
+h3. Parameter
 
 ==
 <% include /de/docs/configuration/template-tcp-server-client.textile %>
