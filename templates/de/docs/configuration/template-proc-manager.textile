@@ -1,8 +1,8 @@
-h2. Sektion: proc-manager
+h2. Sektion: proc_manager
 
 p. In dieser Sektion findet die Verwaltung der Prozesse statt, die ==<% item_name %>== startet, um Anfragen zu bearbeiten.
 
-bc. proc-manager {
+bc. proc_manager {
     max_servers 10
     min_spare_servers 5
     max_spare_servers 8
