@@ -39,6 +39,7 @@ p. Ist das Skript einmal gestartet, sollte es auf keinen Fall gestoppt werden. D
 
 ==
 % $stash->{item_name} = "der Bloonix-Server";
+% $stash->{item_type} = "server";
 ==
 
 <% include /de/docs/configuration/template-proc-manager.textile %>
