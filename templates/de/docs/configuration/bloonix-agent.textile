@@ -46,33 +46,27 @@ p. Die Variablen __PLUGIN_LIBDIR__ und __CONFIG_PATH__ werden zum Start des Agen
 
 h2. Sektion: server
 
-bc. server {
-    proto https
+bc.. server {
     host p1.bloonix.de, s1.bloonix.de
+    port 5460
     mode failover
-    ssl_options {
-        ssl_verify_mode 1
-        ssl_ca_file /etc/pki/tls/certs/ca-bundle.crt
-        # ssl_ca_path /etc/ssl/certs
-    }
+    ssl_verify_mode peer
+
+    # Debian / SuSE / SLES
+    ssl_ca_path /etc/ssl/certs
+
+    # Red Hat / CentOS / Fedora
+    ssl_ca_file /etc/pki/tls/certs/ca-bundle.crt
 }
 
-|_. Parameter |_. Standard |_. Beschreibung |
-| proto | http | Das Protokoll, unter dem der Bloonix-Server erreichbar ist. |
-| host | 127.0.0.1 | Der Hostname bzw. die IP-Adresse zum Bloonix-Server. Dies kann auch eine komma-separierte Liste von IP-Adressen sein. |
-| timeout | 60 | Die maximale Zeit pro Request. Danach wird der Request abgebrochen. |
-| mode | balanced | Es ist möglich, die Requests auf mehrere Server zu verteilen oder aber ein Failover einzurichten. Mögliche Werte sind __balanced__ und __failover__. |
+==
+<% include /de/docs/configuration/template-tcp-server-client.textile %>
+<% include /de/docs/configuration/template-tcp-server-basic.textile %>
+==
 
-h3. Subsektion: ssl_options
-
-|_. Parameter |_. Standard |_. Beschreibung |
-| ssl_verify_mode |  | Dieser Parameter aktiviert oder deaktiviert die Validierung des Serverzertifikats. 0 = nein, 1 = ja. |
-| ssl_ca_path |  | Der Pfad zu den installierten CAs. |
-| ssl_ca_file |  | Der Pfad zum installierten CA Bundle. |
-
-p. Einer der beiden Parameter, __ssl_ca_path__ oder __ssl_ca_file__, sollte konfiguriert werden.
-
-==<% include /de/docs/configuration/template-logger.textile %>==
+==
+<% include /de/docs/configuration/template-logger.textile %>
+==
 
 h2. Sektion: env
 

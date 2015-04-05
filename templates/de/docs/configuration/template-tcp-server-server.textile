@@ -1,0 +1,2 @@
+| host | | Die IP-Adresse, auf die der Server lauschen soll. |
+| port | | Die Portnummer, auf die der Server lauschen soll. |

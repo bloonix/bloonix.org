@@ -39,8 +39,23 @@ p. Ist das Skript einmal gestartet, sollte es auf keinen Fall gestoppt werden. D
 
 ==
 % $stash->{item_name} = "der Bloonix-Server";
-% $stash->{item_port} = 9001;
 <% include /de/docs/configuration/template-proc-manager.textile %>
+==
+
+h2. Sektion: tcp_server
+
+p. In dieser Sektion werden die Parameter für den FastCGI Server konfiguriert. Die Konfiguration ist sehr einfach.
+
+bc. tcp_server {
+    port 5460
+    use_ssl yes
+    ssl_key_file /etc/bloonix/server/pki/server.key
+    ssl_cert_file /etc/bloonix/server/pki/server.cert
+}
+
+==
+<% include /de/docs/configuration/template-tcp-server-server.textile %>
+<% include /de/docs/configuration/template-tcp-server-basic.textile %>
 ==
 
 h2. Sektion: smsgateway
@@ -51,8 +66,10 @@ bc. smsgateway {
 }
 
 |_. Parameter |_. Standard |_. Beschreibung |
-| command |  | Das Kommando, um eine SMS zu versenden. Die Platzhalter %TO% und %MESSAGE% werden URL-encoded mit der Mobilfunknummer und der Warnmeldung ersetzt. |
-| response |  | Die erwartete Antwort, wenn die SMS erfolgreich übersendet werden konnte. Der Wert ist ein regulärer Ausdruck. |
+| command | | Das Kommando, um eine SMS zu versenden. Die Platzhalter %TO% und %MESSAGE% werden URL-encoded mit der Mobilfunknummer und der Warnmeldung ersetzt. |
+| response | | Die erwartete Antwort, wenn die SMS erfolgreich übersendet werden konnte. Der Wert ist ein regulärer Ausdruck. |
+| failover_command | | Mit __failover_command__ lässt sich ein weiteres Kommando einrichten, welches aufgerufen wird, wenn das erste Kommando fehlgeschlagen ist. |
+| failover_response | | Die erwartete Antwort von __failover_command__. |
 
 h2. Sektion: email
 

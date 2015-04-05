@@ -29,8 +29,17 @@ bc. system {
 
 ==
 % $stash->{item_name} = "die Bloonix-WebGUI";
-% $stash->{item_port} = 9001;
+% $stash->{item_type} = "webgui";
 <% include /de/docs/configuration/template-proc-manager.textile %>
+==
+
+==
+% $stash->{item_port} = "9001";
+<% include /de/docs/configuration/template-fcgi-server.textile %>
+==
+
+==
+<% include /de/docs/configuration/template-server-status.textile %>
 ==
 
 h2. Sektion: webapp

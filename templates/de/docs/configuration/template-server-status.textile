@@ -1,0 +1,10 @@
+h3. Sektion: server_status
+
+p. Über Server-Status lässt sich der Status der Server-Prozesse abrufen.
+
+p. Der Aufruf kann über HTTP/HTTPS erfolgen.
+
+|_. Parameter |_. Standard |_. Beschreibung |
+| enabled | yes | Hiermit kann die Funktionalität aktiviert oder deaktivert werden. |
+| location | /server-status | Der Pfad, der zur Abfrage der Server-Statistiken gültig ist. |
+| allow_from | 127.0.0.1 | Eine komma-separierte Liste von IPs, von denen der Server-Status abgefragt werden darf. |

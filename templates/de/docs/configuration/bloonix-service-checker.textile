@@ -21,22 +21,27 @@ p. In dieser Sektion werden die Verbindungsparameter zum Bloonix-Server konfigur
 
 p. _Hinweis:_ Diese Sektion ist identisch zur Konfiguration der Sektion __server{}__ des Bloonix-Agenten.
 
-|_. Parameter |_. Standard |_. Beschreibung |
-| proto | http | Das Protokoll, unter dem der Bloonix-Server erreichbar ist. |
-| host | 127.0.0.1 | Der Hostname bzw. die IP-Adresse zum Bloonix-Server. Dies kann auch eine komma-separierte Liste von IP-Adressen sein. |
-| timeout | 60 | Die maximale Zeit pro Request. Danach wird der Request abgebrochen. |
-| mode | balanced | Es ist möglich, die Requests auf mehrere Bloonix-Server zu verteilen oder aber ein Failover einzurichten. Mögliche Werte sind __balanced__ und __failover__. |
-| timeout | 60 | Der Timeout für den kompletten Request zum Bloonix-Server. |
+h2. Sektion: tcp_server
 
-h3. Untersektion: ssl_options
+p. In dieser Sektion werden die Parameter für den FastCGI Server konfiguriert. Die Konfiguration ist sehr einfach.
 
-p. In dieser Sektion werden die SSL Parameter konfiguriert und ob das Zertifikat des Servers validiert werden soll.
+bc.. server {
+    host p1.bloonix.de, s1.bloonix.de
+    port 5460
+    mode failover
+    ssl_verify_mode peer
 
-p. Falls eine Validierung nicht stattfinden soll, weil zum Beispiel selbst-signierte Zertifikate eingesetzt werden und diese nicht auf allen Servern verteilt sind, so können die SSL Parameter entfernt werden.
+    # Debian / SuSE / SLES
+    ssl_ca_path /etc/ssl/certs
 
-|_. Parameter |_. Standard |_. Beschreibung |
-| ssl_verify_mode |  | Dieser Parameter aktiviert oder deaktiviert die Validierung des Serverzertifikats. 0 = nein, 1 = ja. |
-| ssl_ca_path |  | Der Pfad zu den installierten CAs. |
+    # Red Hat / CentOS / Fedora
+    ssl_ca_file /etc/pki/tls/certs/ca-bundle.crt
+}
+
+==
+<% include /de/docs/configuration/template-tcp-server-client.textile %>
+<% include /de/docs/configuration/template-tcp-server-basic.textile %>
+==
 
 ==
 % $stash->{item_logfile} = "bloonix-srvchk-database.log";

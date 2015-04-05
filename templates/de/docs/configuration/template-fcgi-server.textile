@@ -1,0 +1,11 @@
+h2. Sektion: fcgi_server
+
+p. In dieser Sektion werden die Parameter für den FastCGI Server konfiguriert. Die Konfiguration ist sehr einfach.
+
+bc. fcgi_server {
+    port <% item_port %>
+}
+
+|_. Parameter |_. Standard |_. Beschreibung |
+| port | 9000 | Auf welchem Port soll die FastCGI Applikation lauschen. |
+
