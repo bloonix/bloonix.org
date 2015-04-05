@@ -36,7 +36,6 @@ bc. system {
 ==
 % $stash->{item_port} = "9001";
 ==
-
 <% include /de/docs/configuration/template-fcgi-server.textile %>
 <% include /de/docs/configuration/template-server-status.textile %>
 
