@@ -61,8 +61,8 @@ bc.. server {
 
 h3. Parameter
 
-<% include /de/docs/configuration/template-tcp-server-client.textile %>
-<% include /de/docs/configuration/template-tcp-server-basic.textile %>
+<% include /de/docs/configuration/template-tcp-server-client.textile %><% include /de/docs/configuration/template-tcp-server-basic.textile %>
+
 <% include /de/docs/configuration/template-logger.textile %>
 
 h2. Sektion: env

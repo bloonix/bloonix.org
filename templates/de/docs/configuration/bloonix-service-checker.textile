@@ -40,8 +40,7 @@ bc.. server {
 
 h3. Parameter
 
-<% include /de/docs/configuration/template-tcp-server-client.textile %>
-<% include /de/docs/configuration/template-tcp-server-basic.textile %>
+<% include /de/docs/configuration/template-tcp-server-client.textile %><% include /de/docs/configuration/template-tcp-server-basic.textile %>
 
 ==
 % $stash->{item_logfile} = "bloonix-srvchk-database.log";

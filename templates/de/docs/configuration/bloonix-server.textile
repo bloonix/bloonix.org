@@ -53,8 +53,7 @@ bc. tcp_server {
     ssl_cert_file /etc/bloonix/server/pki/server.cert
 }
 
-<% include /de/docs/configuration/template-tcp-server-server.textile %>
-<% include /de/docs/configuration/template-tcp-server-basic.textile %>
+<% include /de/docs/configuration/template-tcp-server-server.textile %><% include /de/docs/configuration/template-tcp-server-basic.textile %>
 
 h2. Sektion: smsgateway
 
@@ -111,5 +110,7 @@ p. Möchten Sie diese Funktion nicht einsetzen, so können Sie die Sektion ausko
 % $stash->{item_filename} = "bloonix-server.log";
 ==
 <% include /de/docs/configuration/template-database.textile %>
+
 <% include /de/docs/configuration/template-elasticsearch.textile %>
+
 <% include /de/docs/configuration/template-logger.textile %>
