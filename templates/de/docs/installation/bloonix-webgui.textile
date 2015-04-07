@@ -21,7 +21,7 @@ p. Nach der Installation der WebGUI wird eine Konfigurationsdatei für Nginx ang
 
 bc. /etc/bloonix/webgui/nginx.conf
 
-p. Diesen Konfigurationsdatei müssen Sie im Nginx inkludieren. Editieren Sie hierzu die Konfigurationsdatei
+p. Diese Konfigurationsdatei müssen Sie in der Konfiguration von Nginx inkludieren. Editieren Sie hierzu die Konfigurationsdatei
 
 bc. /etc/nginx/nginx.conf
 
