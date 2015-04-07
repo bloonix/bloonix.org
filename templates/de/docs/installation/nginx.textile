@@ -9,20 +9,13 @@ yum install nginx
 bc.. # SuSE / SLES
 zypper install nginx
 
-p. Der Bloonix-Server sowie die Bloonix-WebGUI benötigen später ein SSL-Zertifikat, welches Sie wie folgt generieren können:
-
-bc. mkdir /etc/nginx/ssl
-cd /etc/nginx/ssl
-openssl req -new -x509 -nodes -out server.crt -keyout server.key
-
 p. Editieren Sie die Nginx-Konfiguration
 
 bc. /etc/nginx/nginx.conf
 
-p. und fügen folgende Parameter in die __http__ Sektion. Beispiel
+p. und fügen folgende Parameter in die __http__ Sektion, falls diese noch nicht existieren. Beispiel
 
 bc. server_names_hash_bucket_size 64;
 include conf.d/*.conf;
 
-p. Die Einrichtung von Nginx für den Bloonix-Server und der Bloonix-WebGUI erfolgt später.
-
+p. Die Einrichtung von Nginx für die Bloonix-WebGUI erfolgt später.
