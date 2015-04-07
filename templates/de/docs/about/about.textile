@@ -14,7 +14,7 @@ h2. Nagios Kompabilität
 
 p. Nagios-Plugins sind kompatibel und es besteht die Möglichkeit, Nagios-Plugins über einen Wrapper von Bloonix zu verwenden. Es kann somit der Status von Services abgefragt werden. Wir empfehlen jedoch, Nagios-Plugins nur einzusetzen, wenn es von Bloonix noch kein passendes Plugin zur Überwachung des gewünschten Service gibt.
 
-h2. Unterstütze Betriebssysteme
+h2. Unterstützte Betriebssysteme
 
 p. Für den Einsatz von Bloonix wird ein unixoides Betriebssystem und ein Perl ab Version 5.14 benötigt. Wir empfehlen den Einsatz von Linux, gerne Debian, Ubuntu, Red Hat, CentOS, Fedora oder auch openSUSE, da es hierfür fertige Pakete zur Installation von Bloonix gibt. Die Software kann auch auf anderen Linux Distributionen eingesetzt werden, muss dann jedoch manuell installiert und konfiguriert werden.
 
