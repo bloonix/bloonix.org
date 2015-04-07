@@ -2,7 +2,7 @@ h1. Bloonix Komponenten
 
 h2. Übersicht über alle Komponenten
 
-p. Hier sehen Sie eine grobe Übersicht über alle Komponenten. Da der Bloonix-Server und die Bloonix-WebGUI serverseitig als externe FastCGI-Applikation laufen, sind diese hochskalierbar und können auf mehreren Servern installiert werden. Alles, was Sie dann noch benötigen, ist ein HTTPS-Offloader und Loadbalancer, um die Anfragen zu verteilen.
+p. Hier sehen Sie eine grobe Übersicht über alle Komponenten. Die Bloonix-WebGUI und der Bloonix-Server sind hochskalierbar und können auf mehreren Servern zur Lastverteilung betrieben werden.
 
 !{width: 100%; margin: 20px 0;}/public/img/bloonix-components-de.png!
 
