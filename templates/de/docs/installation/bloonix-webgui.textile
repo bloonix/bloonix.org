@@ -25,7 +25,7 @@ p. Diese Konfigurationsdatei müssen Sie in der Konfiguration von Nginx inkludie
 
 bc. /etc/nginx/nginx.conf
 
-p. und fügen Sie folgende Anweisung ans Ende der http-Sektion:
+p. und fügen Sie folgende Anweisung _ans Ende der http-Sektion_:
 
 bc. include /etc/bloonix/webgui/nginx.conf;
 
