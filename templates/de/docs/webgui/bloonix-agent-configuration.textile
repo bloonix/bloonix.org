@@ -27,9 +27,10 @@ bc. /etc/bloonix/agent/main.conf
 p. Editieren Sie die Konfiguration und tragen in der Sektion __server__ die IP-Adresse oder den Hostnamen des Bloonix-Servers ein.
 
 bc. server {
-    host bloonix.server.example
+    host bloonix-server1.example, bloonix-server2.example
     port 5460
     mode failover
+    use_ssl yes
     ssl_verify_mode peer
     ssl_ca_path /etc/ssl/certs
 }
