@@ -34,15 +34,9 @@ bc.. server {
     ssl_ca_file /etc/pki/tls/certs/ca-bundle.crt
 }
 
-p. _Bitte ersetzen</em> Sie den Hostnamen und die Portnummer mit dem Host und Port, welche für den Bloonix-Server im Nginx konfiguriert wurde.
+p. _Bitte ersetzen_ Sie in der Sektion __server__ die Hostnamen mit dem Host oder der IP-Adresse, auf denen der Bloonix-Server installiert wurde.
 
-p. In der Sektion __server__ ist es wichtig den Host anzupassen. Geben Sie anstelle von
-
-bc.. host p1.bloonix.de, s1.bloonix.de
-
-p. den Hostnamen an, den Sie in der Nginx-Konfiguration für den Bloonix-Server eingetragen haben.
-
-p. *Hinweiß:* Falls ein selbst-signiertes Zertifikat im Nginx konfiguriert ist, müssen die SSL-Parameter in der Konfiguration des Agenten auskommentiert werden, da der Agent ansonsten einen Fehler liefert bei der Prüfung des Server-Zertifikats.
+p. *Hinweiß:* Falls ein selbst-signiertes Zertifikat im für den Bloonix-Server konfiguriert ist, müssen die SSL-Parameter __ssl_verify_peer__ auf __none__ setzen, da der Agent ansonsten einen Fehler liefert bei der Prüfung des Server-Zertifikats.
 
 h3. Sektion: host
 
