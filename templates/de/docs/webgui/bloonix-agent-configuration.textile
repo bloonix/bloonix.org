@@ -12,7 +12,7 @@ bc. bloonix-init-host [ HOST-KEY ] [ SERVER ]
 
 p. Ersetzen Sie den Platzhalter *[ HOST-KEY ]* mit dem Host-Key. Den Platzhalter *[ SERVER ]* ersetzen Sie mit der Adresse des Bloonix-Servers:
 
-bc. bloonix-init-host  60.EAjCK1LlI9E7IWq36vO4c8psqCb5CC  bloonix.server.example:8443
+bc. bloonix-init-host  60.EAjCK1LlI9E7IWq36vO4c8psqCb5CC  bloonix.server.example
 
 p. Und schon ist der Agent fertig konfiguriert und beginnt für Sie die Services zu überwachen, die Sie in der WebGUI konfiguriert haben.
 
@@ -28,12 +28,10 @@ p. Editieren Sie die Konfiguration und tragen in der Sektion __server__ die IP-A
 
 bc. server {
     host bloonix.server.example
-    proto https
+    port 5460
     mode failover
-    ssl_options {
-        ssl_verify_mode 1
-        ssl_ca_path /etc/ssl/certs
-    }
+    ssl_verify_mode peer
+    ssl_ca_path /etc/ssl/certs
 }
 
 p. Als nächstes müssen Sie die Host-ID und das Passwort konfigurieren. Hierfür gehen Sie wie folgt vor. Erstellen Sie eine neue Datei namens
