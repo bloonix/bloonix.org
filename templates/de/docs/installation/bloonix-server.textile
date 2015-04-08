@@ -25,7 +25,7 @@ bc. /etc/init.d/bloonix-server start
 # oder
 systemctl start bloonix-server.service
 
-p. *Achtung:* bevor der Bloonix-Server gestartet wird, sollte das Datenbankschema und das Template für Elasticsearch angelegt sein. Die Installation dieser Komponenten wird mit der Installtion der Bloonix-WebGUI durchgeführt.
+p. *Achtung:* bevor der Bloonix-Server gestartet wird, sollte das Datenbankschema und das Template für Elasticsearch angelegt sein. Die Installation dieser Komponenten wird mit der Installtion der Bloonix-WebGUI durchgeführt. Die Parameter für den Zugang zur Datenbank sollten bereits in der Datei _/etc/bloonix/database/main.conf_ konfiguriert sein.
 
 h1. SSL Zertifikate
 
