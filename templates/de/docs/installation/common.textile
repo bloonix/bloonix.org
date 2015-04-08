@@ -30,4 +30,4 @@ p. Die Installation von Bloonix ist sehr einfach. Arbeiten Sie hier in der Dokum
 # "Bloonix-Server":/de/docs/installation/bloonix-server
 # "Bloonix-Plugins":/de/docs/installation/bloonix-plugins
 # "Bloonix-Agent":/de/docs/installation/bloonix-agent
-# "Manuelle Installation":/de/docs/installation/sources
+
