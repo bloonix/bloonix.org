@@ -38,7 +38,7 @@ p. _Bitte ersetzen</em> Sie den Hostnamen und die Portnummer mit dem Host und Po
 
 p. In der Sektion __server__ ist es wichtig den Host anzupassen. Geben Sie anstelle von
 
-bc.. host p1.bloonix.de:8443, s1.bloonix.de:8443
+bc.. host p1.bloonix.de, s1.bloonix.de
 
 p. den Hostnamen an, den Sie in der Nginx-Konfiguration für den Bloonix-Server eingetragen haben.
 
