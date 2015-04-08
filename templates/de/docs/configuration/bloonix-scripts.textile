@@ -40,7 +40,7 @@ p. Mit diesem Skript können Daten von Hosts aus Elasticsearch entfernt werden. 
 
 h2. bloonix-get-sms-count
 
-p. Dieses Skript erstellt gibt die Anzahl versendeter SMS eines __Unternehmens__ aus. Der Aufruf des Skripts ist sehr einfach:
+p. Dieses Skript gibt die Anzahl versendeter SMS eines __Unternehmens__ aus. Der Aufruf des Skripts ist sehr einfach:
 
 bc. bloonix-get-sms-count 2014-01-01 2014-01-31
 
