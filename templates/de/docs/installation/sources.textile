@@ -1,6 +1,12 @@
 h1. Installation aus den Sourcen
 
-p. Falls Sie ein Linux System einsetzen, für das es keine fertigen Pakete gibt, besteht natürlich die Möglichkeit, alle Pakete manuell zu installieren. Die Abhängigkeiten der einzelnen Pakete vorab zu installieren.
+p. Falls Sie ein Linux System einsetzen, für das es keine fertigen Pakete gibt, besteht natürlich die Möglichkeit, alle Pakete manuell zu installieren. Die Abhängigkeiten können hier nachgelesen werden.
+
+p. Vor der Installation der Pakete sollten Sie unbedingt eine eine Gruppe und einen Benutzer namens __bloonix__ einrichten. Auf einem Linux-System geht das mit __groupadd__ und __useradd__:
+
+bc. getent group bloonix >/dev/null || /usr/sbin/groupadd bloonix
+getent passwd bloonix >/dev/null || /usr/sbin/useradd \
+    bloonix -g bloonix -s /sbin/nologin -d /var/run/bloonix -r
 
 p. Die Installation ist bei allen Paketen grundlegend identisch. Die Sourcepakete gibt es unter folgender URL:
 
@@ -24,7 +30,55 @@ perl Build.PL
 perl Build
 perl Build install
 
-h2. Abhängigkeiten
+h2. Alle Abhängigkeiten auf einen Blick
+
+bc. bloonix-agent
+bloonix-core
+bloonix-dbi
+bloonix-fcgi
+bloonix-heaven
+ca-certificates
+curl
+facter
+lm_sensors
+perl(Authen::SASL)
+perl(Data::Dumper)
+perl(DBD::mysql)
+perl(DBD::MySQL)
+perl(DBD::Pg)
+perl(DBI)
+perl(Digest::SHA)
+perl(FCGI)
+perl(Getopt::Long)
+perl(HTTP::Tiny) >= 0.022
+perl(IO::Select)
+perl(IO::Socket)
+perl(IO::Socket::INET6)
+perl(IO::Socket::SSL)
+perl(IO::Socket::SSL) >= 1.76
+perl(IO::Uncompress::Gunzip)
+perl(IPC::Open3)
+perl(JSON)
+perl-JSON-XS
+perl(Log::Handler)
+perl(Log::Handler) >= 0.84
+perl(Math::BigFloat)
+perl(Math::BigInt)
+perl(MIME::Base64)
+perl(MIME::Lite)
+perl(Net::OpenSSH)
+perl(Net::SNMP)
+perl(Params::Validate)
+perl(Socket6)
+perl(Sys::Hostname)
+perl(Template)
+perl(Term::ReadKey)
+perl(Time::HiRes)
+perl-Time-modules
+perl(Time::ParseDate)
+perl(URI::Escape)
+
+h2. Abhängigkeiten der einzelnen Pakete
 
 h3. Abhängigkeiten des Pakets bloonix-agent
 
@@ -209,52 +263,4 @@ perl(Log::Handler)
 perl(Params::Validate)
 perl(Time::HiRes)
 PhantomJS
-
-h3. Alle Abhängigkeiten auf einen Blick
-
-bc. bloonix-agent
-bloonix-core
-bloonix-dbi
-bloonix-fcgi
-bloonix-heaven
-ca-certificates
-curl
-facter
-lm_sensors
-perl(Authen::SASL)
-perl(Data::Dumper)
-perl(DBD::mysql)
-perl(DBD::MySQL)
-perl(DBD::Pg)
-perl(DBI)
-perl(Digest::SHA)
-perl(FCGI)
-perl(Getopt::Long)
-perl(HTTP::Tiny) >= 0.022
-perl(IO::Select)
-perl(IO::Socket)
-perl(IO::Socket::INET6)
-perl(IO::Socket::SSL)
-perl(IO::Socket::SSL) >= 1.76
-perl(IO::Uncompress::Gunzip)
-perl(IPC::Open3)
-perl(JSON)
-perl-JSON-XS
-perl(Log::Handler)
-perl(Log::Handler) >= 0.84
-perl(Math::BigFloat)
-perl(Math::BigInt)
-perl(MIME::Base64)
-perl(MIME::Lite)
-perl(Net::OpenSSH)
-perl(Net::SNMP)
-perl(Params::Validate)
-perl(Socket6)
-perl(Sys::Hostname)
-perl(Template)
-perl(Term::ReadKey)
-perl(Time::HiRes)
-perl-Time-modules
-perl(Time::ParseDate)
-perl(URI::Escape)
 
