@@ -78,7 +78,7 @@ p. Nun stellen Sie sich vor, Sie möchten sich über die WebGUI die Statistiken 
 bc. 100 Services * 1440 Minuten (1 Tag) * 7 Tage
     = 1.008.000 Dokumente
 
-p. Es würden ca. 1 Million Dokumente abgefragt, komprimiert und zum Browser gesendet, um im Browser visuell dargestellt werden zu können. Damit das Auslesen der Statistiken aus Elasticsearch sehr schnell abläuft, sollten die Festplatten schnell sein und auch genüngend Hauptspeicher zur Verfügung stehen, damit Elasticsearch die Datenmengen zügig verarbeiten kann.
+p. Es würden ca. 1 Million Dokumente abgefragt, komprimiert und zum Browser gesendet, um im Browser visuell dargestellt werden zu können. Damit das Auslesen der Statistiken aus Elasticsearch sehr schnell abläuft, sollten die Festplatten schnell sein und auch genügend Hauptspeicher zur Verfügung stehen, damit Elasticsearch die Datenmengen zügig verarbeiten kann.
 
 h3. Benutzer in der WebGUI
 
