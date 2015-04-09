@@ -1,4 +1,4 @@
-h1. host-variables.textile
+h1. Host Variablen
 
 h2. Was sind Host-Variablen?
 
