@@ -12,8 +12,8 @@ p. Nehmen wir als Beispiel die Login-Seite der Bloonix-WebGUI, in die wir uns ei
 
 bc. <form action="/login" method="POST">
 <input type="text" name="username" value="" />
-<input type="text" name="password" value="" />
-<button type="submit" id="submit"&gt;Login&lt;/button>
+<input type="password" name="password" value="" />
+<button type="submit" id="submit">Login</button>
 </form>
 
 p. Die Regelsätze zum Login müssten dann wie folgt lauten:
