@@ -2,7 +2,7 @@ h1. Installation aus den Sourcen
 
 p. Falls Sie ein Linux System einsetzen, für das es keine fertigen Pakete gibt, besteht natürlich die Möglichkeit, alle Pakete manuell zu installieren. Die Abhängigkeiten können hier nachgelesen werden.
 
-p. Vor der Installation der Pakete sollten Sie unbedingt eine eine Gruppe und einen Benutzer namens __bloonix__ einrichten. Auf einem Linux-System geht das mit __groupadd__ und __useradd__:
+p. Vor der Installation der Pakete sollten Sie unbedingt eine Gruppe und einen Benutzer namens __bloonix__ auf allen Systemen einrichten, auf denen Sie ein Bloonix-Paket installieren möchten. Auf einem Linux-System geht das mit __groupadd__ und __useradd__:
 
 bc. getent group bloonix >/dev/null || /usr/sbin/groupadd bloonix
 getent passwd bloonix >/dev/null || /usr/sbin/useradd \
