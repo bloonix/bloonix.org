@@ -98,7 +98,7 @@ p. Minimale Anforderungen:
 
 bc. 4 CPUs mit min. 2GHz
 8 GB Hauptspeicher
-2 x 15krpm je 600 GB Platten im RAID 1
+2 x 10krpm/15krpm je 600 GB Platten im RAID 1
 
 p. Empfohlene Anforderungen:
 
