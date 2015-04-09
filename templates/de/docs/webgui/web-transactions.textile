@@ -10,11 +10,11 @@ p. Die Web-Transactions werden über einen __Headless Browser__, basierend auf W
 
 p. Nehmen wir uns als Beispiel die Login-Seite der Bloonix-WebGUI, in die wir uns einloggen möchten. Hierzu schauen wir uns zunächst das HTML-Formular der Login-Seite an:
 
-bc. &lt;form action="/login" method="POST"&gt;
-&lt;input type="text" name="username" value="" /&gt;
-&lt;input type="text" name="password" value="" /&gt;
-&lt;button type="submit" id="submit"&gt;Login&lt;/button&gt;
-&lt;/form&gt;
+bc. <form action="/login" method="POST">
+<input type="text" name="username" value="" />
+<input type="text" name="password" value="" />
+<button type="submit" id="submit"&gt;Login&lt;/button>
+</form>
 
 p. Die Regelsätze zum Login müssten dann wie folgt lauten:
 
