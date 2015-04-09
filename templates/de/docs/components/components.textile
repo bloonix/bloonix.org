@@ -46,7 +46,7 @@ p. "Zur Webseite von PostgreSQL":http://www.postgresql.org/
 
 h2. Elasticsearch
 
-p. Elasticsearch wird verwendet, um Metriken und Events zu speichern. Bei der Überwachung von mehreren tausend Hosts können hohe Datenmengen aufkommen. Die Wahl fiel auf Elasticsearch, da Elasticsearch hoch skalierbar ist, eine einfache Clusterfunktionalität bietet und die Daten automatisch horizotal partitioniert.
+p. Elasticsearch wird verwendet, um Metriken und Events zu speichern. Bei der Überwachung von mehreren tausend Hosts können hohe Datenmengen aufkommen. Die Wahl fiel auf Elasticsearch, da Elasticsearch hoch skalierbar ist, eine einfache Clusterfunktionalität bietet und die Daten automatisch horizontal partitioniert.
 
 p. "Zur Webseite von Elasticsearch":http://www.elasticsearch.org/
 
