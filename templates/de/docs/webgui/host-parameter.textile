@@ -36,7 +36,7 @@ p. Mit diesen Feldern können Sie genauere Angaben zu einem Host machen. Zum Bei
 
 p. Bitte beachten Sie, dass diese Felder über eine Autovervollständigung verfügen. Das heisst, dass wenn Sie die Felder einmal für einen Host ausgefüllt haben, erhalten Sie beim nächsten Host die bereits existierenden Werte als Vorschlag. Falls die Liste der Einträge zu lang ist, dann tippen Sie ein paar Buchstaben ein um die Anzeige zu verfeinern.
 
-p. Zum Parameter __Bauklasse__ gibt es weitere Informationen im folgenden Dokument: <a data-id="device-classes">Bauklasse von Hosts</a>
+p. Zum Parameter __Bauklasse__ gibt es weitere Informationen im folgenden Dokument: "Bauklasse von Hosts":/de/docs/webgui/device-classes.html
 
 h2. Formularfeld: Koordinaten
 
