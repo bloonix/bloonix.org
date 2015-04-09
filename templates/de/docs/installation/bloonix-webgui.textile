@@ -86,7 +86,7 @@ bc. /etc/init.d/bloonix-webgui restart
 # oder
 systemctl restart bloonix-webgui.service
 
-p. Öffnen Sie als nächstes einen Webbrowser und geben den Hostnamen ein, der in der Nginx Konfiguration angegeben wurde.
+p. Öffnen Sie als nächstes einen Webbrowser und geben den Hostnamen ein, der in der Nginx Konfiguration angegeben wurde bzw. auf dem die WebGUI läuft.
 
 p. *Wichtig:* Der initiale Zugang zur WebGUI lautet:
 
