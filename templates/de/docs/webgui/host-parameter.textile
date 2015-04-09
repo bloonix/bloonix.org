@@ -34,8 +34,7 @@ h2. Formularfelder: Systemgruppe, Bauklasse, HW Hersteller, HW Produkt, OS Herst
 
 p. Mit diesen Feldern können Sie genauere Angaben zu einem Host machen. Zum Beispiel ob es sich bei dem Host um einen Server, einen Drucker oder einen Router handelt. Ebenfalls können Sie Informationen zum Betriebssystemhersteller oder der Version eintragen.
 
-p. Bitte beachten Sie, dass diese Felder über eine Autovervollständigung verfügen. Das heisst, dass wenn Sie die Felder einmal für einen Host ausgefüllt haben, e
-rhalten Sie beim nächsten Host die bereits existierenden Werte als Vorschlag. Falls die Liste der Einträge zu lang ist, dann tippen Sie ein paar Buchstaben ein um die Anzeige zu verfeinern.
+p. Bitte beachten Sie, dass diese Felder über eine Autovervollständigung verfügen. Das heisst, dass wenn Sie die Felder einmal für einen Host ausgefüllt haben, erhalten Sie beim nächsten Host die bereits existierenden Werte als Vorschlag. Falls die Liste der Einträge zu lang ist, dann tippen Sie ein paar Buchstaben ein um die Anzeige zu verfeinern.
 
 p. Zum Parameter __Bauklasse__ gibt es weitere Informationen im folgenden Dokument: <a data-id="device-classes">Bauklasse von Hosts</a>
 
