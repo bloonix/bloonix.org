@@ -35,5 +35,5 @@ h2. Detailierte Beschreibung
 
 p. Wenn Sie eine detaillierte Beschreibung lesen möchten, wie die Services von Hosts überwacht werden, so finden Sie diese hier:
 
-p. "Wie überwacht Bloonix Hosts und Services":/de/docs/webgui/how-does-bloonix-checks-your-hosts-and-services.html
+p. "Wie überwacht Bloonix Hosts und Services":/de/docs/faq/how-does-bloonix-checks-your-hosts-and-services.html
 
