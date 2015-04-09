@@ -33,8 +33,7 @@ p. Weitere Informationen zur Einrichtung von Services finden Sie im Dokument: "E
 
 h3. Zu 4.
 
-p. Ist der Host mit den Services nun in der WebGUI konfiguriert, so können Sie den Bloonix-Agenten auf Ihrem Server installieren, vorausgesetzt natürlich, Sie möchten die Systemvitals Ihres Servers überwachen. Eine Anleitung zur Installation des Agenten finden Sie hier: "Den Bloonix-Agenten installieren":/de/
-docs/webgui/bloonix-agent-installation.html
+p. Ist der Host mit den Services nun in der WebGUI konfiguriert, so können Sie den Bloonix-Agenten auf Ihrem Server installieren, vorausgesetzt natürlich, Sie möchten die Systemvitals Ihres Servers überwachen. Eine Anleitung zur Installation des Agenten finden Sie hier: "Den Bloonix-Agenten installieren":/de/docs/webgui/bloonix-agent-installation.html
 
 
 p. Bitte beachten Sie, dass Sie zur Einrichtung von Hosts und Services und des Bloonix-Agenten jederzeit den Support von Bloonix kostenfrei beauftragen können, wenn Sie als Produkt den Cloud-Service von Bloonix in Anspruch nehmen.
