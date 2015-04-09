@@ -28,7 +28,7 @@ p. Das Element __#content__ ist ein eindeutiges Element, welches im Login-Formul
 
 h2. Die Einrichtung im Detail
 
-p. Zur Einrichtung der Web-Transactions gelangen Sie wie folgt (1-2-3):
+p. Zur Einrichtung der Web-Transactions gelangen Sie wie folgt (1-2-3 Klicks):
 
 !{width: 100%; margin: 40px 0;}/public/img/add-new-service-1.png!
 
