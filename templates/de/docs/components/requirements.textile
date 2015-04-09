@@ -104,7 +104,7 @@ p. Empfohlene Anforderungen:
 
 bc.. 8 CPUs mit min. 2GHz
 16 GB Hauptspeicher
-2 x SSDs je 600 GB Platten im RAID 1
+2 x 15krpm/SSDs je 600 GB Platten im RAID 1
 
 h4. Aufteilung des Hauptspeichers
 
