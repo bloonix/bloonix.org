@@ -52,6 +52,6 @@ p. "Zur Webseite von Elasticsearch":http://www.elasticsearch.org/
 
 h2. Nginx
 
-p. Der Webserver Nginx wird als Reverse-Proxy eingesetzt, da der Bloonix-Server und die Bloonix-WebGUI als externe FastCGI-Applikation laufen. Die Requests werden per ProxyPass an die Komponenten weitergeleitet.
+p. Der Webserver Nginx wird als Reverse-Proxy eingesetzt, da die Bloonix-WebGUI als externe FastCGI-Applikation läuft. Die Requests werden per ProxyPass an die WebGUI weitergeleitet.
 
 p. "Zur Webseite von Nginx":http://nginx.com/
