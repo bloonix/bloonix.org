@@ -184,6 +184,7 @@ p. Dieses Token müssen Sie mit dem Parameter __token__ zu den POST-Daten hinzuf
 p. *Bitte beachten Sie,* dass das Token nur für 30 Sekunden gültig ist. Sollten Sie versuchen, ein Objekt ohne ein Token zu modifizieren oder sollte die Gültigkeitsdauer eines Tokens abgelaufen sein, so erhalten Sie eine Fehlermeldung.
 
 h3. Objekte erstellen und ändern
+
 p. In diesem Dokument sind die einzelnen Parameter zum Erstellen oder zum Ändern von Objekten bewußt nicht dokumentiert. Stattdessen können Sie die Parameter über die JSON-API abfragen.
 
 p. Angenommen, Sie möchten einen neuen Host erstellen und sich hierzu die Parameter anschauen. Unter folgender Route können Sie die Parameter mit den möglichen Optionen abrufen:
@@ -302,9 +303,9 @@ Route: /timeperiods/:timperiod_id/timeslices/:timeslice_id/delete
 
 h2. Chart Daten
 
-bc. Route: /hosts/:host_id/charts
-
 p. Mit dieser Abfrage werden alle verfügbaren Chart-Daten eines Hosts gezeigt. Beispiel:
+
+bc. Route: /hosts/:host_id/charts
 
 bc. {
     "server_time" : "1400514110002",
