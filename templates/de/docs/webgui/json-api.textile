@@ -145,6 +145,8 @@ h2. Login und Logout
 
 bc. Route: /login
 
+p. Parameter:
+
 |_. Parameter |_. Datatype |_. Default |_. Required |_. Description |
 | username | STRING (100) | | yes | Username |
 | password | STRING (100) | | yes | Password |
