@@ -22,7 +22,7 @@ gpgcheck=1
 gpgkey=http://packages.elasticsearch.org/GPG-KEY-elasticsearch
 enabled=1
 
-h3. Installation aller Komponenten
+h3. Paketinstallation
 
 bc. sudo yum install \
     nginx \
