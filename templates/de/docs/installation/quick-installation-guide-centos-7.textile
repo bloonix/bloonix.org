@@ -64,7 +64,7 @@ bc. sudo vim /var/lib/pgsql/data/pg_hba.conf
 p. Replace the following lines:
 
 ==
-<pre><code> <del>host    all             all             127.0.0.1/32            ident</del>
+<pre><code><del>host    all             all             127.0.0.1/32            ident</del>
 <del>host    all             all             ::1/128                ident</del>
 host    all             all             127.0.0.1/32            md5
 host    all             all             ::1/128                md5
