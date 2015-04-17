@@ -109,7 +109,7 @@ bc. sudo vim /etc/bloonix/agent/main.conf
 p. Set in section server{}:
 
 ==
-<pre><code># Bloonix-Server hostname
+<pre><code># Bloonix-Server hostname (demo.bloonix.org is just an example)
 host demo.bloonix.org
 
 # If you use a self signed certificate, then you have
