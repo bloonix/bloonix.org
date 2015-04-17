@@ -22,17 +22,13 @@ gpgcheck=1
 gpgkey=http://packages.elasticsearch.org/GPG-KEY-elasticsearch
 enabled=1
 
-h3. Install base components
+h3. Install all components
 
 bc. sudo yum install \
     nginx \
     postgresql-server \
     elasticsearch \
     java-1.7.0-openjdk
-
-h3. Install Bloonix components and some plugins
-
-bc. sudo yum install \
     bloonix-webgui \
     bloonix-server \
     bloonix-agent \
