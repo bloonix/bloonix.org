@@ -112,12 +112,15 @@ bc. sudo vim /etc/bloonix/agent/main.conf
 
 p. Setzen Sie folgende Paramter in der Sektion __server__:
 
-bc.. # Bloonix-Server hostname
+==
+<pre><code># Bloonix-Server hostname
 host demo.bloonix.org
 
 # Wenn Sie ein selbst signiertes Zertifikat einsetzen, dann muss die Validierung
 # des Zertifikats deaktiviert werden
 ssl_verify_mode none
+</code></pre>
+==
 
 h3. Alle Bloonix Dienste starten
 
