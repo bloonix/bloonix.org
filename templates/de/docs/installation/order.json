@@ -8,5 +8,6 @@
     { "Bloonix-Server": "bloonix-server.textile" },
     { "Bloonix-Plugins": "bloonix-plugins.textile" },
     { "Bloonix-Agent": "bloonix-agent.textile" },
-    { "Manuelle Installation": "sources.textile" }
+    { "Manuelle Installation": "sources.textile" },
+    { "Quick Guide für CentOS 7": "quick-installation-guide-centos-7.textile" }
 ]
