@@ -1,19 +1,19 @@
-h1. Quick installation guide for Bloonix on CentOS 7
+h1. Schneller Installationsguide für Bloonix auf CentOS 7
 
-h3. Install at first the EPEL repository
+h3. Installieren Sie als erstes das EPEL Repository
 
 bc. sudo yum install epel-release
 
-h3. Install the Bloonix repository
+h3. Installieren Sie das Bloonix Repository
 
 bc. sudo rpm -ivh https://download.bloonix.de/repos/centos/7/noarch/bloonix-release-0.5-1.el7.centos.noarch.rpm
 
-h3. Install the Elasticsearch repository
+h3. Installieren Sie das Elasticsearch Repository
 
 bc. sudo rpm --import https://packages.elasticsearch.org/GPG-KEY-elasticsearch
 sudo vim /etc/yum.repos.d/elasticsearch.repo
 
-p. Insert:
+p. Einfügen
 
 bc. [elasticsearch-1.4]
 name=Elasticsearch repository for 1.4.x packages
@@ -22,7 +22,7 @@ gpgcheck=1
 gpgkey=http://packages.elasticsearch.org/GPG-KEY-elasticsearch
 enabled=1
 
-h3. Install base components
+h3. Installation der Basiskomponenten
 
 bc. sudo yum install \
     nginx \
@@ -30,7 +30,7 @@ bc. sudo yum install \
     elasticsearch \
     java-1.7.0-openjdk
 
-h3. Install Bloonix components and some plugins
+h3. Installation der Bloonix Komponenten und einigen Plugins
 
 bc. sudo yum install \
     bloonix-webgui \
@@ -39,29 +39,29 @@ bc. sudo yum install \
     bloonix-plugins-basic \
     bloonix-plugins-linux
 
-h3. Init PostgreSQL
+h3. PostgreSQL initialisieren
 
 bc. sudo service postgresql initdb
 
-h3. Configure PostgreSQL
+h3. PostgreSQL konfigurieren
 
-p. Edit __/var/lib/pgsql/data/postgresql.conf__ and configure PostgreSQL to listen on localhost:
+p. Editieren Sie die Datei __/var/lib/pgsql/data/postgresql.conf__ und konfigurieren Sie PostgreSQL, um auf __localhost__ zu lauschen:
 
 bc. sudo vim /var/lib/pgsql/data/postgresql.conf
 
-p. Set:
+p. Folgenden Paramter setzen:
 
 bc. listen_addresses = 'localhost'
 
-p. or execute the following command:
+p. oder folgendes Kommando ausführen:
 
 bc. sudo sed -i 's/^#listen_addresses /listen_addresses/' /var/lib/pgsql/data/postgresql.conf
 
-p. Edit __/var/lib/pgsql/data/pg_hba.conf__ and configure PostgreSQL to allow to connect with username and password:
+p. Editieren Sie die Datei __/var/lib/pgsql/data/pg_hba.conf__ und Konfigurieren Sie PostgreSQL, um eine Verbindung mit Benutzername und Passwort zu erlauben:
 
 bc. sudo vim /var/lib/pgsql/data/pg_hba.conf
 
-p. Replace the following lines:
+p. Ersetzen Sie die folgenden Zeilen:
 
 ==
 <pre><code><del>host    all             all             127.0.0.1/32            ident</del>
@@ -71,54 +71,55 @@ host    all             all             ::1/128                md5
 </code></pre>
 ==
 
-p. or execute the following commands:
+p. oder führen Sie folgendes Kommando aus:
 
 bc. sudo sed -i 's/\(host  *all  *all  *127.0.0.1\/32  *\)ident/\1md5/' /var/lib/pgsql/data/pg_hba.conf
 sudo sed -i 's/\(host  *all  *all  *::1\/128  *\)ident/\1md5/' /var/lib/pgsql/data/pg_hba.conf
 
-h3. Restart PostgreSQL
+h3. PostgreSQL neustarten
 
 sudo systemctl restart postgresql.service
 
 h3. Nginx
 
-p. Edit __/etc/nginx/nginx.conf__:
+p. Editieren Sie die Datei __/etc/nginx/nginx.conf__
 
 bc. sudo vim /etc/nginx/nginx.conf
 
-p. and insert the following line:
+p. und fügen Sie folgende Zeile ein:
 
-bc. include /etc/bloonix/webgui/nginx.conf; # insert this line
-include /etc/nginx/conf.d/*.conf;       # above this line
+bc. include /etc/bloonix/webgui/nginx.conf; # diese Zeile einfügen
+include /etc/nginx/conf.d/*.conf;       # oberhalb dieser Zeile
 
-h3. Start Elasticsearch and Nginx
+h3. Elasticsearch und Nginx starten
 
 bc. sudo systemctl start elasticsearch.service
 sudo systemctl start nginx.service
 
-h3. Init Bloonix template for Elasticsearch
+h3. Initialisieren Sie das Bloonix Template für Elasticsearch
 
 bc. sudo /srv/bloonix/webgui/schema/init-elasticsearch localhost:9200
 
-h3. Init Bloonix schema for PostgreSQL
+h3. Initialisieren Sie das Bloonix Schema für PostgreSQL
 
 bc. sudo /srv/bloonix/webgui/schema/init-database
 
-h3. Configure the agent
+h3. Konfigurieren Sie den Agenten
 
-p. Edit the configuration of the Bloonix Agent and configure the section "server"
+p. Editieren Sie die Konfiguration des Bloonix Agenten und konfigurieren Sie die Sektion __server__:
 
 bc. sudo vim /etc/bloonix/agent/main.conf
 
-p. Set in section server{}:
+p. Setzen Sie folgende Paramter in der Sektion __server__:
 
 bc.. # Bloonix-Server hostname
     host demo.bloonix.org
 
-    # We use a self signed certificate and have to turn off certificate validation
+    # Wenn Sie ein selbst signiertes Zertifikat einsetzen, dann muss die Validierung
+    # des Zertifikats deaktiviert werden
     ssl_verify_mode none
 
-h3. Start all Bloonix services
+h3. Alle Bloonix Dienste starten
 
 bc. sudo systemctl start bloonix-webgui.service
 sudo systemctl start bloonix-server.service
@@ -127,4 +128,4 @@ sudo systemctl start bloonix-agent.service
 
 h3. Ready to rumble
 
-p. Done! :-) Now you can login into the WebGUI. The initial username and password is __admin/admin__
+p. Fertig! :-) Jetzt können Sie sich in der WebGUI einloggen. Der initiale Benutzername und das Passwort lautet __admin/admin__
