@@ -19,6 +19,21 @@ p. Zu jedem Plugin gibt es eine spezielle Datei, in der Metadaten abgelegt werde
 
 p. Zu beachten ist hier der Prefix beider Dateien. Für Skripts wird immer der Prefix __check__ verwendet und für die Datei mit den Metadaten der Prefix __plugin__.  Beide Dateien werden später benötigt, um die Metadaten in die Datenbank der WebGUI von Bloonix zu importieren, damit das Plugin in der WebGUI als Service eingerichtet werden kann.
 
+h2. Regeln, die beachtet werden sollten
+
+p. Bevor Sie anfangen, ein Plugin für Bloonix zu entwickeln, sollten ein paar einfache Dinge beachtet werden. Die wohl wichtigste Regel ist:
+
+p. _Ein Plugin sollte so entwickelt sein, dass es nie länger als ca. 30 Sekunden benötigt, um einen Service zu prüfen. Wenn ein Service innerhalb von 30 Sekunden keine Antwort liefert, ist dies als ein kritischer Status einzustufen. Wenn ein Service für gewöhnlich länger benötigt, um innerhalb von 30 Sekunden geprüft zu werden, dann ist der Service nicht dafür geeignet, um über ein Plugin geprüft zu werden. Stattdessen sollte ein Cronjob eingerichtet werden, der den Dienst auf irgendweine Weise prüft und den Status der Prüfung in eine Datei schreibt. Es kann daraufhin der Inhalt der Datei über ein Bloonix-Plugin geprüft werden._
+
+p. Hier ein paar weitere einfache Regeln, an die sich ein Plugin-Entwickler halten sollte:
+
+* Ein Plugin sollte bei blockierenden Aktionen dafür sorgen, dass es selbstständig auf einen Timeout läuft.
+* Ein Plugin ist nicht dafür geeignet, Services zu starten, zu stoppen oder zu konfigurieren.
+* Ein Plugin sollte niemals blind alle Parameter, die über die WebGUI konfiguriert werden, annehmen und ausführen.
+* Sollte ein Plugin eine spezielle Konfiguration benötigen, so ist diese in /etc/bloonix/agent abzulegen.
+* Beim Öffnen oder Schreiben von Dateien sollten ".." Angaben im Pfad zur Datei einen Fehler auslösen.
+* Bitte nur die englische Sprache in Plugins verwenden.
+
 h2. Plugins entwickeln
 
 p. In diesem Abschnitt versuchen wir die Entwicklung eines Plugins von Bloonix anhand eines Beispiels aufzuzeigen. Dazu verwenden wir den Pluginnamen __check-test__. Beachten Sie bitte die Kommentare im Skript.
