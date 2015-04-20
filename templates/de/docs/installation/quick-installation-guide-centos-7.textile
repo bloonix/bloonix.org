@@ -28,7 +28,7 @@ bc. sudo yum install \
     nginx \
     postgresql-server \
     elasticsearch \
-    java-1.7.0-openjdk
+    java-1.7.0-openjdk \
     bloonix-webgui \
     bloonix-server \
     bloonix-agent \
