@@ -10,16 +10,7 @@ h3. Programmiersprache Perl
 
 p. Bloonix Plugins sollten in der Programmiersprache Perl entwickelt werden, da es für Perl ein Modul names __Bloonix::Plugin__ gibt, mit dem die Entwicklung von Plugins deutlich vereinfacht und beschleunigt wird. Derzeit ist es nicht geplant, ein gleichwertiges Modul für andere Sprachen zu entwickeln.
 
-h3. Metadaten
-
-p. Zu jedem Plugin gibt es eine spezielle Datei, in der Metadaten abgelegt werden. Schauen wir uns beispielhaft das Plugin __check-http__ an:
-
-* check-http - das Skript, welches ausgeführt wird
-* plugin-http - Metadaten zum Plugin sowie die Konfiguration der Charts
-
-p. Zu beachten ist hier der Prefix beider Dateien. Für Skripts wird immer der Prefix __check__ verwendet und für die Datei mit den Metadaten der Prefix __plugin__.  Beide Dateien werden später benötigt, um die Metadaten in die Datenbank der WebGUI von Bloonix zu importieren, damit das Plugin in der WebGUI als Service eingerichtet werden kann.
-
-h2. Regeln, die beachtet werden sollten
+h3. Regeln, die beachtet werden sollten
 
 p. Bevor Sie anfangen, ein Plugin für Bloonix zu entwickeln, sollten ein paar einfache Dinge beachtet werden. Die wohl wichtigste Regel ist:
 
@@ -33,6 +24,15 @@ p. Hier ein paar weitere einfache Regeln, an die sich ein Plugin-Entwickler halt
 * Sollte ein Plugin eine spezielle Konfiguration benötigen, so ist diese in /etc/bloonix/agent abzulegen.
 * Beim Öffnen oder Schreiben von Dateien sollten ".." Angaben im Pfad zur Datei einen Fehler auslösen.
 * Bitte nur die englische Sprache in Plugins verwenden.
+
+h3. Metadaten
+
+p. Zu jedem Plugin gibt es eine spezielle Datei, in der Metadaten abgelegt werden. Schauen wir uns beispielhaft das Plugin __check-http__ an:
+
+* check-http - das Skript, welches ausgeführt wird
+* plugin-http - Metadaten zum Plugin sowie die Konfiguration der Charts
+
+p. Zu beachten ist hier der Prefix beider Dateien. Für Skripts wird immer der Prefix __check__ verwendet und für die Datei mit den Metadaten der Prefix __plugin__.  Beide Dateien werden später benötigt, um die Metadaten in die Datenbank der WebGUI von Bloonix zu importieren, damit das Plugin in der WebGUI als Service eingerichtet werden kann.
 
 h2. Plugins entwickeln
 
