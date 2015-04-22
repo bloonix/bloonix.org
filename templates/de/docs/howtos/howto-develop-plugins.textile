@@ -6,6 +6,15 @@ p. Dieser Leitfaden richtet sich an Plugin-Entwickler und erklärt die Standards
 
 h2. Allgemeines
 
+h3. Was ist ein Plugin
+
+p. Ein Plugin ist ein einfaches Skript, welches ausgeführt wird, um den Status eines Service zu prüfen. Es gibt zum Beispiel das Plugin __check-http__, um einen Webservice über eine HTTP/HTTPS Abfrage zu prüfen. Zu jedem Plugin gibt es zusätzlich eine Datei, in der Metadaten abgelegt werden. Für das Plugin __check-http__ ist das bespielsweise die Datei __plugin-http__, in der diese Metadaten stehen. Sie können sich beide Dateien einmal anschauen:
+
+* "check-http":https://github.com/bloonix/bloonix-plugins-basic/blob/master/plugins/check-http - das Skript, welches ausgeführt wird
+* "plugin-http":https://github.com/bloonix/bloonix-plugins-basic/blob/master/plugins/plugin-http - Metadaten zum Plugin sowie die Konfiguration der Charts
+
+p. Zu beachten ist hier der Prefix beider Dateien. Für Skripts wird immer der Prefix __check__ verwendet und für die Datei mit den Metadaten der Prefix __plugin__. Beide Dateien werden später benötigt, um die Metadaten in die Datenbank der WebGUI von Bloonix zu importieren, damit das Plugin in der WebGUI als Service eingerichtet werden kann.
+
 h3. Programmiersprache Perl
 
 p. Bloonix Plugins sollten in der Programmiersprache Perl entwickelt werden, da es für Perl ein Modul names __Bloonix::Plugin__ gibt, mit dem die Entwicklung von Plugins deutlich vereinfacht und beschleunigt wird. Derzeit ist es nicht geplant, ein gleichwertiges Modul für andere Sprachen zu entwickeln.
@@ -14,25 +23,16 @@ h3. Regeln, die beachtet werden sollten
 
 p. Bevor Sie anfangen, ein Plugin für Bloonix zu entwickeln, sollten ein paar einfache Dinge beachtet werden. Die wohl wichtigste Regel ist:
 
-p. _Ein Plugin sollte so entwickelt sein, dass es nie länger als ca. 30 Sekunden benötigt, um einen Service zu prüfen. Wenn ein Service innerhalb von 30 Sekunden keine Antwort liefert, ist dies als ein kritischer Status einzustufen. Wenn ein Service für gewöhnlich länger benötigt, um innerhalb von 30 Sekunden geprüft zu werden, dann ist der Service nicht dafür geeignet, um über ein Plugin geprüft zu werden. Stattdessen sollte ein Cronjob eingerichtet werden, der den Dienst auf irgendweine Weise prüft und den Status der Prüfung in eine Datei schreibt. Es kann daraufhin der Inhalt der Datei über ein Bloonix-Plugin geprüft werden._
+p. _Ein Plugin sollte so entwickelt sein, dass es nie länger als ca. 30 Sekunden benötigt, um einen Service zu prüfen. Wenn ein Service innerhalb von 30 Sekunden keine Antwort liefert, dann ist das als ein kritischer Status einzustufen. Wenn ein Service für gewöhnlich länger benötigt, um innerhalb von 30 Sekunden geprüft zu werden, dann ist der Service nicht dafür geeignet, um über ein Plugin geprüft zu werden. Stattdessen sollte ein Cronjob eingerichtet werden, der den Dienst auf irgendweine Weise prüft und den Status der Prüfung in eine Datei schreibt. Es kann daraufhin der Inhalt der Datei über ein Bloonix-Plugin geprüft werden._
 
 p. Hier ein paar weitere einfache Regeln, an die sich ein Plugin-Entwickler halten sollte:
 
 * Ein Plugin sollte bei blockierenden Aktionen dafür sorgen, dass es selbstständig auf einen Timeout läuft.
 * Ein Plugin ist nicht dafür geeignet, Services zu starten, zu stoppen oder zu konfigurieren.
-* Ein Plugin sollte niemals blind alle Parameter, die über die WebGUI konfiguriert werden, annehmen und ausführen.
-* Sollte ein Plugin eine spezielle Konfiguration benötigen, so ist diese in /etc/bloonix/agent abzulegen.
+* Ein Plugin sollte niemals blind alle Parameter verwenden, die über die WebGUI konfiguriert werden.
+* Sollte ein Plugin eine spezielle Konfiguration benötigen, so ist diese unter /etc/bloonix/agent abzulegen.
 * Beim Öffnen oder Schreiben von Dateien sollten ".." Angaben im Pfad zur Datei einen Fehler auslösen.
 * Bitte nur die englische Sprache in Plugins verwenden.
-
-h3. Metadaten
-
-p. Zu jedem Plugin gibt es eine spezielle Datei, in der Metadaten abgelegt werden. Schauen wir uns beispielhaft das Plugin __check-http__ an:
-
-* check-http - das Skript, welches ausgeführt wird
-* plugin-http - Metadaten zum Plugin sowie die Konfiguration der Charts
-
-p. Zu beachten ist hier der Prefix beider Dateien. Für Skripts wird immer der Prefix __check__ verwendet und für die Datei mit den Metadaten der Prefix __plugin__.  Beide Dateien werden später benötigt, um die Metadaten in die Datenbank der WebGUI von Bloonix zu importieren, damit das Plugin in der WebGUI als Service eingerichtet werden kann.
 
 h2. Plugins entwickeln
 
