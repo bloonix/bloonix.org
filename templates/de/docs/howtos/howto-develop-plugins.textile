@@ -74,7 +74,7 @@ $plugin->add_option(
     # im Formular zur Konfiguration von Services angezeigt.
     name => "URL to check",
 
-    # Die Option, wie sie mit -- aufgerufen wird.
+    # Die Option, wie sie mit -- aufgerufen wird. Hier --url.
     option => "url",
 
     # Der Typ des Werts. Mögliche Angaben sind string, int, number.
@@ -99,7 +99,7 @@ $plugin->add_option(
     regex => qr!https{0,1}://[a-zA-Z0-9]+([.-][a-zA-Z0-9]+)*(:\d+){0,1}(/[^\s]*){0,1}\z!,
 
     # Eine Beschreibung der Option.
-    description => "Check the response time of a URL."
+    description => "The URL you want to check."
 );
 
 $plugin->add_option(
