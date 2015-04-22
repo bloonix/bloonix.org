@@ -37,7 +37,7 @@ bc. sudo yum install \
 
 h3. PostgreSQL initialisieren
 
-bc. sudo service postgresql initdb
+bc. sudo postgresql-setup initdb
 
 h3. PostgreSQL konfigurieren
 
