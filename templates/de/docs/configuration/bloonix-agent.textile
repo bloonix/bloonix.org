@@ -93,7 +93,7 @@ h3. Parameter: use_sudo
 
 p. Da der Bloonix-Agent nicht mit root-Rechten läuft, für manche Service-Checks jedoch root-Rechte benötigt werden, kann hier definiert werden, welche Service-Checks mit sudo ausgeführt werden sollen.
 
-p. Möchten Sie zum Beispiel ein Software-RAID und die Temparatur überwachen, so benötigen die Checks __check-mdadm__ und __check-sensors__ root-Rechte. Damit der Agent diese zwei Checks mit sudo ausführt, muss folgende Konfiguration vorgenommen werden:
+p. Möchten Sie zum Beispiel ein Software-RAID oder die Temparatur überwachen, so benötigen die Checks __check-mdadm__ und __check-sensors__ root-Rechte. Damit der Agent diese zwei Checks mit sudo ausführt, muss folgende Konfiguration vorgenommen werden:
 
 bc. host {
     host_id 12345
@@ -108,6 +108,8 @@ bloonix ALL=NOPASSWD: /usr/lib/bloonix/plugins/check-sensors
 Defaults:bloonix !requiretty
 Defaults:bloonix env_keep += "PLUGIN_LIBDIR CONFIG_PATH"
 Defaults:bloonix secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+
+p. Falls Sie Nagios-Plugins einsetzen und diese via __sudo__ ausgeführt werden müssen, dann muss der Nagios-Check in __sudoers__ eingetragen werden. Wenn in der WebGUI ein Nagios-Plugin eingerichtet wird, so kann das Kommando __check-simple-wrapper__ in der Beschreibung des Plugins Verwirrung stiften. Bitte richten Sie keine sudo-Rechte für das Skript __check-simple-wrapper__ ein.
 
 h3. Parameter: env
 

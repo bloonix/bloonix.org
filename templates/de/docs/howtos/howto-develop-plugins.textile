@@ -126,6 +126,7 @@ $plugin->add_option(
 
 # Die Argumente werden geprüft und validiert. Das Objekt $opt ist eine
 # Hash-Referenz und enthält alle Argumente und Werte im Key-Value Format.
+# Optionen wie zum Beispiel --use-ssl werden umgewandelt in den Hash-Key use_ssl.
 my $opt = $plugin->parse_options;
 
 # Bloonix::Plugin stellt die Methode runtime() zur Verfügung, um den Zeitabstand
