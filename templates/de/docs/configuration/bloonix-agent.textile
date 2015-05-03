@@ -50,6 +50,7 @@ bc.. server {
     host p1.bloonix.de, s1.bloonix.de
     port 5460
     mode failover
+    use_ssl yes
     ssl_verify_mode peer
 
     # Debian / SuSE / SLES
