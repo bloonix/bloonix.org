@@ -2,7 +2,7 @@ h1. Wie funktioniert das nun mit der Überwachung von Hosts und Services
 
 h2. Einrichtung von Hosts und Services im Webinterface
 
-p. Im Webinterface werden alle Hosts und Services eingerichtet, die Sie überwachen möchten. Ein Host kann im Kontext von Bloonix ein Server, ein virtueller Server, ein Router, ein Switch oder auch ein Drucker sein. Jeder Host besitzt einen Hostnamen und eine IP-Adresse. Wenn ein Host im Webinterface eingerichtet wird, erhält dieser eine eindeutige ID und ein dazugehöriges Passwort. Darüber hinaus werden Service-Checks eingerichtet, zum Beispiel zur Überwachung der CPU-Auslastung, des Speicherverbrauchs oder der Auslastung der Netzwerkinterfaces.
+p. Im Webinterface werden alle Hosts und Services eingerichtet, die Sie überwachen möchten. Ein Host kann im Kontext von Bloonix ein Server, ein virtueller Server, ein Router, ein Switch oder auch ein Drucker sein. Jeder Host besitzt einen Hostnamen und eine IP-Adresse. Wenn ein Host im Webinterface eingerichtet wird, erhält dieser eine eindeutige ID und ein dazugehöriges Passwort. Das Passwort ist nicht mit dem Root-Passwort des Servers zu verwechseln, sondern ist ein spezielles Passwort, welches später für den Bloonix-Agenten benötigt wird, damit dieser sich beim Bloonix-Server authentifizieren kann. Darüber hinaus werden Service-Checks eingerichtet, zum Beispiel zur Überwachung der CPU-Auslastung, des Speicherverbrauchs oder der Auslastung der Netzwerkinterfaces.
 
 !{width: 640px; margin: 40px 0;}/public/img/bloonix-howto-webgui.png!
 
