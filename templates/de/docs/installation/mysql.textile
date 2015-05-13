@@ -1,0 +1,21 @@
+h1. MySQL installieren
+
+h2. Debian
+
+bc. apt-get install mysql-server
+mysql_secure_installation
+
+h2. Red Hat / CentOS / Fedora
+
+bc. yum install mariadb-server
+mysql_secure_installation
+
+h2. SuSE / SLES
+
+bc. zypper install mariadb
+mysql_secure_installation
+
+h2. Einrichtung der Datenbank für Bloonix
+
+p. Die Einrichtung der Bloonix-Datenbank erfolgt hier: "Bloonix-WebGUI":/de/docs/installation/bloonix-webgui.html
+
