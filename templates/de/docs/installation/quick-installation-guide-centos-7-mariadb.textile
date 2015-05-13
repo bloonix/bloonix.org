@@ -1,0 +1,94 @@
+h1. Schneller Installationsguide für Bloonix auf CentOS 7
+
+h3. Installieren Sie als erstes das EPEL Repository
+
+bc. sudo yum install epel-release
+
+h3. Installieren Sie das Bloonix Repository
+
+bc. sudo rpm -ivh https://download.bloonix.de/repos/centos/7/noarch/bloonix-release-0.5-1.el7.centos.noarch.rpm
+
+h3. Installieren Sie das Elasticsearch Repository
+
+bc. sudo rpm --import https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+sudo vim /etc/yum.repos.d/elasticsearch.repo
+
+p. Einfügen
+
+bc. [elasticsearch-1.4]
+name=Elasticsearch repository for 1.4.x packages
+baseurl=http://packages.elasticsearch.org/elasticsearch/1.4/centos
+gpgcheck=1
+gpgkey=http://packages.elasticsearch.org/GPG-KEY-elasticsearch
+enabled=1
+
+h3. Paketinstallation
+
+bc. sudo yum install \
+    nginx \
+    mariadb-server \
+    elasticsearch \
+    java-1.7.0-openjdk \
+    bloonix-webgui \
+    bloonix-server \
+    bloonix-agent \
+    bloonix-plugins-basic \
+    bloonix-plugins-linux
+
+h3. MariaDB intialisieren
+
+bc. sudo systemctl start mariadb
+mysql_secure_installation
+
+h3. Nginx
+
+p. Editieren Sie die Datei __/etc/nginx/nginx.conf__
+
+bc. sudo vim /etc/nginx/nginx.conf
+
+p. und fügen Sie folgende Zeile ein:
+
+bc. include /etc/bloonix/webgui/nginx.conf; # diese Zeile einfügen
+include /etc/nginx/conf.d/*.conf;       # oberhalb dieser Zeile
+
+h3. Elasticsearch und Nginx starten
+
+bc. sudo systemctl start elasticsearch.service
+sudo systemctl start nginx.service
+
+h3. Initialisieren Sie das Bloonix Template für Elasticsearch
+
+bc. sudo /srv/bloonix/webgui/schema/init-elasticsearch localhost:9200
+
+h3. Initialisieren Sie das Bloonix Schema für MariaDB
+
+bc. sudo /srv/bloonix/webgui/schema/init-database --mysql
+
+h3. Konfigurieren Sie den Agenten
+
+p. Editieren Sie die Konfiguration des Bloonix Agenten und konfigurieren Sie die Sektion __server__:
+
+bc. sudo vim /etc/bloonix/agent/main.conf
+
+p. Setzen Sie folgende Paramter in der Sektion __server__:
+
+==
+<pre><code># Bloonix-Server hostname (demo.bloonix.org ist nur ein Beispiel)
+host demo.bloonix.org
+
+# Wenn Sie ein selbst signiertes Zertifikat einsetzen, dann muss die Validierung
+# des Zertifikats deaktiviert werden
+ssl_verify_mode none
+</code></pre>
+==
+
+h3. Alle Bloonix Dienste starten
+
+bc. sudo systemctl start bloonix-webgui.service
+sudo systemctl start bloonix-server.service
+sudo systemctl start bloonix-srvchk.service
+sudo systemctl start bloonix-agent.service
+
+h3. Ready to rumble
+
+p. Fertig! :-) Jetzt können Sie sich in der WebGUI einloggen. Der initiale Benutzername und das Passwort lautet __admin/admin__
