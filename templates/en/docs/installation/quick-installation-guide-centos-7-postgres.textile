@@ -1,4 +1,4 @@
-h1. Quick installation guide for Bloonix on CentOS 7
+h1. Quick installation guide on CentOS 7 with PostgreSQL
 
 h3. Install at first the EPEL repository
 

@@ -1,3 +1,4 @@
 [
-    { "Quick Guide for CentOS 7": "quick-installation-guide-centos-7.textile" }
+    { "Quick Guide for CentOS 7 and PostgreSQL": "quick-installation-guide-centos-7-postgres.textile" },
+    { "Quick Guide for CentOS 7 and MariaDB": "quick-installation-guide-centos-7-mariadb.textile" }
 ]
