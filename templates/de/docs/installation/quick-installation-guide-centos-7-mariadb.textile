@@ -1,4 +1,4 @@
-h1. Schneller Installationsguide für Bloonix auf CentOS 7 und MariaDB
+h1. Schneller Installationsguide auf CentOS 7 mit MariaDB
 
 h3. Installieren Sie als erstes das EPEL Repository
 
