@@ -38,9 +38,9 @@ p. Für die WebGUI wird ein moderner und HTML5-fähiger Browser benötigt. Wir e
 
 h1. Storage und Webserver
 
-h2. PostgreSQL
+h2. PostgreSQL / MySQL
 
-p. PostgreSQL wird zur Speicherung der Konfiguration und der Daten von Hosts, Services, Benutzer und Gruppen eingesetzt. Andere Datenbanksysteme werden aktuell nicht unterstützt. Es ist in der Zukunft nicht geplant, MySQL zu unterstützen, da die Applikation von Bloonix mit Sequences arbeitet und dieses Feature von MySQL nicht unterstützt wird.
+p. Die Datenbank wird zur Speicherung der Konfiguration und der Daten von Hosts, Services, Benutzer und Gruppen eingesetzt. Andere Datenbanksysteme werden aktuell nicht unterstützt.
 
 p. "Zur Webseite von PostgreSQL":http://www.postgresql.org/
 

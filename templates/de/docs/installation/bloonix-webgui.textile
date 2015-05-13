@@ -62,15 +62,18 @@ p. Der Paramter __server_name__ ist hier als Catch-All eingerichtet. Falls Sie v
 
 h2. Datenbankschema und Elasticsearch-Template
 
-p. Um das Schema für die PostgreSQL-Datenbank und das Template für Elasticsearch anzulegen, gibt es im Verzeichnis
+p. Um das Schema für die Datenbank und das Template für Elasticsearch anzulegen, gibt es im Verzeichnis
 
 bc. /srv/bloonix/webgui/schema
 
 p. ein paar Skripte zur Hilfe.
 
-p. Um das Schema für die PostgreSQL-Datenbank anzulegen, muss folgendes Kommando ausgeführt werden:
+p. Um das Schema für die Datenbank anzulegen, muss folgendes Kommando ausgeführt werden:
 
-bc. /srv/bloonix/webgui/schema/init-database
+bc. # Für PostgreSQL
+/srv/bloonix/webgui/schema/init-database --postgres
+# Für MariaDB/MySQL
+/srv/bloonix/webgui/schema/init-database --mysql
 
 p. Das Skript erstellt das Datenbank-Schema sowie einen Zugang für den Benutzer __bloonix__. Das Passwort für die Datenbank wird dabei automatisch generiert und in die Konfigurationsdatei __/etc/bloonix/database/main.conf__ geschrieben. Diese Datei wird von allen Komponenten, die einen Zugang zu Datenbank benötigen, inkludiert.
 
