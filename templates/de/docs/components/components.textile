@@ -43,6 +43,8 @@ h2. PostgreSQL / MySQL
 p. Die Datenbank wird zur Speicherung der Konfiguration und der Daten von Hosts, Services, Benutzer und Gruppen eingesetzt. Andere Datenbanksysteme werden aktuell nicht unterstützt.
 
 p. "Zur Webseite von PostgreSQL":http://www.postgresql.org/
+p. "Zur Webseite von MySQL":http://www.mysql.com/
+p. "Zur Webseite von MariaDB":https://mariadb.com/
 
 h2. Elasticsearch
 
