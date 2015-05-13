@@ -98,7 +98,7 @@ bc. sudo /srv/bloonix/webgui/schema/init-elasticsearch localhost:9200
 
 h3. Init Bloonix schema for PostgreSQL
 
-bc. sudo /srv/bloonix/webgui/schema/init-database
+bc. sudo /srv/bloonix/webgui/schema/init-database --postgres
 
 h3. Configure the agent
 
