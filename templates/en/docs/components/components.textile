@@ -40,11 +40,12 @@ p. For the WebGUI a modern HTML5 browser is required. We recommend the use of Ch
 
 h1. Storage and Webserver
 
-h2. PostgreSQL
+h2. PostgreSQL / MySQL
 
-p. PostgreSQL is used to store the configuration and the data by hosts, services, users and groups. Other database systems are not supported. It is not planned in the future to support MySQL, because the application of Bloonix uses sequences. Sequences are not supported by MySQL.
+p. The database is used to store the configuration and the data by hosts, services, users and groups. Other database systems are not supported.
 
 p. "To the website of PostgreSQL":http://www.postgresql.org/
+p. "To the website of MySQL":http://www.mysql.com/
 
 h2. Elasticsearch
 
