@@ -45,7 +45,9 @@ h2. PostgreSQL / MySQL
 p. The database is used to store the configuration and the data by hosts, services, users and groups. Other database systems are not supported.
 
 p. "To the website of PostgreSQL":http://www.postgresql.org/
+
 p. "To the website of MySQL":http://www.mysql.com/
+
 p. "To the website of MariaDB":https://mariadb.com/
 
 h2. Elasticsearch
