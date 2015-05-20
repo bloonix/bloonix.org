@@ -23,7 +23,7 @@ p. Im Formular zur Konfiguration der Benutzer haben Sie die Möglichkeit, einen 
 
 p. Mit dieser Einstellung können Sie den Notification Screen nun wie folgt aufrufen:
 
-bc. https://gui.bloonix.de/screen/?username=test@bloonix.de;authkey=yOH1doaktzMjrMza69JcQwxrfKeRGP
+bc. https://demo.bloonix.de/screen/?username=test@bloonix.de;authkey=yOH1doaktzMjrMza69JcQwxrfKeRGP
 
 h3. Charts ohne Login abrufen
 
@@ -38,7 +38,7 @@ p. Mit dem *Authenfication-Key* können Sie ebenfalls Charts abrufen ohne sich e
 
 p. Anhand des Beispiels in der Grafik verwenden wir nun die Charts, welche unter dem Namen __CPU-Charts__ mit der ID __21__ abgespeichert sind. Diese Charts können Sie nun wie folgt abrufen:
 
-bc. https://gui.bloonix.de/screen/charts/?username=test@bloonix.de;authkey=yOH1doaktzMjrMza69JcQwxrfKeRGP;id=21
+bc. https://demo.bloonix.de/screen/charts/?username=test@bloonix.de;authkey=yOH1doaktzMjrMza69JcQwxrfKeRGP;id=21
 
 p. Die ID __21__ wird einfach als Query-String __id=21__ angehangen und der Pfad lautet __/screen/charts__.
 

@@ -18,7 +18,7 @@ bc. <form action="/login" method="POST">
 
 p. Die Regelsätze zum Login müssten dann wie folgt lauten:
 
-# Besuche die Webseite __https://gui.bloonix.de/login__
+# Besuche die Webseite __https://m1.bloonix.de/login__
 # Gebe den Wert __mein@benutzer.test__ in das Formularfeld __username__ ein
 # Gebe den Wert __geheim__ in das Formularfeld __password__ ein
 # Klicke auf den Button mit der ID __#submit__
@@ -38,7 +38,7 @@ p. Bei den Plugins angelangt klicken Sie dann das Plugin __WebTransactions__ an.
 
 p. Dort angelangt können Sie nun den Workflow einrichten. Als Beispiel verwenden wir den obigen Workflow, um uns in die WebGUI von Bloonix einzuloggen.
 
-h3. 1. Besuche die Webseite __https://gui.bloonix.de/login__
+h3. 1. Besuche die Webseite __https://m1.bloonix.de/login__
 
 !{margin: 40px 0;}/public/img/wtrm-step-1.png!
 !{margin: 40px 0;}/public/img/wtrm-step-2.png!
