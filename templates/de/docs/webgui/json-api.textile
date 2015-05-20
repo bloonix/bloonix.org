@@ -29,7 +29,7 @@ p. Die Antwort der JSON-API erfolgt, wie auch die Anfrage, im JSON-Format. Dabei
 
 bc. {
     "server_time" : "1400501371624",
-    "who_am_i" : "starsky.bloonix.de",
+    "who_am_i" : "demo.bloonix.de",
     "status" : "ok",
     "data" : {
         "sid" : "sdfah7823fs83k3..."
@@ -310,7 +310,7 @@ bc. Route: /hosts/:host_id/charts
 bc. {
     "server_time" : "1400514110002",
     "status" : "ok",
-    "who_am_i" : "starsky.bloonix.de",
+    "who_am_i" : "demo.bloonix.de",
     "data" : [
         {
             "plugin" : "Apache2.Statistics",
@@ -378,7 +378,7 @@ p. Die Struktur der Chart-Daten sieht wie folgt aus:
 bc. {
     "server_time" : "1400516771622",
     "status" : "ok",
-    "who_am_i" : "starsky.bloonix.de",
+    "who_am_i" : "demo.bloonix.de",
     "data" : {
         "stats" : {
              "sendrep" : [
