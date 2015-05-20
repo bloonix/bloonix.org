@@ -11,7 +11,7 @@ h2. HTTP Abfrage
 p. Eine Abfrage über die JSON-API sieht beispielhaft wie folgt aus:
 
 bc.. POST /login HTTP/1.1
-Host: demo.bloonix.de
+Host: demo.bloonix.org
 Content-Type: application/json
 Content-Length: 35
 
@@ -29,7 +29,7 @@ p. Die Antwort der JSON-API erfolgt, wie auch die Anfrage, im JSON-Format. Dabei
 
 bc. {
     "server_time" : "1400501371624",
-    "who_am_i" : "demo.bloonix.de",
+    "who_am_i" : "demo.bloonix.org",
     "status" : "ok",
     "data" : {
         "sid" : "sdfah7823fs83k3..."
@@ -57,11 +57,11 @@ p. Eine Route ist schlichtweg der Pfad einer URL. Die gesamte JSON-API von Bloon
 
 p. Sie können das auch gerne einmal testen. Rufen Sie dazu in der URL-Leiste Ihres Browsers folgende URL auf:
 
-bc. https://demo.bloonix.de/hosts
+bc. https://demo.bloonix.org/hosts
 
 p. Sie erhalten dann eine Liste aller Hosts im JSON-Format. Mit dem Parameter __pretty__ können Sie der JSON-API mitteilen, dass die Ausgabe etwas leserlicher ausgegeben werden soll.
 
-bc. https://demo.bloonix.de/hosts?pretty
+bc. https://demo.bloonix.org/hosts?pretty
 
 h3. Aufbau von Routen
 
@@ -310,7 +310,7 @@ bc. Route: /hosts/:host_id/charts
 bc. {
     "server_time" : "1400514110002",
     "status" : "ok",
-    "who_am_i" : "demo.bloonix.de",
+    "who_am_i" : "demo.bloonix.org",
     "data" : [
         {
             "plugin" : "Apache2.Statistics",
@@ -378,7 +378,7 @@ p. Die Struktur der Chart-Daten sieht wie folgt aus:
 bc. {
     "server_time" : "1400516771622",
     "status" : "ok",
-    "who_am_i" : "demo.bloonix.de",
+    "who_am_i" : "demo.bloonix.org",
     "data" : {
         "stats" : {
              "sendrep" : [
@@ -435,7 +435,7 @@ p. Dies ist eine Kurzbeschreibung um eine Downtime für mehrere Hosts einzuricht
 
 h3. Einloggen
 
-bc. curl -H 'Content-Type: application/json' https://demo.bloonix.de/login/ -d '
+bc. curl -H 'Content-Type: application/json' https://demo.bloonix.org/login/ -d '
 {
     "username" : "username",
     "password" : "password"
@@ -473,12 +473,12 @@ bc. {
 
 p. Eine Beschreibung der einzelnen Zeitangaben finden Sie hier: "Geplante Wartungsarbeiten einrichten":/de/docs/webgui/scheduled-downtimes.html
 
-bc.. curl -H 'Content-Type: application/json' https://demo.bloonix.de/token/csrf -d '
+bc.. curl -H 'Content-Type: application/json' https://demo.bloonix.org/token/csrf -d '
 {
     "sid" : "sid"
 }'
 
-curl -H 'Content-Type: application/json' https://demo.bloonix.de/hosts/create-downtime/ -d '
+curl -H 'Content-Type: application/json' https://demo.bloonix.org/hosts/create-downtime/ -d '
 {
     "sid" : "sid",
     "token" : "token",
@@ -494,12 +494,12 @@ h3. Token abfragen und Downtimes löschen
 
 p. Das Token aus __data__ muss für den Request zum Löschen der Downtimes verwendet werden. Das Token ist nur für 30 Sekunden gültig.
 
-bc.. curl -H 'Content-Type: application/json' https://demo.bloonix.de/token/csrf -d '
+bc.. curl -H 'Content-Type: application/json' https://demo.bloonix.org/token/csrf -d '
 {
     "sid" : "sid"
 }'
 
-curl -H 'Content-Type: application/json' https://demo.bloonix.de/hosts/delete-downtime/ -d '
+curl -H 'Content-Type: application/json' https://demo.bloonix.org/hosts/delete-downtime/ -d '
 {
     "sid" : "sid",
     "token" : "token",
