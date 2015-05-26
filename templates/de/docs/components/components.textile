@@ -1,18 +1,18 @@
 h1. Bloonix Komponenten
 
-h2. Übersicht über alle Komponenten
+h2. Die Komponenten zur Überwachung
 
-p. Hier sehen Sie eine grobe Übersicht über alle Komponenten. Die Bloonix-WebGUI und der Bloonix-Server sind hochskalierbar und können auf mehreren Servern zur Lastverteilung betrieben werden.
+p. Hier sehen Sie eine grobe Übersicht der Komponenten zur Überwachung von Hosts und Services.
 
-!{width: 100%; margin: 20px 0;}/public/img/bloonix-components-de.png!
+!{width: 100%; margin: 20px 0;}/public/img/bloonix-components.png!
 
-p. Die Monitoring Software von Bloonix besteht aus fünf Hauptkomponenten:
+h2. Die Komponenten für das Webinterface
 
-* der Bloonix-Server
-* der Bloonix-Service-Checker
-* der Bloonix-Agent
-* die Bloonix-Plugins
-* die Bloonix-WebGUI
+p. Über das Webinterface von Bloonix werden Hosts und Services sowie Kontakte und Gruppen eingerichtet.
+
+!{margin: 20px 0;}/public/img/bloonix-web-components.png!
+
+h1. Beschreibung der Komponenten
 
 h2. Bloonix-Server
 
@@ -35,8 +35,6 @@ h2. Bloonix-WebGUI
 p. Die *Bloonix-WebGUI* ist das Benutzerinterface und läuft clientseitig als JavaScript Applikation im Browser. Serverseitig läuft die WebGUI als REST-API hinter einem Reverse-Proxy (Nginx), wodurch die Möglichkeit besteht, die WebGUI automatisiert abzufragen. Das Datenformat der REST-API ist JSON.
 
 p. Für die WebGUI wird ein moderner und HTML5-fähiger Browser benötigt. Wir empfehlen den Einsatz von Chrome, Safari, Firefox oder auch Opera. Der Internet Explorer in Version 11 sollte ebenfalls funktionieren, dieser Browser wird jedoch in keiner Version unterstützt.
-
-h1. Storage und Webserver
 
 h2. PostgreSQL / MySQL
 
