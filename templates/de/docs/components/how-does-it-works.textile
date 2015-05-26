@@ -25,9 +25,7 @@ p. Was der Agent nun macht ist folgendes:
 
 h2. Überwachung von Netzwerkkomponenten oder externen Services
 
-p. Da der Bloonix-Agent nicht für Windows-Systeme zur Verfügung steht und auch nicht auf Netzwerkkomponenten installiert werden kann, können diese Systeme nur über SNMP oder externe TCP/UDP Schnittstellen überwacht werden.
-
-p. Hierfür wird der Bloonix-Agent auf einem zentralen Linux-Server installiert, der in Ihrer lokalen Infrastruktur integriert ist, also in dem LAN Ihres Unternehmens. Von dort aus werden alle Netzwerksysteme und Server über SNMP, HTTP und anderen Protokollen überwacht. Der Bloonix-Agent ist so konzipiert, dass er beliebig viele Hosts und Services überwachen kann.
+p. Der Bloonix-Agent kann auf einem zentralen Server in Ihrer lokalen Infrastruktur installiert werden, um von dort aus alle Netzwerksysteme via SNMP zu überwachen, wie zum Beispiel Router, Switches oder Drucker. Der Bloonix-Agent kann aber auch auf einem externen Server installiert werden, um von dort aus die Internetservices zu überwachen.
 
 !{margin: 40px 0;}/public/img/bloonix-howto-agent-server-remote.png!
 
