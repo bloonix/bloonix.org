@@ -12,8 +12,6 @@ p. Über das Webinterface von Bloonix werden Hosts und Services sowie Kontakte u
 
 !{margin: 20px 0;}/public/img/bloonix-web-components.png!
 
-h1. Beschreibung der Komponenten
-
 h2. Bloonix-Server
 
 p. Der *Bloonix-Server* ist der Kern des Monitoring Frameworks und die Schnittstelle für die Bloonix-Agenten. Der Bloonix-Server übersendet auf Anfrage eines Agenten die Konfiguration der zu überwachenden Services und nimmt den Status und auch statistische Daten von den Bloonix-Agenten entgegen, um diese zu validieren, in der Datenbank abzuspeichern und zu prüfen, ob ein Ereignis ausgelöst werden muss, wie zum Beispiel eine E-Mail an einen Administrator zu senden, um ihn darüber zu informieren, dass ein Service überlastet oder nicht mehr verfügbar ist.

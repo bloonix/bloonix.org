@@ -1,18 +1,16 @@
 h1. Bloonix components
 
-h2. Overview
+h2. Overview of the components for the monitoring
 
-p. Here you see a coarse overview of all components. Because the Bloonix server and the Bloonix-WebGUI run server-sided as an external FastCGI application, these are highly scaleable and can be installed on several servers. Everything what you still need then is a HTTPS offloader and loadbalancer to distribute the requests.
+p. Here you see a coarse overview of the components to monitor hosts and services.
 
-!{width: 100%; margin: 20px 0;}/public/img/bloonix-components-en.png!
+!{width: 100%; margin: 20px 0;}/public/img/bloonix-components.png!
 
-p. The monitoring software of Bloonix exists of five main components:
+h2. The components for the web interface
 
-* the Bloonix-Server
-* the Bloonix-Service-Checker
-* the Bloonix-Agent
-* the Bloonix-Plugins
-* and the Bloonix-WebGUI
+p. Over the web interface of Bloonix hosts and service as well as contacts and groups are configured.
+
+!{margin: 20px 0;}/public/img/bloonix-web-components.png!
 
 h2. Bloonix-Server
 
