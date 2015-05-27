@@ -28,6 +28,10 @@ p. The *Bloonix-Agent* is the part of the Frameworks which is responsible to mon
 
 p. Together with the Bloonix-Agent the *Bloonix-Plugins* are installed, which are smaller programms to check the status of one or several services and deliver at the same time statistical data to the service. A Plugin can be written in any computer language, it's only to be noted that the data exchange (program options and output of statistical data) occurs in the JSON format. The Plugins are installed together with the Bloonix-Agent.
 
+h2. Bloonix-Satellite
+
+p. With the *Bloonix-Satellite* it's possible to monitor external services from multiple locations. The Bloonix-Satellite can be installed on any number of systems. The Bloonix-Agent connects to the Bloonix-Satellite and forwards the service checks, which has to be exectued.
+
 h2. Bloonix-WebGUI
 
 p. The *Bloonix-WebGUI* is the user interface and runs on the client side as a JavaScript application in the browser. On the server side the webgui runs as a REST-API behind a reverse proxy (Nginx). The data format of the REST-API is JSON.
@@ -88,4 +92,10 @@ h2. Monitoring of network components or external services
 p. The Bloonix-Agent can be installed on a central server in your local infrastructure to monitor network components via SNMP, as for example router, switches or printer. However, the Bloonix-Agent can be also installed on an external server to monitor internet service from there.
 
 !{margin: 40px 0;}/public/img/bloonix-howto-agent-server-remote.png!
+
+h2. Monitoring of services from multiple locations
+
+p. Over the web interface of Bloonix it's possible to configure multiple locations for service checks, which are able to be monitored as a external service, as example over HTTP, SMTP, IMAP, Ping and so on. In this case the Bloonix-Agent wouldn't execute the service check itself, but would forward the execution of the service check to the Bloonix-Satellites which are configured in the web interface.
+
+!{margin: 40px 0;}/public/img/bloonix-howto-satellite.png!
 

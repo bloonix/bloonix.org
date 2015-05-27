@@ -28,6 +28,10 @@ p. Der *Bloonix-Agent* ist der Teil des Frameworks, der dafür zuständig ist, d
 
 p. Zusammen mit dem Bloonix-Agenten werden *Bloonix-Plugins* installiert, welche kleinere Programme sind, die den Status eines oder mehrerer Services prüfen und zugleich statistische Daten zum Service liefern. Ein Plugin kann in jeder beliebigen Programmiersprache geschrieben sein, zu beachten ist nur, dass der Datenaustausch (Programmoptionen und Ausgabe statistischer Daten) im JSON-Format erfolgt. Die Plugins werden zusammen mit dem Bloonix-Agenten installiert.
 
+h2. Bloonix-Satellit
+
+p. Mit dem *Bloonix-Satellit* ist es möglich, externe Dienste von multiplen Standorten zu überwachen. Der Bloonix-Satellit kann auf beliebigen Systemen installiert werden. Der Bloonix-Agent verbindet sich zum Bloonix-Satellit und übermittelt die Service-Checks, welche ausgeführt werden müssen.
+
 h2. Bloonix-WebGUI
 
 p. Die *Bloonix-WebGUI* ist das Benutzerinterface und läuft clientseitig als JavaScript Applikation im Browser. Serverseitig läuft die WebGUI als REST-API hinter einem Reverse-Proxy (Nginx), wodurch die Möglichkeit besteht, die WebGUI automatisiert abzufragen. Das Datenformat der REST-API ist JSON.
@@ -88,6 +92,12 @@ h2. Überwachung von Netzwerkkomponenten oder externen Services
 p. Der Bloonix-Agent kann auf einem zentralen Server in Ihrer lokalen Infrastruktur installiert werden, um von dort aus alle Netzwerksysteme via SNMP zu überwachen, wie zum Beispiel Router, Switches oder Drucker. Der Bloonix-Agent kann aber auch auf einem externen Server installiert werden, um von dort aus die Internetservices zu überwachen.
 
 !{margin: 40px 0;}/public/img/bloonix-howto-agent-server-remote.png!
+
+h2. Überwachung von Services von multiplen Standorten
+
+p. Im Webinterface von Bloonix kann für Service-Checks, die über eine externe Schnittstelle überwacht werden können, wie zum Beispiel über HTTP, SMTP, IMAP, Ping usw., einer oder mehrere Standorte zur Ausführung angegeben werden. In diesem Fall würde der Bloonix-Agent die Service-Checks nicht selber ausführen, sondern die Ausführung an die im Webinterface eingerichteten Bloonix-Satelliten weiterreichen.
+
+!{margin: 40px 0;}/public/img/bloonix-howto-satellite.png!
 
 h2. Detailierte Beschreibung
 
