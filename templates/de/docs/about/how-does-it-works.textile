@@ -10,7 +10,7 @@ h2. Die Komponenten für das Webinterface
 
 p. Über das Webinterface von Bloonix werden Hosts und Services sowie Kontakte und Gruppen verwaltet.
 
-!{width: 100%; margin: 20px 0;}/public/img/bloonix-web-components.png!
+!{margin: 20px 0;}/public/img/bloonix-web-components.png!
 
 <br/><br/>
 
