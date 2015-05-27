@@ -1,3 +1,6 @@
 h1. Bloonix Documentation
 
-* "Deutsch":/de/docs
+p. I'm really sorry that the documentation is currently only available in the german language.
+
+p. My english is too bad and it would be very great if you like to help to translate it. :-)
+
