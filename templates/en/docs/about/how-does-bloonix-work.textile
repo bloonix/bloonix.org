@@ -10,7 +10,7 @@ h2. The components for the web interface
 
 p. Over the web interface of Bloonix hosts and service as well as contacts and groups are configured.
 
-!{margin: 20px 0;}/public/img/bloonix-web-components.png!
+!{width: 100%; margin: 20px 0;}/public/img/bloonix-web-components.png!
 
 <br/><br/>
 
