@@ -1,0 +1,93 @@
+h1. Wie funktioniert Bloonix
+
+h2. Die Komponenten zur Überwachung
+
+p. Hier sehen Sie eine grobe Übersicht der Komponenten zur Überwachung von Hosts und Services.
+
+!{width: 100%; margin: 20px 0;}/public/img/bloonix-components.png!
+
+h2. Die Komponenten für das Webinterface
+
+p. Über das Webinterface von Bloonix werden Hosts und Services sowie Kontakte und Gruppen verwaltet.
+
+!{width: 100%; margin: 20px 0;}/public/img/bloonix-web-components.png!
+
+h1. Die Komponenten im Detail
+
+h2. Bloonix-Server
+
+p. Der *Bloonix-Server* ist der Kern des Monitoring Frameworks und die Schnittstelle für die Bloonix-Agenten. Der Bloonix-Server übersendet auf Anfrage eines Bloonix-Agenten die Konfiguration der zu überwachenden Services und nimmt den Status und auch statistische Daten von den Bloonix-Agenten entgegen, um diese zu validieren, in der Datenbank abzuspeichern und zu prüfen, ob ein Ereignis ausgelöst werden muss, wie zum Beispiel eine E-Mail an einen Administrator zu senden, um ihn darüber zu informieren, dass ein Service überlastet oder nicht mehr verfügbar ist.
+
+p. Zusammen mit dem Bloonix-Server wird der *Bloonix-Service-Checker* installiert, welcher Teil des Bloonix-Servers und dafür zuständig ist, die Aktualität des Status von Hosts und Services zu überwachen. Wenn zum Beispiel die CPU-Auslastung eines Servers seit mehreren Minuten nicht mehr geprüft wurde, dann kann das daran liegen, dass ein Bloonix-Agent ausgefallen ist. In diesem Fall würde der Service-Checker als Pseudo-Agent einspringen und einen kritischen Status für den Service liefern.
+
+h2. Bloonix-Agent
+
+p. Der *Bloonix-Agent* ist der Teil des Frameworks, der dafür zuständig ist, die Services zu überwachen und den Status der Services sowie dazugehörige Statistiken an den Bloonix-Server zu senden. Der Bloonix-Agent wird auf dem zu überwachenden System installiert und läuft dort als Daemon, der dauerhaft das System überwacht. Der Bloonix-Agent kann auch auf einem zentralen Server installiert werden, um von dort aus Webservices und Netzwerkkomponenten zu überwachen, wie Router, Switches und Loadbalancer.
+
+p. Zusammen mit dem Bloonix-Agenten werden *Bloonix-Plugins* installiert, welche kleinere Programme sind, die den Status eines oder mehrerer Services prüfen und zugleich statistische Daten zum Service liefern. Ein Plugin kann in jeder beliebigen Programmiersprache geschrieben sein, zu beachten ist nur, dass der Datenaustausch (Programmoptionen und Ausgabe statistischer Daten) im JSON-Format erfolgt. Die Plugins werden zusammen mit dem Bloonix-Agenten installiert.
+
+h2. Bloonix-WebGUI
+
+p. Die *Bloonix-WebGUI* ist das Benutzerinterface und läuft clientseitig als JavaScript Applikation im Browser. Serverseitig läuft die WebGUI als REST-API hinter einem Reverse-Proxy (Nginx), wodurch die Möglichkeit besteht, die WebGUI automatisiert abzufragen. Das Datenformat der REST-API ist JSON.
+
+p. Für die WebGUI wird ein moderner und HTML5-fähiger Browser benötigt. Wir empfehlen den Einsatz von Chrome, Safari, Firefox oder auch Opera. Der Internet Explorer in Version 11 sollte ebenfalls funktionieren, dieser Browser wird jedoch in keiner Version unterstützt.
+
+h2. PostgreSQL / MySQL
+
+p. Die Datenbank wird zur Speicherung der Konfiguration und der Daten von Hosts, Services, Benutzer und Gruppen eingesetzt. Andere Datenbanksysteme werden aktuell nicht unterstützt.
+
+p. "Zur Webseite von PostgreSQL":http://www.postgresql.org/
+
+p. "Zur Webseite von MySQL":http://www.mysql.com/
+
+p. "Zur Webseite von MariaDB":https://mariadb.com/
+
+h2. Elasticsearch
+
+p. Elasticsearch wird verwendet, um Metriken und Events zu speichern. Bei der Überwachung von mehreren tausend Hosts können hohe Datenmengen aufkommen. Die Wahl fiel auf Elasticsearch, da Elasticsearch hoch skalierbar ist, eine einfache Clusterfunktionalität bietet und die Daten automatisch horizontal partitioniert.
+
+p. "Zur Webseite von Elasticsearch":http://www.elasticsearch.org/
+
+h2. Nginx
+
+p. Der Webserver Nginx wird als Reverse-Proxy eingesetzt, da die Bloonix-WebGUI als externe FastCGI-Applikation läuft. Die Requests werden per ProxyPass an die WebGUI weitergeleitet.
+
+p. "Zur Webseite von Nginx":http://nginx.com/
+
+h1. Ablauf der Überwachung von Hosts und Services
+
+h2. Einrichtung von Hosts und Services im Webinterface
+
+p. Im Webinterface werden alle Hosts und Service-Checks eingerichtet, die Sie überwachen möchten. Ein Host kann im Kontext von Bloonix ein Server, ein virtueller Server, ein Router, ein Switch oder auch ein Drucker sein. Jeder Host besitzt einen Hostnamen und eine IP-Adresse. Wenn ein Host im Webinterface eingerichtet wird, erhält dieser eine eindeutige ID und ein dazugehöriges Passwort. Das Passwort ist nicht mit dem Root-Passwort des Servers zu verwechseln, sondern ist ein spezielles Passwort, welches später für den Bloonix-Agenten benötigt wird, damit dieser sich beim Bloonix-Server authentifizieren kann. Darüber hinaus werden Service-Checks eingerichtet, zum Beispiel zur Überwachung der CPU-Auslastung, des Speicherverbrauchs oder der Auslastung der Netzwerkinterfaces.
+
+!{margin: 40px 0;}/public/img/bloonix-howto-webgui.png!
+
+h2. Einrichtung eines Bloonix-Agenten
+
+p. Zur Ausführung der Service-Checks wird der Bloonix-Agent benötigt. Ist ein Host im Webinterface eingerichtet, so muss als nächstes der Bloonix-Agent installiert werden. Der Bloonix-Agent kann auf multiplen Systemen zum Einsatz kommen, um die Service-Checks für einen Host auszuführen. Wenn Sie zum Beispiel die System-Vitals eines Hosts überwachen möchten, wie zum Beispiel die CPU-Auslastung, den Speicherverbrauch oder die Festplattenkapazität, dann wird der Bloonix-Agent auf dem zu überwachenden Server installiert. Wenn Sie die Serverdienste überwachen möchten, wie zum Beispiel einen Mailserver, Webserver oder auch DNS-Server, so kann der Bloonix-Agent auf einem externen System installiert werden, um von dort aus die Serverdienste via HTTP-, SMTP-, IMAP-, oder auch DNS-Check zu überwachen.
+
+p. Damit der Bloonix-Agent nun weiß, welche Services dieser überwachen soll, wird die Host-ID und das Passwort des Hosts, welche im Webinterface zu finden sind, in der Konfigurationsdatei des Bloonix-Agenten eingetragen. Auf diese Weise kann der Bloonix-Agent die für den Host konfigurierten Service-Checks beim Bloonix-Server abfragen.
+
+h2. Ablauf der Überwachung
+
+p. Was der Bloonix-Agent nun macht ist folgendes:
+
+# Der Bloonix-Agent verbindet sich mit dem Bloonix-Server und übersendet die Host-ID und das Passwort.
+# Der Bloonix-Server übersendet dem Bloonix-Agenten die Services, die für die Host-ID eingerichtet sind.
+# Der Bloonix-Agent überprüft die Services und übersendet den Status und die Statistiken der Services an den Bloonix-Server.
+# Der Bloonix-Server validiert die Daten, speichert diese in der Datenbank und informiert gegebenfalls einen Administrator per E-Mail oder SMS.
+
+!{margin: 40px 0;}/public/img/bloonix-howto-agent-server.png!
+
+h2. Überwachung von Netzwerkkomponenten oder externen Services
+
+p. Der Bloonix-Agent kann auf einem zentralen Server in Ihrer lokalen Infrastruktur installiert werden, um von dort aus alle Netzwerksysteme via SNMP zu überwachen, wie zum Beispiel Router, Switches oder Drucker. Der Bloonix-Agent kann aber auch auf einem externen Server installiert werden, um von dort aus die Internetservices zu überwachen.
+
+!{margin: 40px 0;}/public/img/bloonix-howto-agent-server-remote.png!
+
+h2. Detailierte Beschreibung
+
+p. Wenn Sie eine detaillierte Beschreibung lesen möchten, wie die Services von Hosts überwacht werden, so finden Sie diese hier:
+
+p. "Wie überwacht Bloonix Hosts und Services":/de/docs/faq/how-does-bloonix-checks-your-hosts-and-services.html
+
