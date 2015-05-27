@@ -1,7 +1,7 @@
 [
     { "Über Bloonix": "about.textile" },
     { "Lizenzen": "license.textile" },
-    { "Wie funktioniert Bloonix": "how-does-it-works.textile" },
+    { "Wie funktioniert Bloonix": "how-does-bloonix-work.textile" },
     { "Plugins": "plugins.textile" },
     { "Systemanforderungen": "requirements.textile" }
 ]
