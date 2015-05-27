@@ -12,6 +12,8 @@ p. Über das Webinterface von Bloonix werden Hosts und Services sowie Kontakte u
 
 !{width: 100%; margin: 20px 0;}/public/img/bloonix-web-components.png!
 
+<br/><br/>
+
 h1. Die Komponenten im Detail
 
 h2. Bloonix-Server
@@ -53,6 +55,8 @@ h2. Nginx
 p. Der Webserver Nginx wird als Reverse-Proxy eingesetzt, da die Bloonix-WebGUI als externe FastCGI-Applikation läuft. Die Requests werden per ProxyPass an die WebGUI weitergeleitet.
 
 p. "Zur Webseite von Nginx":http://nginx.com/
+
+<br/><br/>
 
 h1. Ablauf der Überwachung von Hosts und Services
 

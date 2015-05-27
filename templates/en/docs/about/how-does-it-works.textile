@@ -12,6 +12,8 @@ p. Over the web interface of Bloonix hosts and service as well as contacts and g
 
 !{width: 100%; margin: 20px 0;}/public/img/bloonix-web-components.png!
 
+<br/><br/>
+
 h1. The components in detail
 
 h2. Bloonix-Server
@@ -31,10 +33,6 @@ h2. Bloonix-WebGUI
 p. The *Bloonix-WebGUI* is the user interface and runs on the client side as a JavaScript application in the browser. On the server side the webgui runs as a REST-API behind a reverse proxy (Nginx). The data format of the REST-API is JSON.
 
 p. For the WebGUI a modern HTML5 browser is required. We recommend the use of Chrome, Safari, Firefox or also Opera. The Internet Explorer in version 11 should also work, nevertheless, this browser is supported in no version.
-
-<br/><br/>
-
-h1. Storage and Webserver
 
 h2. PostgreSQL / MySQL
 
@@ -57,6 +55,8 @@ h2. Nginx
 p. Nginx is used as a reverse proxy and as a HTTPS offloader, because the Bloonix-Server and the Bloonix-WebGUI runs as a external FastCGI application. Nginx is avery fast and the configuration is very easy.
 
 p. "To the website of Nginx":http://nginx.com/
+
+<br/><br/>
 
 h1. Workflow of the monitoring of hosts and services
 
