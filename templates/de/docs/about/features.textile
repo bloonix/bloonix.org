@@ -1,112 +1,112 @@
 h1. Feature Liste
 
-* Infrastructure Monitoring
-** Servers
-** Network Elements
-** Applications
+* Infrastruktur Monitoring
+** Server
+** Netzwerk Elemente
+** Applikationen
 
-* Location Monitoring
-** Monitoring Services from different Agents
-** Monitoring Services from different Satellites
-** Splitting Service Monitoring to logical areas: localhost, intranet, internet (remote)
-** External Monitoring with extended debugging (MTR, HTTP-Header, Verbose-Output)
-** Distribution of service checks
+* Standort Monitoring
+** Überwachung von Services von unterschiedlichen Agenten aus
+** Überwachung von Services von unterschiedlichen Satelliten aus
+** Aufteilung von Services in logische Bereiche: localhost, intranet, internet (remote)
+** Externe Überwachung mit erweiterten Analysedaten (MTR, HTTP-Header, Verbose-Output)
+** Verteilung von Service-Checks
 
 * Plugins
-** +60 own Plugins: github.com/bloonix/bloonix-plugin-config
-** Nagios plugin compability
+** +60 eigene Plugins: github.com/bloonix/bloonix-plugin-config
+** Nagios Plugins können verwendet werden
 
-* Dependencies
-** Host to Host
-** Host to Service
-** Service to Service
-** Service to Host
-** Inheritation of dependencies
-** Time based dependencies
-** Dependency visualization (Hypertree, Radial graph)
-** Multiple Host-Alive-Check selection
+* Abhängigkeiten
+** von Host zu Host
+** von Host zu Service
+** von Service zu Service
+** von Service zu Host
+** Vererbung von Abhängigkeiten
+** Zeit-basierte Abhängigkeiten
+** Visualisierung von Abhängigkeiten (Hypertree, Radial graph)
+** Multiple Host-Alive-Check können ausgewählt werden
 
 * Alerting
 ** Email
 ** SMS
-** Timeperiods
-** Escalations
+** Zeitperioden
+** Eskalationen
 ** Flap detection
-** Volatile status notification
-** Soft notification intervals
-** Hard notification intervals
-** Notification after N attempts
-** Scheduled downtimes
-** Periodic scheduled downtimes
-** Service based status trigger
+** Benachrichtigung bei flüchtigen Status
+** Weiche Bencharchrichtigungsintervalle
+** Harte Bencharchrichtigungsintervalle
+** Benachrichtigung nach N fehlgeschlagenen Checks
+** Geplante Wartungsarbeiten
+** Periodische geplante Wartungsarbeiten
+** Service baiserte Status Trigger
 
 * Events
-** Browsable events by
-*** status duration
-*** last status
-*** status
-*** time
+** Durchsuchbare Events nach
+*** Dauer eines Status
+*** letzter Status
+*** Status
+*** Zeit
 
 * Reports
-** Availability Reports
-** Detailed Reports by
-*** time range
-*** number of total events
-*** number of events by duration
-*** number of events by type (security, timeout, volatile, ...)
-*** service status duration
+** Verfügbarkeitsberichte
+** Detailiete Verfügbarkeitsberichte nach
+*** Zeit
+*** Anzahl von Ereignissen
+*** Anzahl von Ergeignissen nach Dauer
+*** Anzahl von Ereignissen nach Type (Sicherheit, Zeitüberschreitung, flüchgig, ...)
+*** Service Statusdauer
 
-* Full Web based configuration
-** Host templates, Hosts
-** Services, Clone Services, Variables
-** Web forms for Plugin configuration
-** Contacts, Contact Groups, Time Periods, Escalations
-** Users and Groups
-** Chart views
-** Customizable Charts
-** Multiple actions for Hosts and Services
-** Categorization of Hosts
+* Volle Konfiguration über eine WebGUI
+** Host-Templates, Hosts
+** Services, Services klonen, Variablen
+** Webformulare um Plugins zu konfigurieren
+** Kontakte, Kontaktgruppen, Zeitperioden, Eskalationen
+** Benutzer und Gruppen
+** Chartansichten
+** Konfigurierbare Charts
+** Multiple Aktionen für Hosts and Services
+** Kategorisierung von Hosts
 
 * Performance Charts
-** Interactive Charts
-*** Zooming
-*** Detailed data view by mouse hover
-*** Hide/Show data series
-** Customizable Charts
-** Customizable Chart Dashboards
+** Interaktive Charts
+*** Zoomen
+*** Detailierte Daten bei Mouse-Over
+*** Verstecken/Anzeigen von Daten
+** Konfigurierbare Charts
+** Konfigurierbare Chart Dashboards
 
-* Virtual splitting of customers
-** Each customer in a own container within the WebGUI
-** Limits configuration per customer and user
+* Virtuelle Aufsplittung von Kunden
+** Jede Kunde in einem eigenen Kontainer innerhalb der WebGUI
+** Konfigurierbare Limits pro Kunde und Benutzer
 
 * Dashboards
-** Customizable Dashboards over Dashlets
+** Konfigurierbare Dashboards über Dashlets
 ** Multiple Dashboards
-** Self created Charts on the Dashboard
+** Selbsterstellte Charts auf dem Dashboard
 ** Heatmap
-** Public Dashboards
+** Öffentliche Dashboards
 
 * JSON-API
-** Javascript + AJAX driven web application
+** Javascript + AJAX gesteuerte Webapplikation
 
-* Database backend, NoSQL
-** MySQL support
-** PostgreSQL support
-** Elasticsearch for time based data
+* Datenbank als Backend, NoSQL
+** Support für MySQL
+** Support für PostgreSQL
+** Elasticsearch für zeitbasierte Daten
 
-* Scalability
-** Service Check distributing to multiple servers
-** Monitoring 100.000+ Hosts and Services per Instance
-** Data distribution with Elasticsearch
+* Skalierbarkeit
+** Verteilung von Service Check zu multiplen Servern
+** Überwachung von 100.000+ Hosts und Services pro Instanz
+** Datenverteilung mit Elasticsearch
 
-* High availability
-** Server and Agents running on multiple servers
-** Database cluster (MySQL Replication, PostgreSQL Replication)
-** Elasticsearch cluster
+* Hochverfügbarkeit
+** Server und Agenten können auf multiplen Server laufen
+** Datenbank Cluster (MySQL Replikation, PostgreSQL Replikation)
+** Elasticsearch Cluster
 
-* Developed in Perl
-* Easily expandable
+* Entwickelt in Perl
+* Einfach erweiterbar
 * Open-Source-Software
-* Licensed under GPLv3
-* Bases on Open-Source-Components
-* Business Support Available
+* Lizensiert unter der GPLv3
+* Basiert auf Open-Source Komponenten
+* Business Support verfügbar

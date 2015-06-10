@@ -14,7 +14,7 @@ h1. Feature list
 
 * Plugins
 ** +60 own Plugins: github.com/bloonix/bloonix-plugin-config
-** Nagios plugin compability
+** Nagios plugin can be used
 
 * Dependencies
 ** Host to Host
