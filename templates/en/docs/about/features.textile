@@ -1,4 +1,4 @@
-h1. Feature Liste
+h1. Feature list
 
 * Infrastructure Monitoring
 ** Servers
