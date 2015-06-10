@@ -1,0 +1,112 @@
+h1. Feature Liste
+
+* Infrastructure Monitoring
+** Servers
+** Network Elements
+** Applications
+
+* Location Monitoring
+** Monitoring Services from different Agents
+** Monitoring Services from different Satellites
+** Splitting Service Monitoring to logical areas: localhost, intranet, internet (remote)
+** External Monitoring with extended debugging (MTR, HTTP-Header, Verbose-Output)
+** Distribution of service checks
+
+* Plugins
+** +60 own Plugins: github.com/bloonix/bloonix-plugin-config
+** Nagios plugin compability
+
+* Dependencies
+** Host to Host
+** Host to Service
+** Service to Service
+** Service to Host
+** Inheritation of dependencies
+** Time based dependencies
+** Dependency visualization (Hypertree, Radial graph)
+** Multiple Host-Alive-Check selection
+
+* Alerting
+** Email
+** SMS
+** Timeperiods
+** Escalations
+** Flap detection
+** Volatile status notification
+** Soft notification intervals
+** Hard notification intervals
+** Notification after N attempts
+** Scheduled downtimes
+** Periodic scheduled downtimes
+** Service based status trigger
+
+* Events
+** Browsable events by
+*** status duration
+*** last status
+*** status
+*** time
+
+* Reports
+** Availability Reports
+** Detailed Reports by
+*** time range
+*** number of total events
+*** number of events by duration
+*** number of events by type (security, timeout, volatile, ...)
+*** service status duration
+
+* Full Web based configuration
+** Host templates, Hosts
+** Services, Clone Services, Variables
+** Web forms for Plugin configuration
+** Contacts, Contact Groups, Time Periods, Escalations
+** Users and Groups
+** Chart views
+** Customizable Charts
+** Multiple actions for Hosts and Services
+** Categorization of Hosts
+
+* Performance Charts
+** Interactive Charts
+*** Zooming
+*** Detailed data view by mouse hover
+*** Hide/Show data series
+** Customizable Charts
+** Customizable Chart Dashboards
+
+* Virtual splitting of customers
+** Each customer in a own container within the WebGUI
+** Limits configuration per customer and user
+
+* Dashboards
+** Customizable Dashboards over Dashlets
+** Multiple Dashboards
+** Self created Charts on the Dashboard
+** Heatmap
+** Public Dashboards
+
+* JSON-API
+** Javascript + AJAX driven web application
+
+* Database backend, NoSQL
+** MySQL support
+** PostgreSQL support
+** Elasticsearch for time based data
+
+* Scalability
+** Service Check distributing to multiple servers
+** Monitoring 100.000+ Hosts and Services per Instance
+** Data distribution with Elasticsearch
+
+* High availability
+** Server and Agents running on multiple servers
+** Database cluster (MySQL Replication, PostgreSQL Replication)
+** Elasticsearch cluster
+
+* Developed in Perl
+* Easily expandable
+* Open-Source-Software
+* Licensed under GPLv3
+* Bases on Open-Source-Components
+* Business Support Available
