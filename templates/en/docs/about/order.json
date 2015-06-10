@@ -1,5 +1,6 @@
 [
     { "About Bloonix": "about.textile" },
     { "License": "license.textile" },
-    { "How does Bloonix work": "how-does-bloonix-work.textile" }
+    { "How does Bloonix work": "how-does-bloonix-work.textile" },
+    { "Feature Liste": "features.textile" }
 ]
