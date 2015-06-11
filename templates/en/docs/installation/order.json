@@ -1,4 +1,15 @@
 [
+    { "Important information in advance": "common.textile" },
+    { "Repositories": "repositories.textile" },
+    { "Elasticsearch": "elasticsearch.textile" },
+    { "PostgreSQL": "postgresql.textile" },
+    { "MySQL/MariaDB": "mysql.textile" },
+    { "Nginx": "nginx.textile" },
+    { "Bloonix-WebGUI": "bloonix-webgui.textile" },
+    { "Bloonix-Server": "bloonix-server.textile" },
+    { "Bloonix-Plugins": "bloonix-plugins.textile" },
+    { "Bloonix-Agent": "bloonix-agent.textile" },
+    { "Manual installation": "sources.textile" },
     { "Quick Guide for CentOS 7 and PostgreSQL": "quick-installation-guide-centos-7-postgres.textile" },
     { "Quick Guide for CentOS 7 and MariaDB": "quick-installation-guide-centos-7-mariadb.textile" }
 ]

@@ -49,6 +49,8 @@ p. Die Konfigurationsdatei des Service-Checkers lautet:
 
 bc. /etc/bloonix/srvchk/main.conf
 
+p. Bitte konfigurieren Sie die Sektion __server__.
+
 p. Der Service-Checker muss nebst dem Bloonix-Server gestartet werden:
 
 bc. /etc/init.d/bloonix-srvchk start

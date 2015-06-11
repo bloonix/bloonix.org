@@ -1,0 +1,25 @@
+h1. Elasticsearch installation
+
+p. Please install OpenJDK before you install Elasticsearch.
+
+bc. # Debian / Ubuntu
+apt-get install openjdk-7-jre
+
+bc. # Red Hat / CentOS / Fedora
+yum install java-1.7.0-openjdk
+
+bc. # SuSE / SLES
+zypper install java-1.7.0-openjdk
+
+p. Elasticsearch can be downloaded on the following website:
+
+p. "http://www.elasticsearch.org/overview/elkdownloads/":http://www.elasticsearch.org/overview/elkdownloads/
+
+p. Start Elasticsearch:
+
+bc. /etc/init.d/elasticsearch start
+# or
+systemctl start elasticsearch.service
+
+p. Don't forget to initialize the Bloonix template for Elasticsearch. You can find more information here: "Bloonix-WebGUI":/en/docs/installation/bloonix-webgui.html
+

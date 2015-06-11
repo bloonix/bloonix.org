@@ -1,0 +1,69 @@
+h1. Bloonix-Agent installation
+
+bc. # Debian / Ubuntu
+apt-get install bloonix-agent
+
+bc. # Red Hat / CentOS / Fedora
+yum install bloonix-agent
+
+bc. # SuSE / SLES
+zypper install bloonix-agent
+
+h2. Bloonix-Agent configuration
+
+p. The configuration file of the agent:
+
+bc. /etc/bloonix/agent/main.conf
+
+p. To monitor the local system, you have to configure two sections.
+
+h2. Section: server
+
+p. Example configuration:
+
+bc.. server {
+    host p1.bloonix.de, s1.bloonix.de
+    port 5460
+    mode failover
+    ssl_verify_mode peer
+
+    # Debian / SuSE / SLES
+    ssl_ca_path /etc/ssl/certs
+
+    # Red Hat / CentOS / Fedora
+    ssl_ca_file /etc/pki/tls/certs/ca-bundle.crt
+}
+
+p. _Please replace_ the hostnames in the section _server__ with the hostname or ip address of the host where the Bloonix-Server were installed.
+
+p. *Notice:* If the Bloonix-Server uses a self signed certificate then you have to set the SSL parameter __ssl_verify_peer__ to __none__, otherwise the Bloonix-Agent throws an error because the agent is unable to validate the certificate.
+
+h3. Section: host
+
+p. Example configuration:
+
+bc. host {
+    host_id 12345
+    password secret
+}
+
+p. In the section __host__ it is configured the Host which was furnished in the WebGUI. Put down the Host-ID and the password. Then you can restart the agent, so that this is begun with the new configuration.
+
+bc. /etc/init.d/bloonix-agent restart
+# or
+systemctl restart bloonix-agent.service
+
+p. If this agent is a central agent to monitor multiple hosts, as for example Router and Switches by SNMP, you can also put down these hosts.
+
+bc. host {
+    host_id 12345
+    password secret
+}
+host {
+    host_id 12346
+    password secret
+}
+host {
+    host_id 12347
+    password secret
+}

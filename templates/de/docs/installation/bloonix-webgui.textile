@@ -60,6 +60,14 @@ bc.. server {
 
 p. Der Paramter __server_name__ ist hier als Catch-All eingerichtet. Falls Sie vorhaben, den Nginx auf dem Server für mehrere Domains zu verwenden, dann sollten Sie den Servernamen anpassen, anstonsten können Sie den Namen so stehen lassen. Das SSL-Zertifikat wurde bereits mit der Installation generiert. Bitte beachten Sie, dass Sie ein gültiges Zertifikat verwenden sollten. Zum Testen sollte jedoch das selbst-generierte Zertifikat ausreichen.
 
+h2. Nginx restarten
+
+p. Nach der Konfiguration der WebGUI können wir nun den Nginx restarten:
+
+bc. /etc/init.d/nginx restart
+# oder
+systemctl restart nginx.service
+
 h2. Datenbankschema und Elasticsearch-Template
 
 p. Um das Schema für die Datenbank und das Template für Elasticsearch anzulegen, gibt es im Verzeichnis
@@ -99,12 +107,4 @@ Passwort: admin
 p. Falls Sie mal das Passwort vergessen haben, so können Sie das Skript __/srv/bloonix/webgui/bin/generate-password__ verwenden, um ein neues Passwort zu generieren. Das Skript gibt zwei Update-Statements aus, die auf der Datenbank von Bloonix ausgeführt werden müssen.
 
 p. _*Bitte beachten Sie*_, dass der Benutzer __admin__ nur verwendet werden sollte, um im Bereich __ADMINISTRATION__ zu agieren. Bitte erstellen Sie als aller erstes eine eigene Company, eine eigene Gruppe und einen eigenen Benutzer. Der Benutzer und die Gruppe müssen der neuen Company zugeordnet werden und der Benutzer sollte Operator-Rechte haben. Für weitere Informationen lesen Sie bitte hier weiter: "Companies und wie diese funktionieren":/de/docs/webgui/how-does-comanies-work.html
-
-h2. Nginx restarten
-
-p. Nach der Konfiguration der WebGUI können wir nun den Nginx restarten:
-
-bc. /etc/init.d/nginx restart
-# oder
-systemctl restart nginx.service
 

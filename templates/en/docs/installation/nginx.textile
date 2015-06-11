@@ -9,12 +9,12 @@ yum install nginx
 bc.. # SuSE / SLES
 zypper install nginx
 
-p. Editieren Sie die Nginx-Konfiguration
+p. Edit the configuration of Nginx:
 
 bc. /etc/nginx/nginx.conf
 
-p. und fügen folgende Parameter in die __http__ Sektion, falls diese noch nicht existieren. Beispiel
+p. and configure the following parameter in the __http__ section:
 
 bc. server_names_hash_bucket_size 64;
 
-p. Die Einrichtung von Nginx für die Bloonix-WebGUI erfolgt später.
+p. The configuration of Nginx for the Bloonix-WebGUI happens later.

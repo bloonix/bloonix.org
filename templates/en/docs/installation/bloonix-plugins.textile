@@ -1,0 +1,55 @@
+h1. Plugin installation
+
+p. The installation of the plugins is very simple. If you want to know which plugins are available just execute the following command:
+
+bc. # Debian / Ubuntu
+apt-cache search bloonix-plugins
+
+bc. # Red Hat / CentOS / Fedora
+yum search bloonix-plugins
+
+bc. # SuSE / SLES
+zypper search bloonix-plugins
+
+p. If you want to monitor a MySQL database so you have to install the plugin __bloonix-plugins-mysql__.
+
+p. _Please note_ that you have to install the plugin on the server from where do want to monitor the service. Generally this is the server where the Bloonix-Agent is installed.
+
+h1. Available plugins
+
+| bloonix-plugins-apache | Plugins to monitor the Apache webserver. |
+| bloonix-plugins-basic | Basic plugins to monitor external services over HTTP, TCP, UDP, SMTP, IMAP, POP3,<br/>DNS, FTP, if statistic of routers and switches. Here are also SNMP checks available. |
+| bloonix-plugins-drbd | Plugins to monitor DRBD devices. |
+| bloonix-plugins-lighttpd | Plugins to monitor the Lighttpd webserver. |
+| bloonix-plugins-linux | Linux plugins to monitor CPU, memory, disk space and many more. |
+| bloonix-plugins-memcached | Plugins to monitor the Memcache daemon. |
+| bloonix-plugins-mysql | Plugins to monitor MySQL 5 databases and replications. |
+| bloonix-plugins-nginx | Plugins to monitor the Nginx webserver. |
+| bloonix-plugins-pgsql | Plugins to monitor PostgreSQL. |
+| bloonix-plugins-postfix | Plugins to monitor Postfix queues. |
+| bloonix-plugins-redis | Plugins to monitor Redis. |
+| bloonix-plugins-sensors | Plugins to monitor the temperatur with lm-sensors. |
+| bloonix-plugins-varnish | Plugins to monitor the Varnish webserver. |
+| bloonix-plugins-wtrm | Plugins to monitor web pages over web transactions. |
+
+h1. Import plugins
+
+p. Damit über die WebGUI die Services zur Überwachung eingerichtet werden können, ist es notwendig, die verfügbaren Bloonix-Plugins in die Datenbank zu importieren. Hierzu muss zunächst das Paket __bloonix-plugin-config__ auf dem Server installiert werden, auf dem Sie die Bloonix-WebGUI installiert und konfiguriert haben:
+
+p. It's necessary to import the plugin meta data into database of Bloonix, so that the services can be configured of the WebGUI. To do that you have to install the package __ bloonix plugin config __ on the server where the Bloonix-WebGUI installed. If the WebGUI is installed on multiple servers then you need to install the package on only one server.
+
+bc. # Debian
+apt-get install bloonix-plugin-config
+
+bc. # Red Hat / CentOS / Fedora
+yum install bloonix-plugin-config
+
+bc. # SuSE / SLES
+zypper install bloonix-plugin-config
+
+p. The command to import the plugins into the database is:
+
+bc. bloonix-load-plugins --load-all
+
+p. _Please note_ that the command is automatically called after the installation and after updates.
+

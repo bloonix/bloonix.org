@@ -1,0 +1,98 @@
+h1. PostgreSQL installieren
+
+p. _Please install PostgreSQL in version 9!_
+
+p. _Attention_: the version number can vary in the examples!</p>
+
+h2. Debian
+
+bc. apt-get install postgresql
+
+p. Edit the PostgreSQL configuration:
+
+bc. /etc/postgresql/9.1/main/postgresql.conf
+
+p. and uncomment the following line:
+
+bc.. listen_addresses = 'localhost'
+
+p. Start PostgreSQL
+
+bc. /etc/init.d/postgresql restart
+# or
+systemctl restart postgresql.service
+
+h2. Red Hat / CentOS / Fedora
+
+bc. yum install postgresql-server
+
+p. At first the PostgreSQL database must be initialised:
+
+bc. service postgresql initdb
+
+p. Edit the PostgreSQL configuration:
+
+bc. /var/lib/pgsql/data/postgresql.conf
+
+p. and uncomment the following line:
+
+bc. listen_addresses = 'localhost'
+
+p. Edit a further configuraion file:
+
+bc. /var/lib/pgsql/data/pg_hba.conf
+
+p. and replace the following lines:
+
+bc. host    all             all             127.0.0.1/32            ident
+host    all             all             ::1/128                 ident
+
+p. with (or add the lines if the lines does not exist):
+
+bc. host    all             all             127.0.0.1/32            md5
+host    all             all             ::1/128                 md5
+
+p. Restart PostgreSQL
+
+bc. /etc/init.d/postgresql restart
+# or
+systemctl restart postgresql.service
+
+h2. SuSE / SLES
+
+bc. zypper install postgresql-server
+
+p. At first the PostgreSQL database must be initialised:
+
+bc. systemctl start postgresql.service
+
+p. Edit the PostgreSQL configuration:
+
+bc. /var/lib/pgsql/data/postgresql.conf
+
+p. and uncomment the following line:
+
+bc. listen_addresses = 'localhost'
+
+p. Edit a further configuration file:
+
+bc. /var/lib/pgsql/data/pg_hba.conf
+
+p. and replace the following lines:
+
+bc. host    all             all             127.0.0.1/32            ident
+host    all             all             ::1/128                 ident
+
+p. with (or add the lines if the lines does not exist):
+
+bc. host    all             all             127.0.0.1/32            md5
+host    all             all             ::1/128                 md5
+
+p. Restart PostgreSQL
+
+bc. systemctl restart postgresql.service
+
+h2. Initilising of the Bloonix schema
+
+p. You can find more information here: "Bloonix-WebGUI":/de/docs/installation/bloonix-webgui.html
+

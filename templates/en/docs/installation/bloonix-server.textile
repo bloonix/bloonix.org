@@ -1,0 +1,59 @@
+h1. Bloonix-Server
+
+h2. Installation
+
+p. The Installation of the Bloonix-Server is very simple.
+
+bc. # Debian / Ubuntu
+apt-get install bloonix-server
+
+bc. # Red Hat / CentOS / Fedora
+yum install bloonix-server
+
+bc. # SuSE / SLES
+zypper install bloonix-server
+
+p. The configuration file is
+
+bc. /etc/bloonix/server/main.conf
+
+p. and is well documented.
+
+p. To start/stop/restart the server just call
+
+bc. /etc/init.d/bloonix-server start
+# oder
+systemctl start bloonix-server.service
+
+p. *Attention:* before you start the Bloonix-Server it's important that the database schema and the Elasticsearch template were created. The installation of both is done in the installation guide of the Bloonix-WebGUI. The parameter to connect to the database should already be configured in _/etc/bloonix/database/main.conf_.
+
+h1. SSL Certificates
+
+p. The communication between the server and the agent can be secured via SSL. After the initial installation of the Bloonix-Server a SSL keypair is created and stored under __/etc/bloonix/server/pki__.
+
+p. We recommend to use a valid SSL certificate over a self signed certificate, otherwise you have to turn of the ssl certificate validation for each Bloonix agent.
+
+h1. Start the Bloonix server
+
+bc. /etc/init.d/bloonix-server start
+# oder
+systemctl start bloonix-server.service
+
+h1. The Bloonix-Service-Checker
+
+p. Mit der Installation des Bloonix-Servers wird auch ein Dienst namens Service-Checker installiert. Dieser Dienst ist dafür zuständig, Hosts und Services zu prüfen, dessen Überwachung auf einen Timeout gelaufen ist. Das bedeutet, dass wenn zum Beispiel die CPU-Auslastung eines Servers seit mehreren Minuten nicht mehr überprüft wurde, weil ein Agent ausgefallen ist oder sogar der Server selbst, auf dem ein Agent läuft, so wird der Service-Checker nach einem Timeout einen kritischen Status für den Service liefern. Es ist somit sehr wichtig, dass der Dienst ebenfall gestartet wird.
+
+p. With the installation of the Bloonix server a service called Service-Checker is also installed. This service is responsible to check hosts and services that runs on a timeout. This means that if, for example, the CPU utilisation of a server was not checked since several minutes any more because an agent has fallen out or even the server himself on which an agent runs, the Bloonix-Service-Checker will act as a pseudo agent and deliver a critical status for the service. It is very important that the Bloonix-Service-Checker is also configured and started.
+
+p. The configuration file is:
+
+bc. /etc/bloonix/srvchk/main.conf
+
+p. Please configure the section __server__.
+
+p. Start the service checker with
+
+bc. /etc/init.d/bloonix-srvchk start
+# oder
+systemctl start bloonix-srvchk.service
+

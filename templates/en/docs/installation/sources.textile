@@ -1,0 +1,261 @@
+h1. Installation from the sources
+
+p. If you use a Linux system for which we offer no packages then you have the possibility to install all packages manually. You can find all dependencies here in this document.
+
+p. Before you install any package you should create a group and user called __bloonix__ on all systems where you want to use any package. On a Linux system you can do that with __groupadd__ and __useradd__:
+
+bc. getent group bloonix >/dev/null || /usr/sbin/groupadd bloonix
+getent passwd bloonix >/dev/null || /usr/sbin/useradd \
+    bloonix -g bloonix -s /sbin/nologin -d /var/run/bloonix -r
+
+p. The installation is basically identical for all packages. You can download the sources here:
+
+p. "https://download.bloonix.de/sources/":https://download.bloonix.de/sources/
+
+p. Example to install the Bloonix-Agent:
+
+bc. wget http://download.bloonix.de/sources/bloonix-agent-0.1.tar.gz
+tar –xzf bloonix-agent-0.1.tar.gz
+cd bloonix-agent-0.1
+perl Configure.PL
+make
+make install
+
+p. Example to install the Bloonix-Core:
+
+bc. wget http://download.bloonix.de/sources/bloonix-core-0.1.tar.gz
+tar –xzf bloonix-core-0.1.tar.gz
+cd bloonix-core-0.1
+perl Build.PL
+perl Build
+perl Build install
+
+h2. All dependencies at a glance:
+
+bc. bloonix-agent
+bloonix-core
+bloonix-dbi
+bloonix-fcgi
+bloonix-heaven
+ca-certificates
+curl
+facter
+lm_sensors
+perl(Authen::SASL)
+perl(Data::Dumper)
+perl(DBD::mysql)
+perl(DBD::Pg)
+perl(DBI)
+perl(Digest::SHA)
+perl(FCGI)
+perl(Getopt::Long)
+perl(HTTP::Tiny) >= 0.022
+perl(IO::Select)
+perl(IO::Socket::INET6)
+perl(IO::Socket::SSL) >= 1.76
+perl(IO::Uncompress::Gunzip)
+perl(IPC::Open3)
+perl(JSON)
+perl-JSON-XS
+perl(Log::Handler) >= 0.84
+perl(Math::BigFloat)
+perl(Math::BigInt)
+perl(MIME::Base64)
+perl(MIME::Lite)
+perl(Net::OpenSSH)
+perl(Net::SNMP)
+perl(Params::Validate)
+perl(Socket6)
+perl(Sys::Hostname)
+perl(Template)
+perl(Term::ReadKey)
+perl(Time::HiRes)
+perl-Time-modules
+perl(Time::ParseDate)
+perl(URI::Escape)
+
+h2. Dependencies of each package
+
+h3. Dependencies of bloonix-agent
+
+bc. facter
+bloonix-core
+perl(Getopt::Long)
+perl(JSON)
+perl(Log::Handler)
+perl(Params::Validate)
+perl(Term::ReadKey)
+perl(Time::HiRes)
+
+h3. Dependencies of bloonix-core
+
+bc. ca-certificates
+perl(Data::Dumper)
+perl(HTTP::Tiny)
+perl(IO::Select)
+perl(IO::Socket::INET6)
+perl(IO::Socket::SSL) >= 1.76
+perl(IO::Uncompress::Gunzip)
+perl(IPC::Open3)
+perl(JSON)
+perl(Log::Handler) >= 0.84
+perl(Net::SNMP)
+perl(Params::Validate)
+perl(Socket6)
+perl(Term::ReadKey)
+perl(Time::HiRes)
+perl(Time::ParseDate)
+
+h3. Dependencies of bloonix-dbi
+
+bc. bloonix-core
+perl(DBI)
+perl(DBD::Pg)
+perl(Log::Handler)
+perl(Params::Validate)
+
+h3. Dependencies of bloonix-fcgi
+
+bc. bloonix-core
+perl-JSON-XS
+perl(FCGI)
+perl(JSON)
+perl(Log::Handler)
+perl(Params::Validate)
+perl(MIME::Base64)
+perl(Time::HiRes)
+
+h3. Dependencies of bloonix-heaven
+
+bc. bloonix-core
+bloonix-fcgi
+perl-JSON-XS
+perl(JSON)
+perl(Log::Handler)
+perl(Getopt::Long)
+
+h3. Dependencies of bloonix-plugins-apache
+
+bc. bloonix-core
+curl
+
+h3. Dependencies of bloonix-plugins-base
+
+bc. bloonix-core
+curl
+perl(Getopt::Long)
+perl(Time::HiRes)
+perl(Authen::SASL)
+perl(MIME::Base64)
+
+h3. Dependencies of bloonix-plugins-drbd
+
+bc. bloonix-core
+
+h3. Dependencies of bloonix-plugins-lighttpd
+
+bc. bloonix-core
+curl
+
+h3. Dependencies of bloonix-plugins-linux
+
+bc. bloonix-core
+
+h3. Dependencies of bloonix-plugins-memcached
+
+bc. bloonix-core
+
+h3. Dependencies of bloonix-plugins-mysql
+
+bc. bloonix-core
+perl(DBI)
+perl(DBD::mysql)
+
+h3. Dependencies of bloonix-plugins-nginx
+
+bc. bloonix-core
+curl
+
+h3. Dependencies of bloonix-plugins-pgsql
+
+bc. bloonix-core
+perl(DBI)
+perl(DBD::Pg)
+
+h3. Dependencies of bloonix-plugins-postfix
+
+bc. bloonix-core
+curl
+
+h3. Dependencies of bloonix-plugins-redis
+
+bc. bloonix-core
+
+h3. Dependencies of bloonix-plugins-sensors
+
+bc. bloonix-core
+lm_sensors
+
+h3. Dependencies of bloonix-plugins-varnish
+
+bc. bloonix-core
+
+h3. Dependencies of bloonix-plugins-windows
+
+bc. bloonix-core
+
+h3. Dependencies of bloonix-plugins-wtrm
+
+bc. bloonix-core
+PhantomJS
+
+h3. Dependencies of bloonix-server
+
+bc. bloonix-agent
+bloonix-core
+bloonix-dbi
+bloonix-fcgi
+perl-JSON-XS
+perl(DBI)
+perl(DBD::Pg)
+perl(Getopt::Long)
+perl(JSON)
+perl(Log::Handler)
+perl(Math::BigFloat)
+perl(Math::BigInt)
+perl(MIME::Lite)
+perl(Params::Validate)
+perl(Sys::Hostname)
+perl(Time::HiRes)
+perl(Time::ParseDate)
+perl(URI::Escape)
+
+h3. Dependencies of bloonix-webgui-core
+
+bc. bloonix-agent
+bloonix-core
+bloonix-dbi
+bloonix-fcgi
+bloonix-heaven
+perl-JSON-XS
+perl-Time-modules
+perl(Digest::SHA)
+perl(JSON)
+perl(MIME::Base64)
+perl(Log::Handler)
+perl(Params::Validate)
+perl(Time::HiRes)
+
+h3. Dependencies of bloonix-wtrm
+
+bc. bloonix-core
+bloonix-fcgi
+bloonix-plugins-wtrm
+perl-JSON-XS
+perl(Getopt::Long)
+perl(JSON)
+perl(Log::Handler)
+perl(Params::Validate)
+perl(Time::HiRes)
+PhantomJS
+

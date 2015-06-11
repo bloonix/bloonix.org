@@ -1,0 +1,106 @@
+h1. Installation of the WebGUI
+
+p. The Bloonix-WebGUI is splitted into two packages. The first package called __bloonix-webgui-core__ contains dependencies and the configuration files for the WebGUI. The second package called __bloonix-webgui__ contains the web application and will be installed to __/srv/bloonix/webgui__.
+
+p. Install the webgui:
+
+bc. # Debian / Ubuntu
+apt-get install bloonix-webgui
+
+bc. # Red Hat / CentOS / Fedora
+yum install bloonix-webgui
+
+bc. # SuSE / SLES
+zypper install bloonix-webgui
+
+h2. Nginx configuration
+
+p. The Bloonix-WebGUI runs as a external FastCGI application and needs Nginx as a reverse proxy. After the installation a configuration file is created for Nginx:
+
+bc. /etc/bloonix/webgui/nginx.conf
+
+p. All you need to do is to include the file into the Nginx configuration. Edit the configuration of Nginx:
+
+bc. /etc/nginx/nginx.conf
+
+p. and insert the following line _at the end of the http section_:
+
+bc. include /etc/bloonix/webgui/nginx.conf;
+
+p. The configuration file __/etc/bloonix/webgui/nginx.conf__ looks like as follows:
+
+bc.. server {
+    listen 443;
+    server_name _;
+
+    access_log /var/log/nginx/bloonix-webgui.access.log;
+    error_log /var/log/nginx/bloonxi-webgui.error.log;
+
+    location ~ /public {
+        root /srv/bloonix/webgui;
+    }
+
+    location /favicon.ico {
+        root /srv/bloonix/webgui/public/img;
+    }
+
+    location / {
+        expires off;
+        include /etc/nginx/fastcgi_params;
+        root /srv/bloonix/webgui/public;
+        fastcgi_pass 127.0.0.1:9000;
+    }
+
+    ssl on;
+    ssl_certificate /etc/bloonix/webgui/pki/server.cert;
+    ssl_certificate_key /etc/bloonix/webgui/pki/server.key;
+}
+
+p. The paramter __server_name__ is configured as catch-all. If you want to use multiple domains on the server then you should change the paramter. Please note that you should use a valid certificate, if possible.
+
+h2. Nginx restarten
+
+p. After the configuration of the WebGUI you can restart Nginx:
+
+bc. /etc/init.d/nginx restart
+# or
+systemctl restart nginx.service
+
+h2. Database schema and Elasticsearch template
+
+p. You can find some scripts to create the database schema and Elasticsearch template in the following directory:
+
+bc. /srv/bloonix/webgui/schema
+
+p. Execute the following command to create the database schema:
+
+bc. # PostgreSQL
+/srv/bloonix/webgui/schema/init-database --postgres
+# MariaDB/MySQL
+/srv/bloonix/webgui/schema/init-database --mysql
+
+p. The skript creates the database schema and the user __bloonix__ with a password. The password is automatically generated and configured into the configuration file __/etc/bloonix/database/main.conf__. This file is used by all components that needs a connection to the database.
+
+p. Execute the following command to create the Elasticsearch template:
+
+bc. /srv/bloonix/webgui/schema/init-elasticsearch localhost:9200
+
+h2. Start the WebGUI
+
+p. If all steps are done please start the WebGUI:
+
+bc. /etc/init.d/bloonix-webgui restart
+# or
+systemctl restart bloonix-webgui.service
+
+p. Now open a web browser and enter the hostname.
+
+p. *Notice:* The initial access to the WebGUI is:
+
+bc. Username: admin
+Password: admin
+
+p. If you have forgotten the password sometimes, so you can use the script __/srv/bloonix/webgui/bin/generate-password__ to generate a new password. The script returns two update statements, which have to been executed on the database.
+
+p. _*Please note*_ that the user __admin__ should only be used to act in the __ADMINISTRATION__ area of the webgui. The first step that you should do after the login is to create a own company, a own group and a own user. The user and the group should be assigned to the new company and the user should have operator rights.
+

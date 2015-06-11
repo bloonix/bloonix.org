@@ -1,23 +1,23 @@
 h1. Repositories
 
-h2. Repository für Debian und Ubuntu
+h2. Repository for Debian and Ubuntu
 
-h3. Unterstützte Versionen
+h3. Supported versions
 
-p. Es werden die Versionen Squeeze, Wheezy und Jessie unterstützt.
+p. Note that only Squeeze, Wheezy und Jessie will be supported.
 
-h3. Installation des Bloonix Repositories
+h3. Installation of the Bloonix repositories
 
-p. Das Bloonix Repository ist über HTTPS erreichbar, daher wird ein spezielles Paket benötigt, welches nicht standardmäßig installiert wird.
+p. The Bloonix repositories are accessible over HTTPS, for this reason you have to install at first __apt-transport-https__.
 
 bc. apt-get update
 apt-get install apt-transport-https ca-certificates curl
 
-p. Als nächstes muss der Public-Signing-Key von Bloonix runtergeladen und installiert werden:
+p. As next you can import the Public-Signing-Key of Bloonix:
 
 bc. wget -q -O- https://download.bloonix.de/repos/debian/bloonix.gpg | apt-key add -
 
-p. Jetzt muss nur noch das passende Bloonix Repository in __/etc/apt/sources.list.d/bloonix.list__ eingetragen werden:
+p. In the next step add the Bloonix repository into __/etc/apt/sources.list.d/bloonix.list__:
 
 bc. # Debian 6:
 echo "deb https://download.bloonix.de/repos/debian/ squeeze main" \
@@ -39,28 +39,26 @@ bc. # Ubuntu 14.04:
 echo "deb https://download.bloonix.de/repos/ubuntu/ trusty main" \
     >>/etc/apt/sources.list.d/bloonix.list
 
-p. Falls Ubuntu zum Einsatz kommt, sollte das passende Debian Release zum Ubuntu Release eingetragen werden.
-
-p. Auflisting der Bloonix Pakete:
+p. List all available bloonix packages:
 
 bc. apt-get update
 apt-cache search bloonix
 
-h2. Repository für Red Hat und CentOS
+h2. Repository for Red Hat und CentOS
 
-h3. Unterstützte Versionen
+h3. Supported versions
 
-p. Derzeit wird lediglich Red Hat 6 / CentOS 6 und Red Hat 7 / CentOS 7 unterstützt. Die Installation unter Fedora sollte jedoch kein Problem darstellen.
+p. At the moment only Red Hat 6 / CentOS 6 and Red Hat 7 / CentOS 7 are supported. The usage of Fedora with one of the repositories shouldn't be problem.
 
 h3. EPEL (Extra Packages for Enterprise Linux)
 
-p. Beim Einsatz von Red Hat und CentOS wird zwingend das EPEL Repository benötigt, da diverse Pakete benötigt werden, die im Repository von Red Hat und CentOS nicht enthalten sind. Bitte installieren Sie daher das EPEL Repository.
+p. For Red Hat and CentOS the EPEL repository is needed because Bloonix needs some packages that are not available in the standard repository, so please install the EPEL repository:
 
 bc. yum install epel-release
 
-p. "Link zum EPEL Projekt":https://fedoraproject.org/wiki/EPEL
+p. "Link to the EPEL projekt":https://fedoraproject.org/wiki/EPEL
 
-h3. Installation des Bloonix Repositories
+h3. Installation of the Bloonix repositories
 
 bc. # RHEL 6:
 rpm -ivh https://download.bloonix.de/repos/centos/6/noarch/bloonix-release-0.5-1.el6.noarch.rpm
@@ -68,13 +66,13 @@ rpm -ivh https://download.bloonix.de/repos/centos/6/noarch/bloonix-release-0.5-1
 bc. # RHEL 7:
 rpm -ivh https://download.bloonix.de/repos/centos/7/noarch/bloonix-release-0.5-1.el7.centos.noarch.rpm
 
-p. Auflisting der Bloonix Pakete:
+p. List all available bloonix packages:
 
 bc. yum search bloonix
 
-h3. Manuelle Installation des Repositories
+h3. Manual installation of the repository
 
-p. Das Bloonix Repository in __/etc/yum.repos.d/Bloonix.repo__ eintragen:
+p. Just create the file __/etc/yum.repos.d/Bloonix.repo__ with the following data:
 
 bc. [bloonix]
 name=Bloonix repository
@@ -82,7 +80,7 @@ baseurl=https://download.bloonix.de/repos/centos/$releasever/$basearch
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-Bloonix
 
-p. Den Public Signing Key von Bloonix runterladen und installieren:
+p. Import the Public-Signing-Key of Bloonix:
 
 bc. wget https://download.bloonix.de/repos/centos/RPM-GPG-KEY-Bloonix \
     --output-document /etc/pki/rpm-gpg/RPM-GPG-KEY-Bloonix
@@ -90,14 +88,14 @@ rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-Bloonix
 
 h2. Repository für openSUSE
 
-h3. Unterstützte Versionen
+h3. Supported versions:
 
-p. Derzeit wird lediglich openSUSE in Version 13 unterstützt. Falls Sie SLES einsetzen, sollte es eine Version sein, die kompatibel zu openSUSE 13 ist.
+p. At the moment only openSUSE 13 is supported. If you use SLES then the SLES version should be compabible to openSUSE 13.
 
-h3. Installation des Bloonix Repositories
+h3. Installation of the Bloonix repository
 
 bc. rpm -ivh https://download.bloonix.de/repos/suse/13/noarch/bloonix-release-0.4-1.noarch.rpm
 
-p. Auflisting der Bloonix Pakete:
+p. List all available bloonix packages:
 
 bc. zypper search bloonix
