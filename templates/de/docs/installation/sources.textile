@@ -41,6 +41,9 @@ ca-certificates
 curl
 facter
 lm_sensors
+openssl
+perl-JSON-XS
+perl-Time-modules
 perl(Authen::SASL)
 perl(Data::Dumper)
 perl(DBD::mysql)
@@ -51,17 +54,18 @@ perl(FCGI)
 perl(Getopt::Long)
 perl(HTTP::Tiny) >= 0.022
 perl(IO::Select)
+perl(IO::Socket)
 perl(IO::Socket::INET6)
-perl(IO::Socket::SSL) >= 1.76
+perl(IO::Socket::SSL) >= 1.77
 perl(IO::Uncompress::Gunzip)
 perl(IPC::Open3)
 perl(JSON)
-perl-JSON-XS
 perl(Log::Handler) >= 0.84
 perl(Math::BigFloat)
 perl(Math::BigInt)
 perl(MIME::Base64)
 perl(MIME::Lite)
+perl(Net::DNS::Resolver)
 perl(Net::OpenSSH)
 perl(Net::SNMP)
 perl(Params::Validate)
@@ -70,7 +74,6 @@ perl(Sys::Hostname)
 perl(Template)
 perl(Term::ReadKey)
 perl(Time::HiRes)
-perl-Time-modules
 perl(Time::ParseDate)
 perl(URI::Escape)
 
@@ -90,15 +93,19 @@ perl(Time::HiRes)
 h3. Abhängigkeiten des Pakets bloonix-core
 
 bc. ca-certificates
+openssl
+perl-JSON-XS
 perl(Data::Dumper)
-perl(HTTP::Tiny)
+perl(HTTP::Tiny) >= 0.022
 perl(IO::Select)
+perl(IO::Socket)
 perl(IO::Socket::INET6)
-perl(IO::Socket::SSL) >= 1.76
+perl(IO::Socket::SSL) >= 1.77
 perl(IO::Uncompress::Gunzip)
 perl(IPC::Open3)
 perl(JSON)
 perl(Log::Handler) >= 0.84
+perl(Net::DNS::Resolver)
 perl(Net::SNMP)
 perl(Params::Validate)
 perl(Socket6)
