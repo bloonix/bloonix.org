@@ -107,7 +107,7 @@ p. Wichtig ist dabei, dass __sudoers__ auch richtig konfiguriert wird. Ganz *wic
 bc. bloonix ALL=NOPASSWD: /usr/lib/bloonix/plugins/check-mdadm
 bloonix ALL=NOPASSWD: /usr/lib/bloonix/plugins/check-sensors
 Defaults:bloonix !requiretty
-Defaults:bloonix env_keep += "PLUGIN_LIBDIR CONFIG_PATH"
+Defaults:bloonix env_keep += "PLUGIN_LIBDIR CONFIG_PATH CHECK_HOST_ID CHECK_SERVICE_ID"
 Defaults:bloonix secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
 p. Falls Sie Nagios-Plugins einsetzen und diese via __sudo__ ausgeführt werden müssen, dann muss der Nagios-Check in __sudoers__ eingetragen werden. Wenn in der WebGUI ein Nagios-Plugin eingerichtet wird, so kann das Kommando __check-simple-wrapper__ in der Beschreibung des Plugins Verwirrung stiften. Bitte richten Sie keine sudo-Rechte für das Skript __check-simple-wrapper__ ein.

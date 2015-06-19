@@ -54,7 +54,7 @@ p. Mit diesem Paramter wird der globale Timeout eines Checks festgesetzt. Wenn d
 
 h2. Formularfeld: Bestätigt
 
-p. Die Option __Bestätigt__ bietet die Möglichkeit, den Status eines Services als "bestätigt" zu markieren, wenn der Status des Service nicht __OK__ ist. Das bedeutet, dass jegliche Benachrichtiung solange für den Service eingestellt wird, bis der Status des Service wieder __OK__ ist. Die Markierung wird aufgehoben, wenn der Service wieder im Status __OK__ ist.
+p. Die Option __Bestätigt__ bietet die Möglichkeit, den Status eines Services als "bestätigt" zu markieren, wenn der Status des Service nicht __OK__ ist. Das bedeutet, dass jegliche Benachrichtiung solange für den Service eingestellt wird, bis der Status des Service wieder __OK__ ist. Die Markierung "bestätigt" wird auch automatisch wieder aufgehoben, wenn der Service wieder im Status __OK__ ist.
 
 p. Diese Option ist sehr hilfreich, wenn Sie zum Beispiel genau wissen, dass sich der Status eines Service zunächst nicht ändern wird und wenn Sie erst wieder benachrichtigt werden möchten, wenn der Status wieder __OK__ ist und dann wieder in einen kritischen Status wechselt.
 
@@ -94,9 +94,9 @@ p. Nehmen wir an, dass der Zeitbereich zur Erkennung von zu häufigen Statuswech
 
 h2. Formularfelder: Ist der Service flüchtig (volatile), Vorhaltezeit des flüchtigen Status (volatile)
 
-p. Ein flüchtiger Service ist ein Service, dessen Status nur für einen sehr kurzen Zeitraum kritisch ist. Dies kann zum Beispiel bei der Prüfung von Logdateien der Fall sein. Nehmen wir zum Beispiel an, es wird eine Logdatei nach kritischen Ereignissen untersucht. Sollte ein Ereignis gefunden und der Status __CRITICAL__ zurückgegeben werden, dann ist es sehr gut möglich, dass der Status bei der nächsten Prüfung der Logdatei nicht mehr vorkommt. Der Status würde also sofort wieder zurück in den Status __OK__ wechseln. Genau für diesen Zweck kann ein Service als __flüchtig__ markiert werden.
+p. Ein flüchtiger Service ist ein Service, dessen Status nur für einen sehr kurzen Zeitraum kritisch ist. Dies kann zum Beispiel bei der Prüfung von Logdateien der Fall sein. Nehmen wir zum Beispiel an, es wird eine Logdatei nach kritischen Ereignissen untersucht. Sollte ein Ereignis gefunden und der Status __CRITICAL__ zurückgegeben werden, dann ist es sehr gut möglich, dass das Ereignis bei der nächsten Prüfung nicht mehr in der Logdatei vorkommt. Der Status würde also wieder zurück in den Status __OK__ wechseln. Genau für diesen Zweck kann ein Service als __flüchtig__ markiert werden.
 
-p. Ist also ein Service als __flüchtig__ markiert, dann bleibt der Service solange im Status __WARNING__, __CRITICAL__ oder __UNKNOWN__, bis der Status in der WebGUI manuell zurücksetzt wurde oder bis die Vorhaltezeit abgelaufen ist.
+p. Ist also ein Service als __flüchtig__ markiert, dann bleibt der Service solange im Status __WARNING__, __CRITICAL__ oder __UNKNOWN__, bis der Status in der WebGUI manuell zurücksetzt wurde oder bis die Vorhaltezeit abgelaufen ist. Somit stellen Sie sicher, dass das Event auf jedem Fall von einem Administrator beachtet wird.
 
 p. Die Vorhaltezeit ist eine Zeitangabe in Sekunden, wann der Service-Check automatisch wieder zurück auf __OK__ gesetzt werden soll, nachdem dieser als kritisch markiert wurde. Ein Wert von 0 besagt, dass die Zeit nie abläuft. Der Wert 0 ist auch der Standardwert für diese Option.
 
