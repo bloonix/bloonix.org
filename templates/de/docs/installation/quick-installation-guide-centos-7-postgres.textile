@@ -74,7 +74,7 @@ sudo sed -i 's/\(host  *all  *all  *::1\/128  *\)ident/\1md5/' /var/lib/pgsql/da
 
 h3. PostgreSQL neustarten
 
-sudo systemctl restart postgresql.service
+bc. sudo systemctl restart postgresql.service
 
 h3. Nginx
 
