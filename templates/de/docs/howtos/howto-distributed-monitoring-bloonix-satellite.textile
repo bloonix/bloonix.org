@@ -1,0 +1,64 @@
+h1. Verteiltes Monitoring mit dem Bloonix Satelliten
+
+h2. Allgemeines
+
+p. Mit dem Bloonix Satellit haben Sie die Möglichkeit, die Überwachung von Internetservices auf multiple Server zu verteilen. Auf diese Weise können Sie die Geschwindigkeit und Verfügbarkeit von verschiedenen Standorten überwachen.
+
+h2. Funktionsweise
+
+p. In der folgenden Grafik sehen Sie, wie der Bloonix Satellit grundlegend funktioniert:
+
+!{width: 100%; margin: 20px 0;}/public/img/bloonix-satellite-area.png!
+
+p. Der Bloonix-Agent, welcher für gewöhnlich für die Ausführung von Checks verantwortlich ist, leitet die Checks an die Satelliten weitern. Nehmen Sie zum Beispiel an, Sie möchten Ihre Webseite von den Standorten London, Frankfurt und Paris prüfen. Der Bloonix-Agent erhält von dem Bloonix-Server den Auftrag, den Check auszuführen, der Bloonix-Agent leitet den Check jedoch an die Satelliten weiter. Nachdem die Satelliten den Check ausgeführt haben, reichen diese das Ergebnis zurück an den Agenten, welcher die Daten zusammenführt und den Status an den Bloonix-Server übermittelt.
+
+h2. Installation und Einrichtung des Bloonix Satellite
+
+p. Angenommen, Sie haben 3 Server, von denen Sie Ihre Internetservices überwachen lassen möchten. Als Beispiel nehmen wir die Standorte London, Frankfurt und Paris. Zunächst einmal müssen Sie den Bloonix-Satelliten auf den Server installieren:
+
+bc. # Debian / Ubuntu
+apt-get install bloonix-satellite
+
+bc. # Red Hat / CentOS / Fedora
+yum install bloonix-satellite
+
+bc. # SuSE / SLES
+zypper install bloonix-satellite
+
+h2. Konfiguration des Bloonix-Satellite
+
+p. Nach der Installation muss in der Konfigurationsdatei des Satellite der Parameter __authkey__ angepasst werden. Dieser Key wird zur Authentifizierung verwendet, sprich, damit der Bloonix-Agent über einen Satelliten Checks ausführen darf, muss sich der Agent mit einem Authkey identifizieren. Die Konfigurationsdatei des Satelliten lautet:
+
+bc. /etc/bloonix/satellite/main.conf
+
+p. Der Parameter, welcher angepasst werden muss, lautet __authkey__. Setzen Sie einen zufälligen String mit einer Mindestlänge von 32 Zeichen.
+
+bc. authkey your-very-long-authkey
+
+p. Zusätzlich können Sie SSL Parameter anpassen. Nach der Installation des Satelliten wird ein SSL Zertifikat generiert. Wenn Sie dieses durch ein gültiges Zeritifkat erstezen möchten, so können Sie die Anapassungen hierfür in der Sektion __tcp_server__ vornehmen. Die Sektion sollte Ihnen bereits bekannt sein, da diese identisch mit der Konfigration des Bloonix-Server ist.
+
+h2. Konfiguration des Agenten
+
+p. Damit sich der Agent bei den Satelliten authentifizieren kann, benötigt dieser ebenfalls den Authkey, welcher bei den Satelliten konfiguriert wird. Editieren Sie die Konfiguration des Agenten, der bei Ihnen die __remote__ Checks ausführt und tragen dort folgende Sektion ein:
+
+bc. satellite {
+    ssl_verify_mode yes
+    ssl_ca_path /etc/ssl/certs
+    authkey your-very-long-authkey
+}
+
+p. Wenn auf dem Satelliten _kein gültiges SSL-Zertifikat_ eingesetzt wird, so müssen Sie den Parameter __ssl_verify_mode__ auf __none__ setzen.
+
+h2. Einrichtung der Satellites in der WebGUI
+
+p. Nach dem nun die Satelliten und Agenten eingerichtet sind, müssen im nächsten Schritt die Satelliten in der WebGUI konfiguriert werden. Loggen Sie sich hierzu mit dem Administrator Account. Die Satelliten werden im Bereich __ADMINISTRATION__ eingerichtet:
+
+!{width: 100%; margin: 20px 0;}/public/img/bloonix-location-configuration.png!
+
+!{width: 100%; margin: 20px 0;}/public/img/bloonix-locations.png!
+
+h2. Einen Service einrichten zur Überwachung von verschiedenen Standorten
+
+p. Ist alles eingerichtet, so können Sie nun einen Service-Check einrichten, der über verschiedene Standorte überwacht wird. Klicken Sie hierzu einfach auf einen Host und fügen einen neuen Service-Check hinzu, zum Beispiel einen HTTP-Check. Im Formular zur Einrichtung des Checks können Sie dann die Standorte auswählen, über die der Check ausgeführt werden soll.
+
+!{width: 100%; margin: 20px 0;}/public/img/bloonix-configure-location-check.png!
