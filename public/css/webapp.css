@@ -140,6 +140,17 @@
 #doc-content table td:first-child {
     white-space: nowrap;
 }
+#doc-content .full-width {
+    width: 100%;
+    margin: 20px 0;
+}
+#doc-content .full-width-shadow {
+    width: 100%;
+    margin: 20px 0;
+    -moz-box-shadow: 5px 5px 14px 1px rgba(0, 0, 0, 0.65);
+    -webkit-box-shadow: 5px 5px 14px 1px rgba(0, 0, 0, 0.65);
+    box-shadow: 5px 5px 14px 1px rgba(0, 0, 0, 0.65);
+}
 .status-OK.inline, .status-WARNING.inline, .status-CRITICAL.inline, .status-UNKNOWN.inline, .status-INFO.inline {
     display: inline-block;
     padding: 4px 12px;

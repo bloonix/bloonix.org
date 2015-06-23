@@ -53,12 +53,12 @@ h2. Einrichtung der Satellites in der WebGUI
 
 p. Nach dem nun die Satelliten und Agenten eingerichtet sind, müssen im nächsten Schritt die Satelliten in der WebGUI konfiguriert werden. Loggen Sie sich hierzu mit dem Administrator Account. Die Satelliten werden im Bereich __ADMINISTRATION__ eingerichtet:
 
-!{width: 100%; margin: 20px 0;}/public/img/bloonix-location-configuration.png!
+!(full-width-shadow)/public/img/bloonix-location-configuration.png!
 
-!{width: 100%; margin: 20px 0;}/public/img/bloonix-locations.png!
+!(full-width-shadow)/public/img/bloonix-locations.png!
 
 h2. Einen Service einrichten zur Überwachung von verschiedenen Standorten
 
 p. Ist alles eingerichtet, so können Sie nun einen Service-Check einrichten, der über verschiedene Standorte überwacht wird. Klicken Sie hierzu einfach auf einen Host und fügen einen neuen Service-Check hinzu, zum Beispiel einen HTTP-Check. Im Formular zur Einrichtung des Checks können Sie dann die Standorte auswählen, über die der Check ausgeführt werden soll.
 
-!{width: 100%; margin: 20px 0;}/public/img/bloonix-configure-location-check.png!
+!(full-width-shadow)/public/img/bloonix-configure-location-check.png!
