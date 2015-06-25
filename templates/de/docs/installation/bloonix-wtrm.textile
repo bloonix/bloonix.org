@@ -12,7 +12,7 @@ h2. Sicherheitsinformationen
 
 p. Für die Einrichtung von Web-Transaktionen gibt es in der WebGUI von Bloonix die Möglichkeit, eine Transaktion zu testen. Wie Sie in der nachfolgenden Grafik sehen können, gibt es hierfür die Buttons __Check it!__ und __Quick check!__:
 
-!(full-width-shadow)/public/img/bloonix-wtrm-check-it.png!
+!(img-shadow)/public/img/bloonix-wtrm-check-it.png!
 
 p. Nun ist zu beachten, dass Web-Transaktionen aus Sicherheitsgründen in einer abgesicherten Umgebung ausgeführt werden sollten, da jede Person, die Web-Transaktionen über die WebGUI einrichten kann, jede beliebige Webseite über __HTTP/HTTPS__ aufrufen kann, die von dem Server aus erreichbar ist, auf dem die Web-Transaktion ausgeführt wird. Sollte sich zum Beispiel der Server in Ihrem lokalen Netzwerk befinden, so wäre es möglich, Webseiten in Ihrem lokalen Netzwerk aufzurufen. Es ist daher ratsam, die Web-Transaktionen auf einem Server durchzuführen, der keinen Zugang zu Ihrem lokalen Netzwerk hat.
 
