@@ -140,7 +140,7 @@
 #doc-content table td:first-child {
     white-space: nowrap;
 }
-#doc-content .img-full-width, #doc-content .img-full-width-shadow {
+#doc-content .img, .img-shadow, .img-full-width, #doc-content .img-full-width-shadow {
     width: 100%;
     margin: 20px 0;
 }
