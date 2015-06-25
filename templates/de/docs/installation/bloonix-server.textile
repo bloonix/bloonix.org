@@ -1,4 +1,4 @@
-h1. Bloonix-Server
+h1. Installation des Bloonix-Servers
 
 h2. Installation
 

@@ -1,0 +1,64 @@
+h1. Installation des Bloonix Transaktion-Daemons
+
+p. Bitte beachten Sie, dass Sie das Paket __bloonix-wtrm__ nur dann installieren müssen, wenn Sie Web-Transaktionen einrichten und diese über die WebGUI testen möchten.
+
+h2. Was sind Web-Transaktionen
+
+p. Mit den Web-Transaktionen von Bloonix haben Sie Möglichkeit, die Funktionalität Ihrer Webseiten zu überwachen. Sie können zum Beispiel den Einkauf von Artikeln in einem Webshop simulieren. Für die Einrichtung einer Web-Transaktion könnte es notwendig sein, den HTML-Code Ihrer Webseite zu optimieren, damit Elemente, die Sie über eine Transaktion ansteuern möchten, eindeutig identifiziert werden können.
+
+p. Zur Durchführung von Web-Transaktionen wird die Software __PhantomJS__ verwendet. __PhantomJS__ ist ein auf WebKit basierender Headless-Browser. Informationen zu __PhantomJS__ finden Sie hier: "PhantomJS":http://phantomjs.org/
+
+h2. Sicherheitsinformationen
+
+p. Für die Einrichtung von Web-Transaktionen gibt es in der WebGUI von Bloonix die Möglichkeit, eine Transaktion zu testen. Wie Sie in der nachfolgenden Grafik sehen können, gibt es hierfür die Buttons __Check it!__ und __Quick check!__:
+
+!(full-width-shadow)/public/img/bloonix-wtrm-check-it.png!
+
+p. Nun ist zu beachten, dass Web-Transaktionen aus Sicherheitsgründen in einer abgesicherten Umgebung ausgeführt werden sollten, da jede Person, die Web-Transaktionen über die WebGUI einrichten kann, jede beliebige Webseite über __HTTP/HTTPS__ aufrufen kann, die von dem Server aus erreichbar ist, auf dem die Web-Transaktion ausgeführt wird. Sollte sich zum Beispiel der Server in Ihrem lokalen Netzwerk befinden, so wäre es möglich, Webseiten in Ihrem lokalen Netzwerk aufzurufen. Es ist daher ratsam, die Web-Transaktionen auf einem Server durchzuführen, der keinen Zugang zu Ihrem lokalen Netzwerk hat.
+
+p. Um eine Trennung von WebGUI und eines Testlaufs einer Transaktion zu ermöglichen, ist es notwendig, die Software __bloonix-wtrm__ zu installieren. __bloonix-wtrm__ ist ein Server-Daemon, welcher über eine IP + Port von der WebGUI angesprochen werden kann, um eine Web-Transaktion zu testen.
+
+h2. Installation von Bloonix-WTRM
+
+p. Die Installation der Software ist sehr einfach.
+
+bc. # Debian / Ubuntu
+apt-get install bloonix-wtrm
+
+bc. # Red Hat / CentOS / Fedora
+yum install bloonix-wtrm
+
+bc. # SuSE / SLES
+zypper install bloonix-wtrm
+
+h2. Konfiguration von Bloonix-WTRM
+
+p. Die Konfigurationsdatei des Daemons lautet:
+
+bc. /etc/bloonix/wtrm/main.conf
+
+p. Es ist notwendig, dass Sie einen API-Key generieren und diesen Key mit dem Parameter __wtrm_api_key__ konfigurieren. Der Key muss mindestens 32 Zeichen lang sein. Generieren können Sie das Key zum Beispiel mit dem Kommando __pwgen 32__.
+
+p. Beispiel:
+
+bc. wtrm_api_key your-very-very-long-api-key
+
+p. Mit der Installation des Pakets wird initial auch ein SSL-Schlüsselpaar erstellt und unter dem Pfad __/etc/bloonix/wtrm/pki__ abgelegt. Falls Sie über ein gültiges Zeritifkat verfügen und dieses einsetzen möchten, so können Sie in der Konfigurationsdatei die SSL-Parameter in der Sektion __tcp_server__ anpassen.
+
+h2. Konfiguration der WebGUI
+
+p. Damit die WebGUI den WTRM Daemon erreichen kann, müssen in der Konfigurationsdatei der WebGUI der Parameter __wtrm_api_key__ und die Sektion __wtrm_api__ konfiguiert werden. Tragen Sie beim Parameter __host__ den Hostnamen des Servers ein, auf dem der WTRM-Daemon läuft. Bitte setzen Sie den Parameter __ssl_verifiy_mode__ auf __none__, falls der WTRM-Daemon ein ungültiges Zertifikat verwendet, zum Beispiel das, welches mit der Installation initial erstellt wurde.
+
+p. Beispielkonfiguration:
+
+bc.. wtrm_api_key your-very-very-long-api-key
+
+wtrm_api {
+    host hostname-of-the-wtrm-daemon
+    port 5470
+    timeout 60
+    use_ssl yes
+    ssl_verify_mode peer
+    ssl_ca_path /etc/ssl/certs
+}
+
