@@ -10,7 +10,7 @@ p. Zur Durchführung von Web-Transaktionen wird die Software __PhantomJS__ verwe
 
 h2. Sicherheitsinformationen
 
-p. Für die Einrichtung von Web-Transaktionen gibt es in der WebGUI von Bloonix die Möglichkeit, eine Transaktion zu testen. Wie Sie in der nachfolgenden Grafik sehen können, gibt es hierfür die Buttons __Check it!__ und __Quick check!__:
+p. Für die Einrichtung von Web-Transaktionen gibt es in der WebGUI von Bloonix die Möglichkeit, eine Transaktion zu testen. Wie Sie in der nachfolgenden Grafik sehen können, gibt es hierfür die Buttons __Check it!__ (1) und __Quick check!__ (2):
 
 !(img-shadow)/public/img/bloonix-wtrm-check-it.png!
 
