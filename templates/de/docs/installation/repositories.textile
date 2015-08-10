@@ -41,7 +41,7 @@ echo "deb https://download.bloonix.de/repos/ubuntu/ trusty main" \
 
 p. Falls Ubuntu zum Einsatz kommt, sollte das passende Debian Release zum Ubuntu Release eingetragen werden.
 
-p. Auflisting der Bloonix Pakete:
+p. Auflistung der Bloonix Pakete:
 
 bc. apt-get update
 apt-cache search bloonix
@@ -68,7 +68,7 @@ rpm -ivh https://download.bloonix.de/repos/centos/6/noarch/bloonix-release-0.5-1
 bc. # RHEL 7:
 rpm -ivh https://download.bloonix.de/repos/centos/7/noarch/bloonix-release-0.5-1.el7.centos.noarch.rpm
 
-p. Auflisting der Bloonix Pakete:
+p. Auflistung der Bloonix Pakete:
 
 bc. yum search bloonix
 
@@ -98,6 +98,6 @@ h3. Installation des Bloonix Repositories
 
 bc. rpm -ivh https://download.bloonix.de/repos/suse/13/noarch/bloonix-release-0.4-1.noarch.rpm
 
-p. Auflisting der Bloonix Pakete:
+p. Auflistung der Bloonix Pakete:
 
 bc. zypper search bloonix
