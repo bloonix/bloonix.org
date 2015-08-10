@@ -80,7 +80,7 @@ p. Als nächstes editieren Sie die Konfiguration des Bloonix-Agenten. Die Konfig
 bc. host {
     use_sudo check-mdadm, check-smart-health
     host_id 12345
-    passsord secret
+    password secret
 }
 
 p. Stoppen und starten Sie den Bloonix-Agenten nach der Konfiguration, damit der Bloonix-Agent diese zwei Service-Checks mittels __sudo__ prüft.
