@@ -63,7 +63,7 @@ p. In der Sektion __notifications__ werden die Subsektionen zur Konfiguration vo
 
 bc.. notifications {
     sms {
-        command /usr/bin/curl --silent https://sms.test?key=SECRET&from=BLOONIX&to=%TO%&message=%MESSAGE%
+        command /usr/bin/curl -s https://sms.test?key=SECRET&from=BLOONIX&to=%TO%&message=%MESSAGE%
         response ^100$
     }
     mail {
