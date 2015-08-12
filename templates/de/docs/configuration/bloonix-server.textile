@@ -78,7 +78,7 @@ h3. Subsektion: sms
 |_. Parameter |_. Standard |_. Beschreibung |
 | command | | Das Kommando, um eine SMS zu versenden. Die Platzhalter %TO% und %MESSAGE% werden URL-encoded mit der Mobilfunknummer und der Warnmeldung ersetzt. |
 | response | | Die erwartete Antwort, wenn die SMS erfolgreich übersendet werden konnte. Der Wert ist ein regulärer Ausdruck. |
-| failover_command | | Mit __failover_command__ lässt sich ein weiteres Kommando einrichten, welches aufgerufen wird, wenn das erste Kommando fehlgeschlagen ist. |
+| failover_command | | Mit __failover_command__ lässt sich ein weiteres Kommando einrichten, welches aufgerufen wird, wenn das erste Kommando fehlgeschlagen ist. Dies ist sinnvoll, wenn zum Beispiel der Anbieter zur Versendung der SMS nicht verfügbar ist. |
 | failover_response | | Die erwartete Antwort von __failover_command__. |
 
 h3. Subsektion: mail
