@@ -116,13 +116,13 @@ p. Für das manuelle Zurücksetzen des volatile Status gibt es einen Link, den S
 
 h2. Formularfeld: Benachrichtigungsintervall
 
-p. Ein Softintervall beeinflußt das erneute Versenden von Warnmeldungen. Wenn ein Service aus dem Status __OK__ in den Status __WARNING__ wechselt, dann wird für den betroffenen Service eine Benachrichtigung per E-Mail und/oder SMS versendet. Wenn der Status des Services sich in der angegeben Zeit des Softintervalls nicht ändert, dann wird eine erneute Benachrichtigung versendet. Auf diese Weise werden Sie als Administrator in einem regelmäßigen Intervall daran erinnert, in welchem Status sich ein Service befindet.
+p. Der Benachrichtigungsintervall beeinflußt das erneute Versenden von Warnmeldungen. Wenn ein Service aus dem Status __OK__ in den Status __WARNING__ wechselt, dann wird für den betroffenen Service eine Benachrichtigung per E-Mail und/oder SMS versendet. Wenn der Status des Services sich in der angegeben Zeit des Benachrichtigungsintervalls nicht ändert, dann wird eine erneute Benachrichtigung versendet. Auf diese Weise werden Sie als Administrator in einem regelmäßigen Intervall daran erinnert, in welchem Status sich ein Service befindet.
 
-p. Zu beachten ist hierbei jedoch, dass wenn der Status des Service zurück auf __OK__ und dann wieder auf __WARNING__ wechselt, der Softintervall sofort verfällt. So verhält es sich auch, wenn sich der Status von __WARNING__ zu __CRITICAL__ oder von __CRITICAL__ zu __UNKNOWN__ ändert, also zu einem höheren Status wechselt.
+p. Zu beachten ist hierbei jedoch, dass wenn der Status des Service zurück auf __OK__ und dann wieder auf __WARNING__ wechselt, der Benachrichtigungsintervall sofort verfällt. So verhält es sich auch, wenn sich der Status von __WARNING__ zu __CRITICAL__ oder von __CRITICAL__ zu __UNKNOWN__ ändert, also zu einem höheren Status wechselt.
 
 p. Der Grund für dieses Verfahren ist recht einfach zu verstehen. Stellen Sie sich vor, Sie erhalten nachts um 2 Uhr eine Mail über den kritischen Zustand eines wichtigen Service. Nun beheben Sie das Problem und legen sich mit der Gewissheit wieder schlafen, dass das Problem behoben ist. Wenn nun der Service erneut in den kritischen Zustand wechselt, dann möchten Sie natürlich erneut über den Zustand informiert werden.
 
 p. Die gleiche Situation lässt sich auch mit einem Statuswechsel von WARNING zu CRITICAL beschreiben. Sie erhalten wieder nachts um 2 Uhr eine Meldung, diesmal aber nur eine Warnmeldung. "Ok", denken Sie sich, "WARNING heißt noch lange nicht CRITICAL" und das Sie vielleicht noch ein paar Stunden Zeit haben das Problem zu lösen. Nun passiert es aber, dass der Service innerhalb kurzer Zeit von __WARNING__ auf __CRITICAL__ wechselt. In diesem Fall möchten Sie natürlich sofort erneut informiert werden um den Fehler zu beheben.
 
-p. Der Standardwert für Softintervalle ist auf 3600 Sekunden gesetzt.
+p. Der Standardwert für Benachrichtigungsintervalle ist auf 3600 Sekunden gesetzt.
 
