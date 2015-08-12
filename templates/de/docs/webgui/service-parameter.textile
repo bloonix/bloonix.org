@@ -124,5 +124,5 @@ p. Der Grund für dieses Verfahren ist recht einfach zu verstehen. Stellen Sie s
 
 p. Die gleiche Situation lässt sich auch mit einem Statuswechsel von WARNING zu CRITICAL beschreiben. Sie erhalten wieder nachts um 2 Uhr eine Meldung, diesmal aber nur eine Warnmeldung. "Ok", denken Sie sich, "WARNING heißt noch lange nicht CRITICAL" und das Sie vielleicht noch ein paar Stunden Zeit haben das Problem zu lösen. Nun passiert es aber, dass der Service innerhalb kurzer Zeit von __WARNING__ auf __CRITICAL__ wechselt. In diesem Fall möchten Sie natürlich sofort erneut informiert werden um den Fehler zu beheben.
 
-p. Der Standardwert für Benachrichtigungsintervalle ist auf 3600 Sekunden gesetzt.
+p. Der Standardwert des Benachrichtigungsintervalls ist auf 3600 Sekunden gesetzt.
 
