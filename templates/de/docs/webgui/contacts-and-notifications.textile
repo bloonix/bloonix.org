@@ -24,27 +24,13 @@ p. Kommen wir nun zu den bereits erwähnten Zeitbereichen, die im Formular zu se
 * Arbeitszeit (Montag bis Freitag von 9 bis 17 Uhr)
 * Ausserhalb der Arbeitszeit (alle anderen Zeiten, die nicht von "Arbeitszeit" erfasst werden)
 
-p. *Eine kleine Info:* Falls diese Zeitbereiche nicht auf Ihre Geschäftszeiten passen, so können Sie auch eigene Zeitpläne (Timeperiods) festlegen.
+p. *Eine kleine Info:* Falls diese Zeitbereiche nicht auf Ihre Geschäftszeiten passen, so können Sie auch eigene Zeitpläne (Timeperiods) festlegen. Zu den Timeperiods gelangen Sie hier:
 
 !{margin: 40px 0;}/public/img/contacts-and-notifications-2.png!
 
-p. Weiterhin haben Sie die Möglichkeit, festzulegen, welche Form der Benachrichtigung für diesen Zeitraum aktiv ist:
-
-* Benachrichtigungs per E-Mail und SMS
-* Nur Benachrichtigungen per E-Mail
-* Nur Benachrichtigungen per SMS
-* Ausschließen
-
-p. Dabei ist zu beachten, dass die Auswahl "Ausschließen" eine höhere Priorität als alle anderen Zeitbereiche hat. So haben Sie zum Beispiel die Möglichkeit Feiertage oder Urlaubstage auszuschließen.
-
 h2. Eskalationsstufen
 
-p. Eskalationsstufen können sehr hilfreich sein, wenn Sie bei kritischen Ereignissen benachrichtigt werden möchten, die in einem angemessenen Zeitraum nicht behoben werden.
-
-p. Bei Bloonix haben Eskalationsstufen keine feste Zeitgrenze, sondern richten sich nach der Anzahl der bereits gesendeten Benachrichtigungen. So kann man zum Beispiel für Kontakte und Bereitschaftspläne Eskalationsstufen nur in der Form von __permanent aktiv__ bis __nach X Benachrichtigungen__ angeben.
-
-p. __Permanent aktiv__ oder __nach 0 Benachrichtigungen__ bedeuted, dass der entsprechende Kontakt immer benachrichtigt wird. __Nach 5 Benachrichtigungen__ bedeuted demnach, dass ein Kontakt ab der 5. Benachrichtigung ebenfalls per E-Mail und/oder SMS benachrichtigt wird. Insofern könnte man je nach Benachrichtigungsintervall zeitlich ungefähr berechnen, wann ein Kontakt mit einer höheren Eskalationsstufe benachrichtigt wird.
-Ist zum Beispiel ein Kontakt mit einer Eskalationsstufe von 5 eingerichtet und der ausgefallene Service mit einem Benachrichtigungsintervall von 30 Minuten, so würde der Kontakt ungefähr nach 2 1/2 Stunden informiert werden.
+p. Eskalationsstufen können sehr hilfreich sein, zum Beispiel wenn Sie bei kritischen Ereignissen erst dann benachrichtigt werden möchten, wenn diese in einem angemessenen Zeitraum nicht behoben wurden. Richten Sie beispielsweise eine Eskalationsstufe von 30 Minuten ein, dann wird der Kontakt erst nach 30 Minuten benachrichtigt.
 
 h2. Kontaktgruppen
 
