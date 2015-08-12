@@ -54,15 +54,15 @@ p. Falls der Bloonix-Agent von mehr als einer IP-Adresse aus Daten abliefern kan
 
 h2. Formularfeld: Intervall
 
-p. Der Intervall hat einen entscheidenen Verwendungszweck bei der Erstellung der RRDs (Round Robin Databases). Der Wert sollte analog zum Parameter "interval" eingestellt werden, der beim zuständigen Bloonix-Agenten eingerichtet ist. Ist also der Bloonix-Agent, der die Checks für diesen Hosts ausführt, zum Beispiel auf einen Intervall von 60 Sekunden eingestellt, dann sollte dieser Wert ebenfalls auf 60 Sekunden gesetzt werden.
+p. Mit diesem Parameter wird der Check-Intervall der Services eines Hosts eingestellt. Dieser Wert wird an alle Services eines Hosts vererbt.
+
+h2. Formularfeld: Wiederholungsintervall
+
+p. Mit diesem Parameter wird der Check-Intervall der Services eines Hosts eingestellt, die sich im Status WARNING, CRITICAL oder UNKNOWN befinden. Dieser Wert wird an alle Services eines Hosts vererbt.
 
 h2. Formularfeld: Timeout
 
-p. Mit diesem Wert wird bestimmt, nach wievielen Sekunden der Status eines Service als veraltet markiert wird und sollte um ein vielfaches von "Intervall" gesetzt werden. Das ist zum Beispiel dann wichtig, wenn ein Bloonix-Agent aus irgendeinem Grund den Status eines Service nicht mehr aktualisiert, vielleicht weil er ausgefallen oder zu stark überlastet ist.
-
-p. Zu beachten ist, dass dieser Wert für alle Services gilt. Sollte einmal ein Service tatsächlich auf diesem Timeout laufen, dann wird der Status des Service auf folgende Meldung gesetzt:
-
-bc. Service check timeout after 180s (host/agent dead?)
+p. Mit diesem Wert wird bestimmt, nach welcher Zeit der Status eines Service als veraltet markiert wird und sollte um ein vielfaches von "Intervall" gesetzt werden. Das ist zum Beispiel dann wichtig, wenn ein Bloonix-Agent aus irgendeinem Grund den Status eines Service nicht mehr aktualisiert, vielleicht weil er ausgefallen oder zu stark überlastet ist. Dieser Wert wird an alle Services eines Hosts vererbt.
 
 h2. Formularfeld: Maximal konfigurierbare Services
 

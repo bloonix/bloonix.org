@@ -52,6 +52,18 @@ h2. Formularfeld: Globaler Check Timeout
 
 p. Mit diesem Paramter wird der globale Timeout eines Checks festgesetzt. Wenn die Ausführungszeit des Checks länger dauert, dann wird der Prozess mit einem Kill-Signal hart beendet und der Status des Service wird auf CRITICAL gesetzt.
 
+h2. Formularfeld: Intervall
+
+p. Mit diesem Parameter wird der Check-Intervall des Service eingestellt. Wenn kein Wert angegeben ist, dann wird der vererbte Wert des Hosts verwendet.
+
+h2. Formularfeld: Wiederholungsintervall
+
+p. Mit diesem Parameter wird der Check-Intervall des Service eingestellt, die sich im Status WARNING, CRITICAL oder UNKNOWN befinden. Wenn kein Wert angegeben ist, dann wird der vererbte Wert des Hosts verwendet.
+
+h2. Formularfeld: Timeout
+
+p. Mit diesem Wert wird bestimmt, nach welcher Zeit der Status eines Service als veraltet markiert wird und sollte um ein vielfaches von "Intervall" gesetzt werden. Das ist zum Beispiel dann wichtig, wenn ein Bloonix-Agent aus irgendeinem Grund den Status eines Service nicht mehr aktualisiert, vielleicht weil er ausgefallen oder zu stark überlastet ist. Wenn kein Wert angegeben ist, dann wird der vererbte Wert des Hosts verwendet.
+
 h2. Formularfeld: Bestätigt
 
 p. Die Option __Bestätigt__ bietet die Möglichkeit, den Status eines Services als "bestätigt" zu markieren, wenn der Status des Service nicht __OK__ ist. Das bedeutet, dass jegliche Benachrichtiung solange für den Service eingestellt wird, bis der Status des Service wieder __OK__ ist. Die Markierung "bestätigt" wird auch automatisch wieder aufgehoben, wenn der Service wieder im Status __OK__ ist.
@@ -102,23 +114,7 @@ p. Die Vorhaltezeit ist eine Zeitangabe in Sekunden, wann der Service-Check auto
 
 p. Für das manuelle Zurücksetzen des volatile Status gibt es einen Link, den Sie in der Navigation von Hosts und Services finden.
 
-h2. Formularfeld: Benachrichtigungsintervall für E-Mails (soft), Benachrichtigungsintervall für E-Mails (hart)
-
-p. Bitte beachten Sie den Abschnitt __Benachrichtigungsintervall für SMS (soft)__ und __Benachrichtigungsintervall für SMS (hart)__, da sich die Technik zum Versenden von Benachrichtungen nicht unterscheidet.
-
-h2. Formularfeld: Benachrichtigungen für Warnmeldungen per E-Mail versenden
-
-p. Mit dieser Option kann festgelegt werden, ob Meldungen mit dem Status WARNING per E-Mail versendet werden sollen. Standardmäßig steht die Option auf __no__.
-
-h2. Formularfeld: Benachrichtigungen für OK Meldungen per E-Mail versenden
-
-p. Mit dieser Option kann festgelegt werden, ob Benachrichtigungen für Services im Status __OK__ per Mail versendet werden. Das bedeutet, wenn ein Service im Status __WARNING__, __CRITICAL__ oder __UNKNOWN__ war und hierfür eine Notification per Mail versendet wurde, dann wird auch eine Notification versendet, wenn der Service wieder in den Status __OK__ wechselt.
-
-h2. Formularfeld: Benachrichtigungen für SMS eingeschaltet
-
-p. Mit dieser Option kann das Versenden von Warnmeldungen aktiviert oder deaktiert werden. Standardmäßig ist die Option auf __yes__ gesetzt.
-
-h2. Formularfeld: Benachrichtigungsintervall für SMS (soft)
+h2. Formularfeld: Benachrichtigungsintervall
 
 p. Ein Softintervall beeinflußt das erneute Versenden von Warnmeldungen. Wenn ein Service aus dem Status __OK__ in den Status __WARNING__ wechselt, dann wird für den betroffenen Service eine Benachrichtigung per E-Mail und/oder SMS versendet. Wenn der Status des Services sich in der angegeben Zeit des Softintervalls nicht ändert, dann wird eine erneute Benachrichtigung versendet. Auf diese Weise werden Sie als Administrator in einem regelmäßigen Intervall daran erinnert, in welchem Status sich ein Service befindet.
 
@@ -129,20 +125,4 @@ p. Der Grund für dieses Verfahren ist recht einfach zu verstehen. Stellen Sie s
 p. Die gleiche Situation lässt sich auch mit einem Statuswechsel von WARNING zu CRITICAL beschreiben. Sie erhalten wieder nachts um 2 Uhr eine Meldung, diesmal aber nur eine Warnmeldung. "Ok", denken Sie sich, "WARNING heißt noch lange nicht CRITICAL" und das Sie vielleicht noch ein paar Stunden Zeit haben das Problem zu lösen. Nun passiert es aber, dass der Service innerhalb kurzer Zeit von __WARNING__ auf __CRITICAL__ wechselt. In diesem Fall möchten Sie natürlich sofort erneut informiert werden um den Fehler zu beheben.
 
 p. Der Standardwert für Softintervalle ist auf 3600 Sekunden gesetzt.
-
-h2. Formularfeld: Benachrichtigungsintervall für SMS (hart)
-
-p. Ein Hartintervall ist im Gegensatz zum Softintervall sehr viel einfacher. Der Hartintervall bestimmt, in welchem Intervall eine Benachrichtigung versendet werden darf, egal wie oft ein Service den Status wechselt und auch in welche Richtung. Das heißt, wenn um 02:00 Uhr nachts eine SMS versendet wurde und der Hartintervall auf 30 Minuten konfiguriert ist, dann wird die nächste SMS erst 02:30 Uhr versendet!
-
-p. Mit dieser Option haben Sie die Möglichkeit, das Aufkommen von Benachrichtigungen etwas zu vermindern, natürlich mit dem Nachteil, dass wenn ein Service von __CRITICAL__ zu __OK__ und dann wieder zu __CRITICAL__ wechselt, erst nach Ablauf des Intervalls erneut eine Benachrichtigung versendet wird.
-
-p. Der Standardwert für Hartintervalle ist auf 0 Sekunden gesetzt.
-
-h2. Formularfeld: Benachrichtigungen für Warnmeldungen per SMS versenden
-
-p. Diese Option funktioniert wie __Send WARNINGS per mail__. Ist die Option auf __no__ gesetzt, so werden keine Warnmeldungen für den Service per SMS versendet, sondern nur, wenn der Status __CRITICAL__ oder __UNKNOWN__ ist. Standardmäßig ist die Option auf __no__ gesetzt.
-
-h2. Formularfeld: Benachrichtigungen für OK Meldungen per SMS versenden
-
-p. Diese Option funktioniert nach dem gleichen Prinzip wie __Send OK notifications per mail__.
 
