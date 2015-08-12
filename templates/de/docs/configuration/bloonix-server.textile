@@ -57,12 +57,23 @@ bc. tcp_server {
 
 <% include /de/docs/configuration/template-tcp-server-server.textile %><% include /de/docs/configuration/template-tcp-server-basic.textile %>
 
-h2. Sektion: smsgateway
+h2. Sektion: notifications
 
-bc. smsgateway {
-    command /usr/bin/curl --silent https://sms.test?key=SECRET&from=BLOONIX&to=%TO%&message=%MESSAGE%
-    response ^100$
+p. In der Sektion __notifications__ werden die Subsektionen zur Konfiguration von E-Mail und SMS Benachrichtigungen konfiguriert.
+
+bc.. notifications {
+    sms {
+        command /usr/bin/curl --silent https://sms.test?key=SECRET&from=BLOONIX&to=%TO%&message=%MESSAGE%
+        response ^100$
+    }
+    mail {
+        from subdomain@yourdomain.test
+        bcc admin@yourdomain.test
+        subject *** STATUS %s FOR %h (%a) ***
+    }
 }
+
+h3. Subsektion: sms
 
 |_. Parameter |_. Standard |_. Beschreibung |
 | command | | Das Kommando, um eine SMS zu versenden. Die Platzhalter %TO% und %MESSAGE% werden URL-encoded mit der Mobilfunknummer und der Warnmeldung ersetzt. |
@@ -70,15 +81,9 @@ bc. smsgateway {
 | failover_command | | Mit __failover_command__ lässt sich ein weiteres Kommando einrichten, welches aufgerufen wird, wenn das erste Kommando fehlgeschlagen ist. |
 | failover_response | | Die erwartete Antwort von __failover_command__. |
 
-h2. Sektion: email
+h3. Subsektion: mail
 
 p. Diese Sektion wird für das Versenden von E-Mails an Kontakte konfiguriert.
-
-bc. email {
-    from subdomain@yourdomain.test
-    bcc admin@yourdomain.test
-    subject *** STATUS %s FOR %h (%a) ***
-}
 
 |_. Parameter |_. Standard |_. Beschreibung |
 | sendmail | /usr/sbin/sendmail -t -oi -oem | Kommando zum Versenden von E-Mails. |
