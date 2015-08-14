@@ -23,7 +23,7 @@ include /etc/bloonix/agent/conf.d
 | config_path | /etc/bloonix/agent | Unter diesem Pfad können Plugin-spezifische Konfigurationsdateien abgelegt werden. |
 | simple_plugins |  | Falls Sie Nagios-kompatible Plugins einsetzen möchten, so können Sie hier den Pfad zu den installierten Plugins setzen. Eine komma-separierte Liste von Pfaden ist möglich. |
 | include |  | Mit dem Parameter __include__ lassen sich andere Konfigurationsdateien oder sogar Verzeichnisse einbinden. Falls das Ziel ein Verzeichnis ist, so werden alle Dateien darin inkludiert, die mit __.conf__ enden. |
-| use_sudo |  | Welche Checks sollen mit sudo ausgeführt werden. Hier werden nur die Checks Skripte angegeben, ohne Pfade. Es ist möglich mehrere Skripte komma-separiert anzugeben. |
+| use_sudo |  | Welche Checks sollen mit __sudo__ ausgeführt werden. Hier werden nur die Checks Skripte angegeben, ohne Pfade. Es ist möglich mehrere Skripte komma-separiert anzugeben. |
 
 h3. Parameter agents
 
@@ -46,7 +46,7 @@ p. Die Variablen __PLUGIN_LIBDIR__ und __CONFIG_PATH__ werden zum Start des Agen
 
 h3. Parameter: use_sudo
 
-p. Da der Bloonix-Agent nicht mit root-Rechten läuft, für manche Service-Checks jedoch root-Rechte benötigt werden, kann hier definiert werden, welche Service-Checks mit sudo ausgeführt werden sollen.
+p. Da der Bloonix-Agent nicht mit root-Rechten läuft, für manche Service-Checks jedoch root-Rechte benötigt werden, kann hier definiert werden, welche Service-Checks mit __sudo__ ausgeführt werden sollen.
 
 p. Die notwendigen Parameter für __use_sudo__ sollten nach der Installtion der Pakete, die Checks enthalten, welche via __sudo__ ausgeführt werden müssen, bereits angelegt sein. Wenn Sie zum Beispiel das Paket __bloonix-plugins-sensors__ installieren, wird eine Datei namens __/etc/bloonix/agent/conf.d/check-lm-sensors.conf__ angelegt, die folgenden Inhalt hat:
 
