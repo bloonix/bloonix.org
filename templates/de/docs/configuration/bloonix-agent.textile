@@ -58,7 +58,7 @@ p. Bitte beachten Sie, dass auch die __sudo__ Anweisungen bereits im Verzeichnis
 bc.. visudo
 #includedir /etc/bloonix/agent/sudoers.d
 
-p. Falls Sie Nagios-Plugins einsetzen und dieses via __sudo__ ausgeführt werden müssen, dann muss der Nagios-Check in __/etc/sudoers__ eingetragen werden und in der Konfigurationsdatei des Agenten mit dem Parameter __use_sudo__.
+p. Falls Sie Nagios-Plugins einsetzen und diese via __sudo__ ausgeführt werden müssen, dann muss der Nagios-Check in __/etc/sudoers__ eingetragen werden und in der Konfigurationsdatei des Agenten mit dem Parameter __use_sudo__.
 
 h2. Sektion: server
 
