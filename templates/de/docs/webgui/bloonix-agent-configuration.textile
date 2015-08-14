@@ -67,21 +67,7 @@ p. Als Beispiel nehmen wir zwei Service-Checks:
 
 p. Um nun für diese zwei Service-Checks __sudo__ einzurichten, gehen Sie folgt vor. Editieren Sie die sudo-Datei mittels dem Kommando __visudo__ und tragen dort die folgenden Zeilen ein:
 
-bc. bloonix ALL=NOPASSWD: /usr/lib/bloonix/plugins/check-mdadm
-bloonix ALL=NOPASSWD: /usr/lib/bloonix/plugins/check-smart-health
-Defaults:bloonix !requiretty
-Defaults:bloonix env_keep += "PLUGIN_LIBDIR CONFIG_PATH CHECK_HOST_ID CHECK_SERVICE_ID"
-Defaults:bloonix secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-
-p. _Bitte beachten Sie_, dass der Parameter __secure_path__ lediglich um den Pfad __/usr/sbin__ erweitert werden sollte, da das Programm __smartctl__ beispielsweise unter diesem Pfad liegt, dieser aber nicht bei allen Linux-Distributionen gesetzt ist.
-
-p. Als nächstes editieren Sie die Konfiguration des Bloonix-Agenten. Die Konfigurationdatei, in welcher der Host konfiguriert ist, ist entweder __/etc/bloonix/agent/conf.d/host-$id.conf__ oder __/etc/bloonix/agent/main.conf__. Fügen Sie in der Host-Sektion den Parameter __use_sudo__ wie folgt hinzu:
-
-bc. host {
-    use_sudo check-mdadm, check-smart-health
-    host_id 12345
-    password secret
-}
+bc. #includedir /etc/bloonix/agent/sudoers.d
 
 p. Stoppen und starten Sie den Bloonix-Agenten nach der Konfiguration, damit der Bloonix-Agent diese zwei Service-Checks mittels __sudo__ prüft.
 
