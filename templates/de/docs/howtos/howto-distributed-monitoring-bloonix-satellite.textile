@@ -12,7 +12,7 @@ p. In der folgenden Grafik sehen Sie, wie der Bloonix Satellit grundlegend funkt
 
 p. Der Bloonix-Agent, welcher für gewöhnlich für die Ausführung von Checks verantwortlich ist, leitet die Checks an die Satelliten weiter. Nehmen Sie zum Beispiel an, Sie möchten Ihre Webseite von den Standorten London, Frankfurt und Paris prüfen. Der Bloonix-Agent erhält von dem Bloonix-Server den Auftrag, den Check auszuführen, der Bloonix-Agent leitet den Check an die Satelliten weiter. Nachdem die Satelliten den Check ausgeführt haben, reichen diese das Ergebnis zurück an den Agenten, welcher die Daten zusammenführt und den Status an den Bloonix-Server übermittelt.
 
-h2. Installation und Einrichtung des Bloonix Satellite
+h2. Installation und Einrichtung des Bloonix Satelliten
 
 p. Angenommen, Sie haben 3 Server, von denen Sie Ihre Internetservices überwachen lassen möchten. Als Beispiel nehmen wir die Standorte London, Frankfurt und Paris. Zunächst einmal müssen Sie den Bloonix-Satelliten auf den Server installieren:
 
