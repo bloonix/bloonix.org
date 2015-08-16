@@ -1,0 +1,51 @@
+h1. Sicherheit
+
+p. Sicherheit ist ein wichtiges Thema und gerade bei Diensten, die im Internet betrieben werden können, extrem wichtig. In diesem Dokument soll erläutert werden, welche Techniken in der Software von Bloonix eingesetzt werden, um die Kommunikation und auch bestimmte Daten von Bloonix abzusichern.
+
+h2. SSL
+
+p. Die Kommunikation zwischen den einzelnen Bloonix Komponenten wird standardmäßig via SSL abgesichert. Auf diese Weise ist es möglich, Serverkomponenten über SSL-Zertifikate zu validieren. Wenn sich zum Beispiel der Bloonix-Agent mit dem Bloonix-Server verbinden möchte, so kann der Agent sicherstellen, dass er sich auch tatsächlich mit einem validen Server verbindet, in dem der Agent das Zertifikat des Servers validiert. In allen Client/Server Komponenten gibt es hierfür in den Konfigurationsdateien identische Parametereinstellungen.
+
+p. Für Clients sind das folgende Parameter:
+
+bc.. server {
+    host $hostname
+    port $portnumber
+    mode failover
+    use_ssl yes
+    ssl_verify_mode peer
+
+    # Debian / SuSE / SLES
+    ssl_ca_path /etc/ssl/certs
+
+    # Red Hat / CentOS / Fedora
+    ssl_ca_file /etc/pki/tls/certs/ca-bundle.crt
+}
+
+p. Die Parameter __ssl_ca_path__ und __ssl_ca_file__ geben den Ort, an dem die Root-CAs liegen, um das Zertifikat des Servers zu validieren. Wenn ein Zertifikat nicht validiert werden konnte, so wird die Verbindung abgebrochen.
+
+p. Auf Serverseite gibt es die Parameter __ssl_key_file__ und ssl_cert_file__ für den privaten Schlüssel sowie das Zertifikat:
+
+bc.. tcp_server {
+    port $portnumber
+    use_ssl yes
+    ssl_key_file /path/to/server.key
+    ssl_cert_file /path/to/server.cert
+}
+
+h2. PBKDF2
+
+p. Bloonix verwendet PBKDF2 als Hash-Verfahren, um aus den Benutzerpasswörtern für die WebGUI einen Schlüssel abzuleiten, welcher dann in der Datenbank gespeichert wird. Zur Generierung des Schlüssels verwendet Bloonix einen Salt mit einer Länge von 64 Zeichen, SHA512 und mindenstens 10000 Runden.
+
+h2. Der Benutzer __bloonix__
+
+p. Alle Prozesse von Bloonix laufen auf unixoiden Systemen mit dem Benutzer __bloonix__, welcher während der Installation von Bloonix erstellt wird. Für den Fall, dass Bloonix zur Prüfung von Services Root-Rechte benötigt, wird __sudo__ verwendet.
+
+h2. Verbindungen zwischen Server und Agent
+
+p. Hier gilt es eine wichtige Frage zu klären: "Wer verbindet sich mit wem?", oder auch: "Wer darf sich mit wem verbinden?". Diese Frage ist besonders für die Netzwerksicherheit wichtig, denn zwischen dem Monitoring-Server und dem zu überwachenden System muss eine Netzwerkverbindung aufgebaut werden. In manchen Netzwerkumgebungen kann das ein Hindernis darstellen, zum Beispiel wenn das Monitoring-System und das zu überwachende System in unterschiedlichen Netzwerken untergebracht sind.
+
+p. Viele Monitoring-Systeme arbeiten nach folgendem Verfahren: es gibt einen Monitoring-Server, vom dem aus die Checks ausgeführt werden. Das heißt, dass der Monitoring-Server die zeitgerechte Ausführung der Checks verwaltet und sich mit dem zu überwachenden System verbindet, um es zu überwachen. So funktioniert zum Beispiel auch die Monitoring-Software Nagios. Es gibt einen Nagios-Server, welcher für die Ausführung der Checks verantwortlich ist. Bei diesem Verfahren ist es notwendig, dass der Monitoring-Server zu jedem System, welches überwacht werden muss, eine Netzwerkverbindung aufbauen kann. Das Verfahren ist gut, solange sich alle Systeme, die überwacht werden müssen, auch im gleichen Netzwerk wie der Monitoring-Server befinden. Die Schwierigekeiten beginnen, sobald sich Systeme in fremden Netzwerken befinden. Insbesondere für Unternehmen, welche Monitoring als Dienstleistung anbieten möchten, kann dies eine große Hürde darstellen, denn kein Kunde vergibt gerne einen Zugang via Port oder VPN in sein privates Netzwerk.
+
+p. Aus den oben genannten Gründen funktioniert Bloonix anders, oder man könnte soagr sagen, Bloonix funktioniert genau anders herum. Während bei vielen Monitoring-Systemen der Monitoring-Server eine aktive Komponente und für die zeitliche Ausführung der Checks veranwortlich ist, so ist der Bloonix-Server eine passive Komponente. Der Bloonix-Server ist weder für die zeitliche Auführung von Checks verantwortlich, noch benötigt der Bloonix-Server eine Verbindung zu jedem System, welches überwacht werden muss. Diese Aufgaben wurden an einen eigenen Dienst ausgelagert und zwar dem Bloonix-Agenten. Der Bloonix-Agent wird auf einem beliebigen System installiert und ist für die zeitliche Ausführung der Checks verantwortlich. Der Bloonix-Agent kann also auf einem Server in jedem Netzwerk installiert werden, um von dort aus alle Systeme zu überwachen. Der Agent kann auch direkt auf dem zu überwachenden Server installiert werden, um diesen zu überwachen. Letztendich verbindet sich der Agent mit dem Server. Dieses Verfahren hat den großen Vorteil, dass nicht jedes zu überwachende System für den Monitoring-Server erreichbar sein muss, sondern der Bloonix-Server muss für jeden Agenten erreichbar sein.
+

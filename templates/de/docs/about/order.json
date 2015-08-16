@@ -5,4 +5,5 @@
     { "Feature Liste": "features.textile" },
     { "Plugins": "plugins.textile" },
     { "Systemanforderungen": "requirements.textile" }
+    { "Sicherheit": "security.textile" }
 ]
