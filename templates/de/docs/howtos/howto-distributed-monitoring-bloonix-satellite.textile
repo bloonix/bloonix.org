@@ -35,7 +35,7 @@ p. Der Parameter, welcher angepasst werden muss, lautet __authkey__. Setzen Sie 
 
 bc. authkey your-very-long-authkey
 
-p. Zusätzlich können Sie SSL Parameter anpassen. Nach der Installation des Satelliten wird ein SSL Zertifikat generiert. Wenn Sie dieses durch ein gültiges Zeritifkat erstezen möchten, so können Sie die Anapassungen hierfür in der Sektion __tcp_server__ vornehmen. Die Sektion sollte Ihnen bereits bekannt sein, da diese identisch mit der Konfigration des Bloonix-Server ist.
+p. Zusätzlich können Sie die SSL Parameter anpassen. Nach der Installation des Satelliten wird ein SSL Zertifikat generiert. Wenn Sie dieses durch ein gültiges Zertifikat erstezen möchten, so können Sie die Anapassungen hierfür in der Sektion __tcp_server__ vornehmen. Die Sektion sollte Ihnen bereits bekannt sein, da diese identisch mit der Konfigration des Bloonix-Server ist.
 
 h2. Welche Checks darf der Satellit ausführen
 
@@ -46,14 +46,14 @@ h2. Konfiguration des Agenten
 p. Damit sich der Agent bei den Satelliten authentifizieren kann, benötigt dieser ebenfalls den Authkey, welcher bei den Satelliten konfiguriert wird. Editieren Sie die Konfiguration des Agenten, der bei Ihnen die __remote__ Checks ausführt und tragen dort folgende Sektion ein:
 
 bc. satellite {
-    ssl_verify_mode yes
+    ssl_verify_mode peer
     ssl_ca_path /etc/ssl/certs
     authkey your-very-long-authkey
 }
 
 p. Wenn auf dem Satelliten _kein gültiges SSL-Zertifikat_ eingesetzt wird, so müssen Sie den Parameter __ssl_verify_mode__ auf __none__ setzen.
 
-h2. Einrichtung der Satellites in der WebGUI
+h2. Einrichtung der Satelliten in der WebGUI
 
 p. Nach dem nun die Satelliten und Agenten eingerichtet sind, müssen im nächsten Schritt die Satelliten in der WebGUI konfiguriert werden. Loggen Sie sich hierzu mit dem Administrator Account. Die Satelliten werden im Bereich __ADMINISTRATION__ eingerichtet:
 
