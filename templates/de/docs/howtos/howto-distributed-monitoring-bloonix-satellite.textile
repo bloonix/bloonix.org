@@ -10,7 +10,7 @@ p. In der folgenden Grafik sehen Sie, wie der Bloonix Satellit grundlegend funkt
 
 !{width: 100%; margin: 20px 0;}/public/img/bloonix-satellite-area.png!
 
-p. Der Bloonix-Agent, welcher für gewöhnlich für die Ausführung von Checks verantwortlich ist, leitet die Checks an die Satelliten weitern. Nehmen Sie zum Beispiel an, Sie möchten Ihre Webseite von den Standorten London, Frankfurt und Paris prüfen. Der Bloonix-Agent erhält von dem Bloonix-Server den Auftrag, den Check auszuführen, der Bloonix-Agent leitet den Check jedoch an die Satelliten weiter. Nachdem die Satelliten den Check ausgeführt haben, reichen diese das Ergebnis zurück an den Agenten, welcher die Daten zusammenführt und den Status an den Bloonix-Server übermittelt.
+p. Der Bloonix-Agent, welcher für gewöhnlich für die Ausführung von Checks verantwortlich ist, leitet die Checks an die Satelliten weiter. Nehmen Sie zum Beispiel an, Sie möchten Ihre Webseite von den Standorten London, Frankfurt und Paris prüfen. Der Bloonix-Agent erhält von dem Bloonix-Server den Auftrag, den Check auszuführen, der Bloonix-Agent leitet den Check an die Satelliten weiter. Nachdem die Satelliten den Check ausgeführt haben, reichen diese das Ergebnis zurück an den Agenten, welcher die Daten zusammenführt und den Status an den Bloonix-Server übermittelt.
 
 h2. Installation und Einrichtung des Bloonix Satellite
 
@@ -25,9 +25,9 @@ yum install bloonix-satellite
 bc. # SuSE / SLES
 zypper install bloonix-satellite
 
-h2. Konfiguration des Bloonix-Satellite
+h2. Konfiguration des Bloonix-Satelliten
 
-p. Nach der Installation muss in der Konfigurationsdatei des Satellite der Parameter __authkey__ angepasst werden. Dieser Key wird zur Authentifizierung verwendet, sprich, damit der Bloonix-Agent über einen Satelliten Checks ausführen darf, muss sich der Agent mit einem Authkey identifizieren. Die Konfigurationsdatei des Satelliten lautet:
+p. Nach der Installation muss in der Konfigurationsdatei des Satelliten der Parameter __authkey__ angepasst werden. Dieser Key wird zur Authentifizierung verwendet, sprich, damit der Bloonix-Agent über einen Satelliten Checks ausführen darf, muss sich der Agent mit einem Authkey identifizieren. Die Konfigurationsdatei des Satelliten lautet:
 
 bc. /etc/bloonix/satellite/main.conf
 
