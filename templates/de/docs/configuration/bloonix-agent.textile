@@ -6,7 +6,7 @@ bc. /etc/bloonix/agent/main.conf
 
 h2. Globale Parameter
 
-bc. agents 1
+bc. agents 4
 user bloonix
 group bloonix
 plugins /usr/lib/bloonix/plugins
@@ -25,13 +25,13 @@ include /etc/bloonix/agent/conf.d
 | include |  | Mit dem Parameter __include__ lassen sich andere Konfigurationsdateien oder sogar Verzeichnisse einbinden. Falls das Ziel ein Verzeichnis ist, so werden alle Dateien darin inkludiert, die mit __.conf__ enden. |
 | use_sudo |  | Welche Checks sollen mit __sudo__ ausgeführt werden. Hier werden nur die Checks Skripte angegeben, ohne Pfade. Es ist möglich mehrere Skripte komma-separiert anzugeben. |
 
-h3. Parameter agents
+h2. Detailierte Beschreibung einzelner Parameter
 
-p. Dieser Parameter bestimmt, wieviele Agenten mittels fork() gestartet werden sollen, um die Daten zu sammeln. Da der Agent meistens installiert wird, um den lokalen Server zu überwachen, reicht es diesen Parameter auf 1 zu setzen. Diesen Wert höher als 1 zu setzen, lohnt sich erst, wenn der Agent mehr als einen Host überwacht.
+h3. Parameter agents und max_concurrent_checks
 
-p. Ein Agent führt immer alle konfigurierten Checks eines Host aus und sendet die Daten gebündelt zum Bloonix-Server. Wieviele Agenten schlussendlich konfiguriert werden, kommt immer darauf an, wieviele Hosts und wieviele Checks in der Summe konfiguriert sind. Ein weiterer Faktor ist auch, wie lange ein Agent benötigt um alle Checks eines Hosts auszuführen.
+p. Der Bloonix-Agent verwendet fork(), um bei Programmstart die angegebene Anzahl an Agenten, die mit dem Parameter __agents__ angegeben ist, zu forken. Der Parent-Prozess fungiert als Scheduler und verteilt die Arbeit auf die Child-Prozesse. Mit dem Parameter __max_concurrent_checks__ wird bestimmt, wieviele Service-Checks parallel pro Host ausgeführt werden. Es wird empfohlen, den Parameter __agents__ und __max_concurrent_checks__ auf mindestens 4 einzustellen.
 
-p. Wenn Sie zum Beispiel 10 Hosts mit je 10 Services konfiguriert haben, so sollten 3 Agenten vollkommen ausreichen, diese 10 Hosts zu prüfen.
+p. Der Parameter __max_concurrent_checks__ sollte nie größer sein als der Parameter __agents__, da nur soviele konkurrierende Checks ausgeführt werden können, wie es Agenten gibt.
 
 h3. Umgebungsvariablen
 
