@@ -1,4 +1,4 @@
-h1. Sicherheit
+h1. Bloonix und Sicherheit
 
 p. Sicherheit ist ein wichtiges Thema und gerade bei Diensten, die im Internet betrieben werden können, extrem wichtig. In diesem Dokument soll erläutert werden, welche Techniken in der Software von Bloonix eingesetzt werden, um die Kommunikation und auch bestimmte Daten von Bloonix abzusichern.
 
@@ -22,9 +22,9 @@ bc.. server {
     ssl_ca_file /etc/pki/tls/certs/ca-bundle.crt
 }
 
-p. Die Parameter __ssl_ca_path__ und __ssl_ca_file__ geben den Ort, an dem die Root-CAs liegen, um das Zertifikat des Servers zu validieren. Wenn ein Zertifikat nicht validiert werden konnte, so wird die Verbindung abgebrochen.
+p. Die Parameter __ssl_ca_path__ und __ssl_ca_file__ geben den Ort an, an dem die Root-CAs liegen, um das Zertifikat des Servers zu validieren. Wenn ein Zertifikat nicht validiert werden konnte, so wird die Verbindung abgebrochen.
 
-p. Auf Serverseite gibt es die Parameter __ssl_key_file__ und ssl_cert_file__ für den privaten Schlüssel sowie das Zertifikat:
+p. Auf Serverseite gibt es die Parameter __ssl_key_file__ und __ssl_cert_file__ für den privaten Schlüssel sowie das Zertifikat:
 
 bc.. tcp_server {
     port $portnumber
@@ -33,11 +33,11 @@ bc.. tcp_server {
     ssl_cert_file /path/to/server.cert
 }
 
-h2. PBKDF2
+h2. Passwörter und PBKDF2
 
 p. Bloonix verwendet PBKDF2 als Hash-Verfahren, um aus den Benutzerpasswörtern für die WebGUI einen Schlüssel abzuleiten, welcher dann in der Datenbank gespeichert wird. Zur Generierung des Schlüssels verwendet Bloonix einen Salt mit einer Länge von 64 Zeichen, SHA512 und mindenstens 10000 Runden.
 
-h2. Der Benutzer __bloonix__
+h2. Der Benutzer „bloonix“
 
 p. Alle Prozesse von Bloonix laufen auf unixoiden Systemen mit dem Benutzer __bloonix__, welcher während der Installation von Bloonix erstellt wird. Für den Fall, dass Bloonix zur Prüfung von Services Root-Rechte benötigt, wird __sudo__ verwendet.
 
