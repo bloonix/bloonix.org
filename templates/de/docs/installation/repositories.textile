@@ -88,7 +88,7 @@ bc. wget https://download.bloonix.de/repos/centos/RPM-GPG-KEY-Bloonix \
     --output-document /etc/pki/rpm-gpg/RPM-GPG-KEY-Bloonix
 rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-Bloonix
 
-h2. Repository für openSUSE
+h2. Repository für openSUSE / SLES
 
 h3. Unterstützte Versionen
 
