@@ -47,8 +47,6 @@ h3. Netzwerksicherheit
 
 p. Hier gilt es eine wichtige Frage zu klären: "Wer verbindet sich mit wem?", oder auch: "Wer darf sich mit wem verbinden?". Diese Frage ist besonders für die Netzwerksicherheit wichtig, denn zwischen dem Monitoring-Server und dem zu überwachenden System muss eine Netzwerkverbindung aufgebaut werden. In manchen Netzwerkumgebungen kann das ein Hindernis sein, zum Beispiel wenn sich das Monitoring-System und das zu überwachende System in unterschiedlichen Netzwerken befinden.
 
-h3. Der Monitoring-Server verbindet sich mit dem zu überwachenden System
-
 p. Viele Monitoring-Systeme arbeiten nach folgendem Verfahren: es gibt einen Monitoring-Server, der die zeitgerechte Ausführung der Checks verwaltet und sich mit dem zu überwachenden System verbindet, um es zu überwachen.
 
 p. Bei diesem Verfahren ist es notwendig, dass der Monitoring-Server zu jedem System, welches überwacht werden muss, eine Netzwerkverbindung aufbauen kann. Das Verfahren ist gut, solange sich alle Systeme, die überwacht werden müssen, auch im gleichen Netzwerk wie der Monitoring-Server befinden. Die Schwierigkeiten beginnen, sobald sich Systeme in fremden Netzwerken befinden. Insbesondere für Unternehmen, welche Monitoring als Dienstleistung anbieten möchten, kann dies eine große Hürde darstellen, denn kein Kunde vergibt gerne einen Zugang in sein internes Netzwerk.
