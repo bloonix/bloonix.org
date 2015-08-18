@@ -63,7 +63,7 @@ p. Der Bloonix-Agent wird entweder direkt auf dem zu überwachenden System insta
 
 !{margin: 40px 0;}/public/img/bloonix-howto-agent-server.png!
 
-p. oder auf einem zentralen Server im Netzwerk installiert.
+p. oder auf einem zentralen Server im Netzwerk installiert:
 
 !{margin: 40px 0;}/public/img/bloonix-howto-agent-server-remote.png!
 
