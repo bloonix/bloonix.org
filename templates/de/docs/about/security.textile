@@ -59,7 +59,13 @@ p. Aus den oben genannten Schwierigkeiten funktioniert Bloonix anders, oder man 
 
 p. Während bei vielen Monitoring-Systemen der Monitoring-Server eine aktive Komponente und für die zeitliche Ausführung der Checks veranwortlich ist, so ist der Bloonix-Server eine passive Komponente. Der Bloonix-Server ist weder für die zeitliche Auführung von Checks verantwortlich, noch benötigt der Bloonix-Server eine Verbindung zu jedem System, welches überwacht werden muss. Diese Aufgaben wurden an einen eigenen Dienst ausgelagert und zwar dem Bloonix-Agenten.
 
+p. Der Bloonix-Agent wird entweder direkt auf dem zu überwachenden System installiert:
+
 !{margin: 40px 0;}/public/img/bloonix-howto-agent-server.png!
 
-p. Der Bloonix-Agent wird entweder direkt auf dem zu überwachenden System oder auf einem zentralen Server im Netzwerk installiert. Dieser verbindet sich mit dem Bloonix-Server und fragt entweder die Services ab, die in der WebGUI konfiguriert wurden und überwacht werden müssen oder liefert die Ergebnisse der Prüfungen ab.  Dieses Verfahren hat den großen Vorteil, dass nicht jedes zu überwachende System für den Monitoring-Server erreichbar sein muss, sondern der Bloonix-Server muss für jeden Agenten erreichbar sein.
+p. oder auf einem zentralen Server im Netzwerk installiert.
+
+!{margin: 40px 0;}/public/img/bloonix-howto-agent-server-remote.png!
+
+p. Der Bloonix-Agent verbindet sich mit dem Bloonix-Server und fragt entweder die Services ab, die in der WebGUI konfiguriert wurden und überwacht werden müssen oder liefert die Ergebnisse der Prüfungen ab.  Dieses Verfahren hat den großen Vorteil, dass nicht jedes zu überwachende System für den Monitoring-Server erreichbar sein muss, sondern der Bloonix-Server muss für jeden Agenten erreichbar sein.
 
