@@ -48,15 +48,13 @@ h3. Parameter: use_sudo
 
 p. Da der Bloonix-Agent nicht mit root-Rechten läuft, für manche Service-Checks jedoch root-Rechte benötigt werden, kann hier definiert werden, welche Service-Checks mit __sudo__ ausgeführt werden sollen.
 
-p. Die notwendigen Parameter für __use_sudo__ sollten nach der Installtion der Pakete, die Checks enthalten, welche via __sudo__ ausgeführt werden müssen, bereits angelegt sein. Wenn Sie zum Beispiel das Paket __bloonix-plugins-sensors__ installieren, wird eine Datei namens __/etc/bloonix/agent/conf.d/check-lm-sensors.conf__ angelegt, die folgenden Inhalt hat:
+p. Die notwendigen Parameter und Dateien zur Funktionalität von __sudo__ sollten nach der Installtion der Pakete, die Checks enthalten, welche via __sudo__ ausgeführt werden müssen, bereits angelegt sein. Wenn Sie zum Beispiel das Paket __bloonix-plugins-sensors__ installieren, dann werden die Dateien __/etc/bloonix/agent/conf.d/check-lm-sensors.conf__ und __/etc/sudoers.d/60_bloonix_check_lm_sensors__ angelegt, die folgenden Inhalt haben:
 
 bc.. cat /etc/bloonix/agent/conf.d/check-lm-sensors.conf
 use_sudo check-lm-sensors
 
-p. Bitte beachten Sie, dass auch die __sudo__ Anweisungen bereits im Verzeichnis __/etc/bloonix/agent/sudoers.d__ konfiguriert sind. Wenn Sie also Checks verwenden möchten, die via __sudo__ ausgeführt werden müssen, so inkludieren Sie bitte das Verzeichnis in der Datei __/etc/sudoers__.
-
-bc.. visudo
-#includedir /etc/bloonix/agent/sudoers.d
+bc.. cat /etc/sudoers.d/60_bloonix_check_lm_sensors
+bloonix ALL=(ALL) NOPASSWD:/usr/lib/bloonix/plugins/check-lm-sensors
 
 p. Falls Sie Nagios-Plugins einsetzen und diese via __sudo__ ausgeführt werden müssen, dann muss der Nagios-Check in __/etc/sudoers__ eingetragen werden und in der Konfigurationsdatei des Agenten mit dem Parameter __use_sudo__.
 
