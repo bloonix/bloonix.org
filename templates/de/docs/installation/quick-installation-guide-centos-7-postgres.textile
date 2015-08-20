@@ -99,6 +99,12 @@ h3. Initialisieren Sie das Bloonix Schema für PostgreSQL
 
 bc. sudo /srv/bloonix/webgui/schema/init-database --postgres
 
+h3. Plugin Metadaten
+
+p. Nachdem die Datenbank erfolgreich initiiert wurde und läuft, kann das Paket __bloonix__plugin_config__ installiert werden, das die Metadaten der Plugins in die Datenbank importiert:
+
+bc. sudo yum install bloonix-plugin-config
+
 h3. Konfigurieren Sie den Agenten
 
 p. Editieren Sie die Konfiguration des Bloonix Agenten und konfigurieren Sie die Sektion __server__:

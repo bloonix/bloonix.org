@@ -65,6 +65,12 @@ h3. Initialisieren Sie das Bloonix Schema für MariaDB
 
 bc. sudo /srv/bloonix/webgui/schema/init-database --mysql
 
+h3. Plugin Metadaten
+
+p. Nachdem die Datenbank erfolgreich initiiert wurde und läuft, kann das Paket __bloonix__plugin_config__ installiert werden, das die Metadaten der Plugins in die Datenbank importiert:
+
+bc. sudo yum install bloonix-plugin-config
+
 h3. Konfigurieren Sie den Agenten
 
 p. Editieren Sie die Konfiguration des Bloonix Agenten und konfigurieren Sie die Sektion __server__:
@@ -82,6 +88,12 @@ host demo.bloonix.org
 ssl_verify_mode none
 </code></pre>
 ==
+
+h3. Plugin meta data
+
+p. After the database were successfully initiated and is running, you can install the package __bloonix__plugin_config__ that imports the plugin meta data into the database:
+
+bc. sudo yum install bloonix-plugin-config
 
 h3. Alle Bloonix Dienste starten
 
