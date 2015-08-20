@@ -44,14 +44,13 @@ mysql_secure_installation
 
 h3. Nginx
 
-p. Edit __/etc/nginx/nginx.conf__:
+p. Create the configuration file __/etc/nginx/conf.d/001_bloonix.conf__ with the following content:
 
-bc. sudo vim /etc/nginx/nginx.conf
+bc. include /etc/bloonix/webgui/nginx.conf;
 
-p. and insert the following line:
+p. or just execute the following command:
 
-bc. include /etc/bloonix/webgui/nginx.conf; # insert this line
-include /etc/nginx/conf.d/*.conf;       # above this line
+bc. sudo echo "include /etc/bloonix/webgui/nginx.conf;" >/etc/nginx/conf.d/001_bloonix.conf
 
 h3. Start Elasticsearch and Nginx
 

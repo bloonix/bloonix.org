@@ -19,11 +19,11 @@ p. The Bloonix-WebGUI runs as a external FastCGI application and needs Nginx as 
 
 bc. /etc/bloonix/webgui/nginx.conf
 
-p. All you need to do is to include the file into the Nginx configuration. Edit the configuration of Nginx:
+p. All you need to do is to include the file into the Nginx configuration. Create a new configuration file:
 
-bc. /etc/nginx/nginx.conf
+bc. /etc/nginx/conf.d/001_bloonix.conf
 
-p. and insert the following line _at the end of the http section_:
+p. and insert the following line:
 
 bc. include /etc/bloonix/webgui/nginx.conf;
 
