@@ -91,6 +91,15 @@ sudo systemctl start bloonix-server.service
 sudo systemctl start bloonix-srvchk.service
 sudo systemctl start bloonix-agent.service
 
+h3. Start all services automatically at system boot
+
+bc. sudo systemctl enable bloonix-webgui.service
+sudo systemctl enable bloonix-server.service
+sudo systemctl enable bloonix-srvchk.service
+sudo systemctl enable bloonix-agent.service
+sudo systemctl enable mariadb
+sudo systemctl enable nginx
+
 h3. Ready to rumble
 
 p. Done! :-) Now you can login into the WebGUI. The initial username and password is __admin/admin__
