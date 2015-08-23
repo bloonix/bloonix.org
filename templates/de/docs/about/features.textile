@@ -104,7 +104,6 @@ h1. Feature Liste
 ** Datenbank Cluster (MySQL Replikation, PostgreSQL Replikation)
 ** Elasticsearch Cluster
 
-* Entwickelt in Perl
 * Einfach erweiterbar
 * Open-Source-Software
 * Lizensiert unter der GPLv3
