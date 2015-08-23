@@ -23,7 +23,7 @@ h2. Kurze Historie
 * _2006_: Im Januar 2006 wurden die ersten Zeilen Code für die Monitoring Software Bloonix geschrieben.
 * _2010_: Im April 2010 startete die Cloud-Lösung Bloonix.
 * _2014_: Im November 2014 wurde die gesamte Software von Bloonix unter die GPLv3 lizenziert.
-* _2015_: Im März 2015 gewinnt Bloonix zusammen mit dem Software Projekt Lychee den den Open-Source-Preis 2014 welcher vom Buch7 Verlag initiiert wurde.
+* _2015_: Im März 2015 gewinnt Bloonix zusammen mit dem Software Projekt Lychee den Open-Source-Preis 2014 welcher vom Buch7 Verlag initiiert wurde.
 
 h2. Entwicklungsgeschwindigkeit
 
