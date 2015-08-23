@@ -18,3 +18,14 @@ p. Für den Einsatz von Bloonix wird ein unixoides Betriebssystem und ein Perl a
 
 p. Der Bloonix-Agent, der für die Überwachung von Systemen verantwortlich ist, ist auch für ältere Linux Versionen verfügbar. Hier reicht ein Perl ab Version 5.8, die Installation erfolgt jedoch manuell (configure, make, make install).
 
+h2. Kurze Historie
+
+* _2006_: Im Januar 2006 wurden die ersten Zeilen Code für die Monitoring Software Bloonix geschrieben.
+* _2010_: Im April 2010 startete die Cloud-Lösung Bloonix.
+* _2014_: Im November 2014 wurde die gesamte Software von Bloonix unter die GPLv3 lizenziert.
+* _2015_: Im März 2015 gewinnt Bloonix zusammen mit dem Software Projekt Lychee den den Open-Source-Preis 2014 welcher vom Buch7 Verlag initiiert wurde.
+
+h2. Entwicklungsgeschwindigkeit
+
+p. Seit dem die Software von Bloonix unter die GPLv3 gestellt wurde, erreichen uns viele Anfragen zu neuen Features. Wir von Bloonix sind ein sehr aktives Team und haben auch den Anspruch, das Feature-Set von Bloonix stetig und zügig zu erweitern. Aus diesem Grund kann es auch vorkommen, dass es fast monatlich ein Update mit neuen Features gibt. Wir haben ebenfalls den Anspruch, Bugs so schnell wie möglich zu fixen, was bedeutet, dass es nach einem Bug Report meistens noch am gleichen oder am nächsten Tag neue Pakete mit Bugfixes gibt. Wenn Sie also den Wunsch haben, Bloonix als Monitoring Lösung einzusetzen, dann lohnt es sich, öfters mal im Forum bei Bloonix vorbeizuschauen, um zu erfahren, wie sich Bloonix weiterentwickelt hat und welche Ankündigungen es zu künftige Updates gibt.
+

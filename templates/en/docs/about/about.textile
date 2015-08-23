@@ -17,3 +17,15 @@ h2. Supported operating systems
 p. For the application of Bloonix an unix based operating system and a Perl from version 5.14 is required. We recommend the use of Linux, with pleasure Debian, Ubuntu, Red Hat, CentOS, Fedora or also openSUSE, because there are ready packages for the distributions.
 
 p. The Bloonix agent who is responsible for the monitoring of systems is also available for older Linux versions. Here reaches a Perl from version 5.8, nevertheless, the installation occurs by hand (configure, make, make instal).
+
+h2. Short history
+
+* _2006_: In January, 2006 the first lines code were written for the monitoring software Bloonix.
+* _2010_: In April, 2010 Bloonix began the cloud solution.
+* _2014_: In November, 2014 the whole software was licensed by Bloonix under the GPLv3.
+* _2015_: In March, 2015 Bloonix wins together with the software project Lychee the __Open-Source-Price 2014__ which were initiated of the Buch7.de.
+
+h2. Developing speed
+
+p. Since the software of Bloonix were licensed under the GPLv3, many new feature requests reach us. We of Bloonix are a very active team and are entitled also to extend the feature set of Bloonix steadily and quickly. That's why it can also seem that there is almost monthly an update with new features. We are entitled also to fix bugs as fast as possible what means that new packages with bug fixes are published at the same or the next day. If you have the wish to use Bloonix as a monitoring solution, then it's worthwhile to visit sometimes our forum to find out how Bloonix has developed and which announcements there are too future updates.
+
