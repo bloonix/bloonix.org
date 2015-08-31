@@ -96,7 +96,7 @@ h1. Feature Liste
 
 * Skalierbarkeit
 ** Verteilung von Service Check zu multiplen Servern
-** Überwachung von 100.000+ Hosts und Services pro Instanz
+** Überwachung von 10.000+ Hosts und Services pro Instanz
 ** Datenverteilung mit Elasticsearch
 
 * Hochverfügbarkeit

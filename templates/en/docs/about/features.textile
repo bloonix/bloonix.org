@@ -96,7 +96,7 @@ h1. Feature list
 
 * Scalability
 ** Service Check distributing to multiple servers
-** Monitoring 100.000+ Hosts and Services per Instance
+** Monitoring 10.000+ Hosts and Services per Instance
 ** Data distribution with Elasticsearch
 
 * High availability
