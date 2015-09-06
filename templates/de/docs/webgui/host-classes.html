@@ -1,0 +1,44 @@
+h1. Klassen von Hosts
+
+h2. Wie funktioniert dieses Feature
+
+p. Im Formular zur Konfiguration von Hosts gibt es die Felder __Hostklasse__, __Systemklasse__ und __Standortklasse__. In diesen Felden haben Sie die Möglichkeit, einen Host zu klassifizieren. Der Grundlegende Gedanke der Klassen ist, bei größeren Ausfällen schnell und zielführend eine ausgefallene Gruppe von Hosts anhand ihrer Klasse ausfindig zu machen.
+
+p. Die Felder können frei verwendet werden. Hier ist ein Beispiel je Klasse, wie diese verwendet werden könnten:
+
+|Host class:|/Server/Dell/R730|
+|System class:|/Linux/Debian/Wheezy|
+|Location class:|/EU/DE/Hamburg/DC-2/Rack-14|
+
+p.  Beispielszenario: in einem Rechenzentrum fällt ein Schrank komplett aus. In dem Schrank gibt es 20 Server mit der Klasse __/EU/Germany/DC 1/Room 4/Rack 14__. Nun könnten Sie sich im Bereich __Standortklasse__ bis zu der ausgefallenen Klasse von Hosts herunterklicken:
+
+bc. All (1000)
+    EU (800)
+      Germany (800)
+        DC 1 (400)
+          Room 4 (400)
+            Rack 14 (20)
+        DC 2 (400)
+          Room 3 (400)
+            Rack 18 (16)
+
+bc. /Server/Linux/Debian/Wheezy
+
+p. Der Server würde dann in der Hierarchie wie folgt auftauchen:
+
+bc. 
+  All (1)
+    Server (1)
+      Linux (1)
+        Debian (1)
+          Wheezy (1)
+
+p. In der folgenden Grafik erhalten Sie ein Beispiel, wie die Hierarchie der Klassen ausschaut:
+
+!{margin: 40px 0;}/public/img/device-classes-1.png! 
+
+p. Auf jeder Ebene der Hierarchie wird ein Icon angezeigt, dass Ihnen den höchsten Status aller Hosts in dieser Ebene anzeigt. Ist beispielsweise ein Host im Status CRITICAL, so wird die Ebene mit einem roten Icon markiert. Zusätzlich wird die Anzahl der Hosts angezeigt, die sich nicht im Status OK befinden.
+
+p. In der folgenden Grafik sehen Sie zum Beispiel, dass es 146 Hosts mit der Klasse __/Server__ gibt und davon ist 1 Host nicht OK. Hat ein Host weitere Subklassen, so können Sie sich weiter durch die Ebenen klicken. Letztendlich befindet sich der Host, der sich im Status UNKNOWN befindet, auf der Ebene __/Server/Linux/Debian/Wheezy__.
+
+!{margin: 40px 0;}/public/img/device-classes-2.png!
