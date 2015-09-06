@@ -22,6 +22,10 @@ bc. All (1000)
           Room 3 (400)
             Rack 18 (16)
 
+h2. Einrichtung von Klassen
+
+p. Wenn Sie zum Beispiel einen Linux Server auf Basis von Debian einrichten möchten, so können Sie als Klasse folgenden Eintrag tätigen:
+
 bc. /Server/Linux/Debian/Wheezy
 
 p. Der Server würde dann in der Hierarchie wie folgt auftauchen:
