@@ -5,7 +5,7 @@
     { "Host Parameter im Detail": "host-parameter.textile" },
     { "Host Variablen": "host-variables.textile" },
     { "Host Templates": "host-templates.textile" },
-    { "Bauklasse von Hosts": "device-classes.textile" },
+    { "Klassen von Hosts": "host-classes.textile" },
     { "Einen neuen Service anlegen": "add-new-service.textile" },
     { "Service Parameter im Detail": "service-parameter.textile" },
     { "Host-Alive-Checks": "host-alive-check.textile" },
