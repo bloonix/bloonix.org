@@ -27,5 +27,5 @@ h2. Short history
 
 h2. Developing speed
 
-p. Since the software of Bloonix were licensed under the GPLv3, many new feature requests reach us. We of Bloonix are a very active team and are entitled also to extend the feature set of Bloonix steadily and quickly. That's why it can also seem that there is almost monthly an update with new features. We are entitled also to fix bugs as fast as possible what means that new packages with bug fixes are published at the same or the next day. If you have the wish to use Bloonix as a monitoring solution, then it's worthwhile to visit sometimes our forum to find out how Bloonix has developed and which announcements there are too future updates.
+p. Since the software of Bloonix were licensed under the GPLv3, many new feature requests reach us. We of Bloonix are a very active team and are entitled also to extend the feature set of Bloonix steadily and quickly. That's why it can also seem that very often an update with new features is available. We are entitled also to fix bugs as fast as possible what means that new packages with bug fixes are published at the same or the next day. If you have the wish to use Bloonix as a monitoring solution, then it's worthwhile to visit sometimes our forum to find out how Bloonix has developed and which announcements there are too future updates.
 
