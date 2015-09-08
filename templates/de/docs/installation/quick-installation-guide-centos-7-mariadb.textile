@@ -84,12 +84,6 @@ ssl_verify_mode none
 </code></pre>
 ==
 
-h3. Plugin meta data
-
-p. After the database were successfully initiated and is running, you can install the package __bloonix__plugin_config__ that imports the plugin meta data into the database:
-
-bc. sudo yum install bloonix-plugin-config
-
 h3. Alle Bloonix Dienste starten
 
 bc. sudo systemctl start bloonix-webgui.service
