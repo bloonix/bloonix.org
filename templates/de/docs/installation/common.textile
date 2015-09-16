@@ -4,6 +4,10 @@ h2. Release Notes
 
 p. Im Forum von Bloonix werden Release Notes veröffentlicht. Bevor Ihr Bloonix installiert oder aktualisiert, solltet Ihr im Forum kurz nach wichtigen Hinweisen suchen: "Release Notes im Bloonix Forum":https://forum.bloonix.org/index.php/Board/17-Release-Notes/
 
+h2. NTPD
+
+p. Auf allen Servern sollte sichergestellt sein, dass die Zeit immer korrekt ist, da es ansonsten sein kann, dass die Verfügbarkeitsreports verfälscht sind, sobald der Status von Services mit einem falschen Zeitstempel gespeichert werden.
+
 h2. Perl Module
 
 p. Auf älteren Linux-Systemen werden aus dem Bloonix-Repository diverse Perl-Module installiert, wenn hierfür keine höheren Versionen aus einem anderen Repository zur Verfügung stehen. Diese Module sind
