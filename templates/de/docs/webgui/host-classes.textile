@@ -2,13 +2,13 @@ h1. Klassen von Hosts
 
 h2. Wie funktioniert dieses Feature
 
-p. Im Formular zur Konfiguration von Hosts gibt es die Felder __Hostklasse__, __Systemklasse__ und __Standortklasse__. In diesen Felden haben Sie die Möglichkeit, einen Host zu klassifizieren. Der Grundlegende Gedanke der Klassen ist, bei größeren Ausfällen schnell und zielführend eine ausgefallene Gruppe von Hosts anhand ihrer Klasse ausfindig zu machen.
+p. Im Formular zur Konfiguration von Hosts gibt es die Klassen __Host__, __System__ __Standort__, __Betriebssystem__, __Hardware__ und __Umgebung__. In diesen Felden haben Sie die Möglichkeit, einen Host zu klassifizieren. Der Grundlegende Gedanke der Klassen ist, bei größeren Ausfällen schnell und zielführend eine ausgefallene Gruppe von Hosts anhand ihrer Klasse ausfindig zu machen.
 
-p. Die Felder können frei verwendet werden. Hier ist ein Beispiel je Klasse, wie diese verwendet werden könnten:
+p. Die Felder können frei verwendet werden. Hier sind einige Beispiele, wie diese verwendet werden könnten:
 
-|Host class:|/Server/Dell/R730|
-|System class:|/Linux/Debian/Wheezy|
-|Location class:|/EU/DE/Hamburg/DC-2/Rack-14|
+|Klasse Hardware:|/Server/Dell/R730|
+|Klasse Betriebssystem:|/Linux/Debian/Wheezy|
+|Klasse Standort:|/EU/DE/Hamburg/DC-2/Rack-14|
 
 p.  Beispielszenario: in einem Rechenzentrum fällt ein Schrank komplett aus. In dem Schrank gibt es 20 Server mit der Klasse __/EU/Germany/DC 1/Room 4/Rack 14__. Nun könnten Sie sich im Bereich __Standortklasse__ bis zu der ausgefallenen Klasse von Hosts herunterklicken:
 
