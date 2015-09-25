@@ -105,7 +105,7 @@ bc. host {
 
 h3. Parameter: env
 
-p. Mit diesem Parameter können Umgebungsvariablen des Checks geändert werden.
+p. Mit diesem Parameter können Umgebungsvariablen der Checks eines Hosts geändert werden.
 
 bc. host {
     host_id 12345
