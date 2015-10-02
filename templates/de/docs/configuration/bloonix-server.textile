@@ -18,7 +18,7 @@ elasticsearch_roll_forward /var/log/bloonix/elasticsearch-roll-forward.json
 | group | bloonix | Mit welcher Gruppe soll der Daemon laufen. |
 | timezone | Europe/Berlin | Die Zeitzone des Servers. |
 | hostname | wird ermittelt | Der Hostname, auf dem der Server läuft. Der Hostname wird automatisch ermittelt, wenn er nicht angegeben ist. |
-| allow_from | ^127\.0\.0\.1\z | Dieser Parameter ist vergleichbar mit einer Whitelist. Es können alle vertrauenswürdigen IP-Adressen eingetragen werden, auf denen ein Bloonix-Agent läuft. Den Parameter gibt es auch in der Weboberfläche von Bloonix bei der Einrichtung eines Hosts. Dort können ebenfalls IP-Adressen eingetragen werden, denen es erlaubt ist, Daten für einen Host abzufragen bzw. Daten abzuliefern. |
+| allow_from | 127.0.0.1 | Dieser Parameter ist vergleichbar mit einer Whitelist. Es können alle vertrauenswürdigen IP-Adressen eingetragen werden, auf denen ein Bloonix-Agent läuft. Den Parameter gibt es auch in der Weboberfläche von Bloonix bei der Einrichtung eines Hosts. Dort können ebenfalls IP-Adressen eingetragen werden, denen es erlaubt ist, Daten für einen Host abzufragen bzw. Daten abzuliefern. |
 | elasticsearch_roll_forward | /var/log/bloonix/elasticsearch-roll-forward.json | Siehe unten. |
 
 h3. Roll-Forward-Log
