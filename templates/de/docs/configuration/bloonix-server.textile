@@ -10,7 +10,7 @@ bc. user bloonix
 group bloonix
 timezone Europe/Berlin
 hostname yourhostname
-allow_from ^127\.0\.0\.1\z
+allow_from 127.0.0.1
 elasticsearch_roll_forward /var/log/bloonix/elasticsearch-roll-forward.json
 
 |_. Parameter |_. Standard |_. Beschreibung |
