@@ -34,6 +34,30 @@ p. Der Bloonix-Agent verwendet fork(), um bei Programmstart die angegebene Anzah
 
 p. Der Parameter __max_concurrent_checks__ sollte nie größer sein als der Parameter __agents__, da nur soviele konkurrierende Checks ausgeführt werden können, wie es Agenten gibt.
 
+h3. Parameter max_concurrent_hosts
+
+p. Der Parameter __max_concurrent_hosts__ funktioniert ähnlich dem Parameter max_concurrent_checks__. Die Hosts, die in der Konfigurationsdatei des Agenten zur Überwachung eingetragen sind, werden in regelmäßigen Abständen gepollt, um zu prüfen, ob Services zur Überwachung anstehen. Hierzu sendet der Bloonix-Agent eine Anfrage zum Bloonix-Server. Wenn Services zur Überwachung anstehen, dann werden die Services geprüft. Die maximale Anzahl an Hosts, die gleichzeitig geprüft werden, kann mit dem Parameter __max_concurrent_checks__ reguliert werden. Standardmäßig steht der Parameter auf dem Wert __auto__ (oder auch 0) und auf 50% der Anzahl des Parameters __agents__ gesetzt.
+
+h3. Parameter max_concurrent_hosts + max_concurrent_checks
+
+p. Mit den Parametern __max_concurrent_hosts__ und __max_concurrent_checks__ kann die Aufteilung der Ausführung von Checks optimiert werden und sollte immer mit Bezug auf den Parameter __agents__ konfiguriert sein. Nehmen wir einmal an, Sie haben die Parameter wie folgt gesetzt:
+
+bc. # nicht optimierte Konfiguration:
+agents 50
+max_concurrent_hosts 50
+max_concurrent_checks 50
+
+p. In diesem Beispiel gibt es 50 Prozesse, die die Queue zur Abarbeitung von Hosts und Service-Checks abarbeiten. Das Problem dabei ist, dass die Prozesse je nach Anzahl der Service-Checks eines Hosts allesamt geblockt werden können. Wenn Sie zum Beispiel einen einzelnen Host in der WebGUI mit 50 HTTP-Checks konfiguriert haben, dann würden diese 50 Checks auf alle Agenten aufgeteilt. Hat der Host in einem Moment Lastprobleme und benötigt für die HTTP-Checks eine längere Abarbeitungszeit, so würden alle 50 Agenten geblockt, bis die Checks ausgeführt sind. Um das zu vermeiden, können die maximalen Checks, die gleichzeitig von einem Host geprüft werden, limitiert werden.
+
+p. Beide Parameter in Kombination können also dazu führen, dann Hosts und Service-Checks optimiert verteilt werden:
+
+bc. # optimierte Konfiguration:
+agents 50
+max_concurrent_hosts 20
+max_concurrent_checks 5
+
+p. In diesem Beispiel können maximal 20 Hosts gleichzeitig mit je 5 Service-Checks bearbeitet werden. Somit würde ein Host, der 50 HTTP-Checks eingerichtet hat, nur 5 Agenten-Prozesse belegen.
+
 h3. Umgebungsvariablen
 
 p. Der Bloonix-Agent setzt beim Start und vor jeder Ausführung eines Checks diverse Umgebungsvariablen, die wiederrum von den Plugins selbst verwendet werden können, um spezifische Informationen zum Host, zum Service oder zur Umgebung zu erlangen. Es werden folgende Variablen standardmäßig gesetzt:
