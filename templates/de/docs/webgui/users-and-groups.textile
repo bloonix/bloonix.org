@@ -39,8 +39,8 @@ p. Mit der Rolle bestimmen Sie, welche Berechtigungen ein Benutzer hat. Es gibt 
 
 |_. Rolle |_. &nbsp;|_. Wert |
 | admin | Administrator | Der Power-User sollte nur verwendet werden, um im Bereich __ADMINISTRATION__ zu agieren. Bitte verwenen Sie den Benutzer für keine anderen Aktionen. |
-| operator | Operator | Der Operator ist ein Power-User und darf Benutzer- und Gruppen verwalten. |
-| user | Benutzer|  Die Rolle __user__ ist für alle sonstigen Benutzer. Diese Benutzer haben keinen Zugriff auf den Administrationsbereich. |
+| operator | Operator | Der Operator ist ein Power-User innherhalb einer Company. Er darf Benutzer- und Gruppen verwalten, sowie alle Hosts und Services. |
+| user | Benutzer|  Die Rolle __user__ ist für alle sonstigen Benutzer. Diese Benutzer haben keinen Zugriff auf den Administrationsbereich und können beim Zugriff auf Hosts und Services eingeschränkt werden. |
 
 h3. Verwaltung von Kontakten
 
