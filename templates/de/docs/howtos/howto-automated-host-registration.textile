@@ -19,15 +19,15 @@ data {
 
 p. Wenn kein Host für einen Agenten konfiguriert ist und die Konfigurationsdatei existiert, dann versucht der Agent den Host, auf dem er installiert ist, zu registrieren. Die Company-ID und den Company-Authkey finden Sie in der WebGUI im Formular zur Konfiguration einer Company. Die Daten können nur von einem Administrator eingesehen werden.
 
-!{margin: 40px 0;}/public/img/bloonix-company-authkey1.png!
+!(img-shadow)/public/img/bloonix-company-authkey1.png!
 
 p. Mit diesen Informationen versucht der Agent den Host zu registrieren. Nach der erfolgreichen Registrierung kann der Host über die WebGUI bearbeitet werden. Klicken Sie hierzu den kleinen Button oben rechts in der WebGUI an, der Ihnen anzeigt, wieviele registrierte Hosts darauf warten, konfiguriert und aktiviert zu werden.
 
-!{margin: 40px 0;}/public/img/bloonix-company-authkey1.png!
+!(img-shadow)/public/img/bloonix-company-authkey1.png!
 
 p. Die Hosts müssen, bevor diese ins Monitoring aufgenommen werden können, mindestens einer Gruppe zugeordnet werden. Bearbeiten Sie die registrierten Hosts über die Buttons in der unteren Navigation.
 
-!{margin: 40px 0;}/public/img/bloonix-process-reg-hosts.png!
+!(img-shadow)/public/img/bloonix-process-reg-hosts.png!
 
 p. Nachdem der Host bearbeitet wurde, muss dieser zu guter letzt noch aktiviert werden, denn registrierte Hosts werden initial inaktiv angelegt.
 
