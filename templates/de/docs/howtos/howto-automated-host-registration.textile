@@ -27,7 +27,7 @@ p. Mit diesen Informationen versucht der Agent den Host zu registrieren. Nach de
 
 p. Die Hosts müssen, bevor diese ins Monitoring aufgenommen werden können, mindestens einer Gruppe zugeordnet werden. Bearbeiten Sie die registrierten Hosts über die Buttons in der unteren Navigation.
 
-!(img-shadow)/public/img/bloonix-process-reg-hosts.png!
+!(img-full-width-shadow)/public/img/bloonix-process-reg-hosts.png!
 
 p. Nachdem der Host bearbeitet wurde, muss dieser zu guter letzt noch aktiviert werden, denn registrierte Hosts werden initial inaktiv angelegt.
 
