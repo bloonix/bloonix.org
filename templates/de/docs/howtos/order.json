@@ -2,5 +2,6 @@
     { "Plugins entwickeln": "howto-develop-plugins.textile" },
     { "Coding mit Stil": "howto-coding-with-style.textile" },
     { "Dokumentation auf Bloonix.org": "howto-bloonix-org-documentation.textile" },
-    { "Verteilte Überwachung mit dem Bloonix-Satelliten": "howto-distributed-monitoring-bloonix-satellite.textile" }
+    { "Verteilte Überwachung mit dem Bloonix-Satelliten": "howto-distributed-monitoring-bloonix-satellite.textile" },
+    { "Automatische Registrierung von Hosts": "howto-automated-host-registration.textile" }
 ]

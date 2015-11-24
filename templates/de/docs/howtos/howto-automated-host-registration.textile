@@ -1,0 +1,75 @@
+h1. Automatische Registrierung von Hosts
+
+p. Neue Hosts können über den Bloonix-Agenten oder über einen einfachen HTTP Aufruf registriert werden. Mit diesem Feature ist es sehr einfach möglich, neue Hosts über Tools wie Puppet, Ansible, Salstack etc. hinzuzufügen, ohne einen Host manuell in der WebGUI von Bloonix anzulegen.
+
+h2. Host Registrierung über den Bloonix-Agenten
+
+p. Der Bloonix-Agent kann einen Host selbst registrieren. Hierzu sind zwei Dinge notwendig:
+
+* Es darf kein Host in der Konfiguration des Agenten konfiguriert sein.
+* Der Agent benötigt zusätzliche Informationen zur Registrierung.
+
+p. Legen Sie die Konfiguraionsdatei __/etc/bloonix/agent/register.conf__ mit folgendem Inhalt an:
+
+bc. webgui_url https://your-webgui.test/
+data {
+    company_id 12345
+    company_authkey secret-key
+}
+
+p. Wenn kein Host für einen Agenten konfiguriert ist und die Konfigurationsdatei existiert, dann versucht der Agent den Host, auf dem er installiert ist, zu registrieren. Die Company-ID und den Company-Authkey finden Sie in der WebGUI im Formular zur Konfiguration einer Company. Die Daten können nur von einem Administrator eingesehen werden.
+
+!{margin: 40px 0;}/public/img/bloonix-company-authkey1.png!
+
+p. Mit diesen Informationen versucht der Agent den Host zu registrieren. Nach der erfolgreichen Registrierung kann der Host über die WebGUI bearbeitet werden. Klicken Sie hierzu den kleinen Button oben rechts in der WebGUI an, der Ihnen anzeigt, wieviele registrierte Hosts darauf warten, konfiguriert und aktiviert zu werden.
+
+!{margin: 40px 0;}/public/img/bloonix-company-authkey1.png!
+
+p. Die Hosts müssen, bevor diese ins Monitoring aufgenommen werden können, mindestens einer Gruppe zugeordnet werden. Bearbeiten Sie die registrierten Hosts über die Buttons in der unteren Navigation.
+
+!{margin: 40px 0;}/public/img/bloonix-process-reg-hosts.png!
+
+p. Nachdem der Host bearbeitet wurde, muss dieser zu guter letzt noch aktiviert werden, denn registrierte Hosts werden initial inaktiv angelegt.
+
+h2. Erweiterte Registrierung von Hosts
+
+p. Bei der Registrierung eines neuen Hosts versucht der Agent den Hostnamen und die IP-Adresse eines Hosts automatisch zu ermitteln. Sie können diese Daten aber auch vordefinieren:
+
+bc. webgui_url https://your-webgui.test/
+data {
+    company_id 12345
+    company_authkey secret-key
+    hostname test.bloonix.org
+    ipaddr 127.0.0.1
+    ipaddr6 ::1
+    description Test host
+}
+
+p. Somit würde der Host mit diesen Daten angelegt. Darüber hinaus besteht die Möglichkeit, einen Host mit der Registrierung automatisch diversen Host-Templates zuzuordnen:
+
+bc. webgui_url https://your-webgui.test/
+data {
+    company_id 12345
+    company_authkey secret-key
+    hostname test.bloonix.org
+    ipaddr 127.0.0.1
+    ipaddr6 ::1
+    description Test host
+    host_template_tags linux, apache, mysql
+}
+
+p. Damit würde der Host direkt den Host-Templates zugeordnet, welche die Tags __linux__, __apache__ und __mysql__ haben. Die Tags können Sie für jedes Host-Template über die WebGUI setzen.
+
+h2. Host Registrierung via curl
+
+p. Wenn Sie die Registrierung selbst über ein Skript durchführen möchten, so ist der Aufruf über __curl__ sehr einfach:
+
+bc. curl 'https://your-webgui.test/register/host' -d '{
+    "company_id": "12345",
+    "company_authkey": "secret",
+    "hostname": "test.bloonix.org",
+    "ipaddr": "127.0.0.1",
+    "ipaddr6": "::1",
+    "description": "Test host",
+    "host_template_tags": "linux, apache, mysql"
+}'

@@ -1,0 +1,35 @@
+h1. Plugins von Grund auf selbst entwickeln
+
+p. In diesem Dokument wird erklärt, welche Anforderungen ein Plugin erfüllen muss, um ins Bloonix Framework integriert werden zu können. Auf das __"Warum wird das so gemacht?"__ wird in diesem Dokumenent nicht eingegangen.
+
+h2. Was ist ein Plugin
+
+p. Ein Plugin in Bloonix ist ein Check-Skript. Mit einem Plugin können Services geprüft und statistische Daten abgefragt werden.
+
+p. Jedes Plugin besteht aus zwei Dateien:
+
+* __check-$service__: Das Skript, welches ausgeführt wird, um den Service zu prüfen.
+* __plugin-$service__ : Ein Datei mit Metadaten zum Check.
+
+h2. Grundlegendes zu Eingabe und Ausgabe von Plugins
+
+p. Der Bloonix-Agent übergibt die Parameter und Werte über __STDIN__ im JSON-Format und erwaretet die Daten ebenfalls im JSON-Format. Der Agent ruft den Check mit dem Parameter __--stdin__ auf, um anzuzeigen, dass er die Parameter über __STDIN__ im JSON-Format übergibt.
+
+h2. Standardparameter
+
+p. Es folgt eine Liste der Parameter, die jedes Plugin standardmäßig unterstützen muss:
+
+|_. Parameter |_. Beschreibung |
+| --stdin | Der Agent zeigt an, dass er die Parameterliste für den Check über __STDIN__ übergeben wird. |
+| --help | Die Hilfe wird zum Check soll ausgegeben werden. |
+| --version | Die Versionsnummer des Checks soll ausgegeben werden. |
+| --plugin-info | Die Informationen zum Plugin sollen ausgegeben werden. Diese Informationen werden zusammen mit den Metadaten in der Datei __plugin-$service__ in die Datenbank von Bloonix importiert. |
+| --pretty | Die JSON-Ausgabe soll formatiert und lesbar ausgegeben werden. |
+| --bloonix-host-id | Der Agent übergibt die Host-ID, für den der Check ausgeführt wird. |
+| --bloonix-service-id | Der Agent übergibt die Service-ID, für den der Check ausgeführt wird. |
+
+h2. Plugin Informationen
+
+p. Wenn der Check mit dem Parameter __--plugin-info__ aufgerufen wird, dann muss der Check folgende Informationen ausgeben:
+
+
