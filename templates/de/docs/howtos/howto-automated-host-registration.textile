@@ -11,7 +11,8 @@ p. Der Bloonix-Agent kann einen Host selbst registrieren. Hierzu sind zwei Dinge
 
 p. Legen Sie die Konfiguraionsdatei __/etc/bloonix/agent/register.conf__ mit folgendem Inhalt an:
 
-bc. webgui_url https://your-webgui.test/
+bc. # cat /etc/bloonix/agent/register.conf
+webgui_url https://your-webgui.test/
 data {
     company_id 12345
     company_authkey secret-key
@@ -35,7 +36,8 @@ h2. Erweiterte Registrierung von Hosts
 
 p. Bei der Registrierung eines neuen Hosts versucht der Agent den Hostnamen und die IP-Adresse eines Hosts automatisch zu ermitteln. Sie können diese Daten aber auch vordefinieren:
 
-bc. webgui_url https://your-webgui.test/
+bc. # cat /etc/bloonix/agent/register.conf
+webgui_url https://your-webgui.test/
 data {
     company_id 12345
     company_authkey secret-key
@@ -47,7 +49,8 @@ data {
 
 p. Somit würde der Host mit diesen Daten angelegt. Darüber hinaus besteht die Möglichkeit, einen Host mit der Registrierung automatisch diversen Host-Templates zuzuordnen:
 
-bc. webgui_url https://your-webgui.test/
+bc. # cat /etc/bloonix/agent/register.conf
+webgui_url https://your-webgui.test/
 data {
     company_id 12345
     company_authkey secret-key
