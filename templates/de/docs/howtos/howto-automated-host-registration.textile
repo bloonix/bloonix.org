@@ -67,7 +67,7 @@ h2. Host Registrierung via curl
 
 p. Wenn Sie die Registrierung selbst über ein Skript durchführen möchten, so ist der Aufruf über __curl__ sehr einfach:
 
-bc. curl 'https://your-webgui.test/register/host' -d '{
+bc. curl -H 'Content-Type: application/json' 'https://your-webgui.test/register/host' -d '{
     "company_id": "12345",
     "company_authkey": "secret",
     "hostname": "test.bloonix.org",
@@ -76,3 +76,20 @@ bc. curl 'https://your-webgui.test/register/host' -d '{
     "description": "Test host",
     "host_template_tags": "linux, apache, mysql"
 }'
+
+p. Die Ausgabe erfolgt als JSON String und sieht wie folgt aus:
+
+bc. {
+   "status" : "ok",
+   "data" : {
+      "password" : "gPWsB5mJ7f3buXlnivGafjLbhI0WKU",
+      "host_id" : "100104"
+   },
+   "server_time" : "1448392212101",
+   "maintenance" : "disabled",
+   "size" : 2,
+   "offset" : 0,
+   "who_am_i" : "test.bloonix.de",
+   "total" : 2,
+   "version" : 111
+}
