@@ -24,7 +24,7 @@ p. Wenn kein Host für einen Agenten konfiguriert ist und die Konfigurationsdate
 
 p. Mit diesen Informationen versucht der Agent den Host zu registrieren. Nach der erfolgreichen Registrierung kann der Host über die WebGUI bearbeitet werden. Klicken Sie hierzu den kleinen Button oben rechts in der WebGUI an, der Ihnen anzeigt, wieviele registrierte Hosts darauf warten, konfiguriert und aktiviert zu werden.
 
-!(img-shadow)/public/img/bloonix-company-authkey1.png!
+!(img-shadow)/public/img/bloonix-req-info-button.png!
 
 p. Die Hosts müssen, bevor diese ins Monitoring aufgenommen werden können, mindestens einer Gruppe zugeordnet werden. Bearbeiten Sie die registrierten Hosts über die Buttons in der unteren Navigation.
 
