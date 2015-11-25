@@ -93,3 +93,6 @@ bc. {
    "total" : 2,
    "version" : 111
 }
+
+p. Die Host-ID und das Passwort müssen nun nur noch in der Konfigurationsdatei des Agenten eingerichtet werden.
+
