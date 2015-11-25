@@ -30,7 +30,7 @@ p. Die Hosts müssen, bevor diese ins Monitoring aufgenommen werden können, min
 
 !(img-full-width-shadow)/public/img/bloonix-process-reg-hosts.png!
 
-p. Nachdem der Host bearbeitet wurde, muss dieser zu guter letzt noch aktiviert werden, denn registrierte Hosts werden initial inaktiv angelegt.
+p. Nachdem der Host bearbeitet wurde, muss dieser zu guter Letzt noch aktiviert werden, denn registrierte Hosts werden initial inaktiv angelegt.
 
 h2. Erweiterte Registrierung von Hosts
 
