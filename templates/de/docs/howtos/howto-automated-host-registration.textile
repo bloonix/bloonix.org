@@ -94,5 +94,5 @@ bc. {
    "version" : 111
 }
 
-p. Die Host-ID und das Passwort müssen nun nur noch in der Konfigurationsdatei des Agenten eingerichtet werden.
+p. Die Host-ID und das Passwort müssen jetzt nur noch in der Konfigurationsdatei des Agenten eingerichtet werden.
 
