@@ -1,6 +1,0 @@
-h1. Variables
-
-p. After parsing the textile documents the following variables should be replaced:
-
-webgui_version
-

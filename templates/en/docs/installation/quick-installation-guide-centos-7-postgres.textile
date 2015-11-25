@@ -79,7 +79,7 @@ bc. include /etc/bloonix/webgui/nginx.conf;
 
 p. or just execute the following command:
 
-bc. sudo echo "include /etc/bloonix/webgui/nginx.conf;" >/etc/nginx/conf.d/001_bloonix.conf
+bc. sudo bash -c 'echo "include /etc/bloonix/webgui/nginx.conf;" >/etc/nginx/conf.d/001_bloonix.conf'
 
 h3. Start Elasticsearch and Nginx
 
