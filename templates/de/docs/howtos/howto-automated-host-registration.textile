@@ -9,7 +9,7 @@ p. Der Bloonix-Agent kann einen Host selbst registrieren. Hierzu sind zwei Dinge
 * Es darf kein Host in der Konfiguration des Agenten konfiguriert sein.
 * Der Agent benötigt zusätzliche Informationen zur Registrierung.
 
-p. Legen Sie die Konfiguraionsdatei __/etc/bloonix/agent/register.conf__ mit folgendem Inhalt an:
+p. Legen Sie die Konfigurationsdatei __/etc/bloonix/agent/register.conf__ mit folgendem Inhalt an:
 
 bc. # cat /etc/bloonix/agent/register.conf
 webgui_url https://your-webgui.test/
