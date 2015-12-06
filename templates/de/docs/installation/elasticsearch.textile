@@ -15,6 +15,8 @@ p. Elasticsearch kann über folgende Webseite heruntergeladen und dann installie
 
 p. "http://www.elasticsearch.org/overview/elkdownloads/":http://www.elasticsearch.org/overview/elkdownloads/
 
+p. Bitte installiert Elasticsearch Version < 1.7.x, da Version 2.x.x noch nicht getestet wurde.
+
 p. Elasticsearch starten:
 
 bc. /etc/init.d/elasticsearch start
