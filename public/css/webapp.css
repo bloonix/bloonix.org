@@ -27,12 +27,12 @@
     font-weight: bold;
 }
 #doc-nav .chapter-sub-title, #doc-nav .chapter-sub-title a {
-    color: #116c77;
+    color: #30909C;
     font-weight: normal;
     font-size: 14px;
 }
 #doc-nav .active-chapter {
-    color: #116c77;
+    color: #30909C;
     font-weight: bold !important;
 }
 #doc-content {
@@ -46,7 +46,7 @@
     text-align: left;
     font-size: 34px;
     font-weight: 700;
-    color: #116c77;
+    color: #30909C;
     margin: 0 auto 20px auto;
 }
 #doc-content h2, #doc-content h2 a {
@@ -54,7 +54,7 @@
     text-align: left;
     font-size: 30px;
     font-weight: 700;
-    color: #116c77;
+    color: #30909C;
     margin: 40px auto 20px auto;
 }
 #doc-content h3, #doc-content h3 a {
@@ -62,7 +62,7 @@
     text-align: left;
     font-size: 20px;
     font-weight: 700;
-    color: #116c77;
+    color: #30909C;
     margin: 30px auto 20px auto;
 }
 #doc-content h4 {
@@ -70,7 +70,7 @@
     text-align: left;
     font-size: 16px;
     font-weight: 400;
-    color: #116c77;
+    color: #30909C;
     margin: 30px auto 20px auto;
 }
 #doc-content p {
@@ -91,7 +91,7 @@
     font-style: normal;
 }
 #doc-content a {
-    color: #116c77;
+    color: #30909C;
     text-decoration: none;
 }
 #doc-content a:hover {
