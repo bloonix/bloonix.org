@@ -52,7 +52,7 @@ h2. Elasticsearch
 
 p. Elasticsearch is used to store metrics and events and all time based data. By the monitoring of several thousand hosts a high amount of data can arise. The choice fell on Elasticsearch, because Elasticsearch is highly scaleable and offers an easy cluster functionality.
 
-p. "To the website of Elasticsearch":http://www.elasticsearch.org/
+p. "To the website of Elasticsearch":https://www.elastic.co/
 
 h2. Nginx
 

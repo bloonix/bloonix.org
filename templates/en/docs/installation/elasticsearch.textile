@@ -13,7 +13,7 @@ zypper install java-1.7.0-openjdk
 
 p. Elasticsearch can be downloaded on the following website:
 
-p. "http://www.elasticsearch.org/overview/elkdownloads/":http://www.elasticsearch.org/overview/elkdownloads/
+p. "https://www.elastic.co/downloads/elasticsearch":https://www.elastic.co/downloads/elasticsearch
 
 p. Start Elasticsearch:
 
