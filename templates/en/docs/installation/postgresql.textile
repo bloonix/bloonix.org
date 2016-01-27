@@ -1,4 +1,4 @@
-h1. PostgreSQL installieren
+h1. PostgreSQL installation
 
 p. _Please install PostgreSQL in version 9!_
 
