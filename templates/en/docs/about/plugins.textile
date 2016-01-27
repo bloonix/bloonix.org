@@ -1,6 +1,6 @@
-h1. Unsere Plugins
+h1. Our Plugins
 
-* *Standortprüfungen*
+* *Location checks*
 * Ping
 * TCP/UDP
 * FTP/FTPS
@@ -48,7 +48,7 @@ h1. Unsere Plugins
 * Redis
 * Varnish
 
-* *Datenbanken / NoSQL*
+* *Databases / NoSQL*
 * PostgreSQL
 * MySQL5
 
