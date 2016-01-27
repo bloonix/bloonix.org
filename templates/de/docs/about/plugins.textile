@@ -1,7 +1,5 @@
 h1. Unsere Plugins
 
-p. Zur Überwachung Ihrer Infrastruktur bietet Bloonix eine Vielzahl an Plugins. Falls Sie in der Liste ein Plugin vermissen, welches für Sie von großem Nutzen sein könnte... keine Sorge, dies sind nicht alle Plugins, die wir anbieten. Darüber hinaus übernimmt Bloonix die Entwicklung kundenspezifischer Plugins.
-
 * *Standortprüfungen*
 * Ping
 * TCP/UDP
