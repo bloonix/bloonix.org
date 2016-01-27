@@ -1,0 +1,54 @@
+h1. Unsere Plugins
+
+* *Standortprüfungen*
+* Ping
+* TCP/UDP
+* FTP/FTPS
+* SSH
+* DNS
+* SMTP/SMTPS
+* IMAP/IMAPS
+* POP3/POP3S
+* HTTP/HTTPS
+* Web-Transactions
+
+* *Linux*
+* DRBD
+* NFS3/NFS4
+* CPU und Load Average
+* Memory
+* Disk Usage und I/O
+* Interfaces I/O, Link Status
+* Netstat und Port Statistiken
+* Services und Prozesse
+* Updates (apt, yum, zypper)
+* File Content Checks
+* Logfile Security Scans
+* MDADM und Smart Health
+
+* *SNMP*
+* CPU
+* Memory
+* Disk Usage
+* Services
+* Prozesse
+* Interface I/O
+* Link Status
+* OID String Checks
+* SNMP Walks mit String Check
+
+* *Webserver*
+* Nginx
+* Varnish
+* Apache2
+* Lighttpd
+
+* *Caching*
+* Memcached
+* Redis
+* Varnish
+
+* *Datenbanken / NoSQL*
+* PostgreSQL
+* MySQL5
+
