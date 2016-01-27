@@ -8,7 +8,7 @@ p. With Bloonix everything can be monitored what is to be reached about a networ
 
 h2. Plugin based monitoring
 
-p. Bloonix is a plugin-based monitoring system and, among the rest, disposes of Plugins for the monitoring of Linux, Windows, Apache, Nginx, Varnish, Memcached, Redis, MySQL and PostgreSQL. The Plugins are developed steadily. You find a coarse overview the available Plugins here: "Bloonix-Plugins":/de/docs/components/plugins.html
+p. Bloonix is a plugin-based monitoring system and, among the rest, disposes of Plugins for the monitoring of Linux, Windows, Apache, Nginx, Varnish, Memcached, Redis, MySQL and PostgreSQL. The Plugins are developed steadily. You find a coarse overview the available Plugins here: "Bloonix-Plugins":/en/docs/components/plugins.html
 
 p. Nagios plugins are compatible and can be used with Bloonix. Hence, we recommend to use only Nagios plugins if there is still no suitable Bloonix plugin for the monitoring of the desired service.
 

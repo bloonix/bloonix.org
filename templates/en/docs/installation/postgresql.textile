@@ -94,5 +94,5 @@ bc. systemctl restart postgresql.service
 
 h2. Initilising of the Bloonix schema
 
-p. You can find more information here: "Bloonix-WebGUI":/de/docs/installation/bloonix-webgui.html
+p. You can find more information here: "Bloonix-WebGUI":/en/docs/installation/bloonix-webgui.html
 
