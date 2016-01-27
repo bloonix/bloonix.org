@@ -22,12 +22,12 @@ h2. Installation guide
 
 p. The installation of Bloonix is simple. Just work through the documentation and Bloonix should be working after some minutes:
 
-# "Repositories":/de/docs/installation/repositories.html
-# "Elasticsearch":/de/docs/installation/elasticsearch.html
-# "PostgreSQL":/de/docs/installation/postgresql.html
-# "Nginx":/de/docs/installation/nginx.html
-# "Bloonix-WebGUI":/de/docs/installation/bloonix-webgui.html
-# "Bloonix-Server":/de/docs/installation/bloonix-server.html
-# "Bloonix-Plugins":/de/docs/installation/bloonix-plugins.html
-# "Bloonix-Agent":/de/docs/installation/bloonix-agent.html
+# "Repositories":/en/docs/installation/repositories.html
+# "Elasticsearch":/en/docs/installation/elasticsearch.html
+# "PostgreSQL":/en/docs/installation/postgresql.html
+# "Nginx":/en/docs/installation/nginx.html
+# "Bloonix-WebGUI":/en/docs/installation/bloonix-webgui.html
+# "Bloonix-Server":/en/docs/installation/bloonix-server.html
+# "Bloonix-Plugins":/en/docs/installation/bloonix-plugins.html
+# "Bloonix-Agent":/en/docs/installation/bloonix-agent.html
 
