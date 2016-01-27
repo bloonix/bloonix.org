@@ -15,7 +15,7 @@ p. Elasticsearch kann über folgende Webseite heruntergeladen und dann installie
 
 p. "https://www.elastic.co/downloads/elasticsearch":https://www.elastic.co/downloads/elasticsearch
 
-p. Bitte installiert Elasticsearch Version < 1.7.x, da Version 2.x.x noch nicht getestet wurde.
+p. Bitte installiert Elasticsearch Version kleiner 2.x.x, da Version 2.x.x noch nicht getestet wurde.
 
 p. Elasticsearch starten:
 

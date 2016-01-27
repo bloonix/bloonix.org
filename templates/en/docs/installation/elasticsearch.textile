@@ -15,6 +15,8 @@ p. Elasticsearch can be downloaded on the following website:
 
 p. "https://www.elastic.co/downloads/elasticsearch":https://www.elastic.co/downloads/elasticsearch
 
+p. Please install Elasticsearch version less than 2.x.x, because version 2.x.x isn't tested.
+
 p. Start Elasticsearch:
 
 bc. /etc/init.d/elasticsearch start
