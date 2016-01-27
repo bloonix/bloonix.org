@@ -10,32 +10,32 @@ h1. Our Plugins
 * IMAP/IMAPS
 * POP3/POP3S
 * HTTP/HTTPS
-* Web-Transactions
+* Web transactions
 
 * *Linux*
 * DRBD
 * NFS3/NFS4
-* CPU und Load Average
+* CPU and load Average
 * Memory
-* Disk Usage und I/O
-* Interfaces I/O, Link Status
-* Netstat und Port Statistiken
-* Services und Prozesse
+* Disk usage and I/O
+* Interfaces I/O, link status
+* Netstat and port statistics
+* Services and processes
 * Updates (apt, yum, zypper)
-* File Content Checks
-* Logfile Security Scans
-* MDADM und Smart Health
+* File content checks
+* Logfile security scans
+* MDADM and smart health
 
 * *SNMP*
 * CPU
 * Memory
-* Disk Usage
+* Disk usage
 * Services
-* Prozesse
+* Processes
 * Interface I/O
-* Link Status
-* OID String Checks
-* SNMP Walks mit String Check
+* Link status
+* OID string checks
+* SNMP walks with string check
 
 * *Webserver*
 * Nginx
