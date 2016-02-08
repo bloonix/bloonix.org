@@ -1,7 +1,5 @@
 h1. MySQL installieren
 
-p. _Please note that support for MySQL is currently in Beta status._
-
 h2. Debian
 
 bc. apt-get install mysql-server

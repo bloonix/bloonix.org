@@ -1,7 +1,5 @@
 h1. Schneller Installationsguide auf CentOS 7 mit MariaDB
 
-p. _Please note that support for MySQL/MariaDB is currently in Beta status._
-
 h3. Installieren Sie als erstes das EPEL Repository
 
 bc. sudo yum install epel-release
