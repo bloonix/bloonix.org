@@ -94,7 +94,7 @@ p. At the moment only openSUSE 13 is supported. If you use SLES then the SLES ve
 
 h3. Installation of the Bloonix repository
 
-bc. rpm -ivh https://download.bloonix.de/repos/suse/13/noarch/bloonix-release-0.4-1.noarch.rpm
+bc. rpm -ivh https://download.bloonix.de/repos/suse/13/noarch/bloonix-release-0.6-1.noarch.rpm
 
 p. List all available bloonix packages:
 
