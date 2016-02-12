@@ -53,6 +53,18 @@ bc. satellite {
 
 p. Wenn auf dem Satelliten _kein gültiges SSL-Zertifikat_ eingesetzt wird, so müssen Sie den Parameter __ssl_verify_mode__ auf __none__ setzen.
 
+p. Wenn jeder Satellit einen anderen __authkey__ hat, so muss die Konfiguration wie folgt geschehen:
+
+bc. satellite {
+    ssl_verify_mode peer
+    ssl_ca_path /etc/ssl/certs
+    authkeys {
+        frankfurt.satellite.test secret-authkey
+        london.satellite.test    secret-authkey
+        new-york.satellite.test  secret-authkey
+    }
+}
+
 h2. Einrichtung der Satelliten in der WebGUI
 
 p. Nach dem nun die Satelliten und Agenten eingerichtet sind, müssen im nächsten Schritt die Satelliten in der WebGUI konfiguriert werden. Loggen Sie sich hierzu mit dem Administrator Account. Die Satelliten werden im Bereich __ADMINISTRATION__ eingerichtet:
