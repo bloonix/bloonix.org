@@ -148,7 +148,7 @@ bc. host {
     host_id 12345
     password secret
     execute_on_event {
-        check-memstat {
+        $service_id { # hier die Service ID verwenden
             status CRITICAL, UNKNOWN
             command /usr/local/bin/my-script %I %C %S
         }
