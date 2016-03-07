@@ -36,7 +36,7 @@ p. Der Parameter __max_concurrent_checks__ sollte nie größer sein als der Para
 
 h3. Parameter max_concurrent_hosts
 
-p. Der Parameter __max_concurrent_hosts__ funktioniert ähnlich dem Parameter __max_concurrent_checks__. Die Hosts, die in der Konfigurationsdatei des Agenten zur Überwachung eingetragen sind, werden in regelmäßigen Abständen gepollt, um zu prüfen, ob Services zur Überwachung anstehen. Hierzu sendet der Bloonix-Agent eine Anfrage zum Bloonix-Server. Wenn Services zur Überwachung anstehen, dann werden die Services geprüft. Die maximale Anzahl an Hosts, die gleichzeitig geprüft werden, kann mit dem Parameter __max_concurrent_checks__ reguliert werden. Standardmäßig steht der Parameter auf dem Wert __auto__ (oder auch 0) und wird auf 50% der Anzahl des Parameters __agents__ gesetzt.
+p. Der Parameter __max_concurrent_hosts__ funktioniert ähnlich dem Parameter __max_concurrent_checks__. Die Hosts, die in der Konfigurationsdatei des Agenten zur Überwachung eingetragen sind, werden in regelmäßigen Abständen gepollt, um zu prüfen, ob Services zur Überwachung anstehen. Hierzu sendet der Bloonix-Agent eine Anfrage zum Bloonix-Server. Wenn Services zur Überwachung anstehen, dann werden die Services geprüft. Die maximale Anzahl an Hosts, die gleichzeitig geprüft werden, kann mit dem Parameter __max_concurrent_hosts__ reguliert werden. Standardmäßig steht der Parameter auf dem Wert __auto__ (oder auch 0) und wird auf 50% der Anzahl des Parameters __agents__ gesetzt.
 
 h3. Parameter max_concurrent_hosts + max_concurrent_checks
 
