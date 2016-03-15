@@ -156,6 +156,12 @@ bc. host {
     }
 }
 
+p. In der Untersektion __execute_on_event__ wird zunächst das Kommando oder die Service-ID angegeben. Im Weiteren muss angegeben werden, für welchen Status das Skript, welches unter __command__ angegben wird, ausgeführt werden soll. Die Platzhalter __%I__, __%C__ und __%S__ werden wie folgt ersetzt:
+
+| %I | Service-ID |
+| %C | Das Kommando, was ausgeührt wurde. Beispiel: check-http |
+| %S | Status des Checks |
+
 h3. Parameter: when
 
 p. Mit dem Parameter __when__ ist es möglich, ein Shell-Kommando auszuführen. Wenn der Exitstatus des Kommandos 0 ist, dann wird der Host überwacht. Beispiel:
@@ -167,10 +173,3 @@ bc. host {
 }
 
 p. In diesem Fall würde der Host mit der ID 12345 nur von dem Agenten geprüft werden, wenn die Datei __/tmp/active.test__ existiert.
-
-p. In der Untersektion __execute_on_event__ wird zunächst das Kommando oder die Service-ID angegeben. Im Weiteren muss angegeben werden, für welchen Status das Skript, welches unter __command__ angegben wird, ausgeführt werden soll. Die Platzhalter __%I__, __%C__ und __%S__ werden wie folgt ersetzt:
-
-| %I | Service-ID |
-| %C | Das Kommando, was ausgeührt wurde. Beispiel: check-http |
-| %S | Status des Checks |
-
