@@ -149,7 +149,7 @@ bc. host {
     host_id 12345
     password secret
     execute_on_event {
-        $service_id { # hier die Service ID verwenden
+        $service_id { # "$service_id" bitte mit der Service-ID ersetzen
             status CRITICAL, UNKNOWN
             command /usr/local/bin/my-script %I %C %S
         }
