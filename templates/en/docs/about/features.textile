@@ -33,8 +33,7 @@ h1. Feature list
 ** Escalations
 ** Flap detection
 ** Volatile status notification
-** Soft notification intervals
-** Hard notification intervals
+** Notification intervals
 ** Notification after N attempts
 ** Scheduled downtimes
 ** Periodic scheduled downtimes

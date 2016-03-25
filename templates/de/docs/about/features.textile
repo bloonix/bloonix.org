@@ -33,8 +33,7 @@ h1. Feature Liste
 ** Eskalationen
 ** Flap detection
 ** Benachrichtigung bei flüchtigen Status
-** Weiche Bencharchrichtigungsintervalle
-** Harte Bencharchrichtigungsintervalle
+** Bencharchrichtigungsintervalle
 ** Benachrichtigung nach N fehlgeschlagenen Checks
 ** Geplante Wartungsarbeiten
 ** Periodische geplante Wartungsarbeiten
@@ -53,7 +52,7 @@ h1. Feature Liste
 *** Zeit
 *** Anzahl von Ereignissen
 *** Anzahl von Ergeignissen nach Dauer
-*** Anzahl von Ereignissen nach Type (Sicherheit, Zeitüberschreitung, flüchgig, ...)
+*** Anzahl von Ereignissen nach Type (Sicherheit, Zeitüberschreitung, flüchtig, ...)
 *** Service Statusdauer
 
 * Volle Konfiguration über eine WebGUI
