@@ -69,3 +69,14 @@ p. oder auf einem zentralen Server im Netzwerk installiert:
 
 p. Der Bloonix-Agent verbindet sich mit dem Bloonix-Server und fragt entweder die Services ab, die in der WebGUI konfiguriert wurden und überwacht werden müssen oder liefert die Ergebnisse der Prüfungen ab.  Dieses Verfahren hat den großen Vorteil, dass nicht jedes zu überwachende System für den Monitoring-Server erreichbar sein muss, sondern der Bloonix-Server muss für jeden Agenten erreichbar sein.
 
+h2. Remote Checks über einen Agenten
+
+p. Wie in dem Dokuemnt "Wie funktioniert Bloonix":/de/docs/about/how-does-bloonix-work.html beschrieben ist, ist es möglich, einen Agenten so zu konfigurieren, dass dieser multiple Hosts von einem beliebigen Standort überachen kann. Beim Einsatz eines Agenten, der Remote Checks ausführt, sollte folgendes beaachtet werden, wenn andere Menschen ausser den Administratoren von Bloonix Checks einrichten können:
+
+* Der Agent führt Checks aus, die in der WebGUI eingerichtet sind
+* Der Agent kann Checks über TCP, UDP, HTTP, SMTP, IMAP, SNMP etc. ausführen
+* Beim Einrichten dieser Checks kann eine beliebige Adresse als Ziel angegeben werden
+
+p. Wenn man einmal diese Möglichkeiten betrachtet, so wäre es theoretisch möglich, dass derjenige, der einen Check in der WebGUI einrichtet, auch Zugriff über diese Checks auf Ihre Netzwerkdienste hat, insofern der Server selbst nicht über eine Firewall so abgesichert ist, dass dies nicht möglich ist.
+
+p. Aus diesen Gründen sollte ein Agent, der remote Checks ausführt, immer auf einem Server laufen, der nicht in Ihrem Netzwerk steht und auf dem auch sonst keine anderen Dienste laufen, als der Agent selbst.
