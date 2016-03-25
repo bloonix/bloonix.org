@@ -4,7 +4,7 @@ h2. Allgemeines
 
 p. Mit dem Bloonix Satellit haben Sie die Möglichkeit, die Überwachung von Internetservices auf multiple Server zu verteilen. Auf diese Weise können Sie die Geschwindigkeit und Verfügbarkeit von verschiedenen Standorten überwachen.
 
-p. Bitte beachten Sie unbedingt die Sicherheitshinweise bei der Einrichtung von Agenten und Satelliten, die remote Checks ausführen: "Sicherheit":/de/docs/about/security.html%23remote-checks-%BCber-einen-agenten-oder-satellit
+p. *Bitte beachten Sie* unbedingt die Sicherheitshinweise bei der Einrichtung von Agenten und Satelliten, die remote Checks ausführen: "Sicherheit":/de/docs/about/security.html
 
 h2. Funktionsweise
 
