@@ -79,4 +79,10 @@ p. Wie in dem Dokument "Wie funktioniert Bloonix":/de/docs/about/how-does-blooni
 
 p. Wenn man einmal diese Möglichkeiten betrachtet, so wäre es theoretisch möglich, dass derjenige, der einen Check in der WebGUI einrichtet, auch Zugriff über diese Checks auf Ihre Netzwerkdienste hat, insofern der Server selbst nicht über eine Firewall so abgesichert ist, dass dies nicht möglich ist.
 
-p. Aus diesen Gründen sollte ein Agent/Satellit, der remote Checks ausführt, immer auf einem Server laufen, der nicht in Ihrem Netzwerk steht und auf dem auch sonst keine anderen Dienste laufen, als der Agent/Satellit selbst.
+p. Beispiel:
+
+bc. check-tcp --host 192.168.10.25 --send '....'
+
+p. Wie hier zu sehen ist, kann man eine beliebige IP Adresse an den Check __check-tcp__ übergeben, welcher dann den String an die IP Adresse sendet, welcher mit dem Parameter __--send__ angegeben wurde. Diese Einrichtung wäre auch über die WebGUI möglich und wenn die IP Adresse eine Adresse aus Ihrem internen Netzwerk ist, so könnte derjenige, den den Check einrichtet, potentiell Ihr Netzwerk angreifen.
+
+p. Aus diesen Gründen sollte ein Agent/Satellit, der remote Checks ausführt, immer auf einem Server laufen, der nicht in Ihrem Netzwerk steht und auf dem auch sonst keine anderen Dienste laufen, als der Agent/Satellit selbst. Dies ist aber nur der Fall, wenn keine vertrauenswürdige Menschen Checks in der WebGUI von Bloonix einrichten können.
