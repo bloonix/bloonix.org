@@ -55,7 +55,7 @@ p. Hinweis: Das Monitoring-System Nagios funktoniert auf diese Weise. Der Nagios
 
 h3. Ein Agent verbindet sich mit dem Monitoring-Server
 
-p. Aus den oben genannten Schwierigkeiten funktioniert Bloonix anders, oder man könnte soagr sagen, Bloonix funktioniert genau anders herum.
+p. Wegen den oben genannten Schwierigkeiten funktioniert Bloonix anders, oder man könnte soagr sagen, Bloonix funktioniert genau anders herum.
 
 p. Während bei vielen Monitoring-Systemen der Monitoring-Server eine aktive Komponente und für die zeitliche Ausführung der Checks veranwortlich ist, so ist der Bloonix-Server eine passive Komponente. Der Bloonix-Server ist weder für die zeitliche Auführung von Checks verantwortlich, noch benötigt der Bloonix-Server eine Verbindung zu jedem System, welches überwacht werden muss. Diese Aufgaben wurden an einen eigenen Dienst ausgelagert und zwar dem Bloonix-Agenten.
 
