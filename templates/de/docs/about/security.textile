@@ -71,7 +71,7 @@ p. Der Bloonix-Agent verbindet sich mit dem Bloonix-Server und fragt entweder di
 
 h2. Remote Checks über einen Agenten oder Satellite
 
-p. Wie in dem Dokument "Wie funktioniert Bloonix":/de/docs/about/how-does-bloonix-work.html beschrieben ist, ist es möglich, einen Agenten/Satellite so zu konfigurieren, dass dieser multiple Hosts von einem beliebigen Standort überachen kann. Beim Einsatz eines Agenten/Satellite, der Remote Checks ausführt, sollte folgendes beaachtet werden, wenn andere Menschen ausser den Administratoren von Bloonix Checks einrichten können:
+p. Wie in dem Dokument "Wie funktioniert Bloonix":/de/docs/about/how-does-bloonix-work.html beschrieben ist, ist es möglich, einen Agenten/Satellite so zu konfigurieren, dass dieser multiple Hosts von einem beliebigen Standort überachen kann. Beim Einsatz eines Agenten/Satellite, der Remote Checks ausführt, sollte folgendes beachtet werden, wenn andere Menschen ausser den Administratoren von Bloonix in der WebGUI Checks einrichten können:
 
 * Der Agent/Satellite führt Checks aus, die in der WebGUI eingerichtet sind
 * Der Agent/Satellite kann Checks über TCP, UDP, HTTP, SMTP, IMAP, SNMP etc. ausführen
