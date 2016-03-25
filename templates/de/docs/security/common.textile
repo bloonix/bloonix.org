@@ -41,24 +41,6 @@ h2. Der Benutzer „bloonix“
 
 p. Alle Prozesse von Bloonix laufen auf unixoiden Systemen mit dem Benutzer __bloonix__, welcher während der Installation von Bloonix erstellt wird. Für den Fall, dass Bloonix zur Prüfung von Services Root-Rechte benötigt, wird __sudo__ verwendet.
 
-h2. Remote Checks über einen Agenten oder Satellit
-
-p. Wie in dem Dokument "Wie funktioniert Bloonix":/de/docs/about/how-does-bloonix-work.html beschrieben ist, ist es möglich, einen Agenten/Satellit so zu konfigurieren, dass dieser multiple Hosts von einem beliebigen Standort überachen kann. Beim Einsatz eines Agenten/Satellit, der Remote Checks ausführt, sollte folgendes beachtet werden, wenn andere Menschen ausser den Administratoren von Bloonix in der WebGUI Checks einrichten können:
-
-* Der Agent/Satellit führt Checks aus, die in der WebGUI eingerichtet sind
-* Der Agent/Satellit kann Checks über TCP, UDP, HTTP, SMTP, IMAP, SNMP etc. ausführen
-* Beim Einrichten dieser Checks kann eine beliebige Adresse als Ziel angegeben werden
-
-p. Wenn man einmal diese Möglichkeiten betrachtet, so wäre es theoretisch möglich, dass derjenige, der einen Check in der WebGUI einrichtet, auch Zugriff über diese Checks auf Ihre Netzwerkdienste hat, insofern der Server selbst nicht über eine Firewall so abgesichert ist, dass dies nicht möglich ist.
-
-p. Beispiel:
-
-bc. check-tcp --host 192.168.10.25 --send '....'
-
-p. Wie hier zu sehen ist, kann man eine beliebige IP Adresse an den Check __check-tcp__ übergeben, welcher dann den String an die IP Adresse sendet, welcher mit dem Parameter __--send__ angegeben wurde. Diese Einrichtung wäre auch über die WebGUI möglich und wenn die IP Adresse eine Adresse aus Ihrem internen Netzwerk ist, so könnte derjenige, den den Check einrichtet, potentiell Ihr Netzwerk angreifen.
-
-p. Aus diesen Gründen sollte ein Agent/Satellit, der remote Checks ausführt, immer auf einem Server laufen, der nicht in Ihrem Netzwerk steht und auf dem auch sonst keine anderen Dienste laufen, als der Agent/Satellit selbst. Dies ist aber nur der Fall, wenn keine vertrauenswürdige Menschen Checks in der WebGUI von Bloonix einrichten können.
-
 h2. Verbindungen zwischen Server und Agent
 
 h3. Netzwerksicherheit

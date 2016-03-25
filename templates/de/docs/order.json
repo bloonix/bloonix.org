@@ -1,5 +1,6 @@
 [
     { "Über Bloonix": "about" },
+    { "Sicherheit": "security" },
     { "Installation": "installation" },
     { "Konfiguration": "configuration" },
     { "HowTos": "howtos" },
