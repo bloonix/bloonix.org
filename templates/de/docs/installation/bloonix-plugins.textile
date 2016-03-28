@@ -34,7 +34,7 @@ h1. Verfügbare Plugins
 
 h1. Plugins importieren
 
-p. Damit über die WebGUI die Services zur Überwachung eingerichtet werden können, ist es notwendig, die verfügbaren Bloonix-Plugins in die Datenbank zu importieren. Hierzu muss zunächst das Paket __bloonix-plugin-config__ auf dem Server installiert werden, auf dem Sie die Bloonix-WebGUI installiert und konfiguriert haben:
+p. Damit über die WebGUI die Services zur Überwachung eingerichtet werden können, ist es notwendig, die verfügbaren Bloonix-Plugins in die Datenbank zu importieren. Hierzu muss zunächst das Paket __bloonix-plugin-config__ auf dem Server installiert werden, auf dem Sie die Bloonix-WebGUI installiert und konfiguriert haben. Das Paket darf erst installiert werden, wenn die Datenbank fertig eingerichtet ist und sich die WebGUI mit der Datenbank verbinden kann.
 
 bc. # Debian
 apt-get install bloonix-plugin-config
