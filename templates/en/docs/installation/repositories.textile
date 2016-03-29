@@ -61,10 +61,10 @@ p. "Link to the EPEL projekt":https://fedoraproject.org/wiki/EPEL
 h3. Installation of the Bloonix repositories
 
 bc. # RHEL 6:
-rpm -ivh https://download.bloonix.de/repos/centos/6/noarch/bloonix-release-0.5-1.el6.noarch.rpm
+rpm -ivh https://download.bloonix.de/repos/centos/6/noarch/bloonix-release-0.7-1.el6.noarch.rpm
 
 bc. # RHEL 7:
-rpm -ivh https://download.bloonix.de/repos/centos/7/noarch/bloonix-release-0.5-1.el7.centos.noarch.rpm
+rpm -ivh https://download.bloonix.de/repos/centos/7/noarch/bloonix-release-0.7-1.el7.centos.noarch.rpm
 
 p. List all available bloonix packages:
 
@@ -94,7 +94,7 @@ p. At the moment only openSUSE 13 is supported. If you use SLES then the SLES ve
 
 h3. Installation of the Bloonix repository
 
-bc. rpm -ivh https://download.bloonix.de/repos/suse/13/noarch/bloonix-release-0.6-1.noarch.rpm
+bc. rpm -ivh https://download.bloonix.de/repos/suse/13/noarch/bloonix-release-0.7-1.noarch.rpm
 
 p. List all available bloonix packages:
 

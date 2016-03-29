@@ -6,7 +6,7 @@ bc. sudo yum install epel-release
 
 h3. Install the Bloonix repository
 
-bc. sudo rpm -ivh https://download.bloonix.de/repos/centos/7/noarch/bloonix-release-0.5-1.el7.centos.noarch.rpm
+bc. sudo rpm -ivh https://download.bloonix.de/repos/centos/7/noarch/bloonix-release-0.7-1.el7.centos.noarch.rpm
 
 h3. Install the Elasticsearch repository
 

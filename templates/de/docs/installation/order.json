@@ -12,5 +12,6 @@
     { "Bloonix-WTRM": "bloonix-wtrm.textile" },
     { "Manuelle Installation": "sources.textile" },
     { "Quick Guide für CentOS 7 und PostgreSQL": "quick-installation-guide-centos-7-postgres.textile" },
-    { "Quick Guide für CentOS 7 und MariaDB": "quick-installation-guide-centos-7-mariadb.textile" }
+    { "Quick Guide für CentOS 7 und MariaDB": "quick-installation-guide-centos-7-mariadb.textile" },
+    { "Quick Guide für Debian 8 und MariaDB": "quick-installation-guide-debian-8-mariadb.textile" }
 ]
