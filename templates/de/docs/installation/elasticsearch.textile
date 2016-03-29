@@ -15,7 +15,7 @@ p. Elasticsearch kann über folgende Webseite heruntergeladen und dann installie
 
 p. "https://www.elastic.co/downloads/elasticsearch":https://www.elastic.co/downloads/elasticsearch
 
-p. Bitte installiert Elasticsearch Version kleiner 2.x.x, da Version 2.x.x noch nicht getestet wurde.
+p. _Wichtiger Hinweis:_  Es ist nicht möglich, von Elasticsearch Version 1.x auf Version 2.x upzugraden, da das alte Bloonix Mapping nicht kompatible zu Elasticsearch 2.x ist!
 
 p. Aus Sicherheitsgründen sollte der Parameter __network.bind_host__ in __/etc/elasticsearch/elasticsearch.yml__ angepasst werden, damit Elasticsearch nicht auf allen IP-Adressen lauscht. Beispiel:
 
