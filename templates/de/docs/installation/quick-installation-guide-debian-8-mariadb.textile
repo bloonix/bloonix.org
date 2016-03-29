@@ -49,7 +49,7 @@ bc. echo "include /etc/bloonix/webgui/nginx.conf;" >/etc/nginx/conf.d/001_blooni
 h3. Elasticsearch und Nginx starten
 
 bc. systemctl start elasticsearch
-systemctl start nginx
+systemctl restart nginx
 
 h3. Initialisieren Sie das Bloonix Template für Elasticsearch
 

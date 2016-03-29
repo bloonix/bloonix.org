@@ -61,10 +61,10 @@ p. "Link to the EPEL projekt":https://fedoraproject.org/wiki/EPEL
 h3. Installation of the Bloonix repositories
 
 bc. # RHEL 6:
-rpm -ivh https://download.bloonix.de/repos/centos/6/noarch/bloonix-release-0.7-1.el6.noarch.rpm
+rpm -ivh https://download.bloonix.de/repos/centos/6/noarch/bloonix-release-0.7-1.noarch.rpm
 
 bc. # RHEL 7:
-rpm -ivh https://download.bloonix.de/repos/centos/7/noarch/bloonix-release-0.7-1.el7.centos.noarch.rpm
+rpm -ivh https://download.bloonix.de/repos/centos/7/noarch/bloonix-release-0.7-1.noarch.rpm
 
 p. List all available bloonix packages:
 
