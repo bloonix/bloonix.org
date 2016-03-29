@@ -15,7 +15,11 @@ p. Elasticsearch can be downloaded on the following website:
 
 p. "https://www.elastic.co/downloads/elasticsearch":https://www.elastic.co/downloads/elasticsearch
 
-p. Please install Elasticsearch version less than 2.x.x, because version 2.x.x isn't tested.
+p. _Important note:_  It's not possible to upgrade from Elasticsearch 1.x to 2.x because the old mapping of Bloonix is not compatible with Elasticsearch 2.x! You can use Elasticsearch 2.x if it's a fresh installation.
+
+p. For security reasons the parameter __network.bind_host__ should be changed in __/etc/elasticsearch/elasticsearch.yml__, so that Elasticsearch doesn't listen on all IP addresses. Example:
+
+bc. network.bind_host: 127.0.0.1
 
 p. Start Elasticsearch:
 
