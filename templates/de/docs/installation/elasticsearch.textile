@@ -17,6 +17,10 @@ p. "https://www.elastic.co/downloads/elasticsearch":https://www.elastic.co/downl
 
 p. Bitte installiert Elasticsearch Version kleiner 2.x.x, da Version 2.x.x noch nicht getestet wurde.
 
+p. Aus Sicherheitsgründen sollte der Parameter __network.bind_host__ in __/etc/elasticsearch/elasticsearch.yml__ angepasst werden, damit Elasticsearch nicht auf allen Interfaces lauscht. Beispiel:
+
+bc. network.bind_host: 127.0.0.1
+
 p. Elasticsearch starten:
 
 bc. /etc/init.d/elasticsearch start
