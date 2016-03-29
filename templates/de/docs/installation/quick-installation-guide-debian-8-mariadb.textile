@@ -17,7 +17,8 @@ echo "deb http://packages.elastic.co/elasticsearch/1.7/debian stable main" \
 
 h3. Paketinstallation
 
-bc. apt-get -y install \
+bc. apt-get update
+apt-get -y install \
     nginx \
     mariadb-server \
     elasticsearch \
