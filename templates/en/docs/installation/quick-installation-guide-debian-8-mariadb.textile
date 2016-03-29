@@ -12,8 +12,8 @@ echo "deb https://download.bloonix.de/repos/debian/ jessie main" \
 h3. Install the Elasticsearch repository
 
 bc. wget -qO - https://packages.elastic.co/GPG-KEY-elasticsearch | apt-key add -
-echo "deb http://packages.elastic.co/elasticsearch/1.7/debian stable main" \
-    >>/etc/apt/sources.list.d/elasticsearch-1.7.list
+echo "deb http://packages.elastic.co/elasticsearch/2.x/debian stable main" \
+    >>/etc/apt/sources.list.d/elasticsearch-2.x.list
 
 p. For security reasons the parameter __network.bind_host__ should be changed in __/etc/elasticsearch/elasticsearch.yml__, so that Elasticsearch doesn't listen on all IP addresses. Example:
 
