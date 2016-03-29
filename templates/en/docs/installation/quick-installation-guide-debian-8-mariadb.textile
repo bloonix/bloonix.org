@@ -1,21 +1,19 @@
 h1. Quick installation guide on CentOS 7 with MariaDB
 
-h3. Install at first the EPEL repository
-
-bc. sudo yum install epel-release
-
 h3. Install the Bloonix repository
 
-bc. sudo rpm -ivh https://download.bloonix.de/repos/centos/7/noarch/bloonix-release-0.7-1.noarch.rpm
+bc. apt-get update
+apt-get -y install apt-transport-https ca-certificates curl
+
+bc. wget -q -O- https://download.bloonix.de/repos/debian/bloonix.gpg | apt-key add -
+echo "deb https://download.bloonix.de/repos/debian/ jessie main" \
+    >>/etc/apt/sources.list.d/bloonix.list
 
 h3. Install the Elasticsearch repository
 
-bc. sudo rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch
-sudo vim /etc/yum.repos.d/elasticsearch.repo
-
-p. Insert:
-
-<% include /all/template-elasticsearch-repo.textile %>
+bc. wget -qO - https://packages.elastic.co/GPG-KEY-elasticsearch | apt-key add -
+echo "deb http://packages.elastic.co/elasticsearch/1.7/debian stable main" \
+    >>/etc/apt/sources.list.d/elasticsearch-1.7.list
 
 p. For security reasons the parameter __network.bind_host__ should be changed in __/etc/elasticsearch/elasticsearch.yml__, so that Elasticsearch doesn't listen on all IP addresses. Example:
 
@@ -23,11 +21,12 @@ bc. network.bind_host: 127.0.0.1
 
 h3. Package installation
 
-bc. sudo yum install \
+bc. apt-get update
+apt-get -y install \
     nginx \
     mariadb-server \
     elasticsearch \
-    java-1.7.0-openjdk \
+    openjdk-7-jre \
     bloonix-webgui \
     bloonix-server \
     bloonix-agent \
@@ -36,7 +35,7 @@ bc. sudo yum install \
 
 h3. Init MariaDB
 
-bc. sudo systemctl start mariadb
+bc. systemctl start mysql
 mysql_secure_installation
 
 h3. Nginx
@@ -47,32 +46,32 @@ bc. include /etc/bloonix/webgui/nginx.conf;
 
 p. or just execute the following command:
 
-bc. sudo bash -c 'echo "include /etc/bloonix/webgui/nginx.conf;" >/etc/nginx/conf.d/001_bloonix.conf'
+bc. echo "include /etc/bloonix/webgui/nginx.conf;" >/etc/nginx/conf.d/001_bloonix.conf
 
 h3. Start Elasticsearch and Nginx
 
-bc. sudo systemctl start elasticsearch.service
-sudo systemctl start nginx.service
+bc. systemctl start elasticsearch
+systemctl restart nginx
 
 h3. Init Bloonix template for Elasticsearch
 
-bc. sudo /srv/bloonix/webgui/schema/init-elasticsearch localhost:9200
+bc. /srv/bloonix/webgui/schema/init-elasticsearch localhost:9200
 
 h3. Init Bloonix schema for MariaDB
 
-bc. sudo /srv/bloonix/webgui/schema/init-database --mysql
+bc. /srv/bloonix/webgui/schema/init-database --mysql
 
 h3. Plugin meta data
 
 p. After the database were successfully initiated and is running, you can install the package __bloonix__plugin_config__ that imports the plugin meta data into the database:
 
-bc. sudo yum install bloonix-plugin-config
+bc. apt-get -y install bloonix-plugin-config
 
 h3. Configure the agent
 
 p. Edit the configuration of the Bloonix Agent and configure the section __server__:
 
-bc. sudo vim /etc/bloonix/agent/main.conf
+bc. vim /etc/bloonix/agent/main.conf
 
 p. Set in section server{}:
 
@@ -88,19 +87,19 @@ ssl_verify_mode none
 
 h3. Start all Bloonix services
 
-bc. sudo systemctl start bloonix-webgui.service
-sudo systemctl start bloonix-server.service
-sudo systemctl start bloonix-srvchk.service
-sudo systemctl start bloonix-agent.service
+bc. systemctl start bloonix-webgui
+systemctl start bloonix-server
+systemctl start bloonix-srvchk
+systemctl start bloonix-agent
 
 h3. Start all services automatically at system boot
 
-bc. sudo systemctl enable bloonix-webgui.service
-sudo systemctl enable bloonix-server.service
-sudo systemctl enable bloonix-srvchk.service
-sudo systemctl enable bloonix-agent.service
-sudo systemctl enable mariadb
-sudo systemctl enable nginx
+bc. systemctl enable bloonix-webgui
+systemctl enable bloonix-server
+systemctl enable bloonix-srvchk
+systemctl enable bloonix-agent
+systemctl enable mariadb
+systemctl enable nginx
 
 h3. Ready to rumble
 

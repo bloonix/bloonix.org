@@ -15,6 +15,10 @@ bc. wget -qO - https://packages.elastic.co/GPG-KEY-elasticsearch | apt-key add -
 echo "deb http://packages.elastic.co/elasticsearch/1.7/debian stable main" \
     >>/etc/apt/sources.list.d/elasticsearch-1.7.list
 
+p. Aus Sicherheitsgründen sollte der Parameter __network.bind_host__ in __/etc/elasticsearch/elasticsearch.yml__ angepasst werden, damit Elasticsearch nicht auf allen IP-Adressen lauscht. Beispiel:
+
+bc. network.bind_host: 127.0.0.1
+
 h3. Paketinstallation
 
 bc. apt-get update

@@ -17,6 +17,10 @@ p. Einfügen
 
 <% include /all/template-elasticsearch-repo.textile %>
 
+p. Aus Sicherheitsgründen sollte der Parameter __network.bind_host__ in __/etc/elasticsearch/elasticsearch.yml__ angepasst werden, damit Elasticsearch nicht auf allen IP-Adressen lauscht. Beispiel:
+
+bc. network.bind_host: 127.0.0.1
+
 h3. Paketinstallation
 
 bc. sudo yum install \
