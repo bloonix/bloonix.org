@@ -32,5 +32,5 @@ p. Diese Variablen können nun bei der Konfiguration eines Service-Checks verwen
 
 h2. Vordefinierte Variablen
 
-p. Bitte beachten Sie, dass es zwei vordefinierte Variablen gibt: __%IPADDR%__ und __%HOSTNAME%__. Diese Variablen werden immer mit der IP-Adresse und dem Hostnamen des Hosts ersetzt.
-
+p. Bitte beachten Sie, dass es vier vordefinierte Variablen gibt: __%IPADDR%__, __%IPADDR6%__, __%HOSTNAME%__ und __%RND(num)%__. Die Variablen __%IPADDR%__, __%IPADDR6%__ und __%HOSTNAME%__ werden durch die IP-Adressen und den Hostnamen des Hosts ersetzt. Die Variable __%RND(num)%__ wird durch einen Random String ersetzt mit einer Länger, wel
+cher __num__ entspricht. Der Random String enthält nur die folgenden Zeichen: __a-zA-Z_0-9__
