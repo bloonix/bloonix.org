@@ -38,7 +38,7 @@ h3. remote
 
 p. Mit der Option __remote__ soll der Check von einem externen Server ausgeführt werden, also ein Server, der nicht in Ihrem lokalen Netzwerk steht. Dies ist besonders für Internetservices sinnvoll. Zum Beispiel können Sie über einen externen Check die Funktionalität Ihres Webservers, Mailservers oder auch DNS-Servers überprüfen.
 
-p. Für weitere Informationen lesen Sie unbedingt das Dokument "Wie überwacht Bloonix Hosts und Services":/de/docs/webgui/how-does-bloonix-checks-your-hosts-and-services.html
+p. Für weitere Informationen lesen Sie unbedingt das Dokument "Wie überwacht Bloonix Hosts und Services":/de/docs/faq/how-does-bloonix-checks-your-hosts-and-services.html
 
 h2. Formularfelder: Check Einstellungen
 
