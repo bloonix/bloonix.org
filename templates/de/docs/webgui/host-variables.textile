@@ -34,9 +34,9 @@ h2. Vordefinierte Variablen
 
 p. Bitte beachten Sie, dass es vier vordefinierte Variablen gibt:
 
-bc: %IPADDR%
+bc. %IPADDR%
 %IPADDR6%
 %HOSTNAME%
 %RND(num)%
 
-p. Die Variablen __IPADDR__, __IPADDR6__ und __HOSTNAME__ werden durch die IP-Adressen und den Hostnamen des Hosts ersetzt. Die Variable __RND(num)__ wird durch einen Random String ersetzt mit einer Länger, welcher __num__ entspricht. Der Random String enthält nur die folgenden Zeichen: __a-zA-Z_0-9__
+p. Die Variablen __IPADDR__, __IPADDR6__ und __HOSTNAME__ werden durch die IP-Adressen und den Hostnamen des Hosts ersetzt. Die Variable __RND__ wird durch einen Random String ersetzt mit einer Länger, welcher __num__ entspricht. Der Random String enthält nur die folgenden Zeichen: __a-zA-Z_0-9__
