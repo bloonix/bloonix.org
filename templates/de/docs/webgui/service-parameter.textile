@@ -16,7 +16,7 @@ p. Jeder Service kann aktiviert und deaktiviert werden. Ist ein Service deaktivi
 
 h2. Formularfeld: Ist dies ein Host-Alive-Check?
 
-p. Mit diesem Parameter lässt sich bestimmen, ob der Service-Check als Host-Alive-Check markiert wird. Weitere Informationsn zum Host-Alive-Check finden Sie im folgenden Dokument: <a data-id="host-alive-check">Was ist ein Host-Alive-Check?</a>
+p. Mit diesem Parameter lässt sich bestimmen, ob der Service-Check als Host-Alive-Check markiert wird. Weitere Informationsn zum Host-Alive-Check finden Sie im folgenden Dokument: "Was ist ein Host-Alive-Check?":/de/docs/webgui/host-alive-check.html
 
 h2. Formularfeld: Ist dies ein passiver Check?
 
@@ -38,7 +38,7 @@ h3. remote
 
 p. Mit der Option __remote__ soll der Check von einem externen Server ausgeführt werden, also ein Server, der nicht in Ihrem lokalen Netzwerk steht. Dies ist besonders für Internetservices sinnvoll. Zum Beispiel können Sie über einen externen Check die Funktionalität Ihres Webservers, Mailservers oder auch DNS-Servers überprüfen.
 
-p. Für weitere Informationen lesen Sie unbedingt das Dokument <a data-id="how-does-bloonix-checks-your-hosts-and-services">Wie überwacht Bloonix Hosts und Services</a>.
+p. Für weitere Informationen lesen Sie unbedingt das Dokument "Wie überwacht Bloonix Hosts und Services":/de/docs/webgui/how-does-bloonix-checks-your-hosts-and-services.html
 
 h2. Formularfelder: Check Einstellungen
 
@@ -46,7 +46,7 @@ p. Mit den Check Einstellungen können Sie die Einstellungen für den Check best
 
 !{margin: 40px 0;}/public/img/service-parameter-1.png!
 
-p. Bitte lesen Sie unbedingt das Dokument: <a data-id="host-variables">Host Variablen</a>
+p. Bitte lesen Sie unbedingt das Dokument: "Host Variablen":/de/docs/webgui/host-variables.html
 
 h2. Formularfeld: Globaler Check Timeout
 

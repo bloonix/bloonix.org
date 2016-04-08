@@ -84,5 +84,5 @@ bc. Hostname ip-addresse [461/500 SMS USED] status
 
 h2. Formularfeld: Host Variablen
 
-p. Bitte lesen Sie unbedingt das Dokument: <a data-id="host-variables">Host Variablen</a>
+p. Bitte lesen Sie unbedingt das Dokument: "Host Variablen":/de/docs/webgui/host-variables.html
 
