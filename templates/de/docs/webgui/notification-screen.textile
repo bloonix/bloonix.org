@@ -19,7 +19,7 @@ h3. Notification Screen ohne Login abrufen
 
 p. Im Formular zur Konfiguration der Benutzer haben Sie die Möglichkeit, einen *Authenfication-Key* zu erstellen. Mit diesem Key kann der Notification Screen abgerufen werden, ohne sich einloggen zu müssen.
 
-!{margin: 40px 0;}/public/img/authentificaton-key-1.png
+!{margin: 40px 0;}/public/img/authentificaton-key-1.png!
 
 p. Mit dieser Einstellung können Sie den Notification Screen nun wie folgt aufrufen:
 
