@@ -289,7 +289,7 @@ bc.. plugin {
     id 100001
     plugin Test.Check
     command check-test
-    datatype statistics
+    datatype statistic
     category Test,HTTP,Network
     netaccess yes
     prefer remote
