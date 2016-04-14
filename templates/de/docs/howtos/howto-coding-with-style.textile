@@ -11,7 +11,7 @@ h3. Grundlegendes
 
 h3. Perl
 
-p. Solte die Programmiersprache Perl verwendet werden, so finden Sie hier einen Codingstyle: "Perlstyle":http://perldoc.perl.org/perlstyle.html
+p. Sollte die Programmiersprache Perl verwendet werden, so finden Sie hier einen Codingstyle: "Perlstyle":http://perldoc.perl.org/perlstyle.html
 
 p. Verwende +kein+ CamelCase:
 
