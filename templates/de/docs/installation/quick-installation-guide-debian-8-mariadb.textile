@@ -15,10 +15,6 @@ bc. wget -qO - https://packages.elastic.co/GPG-KEY-elasticsearch | apt-key add -
 echo "deb http://packages.elastic.co/elasticsearch/2.x/debian stable main" \
     >>/etc/apt/sources.list.d/elasticsearch-2.x.list
 
-p. Aus Sicherheitsgründen sollte der Parameter __network.bind_host__ in __/etc/elasticsearch/elasticsearch.yml__ angepasst werden, damit Elasticsearch nicht auf allen IP-Adressen lauscht. Beispiel:
-
-bc. network.bind_host: 127.0.0.1
-
 h3. Paketinstallation
 
 bc. apt-get update
@@ -51,6 +47,10 @@ p. oder führen Sie folgendes Kommando durch:
 bc. echo "include /etc/bloonix/webgui/nginx.conf;" >/etc/nginx/conf.d/001_bloonix.conf
 
 h3. Elasticsearch und Nginx starten
+
+p. Aus Sicherheitsgründen sollte der Parameter __network.bind_host__ in __/etc/elasticsearch/elasticsearch.yml__ angepasst werden, damit Elasticsearch nicht auf allen IP-Adressen lauscht. Beispiel:
+
+bc. network.bind_host: 127.0.0.1
 
 bc. systemctl start elasticsearch
 systemctl restart nginx
