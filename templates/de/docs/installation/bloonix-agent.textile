@@ -36,7 +36,7 @@ bc.. server {
 
 p. _Bitte ersetzen_ Sie in der Sektion __server__ die Hostnamen mit dem Host oder der IP-Adresse, auf denen der Bloonix-Server installiert wurde.
 
-p. *Hinweis:* Falls ein selbst-signiertes Zertifikat für den Bloonix-Server konfiguriert ist, müssen die SSL-Parameter __ssl_verify_peer__ auf __none__ setzen, da der Agent ansonsten einen Fehler liefert bei der Prüfung des Server-Zertifikats.
+p. *Hinweis:* Falls ein selbst-signiertes Zertifikat für den Bloonix-Server konfiguriert ist, müssen die SSL-Parameter __ssl_verify_mode__ auf __none__ setzen, da der Agent ansonsten einen Fehler liefert bei der Prüfung des Server-Zertifikats.
 
 h3. Sektion: host
 
