@@ -39,6 +39,10 @@ bc. # Ubuntu 14.04:
 echo "deb https://download.bloonix.de/repos/ubuntu/ trusty main" \
     >>/etc/apt/sources.list.d/bloonix.list
 
+bc. # Ubuntu 16.04:
+echo "deb https://download.bloonix.de/repos/ubuntu/ xenial main" \
+    >>/etc/apt/sources.list.d/bloonix.list
+
 p. Falls Ubuntu zum Einsatz kommt, sollte das passende Debian Release zum Ubuntu Release eingetragen werden.
 
 p. Auflistung der Bloonix Pakete:
