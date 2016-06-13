@@ -32,7 +32,7 @@ p. Der Status __INFO__ bedeuted, dass ein Service zum aktuellen Zeitpunkt nicht 
 
 h3. Status: OK
 
-p. Der Status __OK__ sagt aus, dass der Service erfolgreich ohne das Überschreiten von Schwellwerten gefrüft wurde.
+p. Der Status __OK__ sagt aus, dass der Service erfolgreich ohne das Überschreiten von Schwellwerten geprüft wurde.
 
 h3. Der Status von Hosts
 
