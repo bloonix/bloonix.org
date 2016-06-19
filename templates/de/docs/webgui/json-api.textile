@@ -102,7 +102,7 @@ p. Listen werden immer in Teilen ausgeliefert. Das heißt, wenn es 10000 Hosts g
 p. Beispiel einer Anfrage mit folgenden POST-Daten:
 
 bc. {
-    "size" : 3,
+    "limit" : 3,
     "offset" : 0
 }
 
@@ -123,7 +123,7 @@ bc. {
 p. Die Antwort enthält wie angefordert nur drei Objeke. Um die nächsten drei Objekte abzufragen, muss eine weitere Abfrage gesendet werden. Der __offset__ muss dabei erhöht werden:
 
 bc. {
-    "size" : 3,
+    "limit" : 3,
     "offset" : 3
 }
 
