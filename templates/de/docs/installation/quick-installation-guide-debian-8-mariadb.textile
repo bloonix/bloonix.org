@@ -3,7 +3,7 @@ h1. Schneller Installationsguide auf Debian 8 mit MariaDB
 h3. Installieren Sie das Bloonix Repository
 
 bc. apt-get update
-apt-get -y install apt-transport-https ca-certificates curl
+apt-get -y install apt-transport-https ca-certificates
 
 bc. wget -q -O- https://download.bloonix.de/repos/debian/bloonix.gpg | apt-key add -
 echo "deb https://download.bloonix.de/repos/debian/ jessie main" \

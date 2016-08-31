@@ -11,7 +11,7 @@ h3. Installation des Bloonix Repositories
 p. Das Bloonix Repository ist über HTTPS erreichbar, daher wird ein spezielles Paket benötigt, welches nicht standardmäßig installiert wird.
 
 bc. apt-get update
-apt-get install apt-transport-https ca-certificates curl
+apt-get install apt-transport-https ca-certificates
 
 p. Als nächstes muss der Public-Signing-Key von Bloonix runtergeladen und installiert werden:
 

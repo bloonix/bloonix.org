@@ -39,7 +39,6 @@ bloonix-fcgi
 bloonix-heaven
 ca-certificates
 curl
-facter
 lm_sensors
 openssl
 perl-JSON-XS

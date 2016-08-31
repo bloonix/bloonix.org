@@ -39,7 +39,6 @@ bloonix-fcgi
 bloonix-heaven
 ca-certificates
 curl
-facter
 lm_sensors
 openssl
 perl-JSON-XS
@@ -146,7 +145,7 @@ h3. Abhängigkeiten des Pakets bloonix-plugins-apache
 bc. bloonix-core
 curl
 
-h3. Abhängigkeiten des Pakets bloonix-plugins-base
+h3. Abhängigkeiten des Pakets bloonix-plugins-basic
 
 bc. bloonix-core
 curl
