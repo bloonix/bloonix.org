@@ -30,6 +30,8 @@ bc. sudo yum install \
     bloonix-plugins-basic \
     bloonix-plugins-linux
 
+p. Bitte installiere zusätzlich einen MTA wie Postfix, Exim oder Sendmail.
+
 h3. PostgreSQL initialisieren
 
 bc. sudo postgresql-setup initdb

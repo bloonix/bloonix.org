@@ -29,6 +29,8 @@ apt-get -y install \
     bloonix-plugins-basic \
     bloonix-plugins-linux
 
+p. Bitte installiere zusätzlich einen MTA wie Postfix, Exim oder Sendmail.
+
 h3. MariaDB intialisieren
 
 bc. systemctl start mysql

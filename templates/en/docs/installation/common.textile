@@ -4,6 +4,14 @@ h2. Release Notes
 
 p. In the forum of Bloonix release notes are published. Before you install or update Bloonix components you should visit the forum to look for important information: "Release Notes in the Bloonix Forum":https://forum.bloonix.org/index.php/Board/17-Release-Notes/
 
+h2. NTPD
+
+p. Please take care that on all server the time is correct. For this reason you should install a service like NTPD.
+
+h2. MTA
+
+p. On all server where the Bloonix-Server or Bloonix-WebGUI is running, it's necessare that a MTA like Postfix, Exim or Sendmail is installed.
+
 h2. Perl modules
 
 p. On older Linux systems some Perl modules will be installed from the Bloonix repository if lower version are installed. This modules are

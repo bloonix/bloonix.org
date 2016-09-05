@@ -34,6 +34,8 @@ bc. sudo yum install \
     bloonix-plugins-basic \
     bloonix-plugins-linux
 
+p. In addition please install a MTA like Postfix, Exim or Sendmail please.
+
 h3. Init MariaDB
 
 bc. sudo systemctl start mariadb
