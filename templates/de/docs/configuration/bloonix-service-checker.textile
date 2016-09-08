@@ -23,7 +23,7 @@ p. _Hinweis:_ Diese Sektion ist identisch zur Konfiguration der Sektion __server
 
 h2. Sektion: tcp_server
 
-p. In dieser Sektion werden die Parameter für den FastCGI Server konfiguriert. Die Konfiguration ist sehr einfach.
+p. In dieser Sektion werden die Parameter für eine Verbindung zum Bloonix Server konfiguriert. Die Konfiguration ist sehr einfach.
 
 bc.. server {
     host p1.bloonix.de, s1.bloonix.de
