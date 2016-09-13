@@ -13,8 +13,6 @@ h1. Unsere Plugins
 * Web-Transactions
 
 * *Linux*
-* DRBD
-* NFS3/NFS4
 * CPU und Load Average
 * Memory
 * Disk Usage und I/O
@@ -25,6 +23,9 @@ h1. Unsere Plugins
 * File Content Checks
 * Logfile Security Scans
 * MDADM und Smart Health
+* DRBD
+* NFS3/NFS4
+* Gluster
 
 * *SNMP*
 * CPU
@@ -52,3 +53,6 @@ h1. Unsere Plugins
 * PostgreSQL
 * MySQL5
 
+Eine Übersicht über all unsere Plugins finden Sie hier:
+
+"Bloonix-Plugins":https://github.com/bloonix/bloonix-plugin-config
