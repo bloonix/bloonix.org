@@ -2,7 +2,7 @@ h1. Notification Screen
 
 h2. Der Notification Screen
 
-p. Mit dem Notification Screen haben Sie die Möglichkeit, die für einen Benutzer konfigurierten Hosts mit einem Status zu sehen. Diese Übersicht eignet sich besonders für große Wandmonitore in Ihrem Büro. Dort haben Sie dann zu jeder Zeit den Status Ihrer Hosts und Services im Blickfeld und können deutlich schneller reagieren, wenn etwas ausfällt.
+p. Mit dem Notification Screen haben Sie die Möglichkeit, die für einen Benutzer konfigurierten Hosts mit einem Status zu sehen. Der Notification Screen wurde für große Wandmonitore entwickelt, die zum Beispiel in Ihrem Büro hängen und für alle Mitarbeiter sichtbar sind. Dort haben Sie dann zu jeder Zeit den Status Ihrer Hosts und Services im Blickfeld und können deutlich schneller reagieren, wenn etwas ausfällt. Auf dem Notification Screen werden die Hosts nach ihrem Status sortiert angezeigt. Die Reihenfolge ist: UNKNOWN, CRITICAL, WARNING, INFO, OK.
 
 !{width: 100%; margin: 40px 0;}/public/img/notification-screen-1.png!
 
