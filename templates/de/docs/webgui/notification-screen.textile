@@ -11,7 +11,7 @@ p. *Es wird empfohlen,* für den Notification Screen einen oder mehrere Benutzer
 * Der Benutzer muss die Rolle __user__ erhalten
 * Der Benutzer darf keine Kontakte verwalten
 * Auf Wunsch erlauben Sie den Login des Benutzers nur von bestimmten IPs
-* Wenn der Benutzer zu Gruppen hinzugefügt wird, dann ohne die Berechtigung Services anzulegen, zu ändern oder zu löschen können
+* Wenn der Benutzer zu Gruppen hinzugefügt wird, dann ohne die Berechtigung Services anzulegen, zu ändern oder löschen zu können
 
 h2. Notification Screen und Charts ohne Login abrufen
 
