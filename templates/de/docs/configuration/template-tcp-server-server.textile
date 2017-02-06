@@ -1,3 +1,3 @@
 |_. Parameter |_. Standard |_. Beschreibung |
-| host | | Die IP-Adresse, auf die der Server lauschen soll. |
+| host | | Die IP-Adresse, auf die der Server lauschen soll. '::' für IPv6. |
 | port | | Die Portnummer, auf die der Server lauschen soll. |
