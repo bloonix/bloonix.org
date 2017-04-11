@@ -22,6 +22,10 @@ Log::Handler Version 0.84
 
 p. Diese Versionen werden mindestens zum Einsatz der Bloonix-Software benötigt. Bitte prüfen Sie vor der Installation der Bloonix-Software, ob andere Software, die von Ihnen eingesetzt wird, mit diesen Versionen nicht kompatibel sind oder ob es zu Problemen kommen kann.
 
+h2. Bloonix-WebGUI
+
+p. _*Bitte beachten Sie*_, dass der Benutzer __admin__ nur verwendet werden sollte, um im Bereich __ADMINISTRATION__ zu agieren. Bitte erstellen Sie als aller erstes eine eigene Company, eine eigene Gruppe und einen eigenen Benutzer. Der Benutzer und die Gruppe müssen der neuen Company zugeordnet werden und der Benutzer sollte Operator-Rechte haben. Für weitere Informationen lesen Sie bitte hier weiter: "Companies und wie diese funktionieren":/de/docs/webgui/how-does-comanies-work.html
+
 h2. Source-Code
 
 p. Der Source-Code von Bloonix ist auf Github zu finden: "https://github.com/bloonix/bloonix":https://github.com/bloonix/bloonix

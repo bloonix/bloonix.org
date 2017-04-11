@@ -22,6 +22,10 @@ Log::Handler Version 0.84
 
 p. This versions are needed at least to run the Bloonix software. Please check of other software on your server could crash if this versions are installed.
 
+h2. Bloonix-WebGUI
+
+p. _*Please note*_ that the user __admin__ should only be used to act in the __ADMINISTRATION__ area of the webgui. The first step that you should do after the login is to create a own company, a own group and a own user. The user and the group should be assigned to the new company and the user should have operator rights.
+
 h2. Source code
 
 p. You can find the source code of Bloonix on Github: "https://github.com/bloonix/bloonix":https://github.com/bloonix/bloonix
