@@ -31,6 +31,10 @@ bc. # Debian 8:
 echo "deb https://download.bloonix.de/repos/debian/ jessie main" \
     >>/etc/apt/sources.list.d/bloonix.list
 
+bc. # Debian 9:
+echo "deb https://download.bloonix.de/repos/debian/ stretch main" \
+    >>/etc/apt/sources.list.d/bloonix.list
+
 bc. # Ubuntu 12.04:
 echo "deb https://download.bloonix.de/repos/ubuntu/ precise main" \
     >>/etc/apt/sources.list.d/bloonix.list
