@@ -17,8 +17,6 @@ p. "https://www.elastic.co/downloads/elasticsearch":https://www.elastic.co/downl
 
 p. _Wichtiger Hinweis:_  Es ist nicht möglich, von Elasticsearch Version 1.x auf Version 2.x upzugraden, da das alte Bloonix Mapping nicht kompatibel zu Elasticsearch 2.x ist! Sie können Elasticsearch 2.x installieren, wenn es eine neue Installation ist.
 
-p. Elasticsearch 5 wird derzeit noch nicht unterstützt.
-
 p. Aus Sicherheitsgründen sollte der Parameter __network.bind_host__ in __/etc/elasticsearch/elasticsearch.yml__ angepasst werden, damit Elasticsearch nicht auf allen IP-Adressen lauscht. 
 
 p. Beispiel (Version 1.x):
